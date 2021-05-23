@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Simulating a timer interrupt</title>
+    <link rel="StyleSheet" href="css/InterruptSimulation_Timer.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+  </head>
+  <body style="background-color: White; background-image: url(&quot;images/BlackGrayStrip.png&quot;); background-position: center top; background-repeat: repeat-x">
+    <table align="left">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/IARSystems.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading1"><a name="15992948">Simulating a timer interrupt</a></div>
+      <div class="WebWorks_MiniTOC">
+        <div class="WebWorks_MiniTOC_Level1">
+          <a class="WebWorks_MiniTOC_Link" href="#15971732">Tutorial overview</a>
+        </div>
+        <div class="WebWorks_MiniTOC_Level2">
+          <a class="WebWorks_MiniTOC_Link" href="#15998446">Tutorial description</a>
+        </div>
+        <div class="WebWorks_MiniTOC_Level2">
+          <a class="WebWorks_MiniTOC_Link" href="#15998594">Files used in this tutorial</a>
+        </div>
+        <div class="WebWorks_MiniTOC_Level2">
+          <a class="WebWorks_MiniTOC_Link" href="#15998973">Opening the tutorial workspace</a>
+        </div>
+        <div class="WebWorks_MiniTOC_Level1">
+          <a class="WebWorks_MiniTOC_Link" href="#15972018">Simulating a timer interrupt</a>
+        </div>
+        <div class="WebWorks_MiniTOC_Level2">
+          <a class="WebWorks_MiniTOC_Link" href="#15984535">Adding your interrupt service routine</a>
+        </div>
+        <div class="WebWorks_MiniTOC_Level2">
+          <a class="WebWorks_MiniTOC_Link" href="#16001864">Setting up the project</a>
+        </div>
+        <div class="WebWorks_MiniTOC_Level2">
+          <a class="WebWorks_MiniTOC_Link" href="#16001867">Setting up the interrupt simulation</a>
+        </div>
+        <div class="WebWorks_MiniTOC_Level2">
+          <a class="WebWorks_MiniTOC_Link" href="#16001157">Monitoring the interrupts during execution</a>
+        </div>
+      </div>
+      <div class="Ingress"><a name="16264649">This tutorial demonstrates the method for simulating a simple timer interrupt and how you can monitor it while it is being serviced. However, the procedure can also be used for other types of interrupts.</a></div>
+      <div class="Ingress"><a name="15999809">The tutorial also shows how to use compiler keywords and pragma directives for writing your interrupt service routines directly in C.</a></div>
+      <div class="Ingress"><a name="15982671">Note that the screenshots in this tutorial do not always correspond exactly to the counterparts in your product.</a></div>
+      <div class="Ingress"><a name="15982717">This tutorial assumes that you are familiar with basic use of IAR Embedded Workbench, see the tutorials </a><span class="Reference">Getting Started using IAR Embedded Workbench</span>.</div>
+      <div class="Heading2"><a name="15971732">Tutorial overview</a></div>
+      <div class="Heading3"><a name="15998446">Tutorial description</a></div>
+      <div class="Body"><a name="15998515">The IAR C-SPY® Simulator can on a basic level simulate the interrupt mechanism available on your device. In C-SPY, you can specify timing information and other characteristics required for realistic generation of interrupt activation signals. The tutorial demonstrates how you can use these mechanisms to generate interrupts and to verify that your interrupt setup code is correct and that your interrupt service routines work as intended. </a></div>
+      <div class="Heading3"><a name="15998594">Files used in this tutorial</a></div>
+      <div class="Body"><a name="16264658">The project in this tutorial uses these files:</a></div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><span class="Computer"><a name="15998840">TimerInterrupt.c</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body_in_list"><a name="16233928">Contains an interrupt service routine for a timer which increments a counter. The </a><span class="Computer">main</span> function sets the necessary status registers. The application exits when 100 interrupts have been generated.</div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><span class="Computer" style="color: #000000"><a name="16235216">cstartupCM3.s</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body_in_list"><a name="16235224">Contains the definition of the interrupt vector that is used in this tutorial.</a></div>
+      <div class="Heading3"><a name="15998973">Opening the tutorial workspace</a></div>
+      <div class="List_step_first_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_first_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_first_inner"><a name="15999233">In the IDE and if Information Center is not open, choose </a><span class="Menu_Command">Help&gt;Information Center</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="15999242">Click the </a><span class="Menu_Command">Product explorer</span> symbol.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="15999267"><img class="Default" src="images/TutorialsInInfoCenter_02.png" width="300" height="400" style="display: block; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="15999277">Under the heading </a><span class="Menu_Command">Advanced Debugging</span>, click <span class="Menu_Command">Open tutorial workspace</span>. Choose a destination for your project in the browse dialog box that appears. We recommend that you create a specific directory (with a subdirectory) where you store all your tutorial files, if not already done. In this tutorial we call the directory <span class="Computer">MyTutorials</span> and the subdirectory <span class="Computer">AdvancedDebugging</span>. The <span class="Computer">AdvancedDebugging</span> workspace is opened in the IDE.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="15999291">In the </a><span class="Menu_Command">Workspace</span> window, select the <span class="Computer">SimulatingATimerInterrupt</span> project, right-click and choose <span class="Menu_Command">Set as Active</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="15999310"><img class="Default" src="images/SimulatingTimerInterruptProject_Mym80_02.png" width="368" height="256" style="display: block; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="Heading2"><a name="15972018">Simulating a timer interrupt</a></div>
+      <div class="Body"><a name="3164422">In this example procedure, you will work through these steps:</a></div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a href="#15984535" title="Simulating a timer interrupt" name="3164432">Adding your interrupt service routine</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a href="#16001864" title="Simulating a timer interrupt" name="16001221">Setting up the project</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a href="#16001867" title="Simulating a timer interrupt" name="16001224">Setting up the interrupt simulation</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a href="#16001157" title="Simulating a timer interrupt" name="15984526">Monitoring the interrupts during execution</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Heading3"><a name="15984535">Adding your interrupt service routine</a></div>
+      <div class="List_step_first_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_first_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_first_inner"><a name="15984798">Open the file </a><span class="Computer">TimerInterrupt.c</span>, which here is demonstrated by a few snippets which show how you can use some keywords and pragma directives for writing an interrupt service routine in C:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Prog"><a name="15984595">#pragma language = extended</a></div>
+      <div class="Prog"><a name="16054698">&nbsp;</a></div>
+      <div class="Prog"><a name="15984599">#include &lt;stdio.h&gt;</a></div>
+      <div class="Prog"><a name="16054671">#include &lt;stdint.h&gt;</a></div>
+      <div class="Prog"><a name="16054674">#include &lt;intrinsics.h&gt;</a></div>
+      <div class="Prog"><a name="16054647">&nbsp;</a></div>
+      <div class="Prog"><a name="15984607">static volatile  uint_fast8_t counter = 0;</a></div>
+      <div class="Prog"><a name="15984611">void main (void)</a></div>
+      <div class="Prog"><a name="15984615">{</a></div>
+      <div class="Prog"><a name="15984619">  /* Timer setup code */</a></div>
+      <div class="Prog"><a name="15984623">  ....</a></div>
+      <div class="Prog"><a name="15984628"> </a></div>
+      <div class="Prog"><a name="15984634">  _ _enable_interrupt();							/* Enable interrupts */</a></div>
+      <div class="Prog"><a name="15984638"> </a></div>
+      <div class="Prog"><a name="15984642">  while (counter &lt; 100);							/* Wait loop */</a></div>
+      <div class="Prog"><a name="15984646">  puts("Done\n");</a></div>
+      <div class="Prog"><a name="15984650">}</a></div>
+      <div class="Prog"><a name="15984655">&nbsp;</a></div>
+      <div class="Prog"><a name="15984661">/* Timer interrupt service routine. */</a></div>
+      <div class="Prog"><a name="16264679">void basic_timer(void)</a></div>
+      <div class="Prog"><a name="15990023">{</a></div>
+      <div class="Prog"><a name="15984673">  counter += 1;</a></div>
+      <div class="Prog"><a name="16041845">}</a></div>
+      <div class="Body"><a name="16264729">The interrupt vector is defined in </a><span class="Computer">cstartupCM3.s</span> which is included in the project.</div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16004149">Use the </a><span class="Computer">TimerInterrupt.c</span> file as is; you do not have to modify it in any way for this tutorial.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Heading3"><a name="16001864">Setting up the project</a></div>
+      <div class="Body"><a name="16003100">The </a><span class="Computer">SimulatingATimerInterrupt</span> project is preconfigured with appropriate option settings for this tutorial. Still, this procedure guides you through the option settings required for this tutorial.</div>
+      <div class="List_step_first_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_first_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_first_inner"><a name="16003084">Choose </a><span class="Menu_Command">Project&gt;Options&gt;General Options&gt;Target</span> and select a device. You can find information about which device to use for this tutorial in the header of  <span class="Computer">TimerInterrupt.c</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="16002769">A suitable </a><span class="Emphasis">device description file</span> will automatically be used later on when you start the C-SPY debugger. This file contains device-specific information required by the C-SPY debugger to simulate, for example the interrupt used in this tutorial.</div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16002120">Choose </a><span class="Menu_Command">Project&gt;Options&gt;Debugger&gt;Setup</span> and choose <span class="Menu_Command">Simulator</span> from the <span class="Menu_Command">Driver</span> drop-down list.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16002162">Build your project and start the C-SPY debugger.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Heading3"><a name="16001867">Setting up the interrupt simulation</a></div>
+      <div class="Body"><a name="16094536">The C-SPY interrupt system is based on the cycle counter. You can specify the amount of cycles to pass before C-SPY generates an interrupt. This example procedure demonstrates how you set up an interrupt interactively by using a dedicated dialog box and how you make interrupts to be generated every 2000 cycles.</a></div>
+      <div class="List_step_first_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_first_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_first_inner"><a name="16264781">Choose </a><span class="Menu_Command">Simulator&gt;Interrupt Configuration</span> to open the <span class="Menu_Command">Interrupt Configuration</span> window. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16264801">Right-click in the window and select </a><span class="Menu_Command">Enable interrupt simulation</span> to enable interrupt simulation.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16264818">Verify these settings:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TableAnchor"><a name="15989066">&nbsp;</a></div>
+      <table class="Standard" style="text-align: left; width: 470.54845984251966pt" cellspacing="0" summary="">
+        <caption></caption>
+        <tr>
+          <td style="border-bottom-color: #7f7f7f; border-bottom-style: solid; border-bottom-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: middle; width: 92.5685858267717pt">
+            <div class="CellHeading"><a name="15988957">Option</a></div>
+          </td>
+          <td style="border-bottom-color: #7f7f7f; border-bottom-style: solid; border-bottom-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: middle; width: 125.597735433071pt">
+            <div class="CellHeading"><a name="15988962">Setting</a></div>
+          </td>
+          <td style="border-bottom-color: #7f7f7f; border-bottom-style: solid; border-bottom-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: middle; width: 252.382138582677pt">
+            <div class="CellHeading"><a name="15988967">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-top-color: #7f7f7f; border-top-style: solid; border-top-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Menu_Command"><a name="15988972">Interrupt</a></span></div>
+          </td>
+          <td style="border-top-color: #7f7f7f; border-top-style: solid; border-top-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><a name="16264926">&nbsp;</a></div>
+          </td>
+          <td style="border-top-color: #7f7f7f; border-top-style: solid; border-top-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><a name="15988988">Specifies which interrupt vector to use.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Menu_Command"><a name="15988990">Description</a></span></div>
+          </td>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><a name="15988992">As is</a></div>
+          </td>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><a name="15988994">The interrupt definition (retrieved from the </a><span class="Computer">ddf</span> file) that the simulator uses to simulate the interrupt correctly. </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Menu_Command"><a name="15988999">First activation</a></span></div>
+          </td>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Computer"><a name="15989001">4000</a></span></div>
+          </td>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><a name="15989005">Specifies the first activation time for the interrupt. The interrupt is activated when the cycle counter has reached this value.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Menu_Command"><a name="15989011">Repeat interval</a></span></div>
+          </td>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Computer"><a name="15989016">2000</a></span></div>
+          </td>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><a name="15989018">Specifies the repeat interval for the interrupt, measured in clock cycles.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Menu_Command"><a name="15989023">Hold time</a></span></div>
+          </td>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Computer"><a name="15989028">100</a></span></div>
+          </td>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><a name="15989030">Hold time—the number of cycles that the interrupt is pending.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Menu_Command"><a name="15989035">Probability (%)</a></span></div>
+          </td>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Computer"><a name="15989040">100</a></span></div>
+          </td>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><a name="15989042">Specifies probability. 100% specifies that the interrupt will occur. Another percentage might be used for simulating a more random interrupt behavior.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #7f7f7f; border-bottom-style: solid; border-bottom-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Menu_Command"><a name="15989047">Variance (%)</a></span></div>
+          </td>
+          <td style="border-bottom-color: #7f7f7f; border-bottom-style: solid; border-bottom-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Computer"><a name="15989052">0</a></span></div>
+          </td>
+          <td style="border-bottom-color: #7f7f7f; border-bottom-style: solid; border-bottom-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><a name="15989054">Time variance—influences the activation time to simulate a more realistic hardware behavior. Not used in this tutorial.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><a name="15989183">During execution, after each completed simulation of a single assembler instruction, the C-SPY simulator will check whether the activation time has been reached. If so, the interrupt will be triggered and set to </a><span class="Emphasis">pending</span> provided that <span class="Menu_Command">Probability</span> is set to 100% (which it is in this example).</div>
+      <div class="Body"><a name="16264861">If the interrupt is acknowledged within the hold time, the interrupt service routine is serviced. Otherwise, the interrupt will expire. In both cases, a new interrupt will be triggered after the repeat interval.</a></div>
+      <div class="Heading3"><a name="16001157">Monitoring the interrupts during execution</a></div>
+      <div class="List_step_first_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_first_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_first_inner"><a name="15979526">Choose </a><span class="Menu_Command">View&gt;Terminal I/O</span> to open the <span class="Menu_Command">Terminal I/O</span> window.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="15989904">Execute your application. If you have enabled the interrupt properly in your application source code, C-SPY will:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a name="15989914">Generate an interrupt when the cycle counter has reached 4000 cycles</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a name="15989922">Continuously repeat the interrupt after approximately 2000 cycles.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="15989930">When the </a><span class="Computer">counter</span> variable reaches 100, the string <span class="Computer">Done</span> is printed in the <span class="Menu_Command">Terminal I/O</span> window.</div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="15989935">To monitor the interrupt in action more closely:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a name="15982172">Choose </a><span class="Menu_Command">Simulator&gt;Interrupt Log</span> to open the <span class="Menu_Command">Interrupt Log</span> window, which logs various information about the interrupts, such as entrances to and exits from interrupt service routines, and whether the interrupt is triggered or has expired (reached the hold time).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body_in_list"><a name="15980268">From the context menu available in the </a><span class="Menu_Command">Interrupt Log</span> window, choose <span class="Menu_Command">Enable</span> to enable the logging.</div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a name="15980287">Choose </a><span class="Menu_Command">Simulator&gt;Timeline</span> to open the <span class="Menu_Command">Timeline</span> window which provides a graphical view of the interrupt events during the execution of your application.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body_in_list"><a name="15980364">Right-click in the window and choose </a><span class="Menu_Command">Select Graphs&gt;Interrupts</span>.</div>
+      <div class="Body_in_list"><a name="15997203">Click in the </a><span class="Menu_Command">Interrupts</span> graph, right-click and choose <span class="Menu_Command">Enable</span> from the context menu to enable the Interrupt Log graph.</div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a name="15980638">Choose </a><span class="Menu_Command">Simulator&gt;Interrupt Status</span> to open the <span class="Menu_Command">Interrupt Status</span> window which shows the status of all the currently active interrupts, in other words, interrupts that are either being serviced or waiting to be serviced.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a name="16264900">Choose </a><span class="Menu_Command">Simulator&gt;Available Interrupts</span> to open the <span class="Menu_Command">Available Interrupts</span> window where you can force an interrupt instantly. Typically, this is useful when you are setting up an interrupt and you want to determine whether the interrupt is setup correct, and whether the interrupt service routine is invoked as expected.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="15981073">Note that if the menu commands are not available, these windows are not supported by the product you are using.</a></div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="15980178">Click in the left margin to set a breakpoint in the interrupt service routine:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="15990203"><img class="Default" src="images/BreakpointInTimerInterrupt.png" width="319" height="58" style="display: block; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="15990102">Click the </a><span class="Menu_Command">Reset</span> button (<img class="Default" src="images/ResetButton_Mym80_01.png" width="25" height="25" style="display: inline; left: 0.0; top: 0.0" alt="" />) and then click the <span class="Menu_Command">Go</span> button(<img class="Default" src="images/GoButton_Mym80_02.png" width="25" height="25" style="display: inline; left: 0.0; top: 0.0" alt="" />) to restart execution. Execution stops at the breakpoint. You can now view the information about the interrupt in the various windows:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a name="15990478">In the </a><span class="Menu_Command">Interrupt Log </span>window you can see at which time and at which program counter value the interrupt was triggered.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a name="15991800">In the </a><span class="Menu_Command">Timeline</span> window you can see that the Interrupt Log graph (illustrated with a black line) has appeared. The execution start of the interrupt service routine is illustrated with a black vertical line.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body_in_list"><a name="15992454">Use the + and - keys to zoom in or out.</a></div>
+      <div class="Body_in_list"><a name="15992780">Use the arrow keys, Home, End, or Ctrl+End to move backwards and forward between the various interrupts in the graph.</a></div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a name="15991863">In the </a><span class="Menu_Command">Interrupt Status</span> window you can see that the interrupt is currently being serviced.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="15990705">Click </a><span class="Menu_Command">Go</span> again.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="15997543">In the </a><span class="Menu_Command">Interrupt Log</span> window you can now see that a new interrupt has been generated. Double-click the <span class="Menu_Command">Leave</span> cell for the first interrupt; focus switches to the editor window and in the Interrupt Log graph in the <span class="Menu_Command">Timeline</span> window where the first interrupt is now illustrated by a green box.<img class="Default" src="images/TimerInterruptInTimelineWin.png" width="467" height="99" style="display: block; left: 0.0; top: 0.0" alt="" /></div>
+      <div class="Body"><a name="15997507">Point at the green box with the mouse pointer to get detailed tooltip information for that interrupt. </a></div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">7	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="15992380">Remove the breakpoint and then click </a><span class="Menu_Command">Go</span> again. The application reaches its end.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="16054855">As you can see in the graph, several interrupts have now been generated.</a></div>
+    </blockquote>
+  </body>
+</html>

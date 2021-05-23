@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Certificate Verification Error</title>
+<link rel="stylesheet" href="https://a.company-target.com/%24%24%24%26%3f%26%3f%24%24%24?cmd=get_file&arg=block_style.css&sid=51BF1650D3091E89A42A6473FA3E44C1BCBCE108" type="text/css">
+</head>
+<body>
+
+<div id="pagecontainer">
+        <img class="icon" src="https://a.company-target.com/%24%24%24%26%3f%26%3f%24%24%24?cmd=get_file&arg=images/block.png&sid=3AC01B8240BC1AFF57347CAB611495475F0174B2"> <!--Icon for block type-->
+        <h1>A certificate verification error occured</h1>
+
+        <div class="row">
+                <p class="label">Overview:</p>
+                <p class="item">The access to the URL a.company-target.com is restricted because the validation of the certificate failed</p>
+        </div>
+        <div class="row">
+                <p class="label">Details:</p>
+                <p class="item"><b><i>VERIFY DENY: depth=0</i></b>, CommonName "a.company-target.com" does not match URL "a.company-target.com"</p>
+        </div>
+
+        <div id="options">
+                <p class="label">Options:</p>
+                                 <form name="ask" method="get" action="https://a.company-target.com/%24%24%24%26%3f%26%3f%24%24%24">
+                                <INPUT type=hidden value="ask_add" name=cmd>
+                                <INPUT type=hidden value="a.company-target.com_b71a5f76_1B29E25C1B16874F77DFF2E0B1ED5242" name=arg>
+                                <!--cmd=ask_add&arg=a.company-target.com_b71a5f76_1B29E25C1B16874F77DFF2E0B1ED5242&sid=-->
+                                <INPUT type=hidden value="E8D88958AFADB06F0B7411D082CA37D0FF42DB23" name=sid>
+                                <INPUT type=hidden value="https://a.company-target.com/pixel?type=js&id=1424298379&page=https%3A%2F%2Fwww.altera.com%2Fproducts%2Fprocessors%2Fsupport.html" name=url>
+                                <input type="submit" class="button" name="Override" value="   Visit Site anyway   "       >
+                                </form><p class="item">Pressing the button allows you to visit the website although the certificate is not valid.</p> 
+                <form action=""><input type="button" class="button" onclick="history.back();" value="   Go Back   "></form><p class="item">Pressing the button allows you to go to the previous page.</p>
+                                <p class="last-item">To find out more about the reason for the block message, please contact your administrator and refer to ID 10737394.</p>
+        </div>
+
+        <div><img class="logo" title="Websense" src="https://a.company-target.com/%24%24%24%26%3f%26%3f%24%24%24?cmd=get_file&arg=images/wslogo_block_page.png&sid=4B7E243CC7CC99556EF2B571F9D7531A20E4D12C" alt="Websense Logo">
+                <div style="clear: both; overflow: hidden; height:1px;"></div>
+        </div>
+</div>
+
+</body>
+</html>

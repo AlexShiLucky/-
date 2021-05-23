@@ -1,0 +1,4184 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemalocation="http://www.w3.org/MarkUp/SCHEMA/xhtml11.xsd" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" 
+	  content="application/xhtml+xml; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <title>IAR Embedded Workbenchリリース履歴</title>
+    <link type="text/css" rel="stylesheet" media="all"
+	  href="style/ewic.css" />
+</head>
+<body>
+  <div id="titlebanner">
+    <div>
+      <h1>リリース履歴</h1>
+    </div>
+  </div>
+  <div class="breadcrumb">
+      <a href="index.JPN.html">Arm用IARインフォメーションセンタ</a> | 
+      <a href="release_notes.JPN.html">リリースノート</a> | 
+      <a href="components.JPN.html">コンポーネント</a> | 
+      <a href="iccarm.JPN.html">
+	ARM用 IAR C/C++ コンパイラのリリースノート</a> | リリースノート
+    </div>    
+    <div class="mainblock">
+      <h2>
+        リリース履歴
+      </h2>
+﻿<!-- $Id: release_history.JPN.html 143648 2019-09-23 12:04:04Z robertma $ -->
+    <ul>
+      <li>
+<A HREF="#his832">V8.32</A> 2018-10-12
+      </li>
+      <li>
+<A HREF="#his830">V8.30</A> 2018-06-15
+      </li>
+      <li>
+<A HREF="#his822">V8.22</A> 2018-01-22
+      </li>
+      <li>
+<A HREF="#his820">V8.20</A> 2017-10-16
+      </li>
+      <li>
+<A HREF="#his811">V8.11</A> 2017-04-11
+      </li>
+      <li>
+<A HREF="#his810">V8.10</A> 2017-03-10
+      </li>
+      <li>
+<A HREF="#his780">V7.80</A> 2016-10-17
+      </li>
+      <li>
+<A HREF="#his770">V7.70</A> 2016-06-17
+      </li>
+      <li>
+<A HREF="#his760">V7.60</A> 2016-03-31
+      </li>   
+      <li>
+<A HREF="#his750">V7.50</A> 2015-11-10
+      </li>   
+      <li>
+<A HREF="#his740">V7.40</A> 2015-02-19
+      </li>   
+      <li>
+<A HREF="#his730">V7.30</A> 2014-09-24
+      </li>   
+      <li>
+<A HREF="#his720">V7.20</A> 2014-05-19
+      </li>   
+      <li>
+<A HREF="#his710">V7.10</A> 2014-02-21
+      </li>   
+      <li>
+<A HREF="#his670">V6.70</A> 2013-10-29
+      </li>   
+      <li>
+<A HREF="#his660">V6.60</A> 2013-06-27
+      </li>   
+      <li>
+<A HREF="#his650">V6.50</A> 2012-11-10
+      </li>   
+      <li>
+<A HREF="#his640">V6.40</A> 2012-06-05
+      </li>   
+      <li>
+<A HREF="#his630">V6.30</A> 2011-10-22 
+      </li>   
+      <li>
+<A HREF="#his621">V6.21</A> 2011-07-05 
+      </li>   
+      <li>
+<A HREF="#his620">V6.20</A> 2011-04-29 
+      </li>   
+      <li>
+<A HREF="#his610">V6.10</A> 2010-11-04 
+      </li>   
+      <li>
+<A HREF="#his550">V5.50</A> 2010-04-21   
+      </li>   
+      <li>
+<A HREF="#his541">V5.41</A> 2009-12-14   
+      </li>   
+      <li>
+<A HREF="#his540">V5.40</A> 2009-07-10   
+      </li>   
+      <li>
+<A HREF="#his530">V5.30</A> 2009-01-23   
+      </li>   
+      <li>
+<A HREF="#his520">V5.20</A> 2008-06-24   
+      </li>   
+      <li>
+<A HREF="#his511">V5.11</A> 2007-12-11   
+      </li>   
+      <li>
+<A HREF="#his510">V5.10</A> 2007-06-12   
+      </li>   
+    </ul>
+    <p></p>
+
+    <!-- ============================================== -->
+
+<h4><A NAME="his832">V8.32 2018-10-12</A></h4>
+<b>プログラム修正</b>
+ 
+<ul>
+     <li>
+        <p>
+EWARM 8.32.3<br><b>[<a name='EWARM-6657'>EWARM-6657</a>, <a name='TPB-3083'>TPB-3083</a>]</b>最適化レベル「高」では、コンパイラは、中にシフトがある</font>コードをコンパイルするとき、インターナルエラーで終了します。 
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.32.3<br><b>[<a name='EWARM-6634'>EWARM-6634</a>, <a name='TPB-3081'>TPB-3081</a>]</b> コンパイラは、定数式で可変テンプレート演算子sizeof...を使用するコードでは、インターナルエラーで終了します。 
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.32.3<br><b>[<a name='EWARM-6615'>EWARM-6615</a>, <a name='TPB-3077'>TPB-3077</a>]</b> 最適化レベル「高」では、同じ関数内でC++ 演算子newが1回以上使用され、オブジェクトを同じアドレスに2回以上配置する場合に、関数のインライン化の最適化により無効なコードを生成される可能性があります。以下の例では、</font>関数のインライン化の最適化が有効な場合、このコードをコンパイルすると、<tt>YYYYY</tt>のコンストラクタへの呼び出しが、最適化レベル「高」で間違って削除されます。</p>
+        <div><div>
+        <pre>
+void Bug::Bug()
+{
+mI = <span>new</span> (mBuffer) XXXXX(); 
+mI = <span>new</span> (mBuffer) YYYYY(); 
+<span>int</span> data = mI-&gt;V(); 
+<span>if</span> (data != 0)
+{
+showNr(data);
+}?        }
+        </pre>
+        </div></div>
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.32.2<br><b>[<a name='EWARM-6594'>EWARM-6594</a>, <a name='TPB-3073'>TPB-3073</a>]</b>C++ ファイルの複数ファイルコンパイル(-mfc)で、<new>ヘッダーをインクルードするファイルが1つ以上あり、インクルードしないファイルが１つ以上ある場合、以下のエラーを誤って生成します。</font> 
+<p>Error[Pe1061]: declaration of enum "std::align_val_t" is incompatible with a declaration in another translation unit (...)</font></p>
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.32.2<br><b>[<a name='EWARM-6555'>EWARM-6555</a>, <a name='TPB-3064'>TPB-3064</a>]</b>
+<p>次の例で示すように、2つの同じ32ビットの値が64ビットの1つの値に組み合わされるコードをコンパイルするとき、コンPAIRAがクラッシュします。</p>
+        <div><div>
+        <pre>
+uint64_t combine(uint32_t v)
+{
+<span>return</span> ((uint64_t)v &lt;&lt; 32) | (uint64_t) v;
+}
+        </pre>
+        </div></div>
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6518'>EWARM-6518</a>, <a name='TPB-3053'>TPB-3053</a>]</b>integer ビットフィールドのタイプが明示的な<tt>signed</tt>修飾子で指定されたモジュールでは、コンパイラは符号付整数型が使用されたデバッグ情報を生成することがあります。この方法は間違って<tt>signed</tt>修飾子を含む名前を提供します。これにより、デバッガは構造タイプを正しく統一できなくなり、デバッグエクスペリエンスが低下します。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6454'>EWARM-6454</a>, <a name='TPB-3043'>TPB-3043</a>]</b>コンパイラは、1つのオペランドが型のないテンプレートパラメータがある整数定数式の<tt>&amp;</tt>演算子がある場合に、インターナルエラーで終了することがあります。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6416'>EWARM-6416</a>, <a name='TPB-3042'>TPB-3042</a>]</b><tt>else</tt>部分のない<tt>if constexpr</tt>文が含まれているソースコードをコンパイルすることと偽の条件が原因で、コンパイラがインターナルエラーで終了します。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6414'>EWARM-6414</a>, <a name='TPB-3027'>TPB-3027</a>]</b>ワーニングメッセージPe182 (&quot;bitwise operation drops significant bits from a constant&quot;)が誤って発行されます。次のような場合に警告するためにあります
+<pre>   if (uchar &amp; 0x400)
+        
+        </pre>
+<p>ただし、そのような問題がない場合でも発行されることがあります。</p>
+        </p>
+     </li>
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+<li><p><b>C18のサポート</b><br />デフォルトの標準CはC18 (ISO/IEC 9899:2018)です。
+  </p></li>
+<li><p><b>C++17のサポート</b><br />コンパイラはすべてのC++17機能をサポートするようになりました。C++ライブラリは、C++17追加なしでC++14をサポートします。
+  </p></li>
+ </ul>
+ 
+
+
+<h4><A NAME="his830">V8.30 2018-06-15</A></h4>
+<b>プログラム修正</b>
+ 
+<ul>
+     <li>
+        <p>
+EWARM 8.30.2<br><b>[<a name='EWARM-6480'>EWARM-6480</a>, <a name='TPB-3040'>TPB-3040</a>]</b>レグレッションが原因で大きな定数整数のみの配列が含まれているファイルのコンパイルル時にメモリ不足が発生します。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.30.2<br><b>[<a name='EWARM-6471'>EWARM-6471</a>, <a name='TPB-3039'>TPB-3039</a>]</b>
+<p>可変数メンバー機能テンプレートがかかわる場合に、コンパイラが誤ったエラーを発行することがあります。</p>
+<p>例：</p>
+        <pre>  
+struct A {
+struct B {
+void g() { A a; a.f(1); }
+};
+void h(int){}
+template&lt;typename...Ts&gt; void f(Ts... args) {
+h(args...);  // Spurious Pe018 (expected a &quot;)&quot;) error here
+}        };
+        
+int main() {
+A::B B; 
+B.g();
+}
+        </pre>
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.30.2<br><b>[<a name='EWARM-6455'>EWARM-6455</a>, <a name='TPB-3034'>TPB-3034</a>]</b> 例外を無効にしてコンパイルすると、delete演算子の宣言に対して、コンパイラは間違ってPe831リマーク(配置削除のサポートは無効です)を発行することがあります。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.30.2<br><b>[<a name='EWARM-6447'>EWARM-6447</a>, <a name='TPB-3032'>TPB-3032</a>]</b>オフセットのあるunionを返すと、関数がインライン化されている場合、オフセットのない部分を返します。例、<br> 
+        <div><div>
+        <pre>
+union un
+{<span>long</span><span>long</span> a; <span>long</span> b[2]; } 
+;
+<span>long</span> f()
+{ un x; ... <span>return</span> x.b[1]; <span>// returns x.b[0] when inlined }</span>
+        </pre>
+        </div></div>
+<p></p>
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.30.2<br><b>[<a name='EWARM-6440'>EWARM-6440</a>]</b>テンプレートC++ライブラリはVFP-v4のCortex-M4には構築されません。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.30.2<br><b>[<a name='EWARM-6438'>EWARM-6438</a>]</b>MISRA-C:2004規則2.4から違反していないかチェックするとき、コンパイラは間違って2バイトが';'または'}'のコメントのShift JIS マルチバイト文字をトリガします。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.30.2<br><b>[<a name='EWARM-6409'>EWARM-6409</a>]</b>最適化レベル「中」およびそれ以上では、コンパイラは、<tt>x &lt; y ? y : x</tt>のような疑問符の式の最大および最小に間違ったコードを生成します。式のタイプが<tt>int</tt>よりも小さく、比較の変数の順序がコロンの部分の順序と異なる場合、変数の使用した値はいつも適切に拡張されるとは限りません。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.30.2<br><b>[<a name='EWARM-6394'>EWARM-6394</a>]</b>ソースレジスタがベースレジスタと同じでライトバックが使用されているとき、低レベルの最適化の通過は、予期しない<tt>STR</tt>命令を作成することがまれにあります。
+        </p>
+     </li>
+     <li>
+        <p>
+        <b>[<a name='EWARM-6896'>EWARM-6896</a>]</b>
+        最適化レベル「中」およびそれ以上で、ベクタ浮動小数点(VFP)コプロセッサあるいはベクトル化変換が行われる際に
+        まれにコンパイラが誤ったコードを生成することがあります。
+        この問題の発生は特定のソースコード記述に依存しません。
+        </p>
+        <p>この問題はコンパイラのリストファイルを検査することでのみ検出が可能です。
+        関数がVFPレジスタをプッシュしているがその関数内ではそれらが使用されていない場合、この問題が
+        発生している可能性があり、より詳細な検査が必要です。
+        </p>
+     </li>     
+     <li>
+        <p>
+<b>[<a name='EWARM-6532'>EWARM-6532</a>]</b>
+<p>ACLE (ARM C言語拡張)からのシンボル{{__ARM_BIG_ENDIAN}}は、リトルエンディアンプロジェクトの {{0}} として間違って定義されます。シンボルはリトルエンディアンプロジェクトに定義しないでください。 
+        </p>
+     </li>     
+     <li>
+        <p>
+<b>[<a name='EWARM-6336'>EWARM-6336</a>, <a name='TPB-2996'>TPB-2996</a>]</b>
+<p>2つの変数を比較して、式の値が下位タイプにキャストされたどちらかの変数の値になるとき、コンパイラは疑問符のある式の最小および最大に間違ったコードを生成します。同じバグは、2つの変数を比較して、<tt>then</tt>と<tt>else</tt>句だけが、下位タイプの別の変数にどちらかの変数の値を割り当てる<tt>if</tt>文にもトリガします。 </p>
+<p>最初の場合の例を次に示します。トリガする条件は疑問符の式で、コンパイラが疑問符を削除することを防ぐために<tt>if</tt>文があります。</p>
+        <div><div>
+        <pre>
+<span>int</span> b; 
+void e(unsigned <span>int</span> a, <span>int</span> c)
+{
+unsigned <span class="code-object">int</span> d = (a &gt; c) ?(unsigned <span           class="code-object">short</span>)c :  (unsigned <span class="code-object">short</span>)a; 
+<span class="code-keyword">if</span> (d)
+b = d;
+}
+        </pre>
+        </div></div>
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6322'>EWARM-6322</a>]</b>最適化レベル「高」では、FPUのサポートが有効でターゲットFPUに32 Dレジスタがあるとき、1ビット指数部と6ビット仮数部で示される浮動小数点定数のロードに、コンパイラは間違ったコードを生成します。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6309'>EWARM-6309</a>, <a name='TPB-2989'>TPB-2989</a>]</b>最適化レベル「高」では、コンパイラが生成したコードは、次のソースコードの呼び出しと異なります: 1. ローカル変数が条件付きで2つの異なる変数値に設定されている、2. この変数の使用はすべて、同じ部分式の一部えある、また 3.これらの部分式の少なくても1つは、より大きいビット単位のORの一部である。エラーはこのコードの正確性に関係ありません。
+<p>このコードは問題をトリガします:</p>
+        <div><div>
+        <pre>
+<span>int</span> f(<span>int</span> x)
+{
+<span class="code-object">int</span> a = (x == 5 ?10 :7);
+<span class="code-object">int</span> b = 3 * a; 
+<span class="code-object">int</span> c = 7 | (3 * a); 
+<span class="code-keyword">return</span> b + c;
+}
+        </pre>
+        </div></div>
+<p>while this code can't</p>
+        <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+        <pre class="code-java">
+<span class="code-object">int</span> f(<span class="code-object">int</span> x)
+{
+<span class="code-object">int</span> a = (x == 5 ?10 :7);
+<span class="code-object">int</span> b = 3 * a; 
+<span class="code-object">int</span> c = 7 - (3 * a); 
+<span class="code-keyword">return</span> b + c;
+}
+        </pre>
+        </div></div>
+<p>特別な場合として、structアドレスの使用がすべて同じ部分式の一部である場合、structのアドレスが条件付で異なる定数値に設定されているとき、問題はビットフィールドstructの割り当てによってトリガされます。この場合、ビット単位のORを含む部分式は、ビットフィールド割り当ての一部です。</p>
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6306'>EWARM-6306</a>]最適化レベル「中」またはそれ以上では、</b>組み込み関数<tt>_<em>RBIT()</em></tt>または<tt>_rbit()</tt>を<tt>RBIT</tt>命令をサポートしていないアーキテクチャで使用すると、インターナルエラーの原因になります。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6279'>EWARM-6279</a>, <a name='TPB-2975'>TPB-2975</a>]</b>時間を節約するために、ライブラリ静的変数 _Isdst_rulesは、32ビットと64ビットの両方のコードで定義されています。これはリンケージで再定義エラーの原因になります。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6270'>EWARM-6270</a>, <a name='TPB-2973'>TPB-2973</a>]</b>
+<p>最適化レベル「高」では、コンパイラはインターナルエラーまたは、下の例のようなループをコンパイルしたときに誤ったコードを生成してクラッシュします。この問題をトリガするための必要条件: a) ループ変数は、ポインタの演算を使用してステップ実行されるポインタです b) ループ内では、ループ変数は、ループで変わらない2つの変数の合計で、インデックス化されます。</p>
+        <div><div>
+        <pre>
+void f(<span>int</span> *x, <span>int</span> b, <span>int</span> c, <span>int</span> d)
+{
+<span class="code-keyword">for</span> (<span class="code-object">int</span> *a = x; *a &lt; 1  ; a = a + d)
+{
+a[0] = a[c + b];
+}        
+}
+        </pre>
+        </div></div>
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6250'>EWARM-6250</a>, <a name='TPB-2963'>TPB-2963</a>]</b>最適化レベル「なし」では、データメンバのひとつがビットフィールドの匿名のunionが含まれているコードをコンパイルするとき、コンパイラはインターナルエラーで終了します。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6240'>EWARM-6240</a>, <a name='TPB-2961'>TPB-2961</a>]</b>C++モードでMISRA Cチェックを実行すると、コンパイラは、<tt>bool</tt>型でない場合、右辺のオペランドの規則12.5 (<tt>&amp;&amp;</tt>と<tt>||</tt>のオペランドは主要の式)違反を間違ってレポートします。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6238'>EWARM-6238</a>]</b>最適化レベル「中」およびそれ以上では、Thumbターゲットにコンパイルするとき、Boolean変数が定数と比較する変数になるよう設定されていると、コンパイラは間違ったコードを生成します。バグをトリガする通常のコードは<tt>y = (x &gt; 5 ?0 :1)</tt>ただし、コンパイラによりこの形式に変換されるコードにも影響します。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6219'>EWARM-6219</a>, <a name='TPB-2958'>TPB-2958</a>]</b>
+<p>コンパイラは、デフォルトのテンプレートの引数の可変数関数を使用する、C++コードでのファイルのコンパイルに失敗します。</p>
+<p>可変数関数テンプレートにデフォルトのテンプレートの引数があり、親可変数でないパラメータを使用するパック拡張が含まれている場合、<br> 置換が失敗になります。これがエラーの1つの原因になります。通常&quot;no instance of ... matches the argument list&quot;です。</p>
+<p>例：</p>
+        <div class="preformatted panel" style="border-width: 1px;"><div class="preformattedContent
+        panelContent">
+        <pre>
+struct C {}; 
+template &lt;typename...Ts&gt; struct A; 
+template&lt;typename, typename&gt; struct B {
+static constexpr bool v = false;
+};
+template&lt;bool...T&gt; struct F; 
+template &lt;bool...Bs&gt; using E = B&lt; F&lt;Bs...&gt;, F&lt;Bs...&gt;&gt;;
+template&lt;typename T, typename..._Us&gt; struct D {
+static constexpr bool v = true;
+};
+template&lt;typename Ts, typename ...&gt; struct H {
+template&lt;typename...Us, bool b =  E&lt;D&lt;Ts, Us&gt;::v...&gt;::v&gt; H(Us&amp;&amp;... us);
+};
+// Error &quot;no instance of constructor ... matches the argument list&quot; here
+H&lt;A&lt;C(int)&gt;&gt; h{1};
+        </pre>
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6198'>EWARM-6198</a>, <a name='TPB-2948'>TPB-2948</a>]</b>クラスサブオブジェクトがあるオブジェクトの<tt>constexpr</tt>コンストラクタがかかわる場合は、コンパイラは(間違った)注意&quot;access to uninitialized subobject&quot;でエラーPe028 (&quot;expression must have a constant value&quot;)を誤って出力することがあります。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6184'>EWARM-6184</a>, <a name='TPB-2943'>TPB-2943</a>]</b>コンストラクタと<tt>std::complex</tt>テンプレート(<tt>float</tt>、<tt>double</tt>、および<tt>long double</tt>)の明示的な特化の複合代入演算子は、コンポーネント値になります。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6183'>EWARM-6183</a>]</b>ACLE組み込み関数(__arm_rsr, __arm_rsr64, __arm_rsrp, __arm_wsr, __arm_wsr64, or __arm_wsrp)のひとつを使用して、C++インライン関数の特別なレジスタにアクセスすると、コンパイラがインターナルエラーで終了します。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6182'>EWARM-6182</a>, <a name='TPB-2944'>TPB-2944</a>]</b>失敗したアサートは出力に絶対引数式を書き込みません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6143'>EWARM-6143</a>]</b>最適化レベル「高」では、ポインタがそれ自身のアドレスと同じ値を割り当てるとき、コンパイラは間違ったコードを生成します。問題はThumb2命令セットをコンパイルするときにのみ発生し、割り当てられたポインタがstruct変数のフィールドのときにトリガするようになります。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6116'>EWARM-6116</a>, <a name='TPB-2915'>TPB-2915</a>]</b><tt>#warning</tt>プリプロセッサディレクティブは、異なる重要度でのみ<tt>#error</tt>プリプロセッサ ディレクティブと同じものではなく、別の診断を生成するようになりました。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6085'>EWARM-6085</a>, <a name='TPB-2900'>TPB-2900</a>]</b>
+<p>C++14 <tt>constexpr void</tt>式は、コンパイラをインターナルエラー(&quot;[Il2cvm - CollectLiterals]: Unexpected constant kind.&quot;)で終了する原因になります。</p>
+<p>例：</p>
+        <div><div>
+        <pre>
+constexpr void foo() { }
+int main() { foo(); }
+        </pre>
+        </div></div>
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6079'>EWARM-6079</a>, <a name='TPB-2918'>TPB-2918</a>]</b>コンパイラは、整数型にキャストするアドレスのサイズで配列を宣言されると、エラーを診断するのではなくインターナルエラーで終了します。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6073'>EWARM-6073</a>, <a name='TPB-2896'>TPB-2896</a>]</b>
+<p>最適化レベル「高」では、最初のアドレス内にネスとされた別のループ内にアドレス式がある場合、ループのアドレス式を簡素化するとき、コンパイラは間違ったエラーを生成します。例として、次のループを見てください。コンパイラは2つのステップで配列式を簡素化します。最初に<tt>LOOP C</tt>で、次に<tt>LOOP A</tt>です。ただし2番目のステップで、その初期定義を置き換えることなく、<tt>cc</tt>が定義されていない場所に初期化を移動します。この問題は、ループ間でネストしている追加レベルがあるときにのみ発生します。</p>
+        <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+        <pre class="code-java">
+<span class="code-object">int</span> f(<span class="code-object">int</span> *data, <span         class="code-object">int</span> x, <span class="code-object">int</span> c, <span         class="code-object">int</span> rc)
+{
+<span class="code-object">int</span> v = 0; 
+/* LOOP A */
+<span class="code-keyword">for</span> (<span class="code-object">int</span> r = 0; r &lt; rc; r++)
+{
+/* LOOP B */
+<span class="code-keyword">while</span> (!v)
+{
+/* LOOP C */
+<span class="code-keyword">for</span> (<span class="code-object">int</span> cc = c + 1; (cc &lt; (c + x)); cc++)
+{
+v = (data[cc * rc + r]);  /* SIMPLIFY */
+}            }          }
+<span class="code-keyword">return</span> v;
+}
+        </pre>
+        </div></div>
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6044'>EWARM-6044</a>, <a name='TPB-2891'>TPB-2891</a>]</b>
+<p>次のソースコードは間違ったエラーになります:</p>
+        <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+        <pre class="code-java">
+<span class="code-keyword">const</span> std::function&lt;<span class="code-object">int</span>*(<span         class="code-object">int</span>*)&gt; func = [](<span class="code-object">int</span> *pn){ <span         class="code-keyword">return</span> pn; };
+        </pre>
+        </div></div>
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5827'>EWARM-5827</a>, <a name='TPB-2808'>TPB-2808</a>]</b>
+<p>根底の関数宣言子が括弧内にあるとき、解析は<tt>override</tt>のような関数修飾子を正しく解析しません。</p>
+<p>例：</p>
+        <div class="preformatted panel" style="border-width: 1px;"><div class="preformattedContent
+        panelContent">
+        <pre>
+struct A
+{
+virtual void (*f())() = 0;
+};
+struct B : A
+{
+virtual void (*f())() override;
+};
+        </pre>
+        </div></div>
+        </p>
+     </li>
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+  <li>
+なし
+  </li>
+</ul>
+ 
+ 
+
+<h4><A NAME="his822">V8.22 2018-01-22</A></h4>
+<b>プログラム修正</b>
+ 
+<ul>
+     <li>
+        <p>
+EWARM 8.22.2<br><b>[<a name='EWARM-6208'>EWARM-6208</a>, <a name='TPB-2953'>TPB-2953</a>]</b>
+<p>テンプレート化された変換演算子を介した値をリターンクラスのテンプレートのインスタンス化に変換すると、誤解を招くエラーで失敗します。</p>
+<p>例：</p>
+        <div class="preformatted panel" style="border-width: 1px;"><div class="preformattedContent
+        panelContent">
+        <pre>
+template&lt;class T&gt; struct A {}; 
+struct B
+{
+template&lt;class T&gt; operator A&lt;T&gt;&amp; ();
+};
+struct S {}; 
+void foo(A&lt;S&gt; &amp;); 
+void bar()
+{
+B b; 
+foo(b); // Error here
+}
+        </pre>
+        </div></div>
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.22.2<br><b>[<a name='EWARM-6192'>EWARM-6192</a>, <a name='TPB-2945'>TPB-2945</a>]</b> コンパイラは、ポインタタイプに整数キャストを適用したサブスクリプトが含まれている式を間違って折りたたむことがあります。
+<p>例：</p>
+        <div class="preformatted panel" style="border-width: 1px;"><div class="preformattedContent
+        panelContent">
+        <pre>
+int *p = &amp;((int*)0x1000)[1];
+        </pre>
+        </div></div>
+<p>このような例では、オフセットのないポインタ値になることがあります。</p>
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6130'>EWARM-6130</a>, <a name='TPB-2919'>TPB-2919</a>]</b>
+<p>最適化レベル「高」では、次の場合にコンパイラはループに間違ったコードを生成します。1) ループのラップ数が、ループで更新される変数を含む簡単な算術式で表されるとき、2) 個の変数の初期値がループで更新される別の変数を含んでいる式のとき、3) これらの両方の変数でループが実行する更新は、ラップ数を含む算術式によって置き換えられるとき。</p>
+<p>デバッグをトリガする例を次に示します。次のことに気をつけてください。1) ループのラップ数は<tt>n  = x / 10</tt>。2) <tt>x</tt>の初期値は<tt>x = y / 10</tt> で<tt>y</tt>はループ内で変更されます。3) ループは<tt>x = x - 10 * n</tt> と <tt>y = y - 100 * n</tt>で置き換えることができます。</p>
+        <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+        <pre class="code-java">
+unsigned <span class="code-object">int</span> x; 
+unsigned <span class="code-object">int</span> y = 4712; 
+<span class="code-object">int</span> f(void)
+{
+x = (y / 10); 
+<span class="code-keyword">while</span> (x &gt;= 10)
+{
+x -= 10; 
+y -= 100;
+}
+<span class="code-keyword">return</span> x;
+}
+        </pre>
+        </div></div>
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6128'>EWARM-6128</a>, <a name='TPB-2920'>TPB-2920</a>]</b> Rawエンコードまたはシステムのデフォルトのロケールエンコードにリストファイルを生成するときに、一部の文字が正しくエンコードできないというコンパイラはエラーのワーニング(Ms014)を出力します。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6109'>EWARM-6109</a>]</b> 関数パラメータ(またはリターン値)がVFPレジスタを通過する「均一集合体」の場合、代わりにコアレジスタ(またはスタック)を通過します。「均一集合体」の定義については、「Procedure Call Standard for the ARM Architecture」を参照してください。
+<p>このバグは2つのフィールドに同じタイプがない(または含まない)ために、複合タイプは均一集合体として正しく識別されません。以下に例を示します。</p>
+        <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+        <pre class="code-java">
+struct { <span class="code-object">float</span> fa[2]; <span class="code-object">float</span> f1; <span class="code-object">float</span> f2; } Homogeneous_Aggregate;
+        </pre>
+        </div></div>
+<p>上記のタイプは対称ではありません: フィールド<tt>fa</tt>にはタイプ<tt>float[2]</tt>がありますが、フィールド<tt>f1</tt>と<tt>f2</tt>にはありません。</p>
+<p>このバグがあるコンパイラは、このバグがある別のコンパイラと互換性があります。上記の例は非常にまれな場合で、このバグがあるコンパイラは、このバグがないコンパイラと互換性がないことがあります。</p>
+<p>呼出し側と呼出し先が異なるモジュールで実行される、またモジュールが互換性のないコンパイラでコンパイルされると、ランタイムの失敗が発生します。</p>
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6069'>EWARM-6069</a>]</b> ARMv7-A/R<tt>rt7Sx_tl.a</tt>のランタイムサポートライブラリが、除算を使用するアプリケーションのリンカコマンドラインで指定される場合、ライブラリをサポートするとき、また互換性がない場合には、リンカは「エラー[Lt039]: 互換性のないアーキテクチャ属性」をレポートします。
+<p>このバグが原因で、リンカはエラーをレポートせずに間違ったバイナリを生成します。バイナリに<tt>UDIV</tt>命令が含まれ、その命令をサポートしていないコアである、という誤りになります。これは、次の条件をすべて満たすと発生します。</p>
+        <ul>
+<li>ランタイムの1つが、ライブラリ<tt>rt7Sx_tl.a</tt>または<tt>rt5E_al.a</tt>が明示的にリンカコマンドライン(またはビッグエンディアンの種類の1つ、<tt>rt7Sx_tb.a</tt>または<tt>rt5E_ab.a</tt>)で指定されることをサポートします。</li>
+<li>アプリケーションにより一部のバイナリが使用され、自動的にバイナリが選択され、ライブラリの除算ルーチンを使用する。このライブラリがコマンドラインで指定されていると、エラーLt039がレポートされます。</li>
+<li>ターゲットCPUは、Thumbモードで<tt>UDIV</tt>命令をサポートしません。</li>
+<li>アプリケーション自体には、ライブラリ除算ルーチンのリファレンスはありません。ある場合は、エラーLt039がレポートされます。</li>
+        </ul>
+<p>定数による除算は、乗算(最適化レベル「高」)を使用するために最適化されます。これにより、アプリケーションからの除算ルーチンのリファレンス数が減少します。</p>
+<p>integer除算を使用するライブラリ ルーチンには、ルーチンの<tt>printf</tt>ファミリと、いくつかのソフトウェア浮動小数点ルーチンが含まれています。</p>
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6052'>EWARM-6052</a>]</b> 組み込み関数がThumbモードで利用可能ではないターゲットで、デフォルトでArmモードとしてコンパイルされるインライン関数から組み込み関数を呼び出すと、誤ってコンパイルタイムエラー[Ta097]を生成します。これはC99インライン化でのみ発生します。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6034'>EWARM-6034</a>, <a name='TPB-2907'>TPB-2907</a>]</b> コンパイラはインターナルエラー(&quot;assertion failed: compare_constants: bad constant kind&quot;)で終了します。<tt>||</tt>または<tt>&amp;&amp;</tt>式の複合リテラルに影響する場合があります。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5945'>EWARM-5945</a>]</b> Thumb (Thumb2ではない)のコンパイルで、<br/><tt>[x - 1]</tt>などの式がある文字列テーブルのリファレンスは、「リンクエラー&quot;エラー[Lp002]: 再配置に失敗: 値が範囲外または無効」になります。
+        </p>
+     </li>
+</ul>
+ 
+<b>新機能</b>
+ 
+<ul>
+<li><p>なし</p></li>
+</ul>
+ 
+
+
+<h4><A NAME="his820">V8.20 2017-10-16</A></h4>
+<b>プログラム修正</b>
+ 
+<ul>
+     <li>
+        <p>
+EWARM 8.20.2<br><b>[<a name='EWARM-6013'>EWARM-6013</a>, <a name='TPB-2874'>TPB-2874</a>]</b> コンストラクタを使用したオブジェクトのメンバー配列に、依存したイニシャライザを使用している場合は、コンパイラがインターナルエラーにより終了することがありました(...<tt>decl_inits.c, line 5177</tt>)。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.20.2<br><b>[<a name='EWARM-5993'>EWARM-5993</a>, <a name='TPB-2871'>TPB-2871</a>]</b> 既知の値を認識している場合、定数のメンバ変数と、宣言されたコンストラクタconstexprがある宣言ざれたオブジェクトconstexprタイプは、定数として認識されません。この場合には、これは非常に非効率なコード(正しいけれど)になります。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.20.2<br><b>[<a name='EWARM-5985'>EWARM-5985</a>, <a name='TPB-2908'>TPB-2908</a>]</b> 最適化レベル「高」では、intより小さい符号なしタイプを持つindex式のマイナスの定数オフセットは、プラスのオフセットに変わります。例えば、index式タイプが符号なしのcharの場合、式<code>i - 15u</code>は<code>(int)i + 240</code>になります。 
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.20.2<br><b>[<a name='EWARM-5984'>EWARM-5984</a>, <a name='TPB-2854'>TPB-2854</a>]</b> 最適化レベル「高」またはそれ以上では、インライン化された関数で更新を実行すると、コンパイラの解析は、struct変数のフィールドの更新を想定して失敗します。これが原因で、このフィールドが定数値を持つように誤って無限にコンパイルします。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.20.2<br><b>[<a name='EWARM-5941'>EWARM-5941</a>]</b> 最適化レベル「高」またはそれ以上では、コンパイラは、最小と最大式に間違った出力を生成します。例 <tt>x &lt; y ? x : y</tt>この中の1つの値が定数の場合。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.20.2<br><b>[<a name='EWARM-5937'>EWARM-5937</a>, <a name='TPB-2845'>TPB-2845</a>]</b> 最適化レベル「中」またはそれ以上では、出力ファイルに配置される静的記憶寿命の変数の順番は、制御されません。これは、コードが正しいかどうかに関係ありません。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.20.2<br><b>[<a name='EWARM-5932'>EWARM-5932</a>, <a name='TPB-2835'>TPB-2835</a>]</b> 結果がエイリアスを持つ変数に配置される場合や、宛先のアドレスが計算するには複雑な場合は、コンパイラは、リターン値ポインタを介して集合タイプを返す関数呼び出しに、間違った例外情報を生成することがあります。また呼び出し規約がそのような場合、リターン値ポインタが関数から返されません。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.20.2<br><b>[<a name='EWARM-5842'>EWARM-5842</a>, <a name='TPB-2830'>TPB-2830</a>]</b><tt>--no_static_destruction</tt>を使用し、スレッドのローカル変数を破棄する必要があるとき、 コンパイラはインターナルエラーで終了します(assertion failed at &quot;...\lower_init.c&quot;, line 21513)。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5947'>EWARM-5947</a>, <a name='TPB-2828'>TPB-2828</a>]</b> オプティマイザーが、シフト数が認識されていなくても、バイナリ式(+  -  &amp;  |  ^)で配布されたシフト演算  (&lt;&lt;  または  &gt;&gt;)を組み合わせます。バイナリ演算として&lsquo;+&rsquo;があり、両方の引数にシフトが残っている例:?<br/><tt>((c*16)&lt;&lt;1) + (((c-1)*4)&lt;&lt;1)</tt>はまず、<br/><tt>(c&lt;&lt;5) + ((c-1)&lt;&lt;3)</tt>になり、<br/><tt>(c + c-1)&lt;&lt;3</tt><br/>のように間違って書き直しされます。このエラーは、上の例のようにシフト数がそれ自体で簡単な式にされる場合に発生します。式はソースコードまたは前回の最適化結果に明示的になります。このため、効果的な回避策がありません。
+        </p>
+     </li>
+	 
+     <li>
+        <p>
+<b>[<a name='EWARM-5927'>EWARM-5927</a>, <a name='TPB-2841'>TPB-2841</a>]</b> decltype 式でのみ異なる、クラステンプレートの部分的特化は、コンパイラで間違いとみなされます。
+
+<p>例：</p>
+
+<div class="preformatted panel" style="border-width: 1px;"><div class="preformattedContent panelContent">
+<pre>   template&lt;class Ty&gt; Ty declval(); 
+
+template&lt;bool a&gt; struct b {}; 
+
+template&lt;&gt; struct b&lt;true&gt; {typedef void type;}; 
+
+template&lt;typename T1, typename T2 = void&gt; struct d; 
+
+template&lt;typename U&gt; struct d&lt;U, b&lt;decltype(f(declval&lt;U&gt;()))::g&gt;&gt; {}; 
+
+template&lt;typename U&gt; struct d&lt;U, b&lt;decltype(f(declval&lt;U&gt;(), declval&lt;U&gt;()))::g&gt;&gt; {};
+
+</pre>
+</div></div>
+
+<p>最終の2つの部分的特化が、間違っているとみなされます。</p>
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5874'>EWARM-5874</a>、<a name='TPB-2825'>TPB-2825</a>]</b>匿名の<tt>union</tt>メンバー内に匿名の<tt>struct</tt> (IAR拡張子)があるクラスのコンストラクタをコンパイルするとき、コンパイラは、その他のメンバーを正常に初期化するためのコードの出力に失敗します。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5855'>EWARM-5855</a>、<a name='TPB-2820'>TPB-2820</a>]</b>コンパイラは、保存場所を変更した変数のデバッグ情報を更新することに失敗することがあります。たとえば、スタックからプロセッサレジスタに移動された場合など。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5833'>EWARM-5833</a>, <a name='TPB-2809'>TPB-2809</a>]</b> デフォルトのパラメータで<tt>std::initializer_list</tt>コンストラクタがかかわる場合、コンパイラはインターナルエラー(&quot;[GoMain - CheckScopes]: Incorrect scope information from parser.&quot;)で終了します。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5825'>EWARM-5825</a>, <a name='TPB-2804'>TPB-2804</a>]</b> 匿名のunion内で匿名のstruct (IAR拡張子)を使用するクラスに、<tt>constexpr</tt>コンストラクタをコンパイルするとき、コンパイラは誤ったエラーを発行します。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5803'>EWARM-5803</a>静的変数の蓄積サイズが大きい(1024バイト以上) 関数をコンパイルすると、インターナルエラーになります。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5797'>EWARM-5797</a>、<a name='EW26712'>EW26712</a>]</b>VFPをコンパイルする際に、コンパイラのインターナルエラーが発生する可能性があります。たとえば、4つの<tt>double</tt>値からなる値ががコピーされます。2つの<tt>float</tt>値、2つの<tt>double</tt>値、4つの<tt>float</tt>値、または4つの<tt>double</tt>値の64ビット、128ビット、および256ビットのコンテイナで、問題は発生します。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5747'>EWARM-5747</a>、<a name='EW26638'>EW26638</a>]</b>ASCII文字以外をパスに使用している場合、iarchiveはインターナルエラーで終了します。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5741'>EWARM-5741</a>、<a name='EW26627'>EW26627</a>]</b>定数オフセットの式に_<em>section_begin/</em>_section_endを使用している場合、コンパイラがインターナルエラーで終了することがあります。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5736'>EWARM-5736</a>, <a name='EW26616'>EW26616</a>]</b> 関数宣言のパラメータ名が直近のブロックの変数と同じ場合、MISRA-C:2004 規則 5.2がトリガされます。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5702'>EWARM-5702</a>, <a name='EW26550'>EW26550</a>]</b> 最適化レベル高またはそれ以上では、パラメーターが、定数文字列をポイントし、1つ以上のポインタが関連の文字列の最初をポイントしていないとき、コンパイラは<tt>strcmp</tt>に不正なコードを生成できます。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5701'>EWARM-5701</a>, <a name='EW26548'>EW26548</a>]</b>最適化レベルが中または高では、それ自身を呼び出す関数が含まれていて、再帰呼び出しが<tt>switch</tt>によって異なるとき、インターナルエラーが発生する可能性があります。
+        </p>
+     </li>
+	 <li>
+	    <p>
+		<b>[<a name='EWARM-5570'>EWARM-5570</a>, <a name='EW26345'>EW26345</a>]</b> VFPをサポートしていないターゲットのITブロック内で、VFP命令のあるインラインアセンブラ文をコンパイルすると、インターナルエラーが発生します。
+	 </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5269'>EWARM-5269</a>、<a name='EW25735'>EW25735</a>]</b>スタック上の変数の寿命が、setjmpへの呼出しを介して正しく処理されません。これが原因で、重複していない寿命を持つ2つの変数がスタック上の同じ位置に割り当てられ、setjmp呼出しで変数の寿命に対して値が保持されないことがあります。
+        </p>
+     </li>
+</ul>
+ 
+<b>新機能</b>
+ <ul>
+<li><p><b>Arm v8-Rアーキテクチャの初期サポート</b><br />このリリースでは、Arm v8-R/R52アーキテクチャの基本的なサポートを提供します。
+  </p></li>
+<li><p><b>スタック保護</b><br />Arm用のIAR C/C++コンパイラは、スタック保護をサポートします。関数がそのアドレスに戻る前に、関数リターンアドレスの破損を検出するために、カナリー値はスタック変数とリターンアドレスの間になります。コンパイラに、ヒューリスティックを使用して関数にスタック保護が必要かどうかを決定します。定義したローカル変数に配列型、または配列型として含まれる構造体型がある場合、関数にはスタック保護が必要です。
+  </p></li>
+</ul>
+ 	
+	
+<h4><A NAME="his811">V8.11 2017-04-11</A></h4>
+<b>プログラム修正</b>
+ 
+<ul>
+  <li><p>
+すべての最適化レベルで、右辺の符号付きの式が変数を更新すると、コンパイラはビットフィールドメンバへの割り当てに間違ったコードを生成します。 例えば、インクリメント前の使用。バグをトリガする一般的な例を次に示します。<br>
+    <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+    <pre class="code-java">
+#include<stdio.h>
+    
+struct A {
+int a; 
+int b:8;
+};
+   
+int main(void)
+{
+struct A v1 = {0,1}; 
+struct A v2 = {2,3}; 
+      
+v2.b = v1.a++; 
+      
+if(v2.b == 0) {
+printf(&quot;OK\n&quot;); 
+} else {
+printf(&quot;BAD\n&quot;);
+}
+return 0;
+}
+    </pre></div></div>
+[EWARM-6162, TPB-2942]
+  </p></li>
+  
+  <li><p>
+最適化レベル高では、ループテストのインクリメント前後の演算の速度、<code>do</code>ループは、誤って最適化されます。<br>[EW26455]
+  </p></li>
+    
+  <li><p>
+ごく稀にコンパイラが無限ループの状態になることがあります。<br>[EW26475]
+  </p></li>
+
+  <li><p>
+被除数が大きい署名されてない型に拡張されるとき、被除数が<code>-1</code>または<code>U{CHAR,SHRT,INT,LONG}_MAX</code>の剰余式は取り扱われません。<br>[EW26479]
+  </p></li>
+
+  <li><p>
+最適化レベル高では、テストのいずれかの変数がif文からループテスト間で変更され、変数が<code>int</code>より小さい型を持つ場合、ループの状態に状態を示す<code>if</code>文で前につけられた<code>for</code>または<code>while</code>ループは、誤って最適化されます。<br>[EW26492]
+  </p></li>
+
+  <li><p>
+AFE1 アセンブラは、デフォルトモードで<code>0x7F</code>を超える値のコメントの文字を取り扱うことはできません。<br>[EW26495]
+  </p></li>
+  
+  <li><p>
+EWARM 8.11.2:<br><code>vget_lane_xxx</code>または<code>vgetq_lane_xxx</code>がインターナルエラーを生成することがあります。[EW26156]
+  </p></li>
+  
+  <li><p>
+EWARM 8.11.2:<br>Thumb-2の大きい関数をコンパイルするとき、２つの基本的なブロックがそれぞれ1Mb以上になり、条件付き幅分岐が到達できないことがあります。以前は終了しない、またはインターナルエラーを報告しコンパイラが失敗していました。現在これに対応する2つの方法があります。<br>[EW26189]
+  </p></li>
+  
+  <li><p>
+EWARM 8.11.2:<br>VFPがあるけれど、NEONがないコアをコンパイルしするとき、T2型が２つのT1型オブジェクトから成り、T1型が２つのdouble型オブジェクトから成る場合、T２型のオブジェクトにあるT１型のオブジェクトにアクセスすると、インターナルエラーを引き起こします。<br>[EW26205]
+  </p></li>
+  
+  <li><p>
+EWARM 8.11.2:<br>リスト初期化を使用して作成されたビットフィールドがある構造に割り当てるとき、C++モードではインターナルエラーでコンパイラを終了できます。<br>[EW26520]
+  </p></li>
+
+  <li><p>
+EWARM 8.11.2:<br>まれに、定数と比較する変数がある状態では、最適化レベル高または中で最適化が間違って行われます。<br>[EW26525]
+  </p></li>
+
+  <li><p>
+EWARM 8.11.2:<br>関数<code>isblank()</code>がtrueを返す文字に、関数<code>isspace()</code>が誤ってtrueを返します。<br>[EW26556]
+  </p></li>
+
+  <li><p>
+EWARM 8.11.2:<br><code>__ro_placement</code>で定義された変数は、<code>RWPI</code>をコンパイルするとき、正しくアクセスされません。<br>[EW26569]
+  </p></li>
+  
+  <li><p>
+EWARM 8.11.2:<br>関数<code>iswctype</code>と<code>wctype</code>は空の演算子には機能的に不明です。<br>[EW26581]
+  </p></li>
+
+  <li><p>
+EWARM 8.11.2:<br>標準では、文字<code>0xFF</code>として扱われるべきといわれるときに、<code>putchar(-1)</code>が誤って<code>-1</code>は<code>EOF</code>だと想定します。<br>[EW26588]
+  </p></li>
+
+  <li><p>
+EWARM 8.11.3:<br>最適化レベル高では、ポインタが減算を含む算術式の結果になるとき、コンパイラはポインタを修飾参照するために無効なコードを生成します。<br>[EW26629]
+  </p></li>  
+  
+  <li><p>
+EWARM 8.11.3:<br> 校正パラメータのある生成されたサンク呼び出しが、4バイトより大きく、サイズが4バイトの偶数でない場合、インターナルエラーの原因になることがあります。<br>[EW26633]
+  </p></li>
+  
+  <li><p>
+EWARM 8.11.3:<br> ELFセグメントのサイズが0バイトで、すぐに処理するセグメントのIntel-hex/Motorola S-recordファイルの最後のラインに、16ペイロード バイト未満を含む場合、不完全なラインが出力されず、またそこに配置されるバイトが失われます。<br>この問題はV10.1.4.185で発生していました。<br>[EW26644]
+  </p></li>
+
+  <li><p>
+EWARM 8.11.3:<br>最適化レベル「高」では、同じ配列要素(<code>a[i]</code>)に複数のアクセスが含まれていル場合、コードが間違って最適化されます。オプティマイザーがインデックス式の定数値を計算するアクセスの1つで発生します(例: <code>if (i == 42) x += a[i]</code>。<br>[EW26655]
+  </p></li>
+
+  <li><p>
+EWARM 8.11.3:<br> dsp 拡張子のターゲット用にコンパイルするとき、コンパイラは、16の手順を右に移動した2つの署名していない値を積算するために、署名した積算命令を生成できます。<br>[EW26663]
+  </p></li>
+
+  <li><p>
+EWARM 8.11.3:<br>最適化レベル中またはそれ以下では、静的変数が<code>__no_init</code>がゼロに初期化されたと宣言されたように、コンパイラは間違って最適化します。<br>[EW26692]
+  </p></li>
+
+  <li><p>
+EWARM 8.11.3:<br>最適化レベル中またはそれ以下では、コンパイラは、式があとでインクリメントされるポインタを修飾参照するswitch文が含まれるコードのために、間違った出力を生成することがあります。<br>[EW26713]
+  </p></li>
+
+  <li><p>
+EWARM 8.11.3:<br>ゼロに初期化した絶対変数は<code>__no_init</code> (プログラムのスタートアップで初期化されない)のように扱われます。<br>[EW26715]
+  </p></li>
+
+  <li><p>
+EWARM 8.11.3:<br>オブジェクトの配列の値の初期化(イニシャライザーが空の括弧になっているオブジェクトに発生します)、ユーザーが提供したデフォルトのコンストラクタがあるサブオブジェクトの中には、誤ってその他のサブオブジェクトをゼロに初期化しません。<br>[EW26717]
+  </p></li>
+
+  <li><p>
+EWARM 8.11.3:<br>2バイト構成で構成コピーを実行しているとき、コンパイラオプション<code>--no_unaligned_access</code>は、Thumb-2 に考慮されません。<br>[EWARM-5810, EW26735]
+  </p></li>
+
+
+  <li><p>
+EWARM 8.11.3:<br>最適化レベル「高」では、同じ配列要素(<code>a[i]</code>)に複数のアクセスが含まれている場合、コードが間違って最適化されます。オプティマイザーがインデックス式の定数値を計算するアクセスの1つで発生します(例: <code>if (i == 42) x += a[i]</code>;)。[EWARM-5761, TPB-2775]
+  </p></li>
+
+
+  <li><p>
+EWARM 8.11.3:<br>用語のひとつが、要素のひとつが減算である乗算の論理否定を含む複雑な式の場合、最適化レベル「高」でも間違って最適化されます。
+
+例: <code>return (- ( ((x - y) * - 2) - z) ) / 48;</code><br>
+
+単項論理否定、定数、およびいくつかのバイナリ演算子がある複雑な式を最適化するとき、コンパイラはサイレンとコードの生成エラーを作成します。最適化中に、コンパイラが式を変換し定数が拒否されると、コードの生成に失敗します。<br>[EWARM-5740, EW26625]
+  </p></li>
+
+  <li><p>
+EWARM 8.11.3:<br>C-RUN (境界チェック)初期コードには、アライメントされていないアクセスが含まれていました。<br>[EWARM-5861]
+  </p></li>
+</ul>
+
+  
+<b>新機能</b>
+  <ul> 
+<li><p><b>Cortex-R8</b><br/> ARM Cortex-R8コアのコード生成およびデバッグのサポート。
+      </p></li> 
+  </ul>
+ 
+<h4><A NAME="his810">V8.10 2017/03/10</A></h4>
+<b>プログラム修正</b>
+ 
+<ul>
+  <li><p>
+集合の配列、配列のエレメント数よりも少ないエントリの依存したイニシャライザリストがある、プレーン旧データの一部の初期化は、インターナルエラー(assertion failed in decl_inits.c)でコンパイラを終了させることがあります。<br>[EW26298]
+  </p></li>
+
+  <li><p>
+最適化レベルが「高」では、算術式でまたはそれとして発生する２つ以上の同一のテストを含む関数は、誤って最適化されることがあります。<br>[EW26325]
+  </p></li>
+
+  <li><p>
+最適化レベル中または高では、<code>const __weak</code>構造または配列変数へのアクセスが、誤って最適化されることがあります。<br>[EW26346]
+  </p></li>
+
+  <li><p>
+マクロをレコードするときに<code>ENDM</code>が見つからない場合、マクロを使用するときにインターナルエラーになります。<br>[EW26360]
+  </p></li>
+
+  <li><p>
+difftime_i.cファイルが含まれたDLIBライブラリの再構築のためのテンプレート プロジェクトには、ヘッダーファイルが必要ですが、配布には含まれていません。difftime_i.c ファイルはプロジェクトに含まれていません。<br>[EW26372]
+  </p></li>
+
+  <li><p>
+一部の複雑な配列インデックス式は、インターナルエラーをトリガします。<br>[EW26388]
+  </p></li>
+
+  <li><p>
+noreturn 関数への呼び出しの後、ワーニング Pe111 (文が接続できない)はコードに誤って発行されません。<br>[EW26389]
+  </p></li>
+
+  <li><p>
+まれに、intra-crossjump最適化はまだ使用されるコードを削除することがあります。<br>[EW26429]
+  </p></li>
+
+  <li><p>
+定数量でインクリメント/ディクリメントされ、その他の関数は1回だけ使用される場合、最適化レベル「中」または「高」では、静的記憶寿命を持つ変数は、間違って最適化されます。<br>[EW26446]
+  </p></li>
+
+  <li><p>
+自動保管期間がある配列のアドレスがインラインアセンブラ文に渡される関数は、最適化レベル「高」では、誤って最適化されます。<br>[EW26448]
+  </p></li>
+  
+  <li><p>
+Pe291エラー&quot;class Xにデフォルトのコンストラクタがありません&quot;のあと、コンパイラはインターナルエラーを生成することがあります。<br>[EW26522]
+  </p></li>
+
+  <li><p>
+浮動小数点ライブラリのsquareルート関数が、<code>sqrt(-0.0)</code>に標準仕様の<code>-0.0</code>ではなく<code>+0.0</code>を返します。<br>[EW26590]
+  </p></li>
+
+  <li><p>
+コンパイラはワイド文字列リテラルと文字列リテラルを連結できません。<br>[EW26602]
+  </p></li>
+
+  <li><p>
+<code>cosh(Inf)</code>は<code>errno</code>を<code>EDOM</code>に設定しません。<br>[EW26608]
+  </p></li>
+
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+<li><p><b>C11言語スタンダードをサポート</b><br> コンパイラおよびライブラリは最新のC言語スタンダードISO/IEC 9899:2012のサポートが追加されました。<br>
+      <ul>
+<li>新しいCライブラリ バイナリオブジェクト インターフェースは、EWARM の以前のバージョンと互換性がありません。</li>
+<li>C11はデフォルトの言語です。C89も使用されることがあります(100%逆の互換性はない)。</li>
+<li>C11スレッドメカニズムは、サポートされていません。また<code>atomic</code>は特定のARMコアだけでサポートされています。</li>
+<li>TLS変数のサポートおよび安全なC追加機能が含まれています。</li>
+      </ul>
+   </p></li>    
+<li><p><b>C++14言語スタンダードをサポート</b><br>コンパイラおよびライブラリは最新のC++スタンダードISO/IEC 14882:2015をサポートしています。</li>
+      <ul>
+<li>新しいC++ライブラリ バイナリオブジェクト インターフェースは、EWARM の以前のバージョンと互換性がありません。</li>
+<li>コードを維持しないで新しいC++を使用するために、以前のEC++ またはC++アプリケーションをアップグレードできません。例、C++言語は、逆の互換性はありません。</li>
+<li>コンパイラは例外およびRTTIとともに、またはそれなしのC++をサポートします。</li>
+<li>コンパイラは特定のARMコア用の<code>atomic</code>をサポートします。</li>
+<li>埋め込まれたC++と拡張して埋め込まれたC++は削除されています。</p></li>
+      </ul>
+<li><p>コンパイラはエンコードを適切にサポートしています。これは、UTF-8、UTF-16、UTF-32、または文字列と文字のシステムロケールが使えることを意味します。</p></li>          
+</ul>
+ 
+ 
+
+<h4><A NAME="his780">V7.80 2016-10-17</A></h4>
+<b>プログラム修正</b>
+ 
+<ul>
+  <li><p>
+マクロ引数内の<code>#pragma</code>ディレクティブのソースファイルをコンパイルしたり、プリプロセッサしたりするとき、コンパイラはインターナルエラーを終了できます。終端文字のないマクロの呼び出し内の<code>#include</code>ディレクティブがある場合、通常これが発生します。<br>[EW26221]
+  </p></li>
+  
+  <li><p>
+ループの上限が機能を呼び出すと、高最適化レベルでmemcpy、memset、またはmemclrとの同等のループは、間違って最適化されます。<br>[EW26223]
+  </p></li>
+  
+  <li><p>
+グローバルの最適化は、特定の状況ではcanonicalでない中間コードを生成します。コードジェネレータは、この(正しい)コードの構造を予期していなりため、内部エラーになります。<br>[EW26232]
+  </p></li>
+  
+  <li><p>
+最適化が「高」レベルでは、自動変数のスカラ変数 (<code>v</code>) が間違って最適化されます。<br>&#8226; <code>v</code> への表示可能な割り当ては<code>0</code> または <code>1</code>にされる。<br>&#8226; 1つまたは複数の呼び出しが含まれる機能は非直接的に<code>v</code>に割り当てられる。<br>&#8226; <code>v</code>に割り当てたすべての呼び出しにはpragma <code>機能</code>がありステータス<code>no_state</code>に影響する<br>&#8226; 機能は<code>v</code>の最低ビットをマスクする(例<code>v &amp; 1</code>)。<br>          [EW26241]
+  </p></li>
+  
+  <li><p>
+クラステンプレートのメンバ機能コードにクラステンプレートタイプ自体のポインタまたは参照から/に<code>dynamic_cast</code>オペレータを使用している場合、コンパイラは内部エラーで終了します。<br>[EW26248]
+  </p></li>
+  
+  <li><p>
+Thumb-1 コード用のスタックパラメータへのアクセスの最適化は、メモリによる順番で実行されます。この結果、環境のわずかな変化に応じて異なるコードが生成されます。<br>[EW26267]
+  </p></li>
+
+  <li><p>
+<code>#pragma weak</code>を使用して弱いエイリアスを定義し、同じコンパイルユニットにそのエイリアスを使用すると、コンパイラーが内部エラーで終了します。<br>[EW26268]
+  </p></li>
+
+  <li><p>
+EWARM 7.80.2:<br> <code>A</code>と<code>B</code>が同じstruct<code>S</code>にあるので、文字列<code>((S.A &gt;&gt; (32 - N)) | (S.B &lt;&lt; N))</code>の式は、ローテート命令(<code>ROR</code>)として再書き込みできませんでした。<br>[EW26210]
+  </p></li>
+
+  <li><p>
+EWARM 7.80.2:<br>プロジェクトのファイルパスにある日本語の文字で問題になった、ローカルの問題を解決しました。<br>[EW26278]
+  </p></li>
+
+  <li><p>
+EWARM 7.80.4:<br>集合の配列、配列のエレメント数よりも少ないエントリの依存したイニシャライザリストがある、プレーン旧データの一部の初期化は、インターナルエラー(<code>decl_inits.c</code>でアサーションエラー)でコンパイラを終了させることがあります。<br>[EW]
+  </p></li>
+
+  <li><p>
+EWARM 7.80.4:<br>最適化レベルが高では、算術式でまたはそれとして発生する２つ以上の同一のテストを含む関数は、誤って最適化されることがあります。<br>[EW26325]
+  </p></li>
+
+  <li><p>
+EWARM 7.80.4:<br>最適化レベル中または高では、<code>const __weak</code>構造または配列変数へのアクセスが、誤って最適化されることがあります。<br>[EW26346]
+  </p></li>
+
+</ul>
+
+
+<h4><A NAME="his770">V7.70 2016-06-17</A></h4>
+<b>プログラム修正</b>
+
+<ul>
+  <li>
+    <p>
+翻訳単位や変数のアドレスの変数から視覚的に読み込めない場合、最適化レベルが高では、静的変数が誤って最適化されることがあります。また変数のアドレスは、ほかの変数のイニシャライザで発生し、アドレスは整数型にキャストしています。<br>[EW26045]
+    </p>
+  </li>
+  <li>
+    <p>
+符号付き文字をキャストして、ポインタ型への符号なしの型は、内部エラーを引き起こします。<br>[EW26051]
+    </p>
+  </li>
+  <li>
+    <p>
+<code>short</code> に戻された <code>1.0f</code> で並べられた <code>short</code> の乗算のVFP コードを生成しているときに、内部エラー。<br>[EW26068]
+    </p>
+  </li>
+  <li>
+    <p>
+DSP 拡張のある ARM コアをコンパイルしている際 (ARMv7E-M, ARMv5E の構築)、 <code>a</code> がa 32-ビット値で <code>b, c</code> が 64-ビット値の<code>a - ((b * c) &gt;&gt; 32)</code>形式の式は、間違った結果を取得します。<br>[EW26084]
+    </p>
+  </li>
+  <li>
+    <p>
+制御分析のフローで配列された問題のため、アセンブラレベル オプティマイザは、メタ安定状態にトラップされる可能性がありました。<br>[EW26088]
+    </p>
+  </li>
+  <li>
+    <p>
+EWARM 7.70.2:<br> ielftoolで国内文字(7ビットのASCII以外の文字)をパス名に使用すると、正しき機能しないことがあります。<br> * ローバイナリにそのような文字を指定すると、SimpleCode、またはELF出力ファイルが、間違った名前で間違った場所にファイルに出力されます。<br>* 入力ファイルや出力ファイルにそれらの文字を使用すると、多くの場合、冗長コンソール出力が不正になります。<br>[EW26101]
+    </p>
+  </li>
+  <li>
+    <p>
+EWARM 7.70.2:<br>浮動小数点数へのアクセスをベクトル化すると、ネガティブ スケーリングまたはネガティブ インクリメントを正しく処理しません。<br>[EW26170]
+    </p>
+  </li>
+  <li>
+    <p>
+EWARM 7.70.2:<br>まれに、強制無限関数が、最適化レベル低にて、インターナルエラーを引き起こします。<br>[EW26172]
+    </p>
+  </li>
+  <li>
+    <p>
+EWARM 7.70.2:<br>ループ カウンターが、ループ不変非定数式と定数によってインクリメントされた場合に、最適化レベル高でインターナルエラーを引き起こします。<br>[EW26175]
+    </p>
+  </li>
+  <li>
+    <p>
+EWARM 7.70.2:<br>Thumb-2 のコンパイル中、インライン アセンブラ ステートメントが IT ブロック内に置かれ、エラー Ta117（ITブロックが永久に終了しました）が発生することが多くあります。<br>[EW26200]
+    </p>
+  </li>
+  <li>
+    <p>
+EWARM 7.70.2:<br>最適化レベル中または高において、変数が出力パラメータとして発生し、インライン アセンブラ ステートメントの前に変数が割り当てられると、インライン アセンブラ ステートメントが不正に最適化されることがあります。<br>[EW26201]
+    </p>
+  </li>
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+  <li>
+<p><b>新しい ARMv8-M 構造の初期サポート</b><br /> このリリースは、ARMv8-M Baseline および Mainline 実装の両方をサポートします。ARMv8-M 構造は、埋め込まれた IoT 市場のアプリケーションの安全性を確保することに焦点を当てています。<br />例のプロジェクトは、ディレクトリ <code>&lt;インストールパス&gt;\arm\src\ARMv8M_Secure</code> にあります。
+     </p>
+     
+<p>これは CMSE の利用可能な拡張に関するクイックリファレンスで、ドキュメント化されていません。CMSE プログラミング モデルについての ARM ドキュメントの、ARMv8-M セキュリティ拡張: 開発ツールの要件&quot;などを参照してください。
+     </p>
+<p>次の拡張は、ARMv8-M、ベースライン (<code>--cpu 8-M.baseline</code>)、またはメインライン (<code>--cpu 8-M.mainline</code>)に構築する場合にのみ利用可能です。
+     </p>
+<p>CMSE プログラミング モデルは、異なる実行ファイルとして、安全なコードと安全でないコードがビルドされることを指定します。安全コードで実行されたセットアップのレベルはと、安全でないコードのエントリポイントの場所は、CMSE プログラミング モデルには指定されません。よって 2 つの実行ファイルは正しく相互作用するためにこれらの点で同意する必要があります。
+      </p>
+<p>属性 <code>__cmse_nonsecure_entry</code> が決定したように、リンカは各エントリ関数に安全なゲートウェイベニアを自動的に作成します。これらのベニアは、セクション <code>Veneer$$CMSE</code> に生成され、NSC 領域に配置されます。ARMv8-M コアのドキュメントを参照し、SAU (安全属性ユニット) をプログラ?ムする方法を決定します。
+      </p>
+
+<h4>CMSE に関連した ICCARM 属性</h4>
+<p>属性 <code>__cmse_nonsecure_entry</code><br /> 説明 <br /> 安全コード（<code>--cmse</code>を使用)を構築するとき、この属性を使用して安全モードにエントリ関数を宣言します。<br />これは、CMSE プログラミング モデルの <code>__attribute__((cmse_nonsecure_entry))</code> に関連します。<br />スタックまた VFP レジスタにあるパラメータまたは返り値は、この属性の関数をサポートしません。
+      </p>
+<p>属性 <code>__cmse_nonsecure_call</code><br /> 説明<br /> 安全コード (<code>--cmse</code>使用)を構築している時、この属性を安全でない関数の呼び出しに使用します。これにより、この属性の関数の定義は許可されず、実行ファイルには安全な関数の定義だけが含まれていることを確約します。これは、CMSE プログラミング モデルの <code>__attribute__((cmse_nonsecure_call))</code> に関連します。<br />スタックまた VFP レジスタにあるパラメータまたは返り値は、この属性の関数をサポートしません。
+      </p>
+
+<h4>CMSE に関連した ICCARM オプション</h4>
+<p>オプション <code>--cmse</code><br /> CMSE 安全なオブジェクトの生成を有効化<br /> 説明<br /> このオプションは CMSE 属性 <code>__cmse_nonsecure_entry</code> および <code>__cmse_nonsecure_call</code> を使用した、CMSE の安全な実行ファイルの作成をサポートすることを有効にします。オプション <code>--cmse</code> は、CMSE プログラミング モデルの <code>-mcmse</code> に関連しています。
+      </p>
+
+<h4>CMSE に関連した IASMARM オプション</h4>
+<p>OPTION <code>--cmse</code><br /> CMSE 安全オブジェクトの生成を有効化<br /> 説明<br /> このオプションは、安全モードでのみ利用可能な手順を使用できるようになります。
+      </p>
+
+<h4>CMSE に関連した ILINKARM オプション</h4>
+<p>オプション <code>--import_cmse_lib_out ファイル|ディレクトリ</code><br /> 安全でないイメージを構築するためにインポート ライブラリを作成<br /> 説明<br /> このオプションを使用します。安全なイメージをリンクするときに、安全でないイメージに関連するようにリンクするときに使用されるインポート ライブラリを作成します。インポート ライブラリはオブジェクト ファイルで、シンボルテーブルから成ります。各シンボルは、シンボルと同じ名前のエントリ関数のために、安全なゲートウェイのアドレスを指定します。
+      </p>
+<p>オプション <code>--import_cmse_lib_in FILE</code><br /> 安全でないイメージを構築するために、以前のバージョンのインポート ライブラリを読み込む<br /> 説明<br /> インポート ライブラリを更新している時はこのオプションを使用します。提供されたインポート ライブラリにあるエントリ関数は、更新されたインポート ライブラリの同じアドレスに配置されます。
+      </p>
+  </li>
+</ul>
+
+
+
+<h4><A NAME="his760">V7.60 31.03.16</A></h4>
+<b>プログラム修正</b>
+<ul>
+  <li>
+    <p>
+初期化式におけるいくつかのエラーは、適切なエラーの代わりにエラー Pe001 (改行のないファイルの最後の最終ライン)で診断できます。<br>例: <code>union XXX var = 0;</code><br> [EW25472]
+    </p>
+  </li>
+
+  <li>
+    <p>
+スケジュールの手順は、スタック ポインタの調整で、スタックアクセスを移動できました( <code>SP</code>以外のレジスタを使用)。これは割込みが発生した場合に、スタックの破損を引き起こす場合があります。<br>[EW25810]
+    </p>
+  </li>
+
+  <li>
+    <p>
+volatile 型の一部が複数次元の配列の構成を読み取るとき、SPC volatile 型は負の値を読み取ります。<br>[EW25817]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+ビットフィールドの代入演算子が含まれている部分式の値を使用することは、コンパイラが内部エラーで終了する原因になることがあります。<br>[EW25853]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+データサンプリング式が <code>(x &amp; c1) | (y | (x &amp; c2))</code> のようなとき、<code>y</code><code>x &amp; {expr}</code> 形式の場合、コンパイラは間違った定数を抽出する場合があります。これが発生すると、定数でない値でコンパイラは定数 fold <code>c1</code> を試行しようとし、その結果 NULL ポインタと予測したように NULL ポインタがクラッシュします。<br>[EW25854]
+    </p>
+  </li>
+ 
+  <li>
+    <p>
+VFP のコードを生成している時、同じ型の浮動小数点メンバだけで成る union 型のパラメータは、間違って struct 型に関連しているように取り扱われてました。これにより内部エラーが発生したり、union の後にメモリを読み取ることがあります。<br>[EW25855]
+    </p>
+  </li>
+ 
+  <li>
+    <p>
+同じ目的のラベルを持つ範囲内のすべての integer 値の変更のために、ARM モードにコードを生成するときに、インターナルエラーが報告されることがあります。また、範囲の最初から最後の値の距離は、すぐには変更したように表示できません。最適化のために、同等のコードから成るcase値は、同じラベルを割り当てることに注意してください。<br>[EW25860]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+変数アドレスで初期化されるブロックローカル静的変数を持つ関数が、間違って最適化されることがあります。<br>[EW25864]
+    </p>
+  </li>
+  
+
+  <li>
+    <p>
+ループがアキュムレータのその他の使用に含まれている場合、蓄積パターンのループは誤ってベクトル化されることがあります。<br>[EW25867]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+引数がconst 複数次元の char 配列のエレメントのリファレンスになる、最適化が「中」または「高」は、 <code>strcmp</code>を呼び出し、誤って最適化されることがあります。<br>[EW25868]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+ゼロと比べて不変変数が含まれているループは、誤ってベクトル化されることがあります。<br>[EW25871]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+C のブロックローカル静的変数のために、イニシャライザの一部として複合リテラルを使用すると、コンパイラが内部エラーで終了してしまう原因になります。また代わりに <code>式が定数値を持つ必要がある</code>エラーを生成することがあります。<br>[EW25873]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+ループ カウンタがデクリメントした後の配列アクセスは、正しくベクトル化されていないことがあります。<br>[EW25875]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+ループ内だけで使用された自動配列にリファレンスが含まれている場合は、ループが間違ってベクトル化されることがあります。<br>[EW25878]
+    </p>
+  </li>
+  
+
+  <li>
+    <p>
+符号付き <code>short</code> または負の定数の <code>int &amp;</code> 操作が含まれている場合、ループが間違ってベクトル化されることがあります。(これは、根底型が符号付きのビットフィールド操作で発生する。<br>	[EW25880]
+    </p>
+  </li>
+ 
+  <li>
+    <p>
+同じインラインアセンブラ文で初期値 <code>'0'</code> を持たない16進数の定数と同じ名前のローカル アセンブラ ラベルを使用すると、コンパイラが内部エラーで終了してしまうことがあります。.<br>[EW25882]
+    </p>
+  </li>
+  
+ 
+  <li>
+    <p>
+16 ステップ以上の 8 ビット値を左シフトすると、ベクトル化中に内部エラーが発生することがあります。<br>[EW25885]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+最適化が「中」または「高」では、スカラ静的変数への特定のアクセスが間違って最適化されることがあります。<br>[EW25890]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+最適化の目的がサイズの時、コンパイラがループ本体が全く同じように一度実行されることを減らすことができる場合、右手側が変数で、同じ変数がンデックス式 (<code>a[i] = i</code>)発生する、配列エレメントの割り当てを含んでいるループが、間違って最適化されることがあります。<br>[EW25893]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+いくつかの許可されていない集合タイプにはエラーメッセージが出力されません (例、シングルゼロ長さの配列メンバの struct)。<br>[EW25897]
+    </p>
+  </li>
+
+  <li>
+    <p>
+ループの最後に到達できない条件付きループで関数のエンディングをコンパイルしている時に、内部エラーでコンパイラが終了することがあります。<br>[EW25932]
+    </p>
+  </li>
+
+  <li>
+    <p>
+同じコンパイルユニットに、以前の Thumb-2 SWI 関数定義がある場合、Thumb-2 の SWI でない関数定義には間違ったバックトレース情報が生成されました。手順を実行中にデバッガが遅くなることがわかっています。<br>[EW25945]
+  <li>
+    <p>
+その他のすべてのシステム ライブラリ ヘッダーの前に、<code>&lt;stdarg.h&gt;</code> (または <code>&lt;cstdarg&gt;</code>) が含まれていなかったときに、完全な C++ モードでコンパイルすると、<code>va_list</code> 型に影響する型のパラメータを持つ関数は、互換性のないマングル化された名前を与えられる場合があります。<br>[EW25962]
+    </p>
+  </li>
+
+  <li>
+    <p>
+Thumb モードでランタイム境界チェックを有効にしてコンパイルすると、コンパイラはインターナルエラー(<code>ElfOutput: Stack usage label missing!</code>)。<br>[EW25981]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+EWARM 7.60.2:<br>最適化レベル「高」では、ループ テストの符号比較を持つ<code>do</code>ループは、間違って最適化されることがあります。<br>[EW25986]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+EWARM 7.60.2:<br>定数を含む浮動小数点比較を最適化すると、まれに少し定数を変更することがあります。<br>[EW26011]
+    </p>
+  </li>
+
+
+  <li>
+    <p>
+EWARM 7.60.2:<br>インライン アセンブラ文のロックされたレジスタを上書きしようとすると、詳細なエラーメッセージの代わりに、インターナルエラーを引き起こす場合があります。<br>[EW26013]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+EWARM 7.60.2:<br>最適化で呼出し先保存レジスタの最後の使用を削除すると、使用していないレジスタは、保存されなくなることがあります。これにより、DWARF デバッグ情報が反映されてなかった、stack レイアウトを変更します。<br>[EW26026]
+    </p>
+  </li>
+
+  <li>
+    <p>
+EWARM 7.60.2:<br><code>拡張および追加</code>の手順は、拡張する前にサード オペランドを回転されるようにできますが、最適化コードで見落とされ、オペランドが回転されると、コンパイラのクラッシュを引き起こします。<br>[EW26027]
+    </p>
+  </li>
+
+  <li>
+    <p>
+EWARM 7.60.2:<br><code>--macro_positions_in_diagnostics</code> モードでは、マクロで<code>_Pragma(&quot;&quot;diag_xxx = ...&quot;&quot;)</code>を使用すると、残りのマクロ拡張のために診断で期待通りの効果を出しません。<br>[EW26032]
+    </p>
+  </li>
+
+  <li>
+    <p>
+EWARM 7.60.2:<br>コンパイラは、以前のバージョンのコンパイラで管理された抽象クラスを削除するために、コンストラクタで仮想関数ポインタ表へのいくつかの不必要な書き込みを維持します。<br>[EW26038]
+    </p>
+  </li>
+
+  <li>
+    <p>
+EWARM 7.60.2:<br><code>--no_unaligned_access</code>でコンパイルすると、インターナルエラーを引き起こす場合があります。たとえば、配列されていない 2-バイトのエレメントで配列をインデックス化する場合(オフセットレジスタが、配列されていない 2-バイトのエレメントの読み込み/保存に使用された 2 つの<code>LDRB/STRB</code>操作に使用される場合、問題が発生します)。<br>[EW26042]
+    </p>
+  </li>
+
+  <li>
+    <p>
+EWARM 7.60.2:<br>まれに、関連の volatile でないインラインアセンブラの文を削除することが正当でも、volatile インラインアセンブラの文が削除できないことがあります。一部の最適化により、インラインアセンブラ文のコピーが作成されたとき、そのコピーのvolatile属性がメモリ依存(初期化されていない)になり、発生します。<br>[EW26047]
+    </p>
+  </li>
+
+  <li>
+    <p>
+EWARM 7.60.2:<br>lvalue に初期化された静的記憶寿命変数のリファレンスタイプは、ROMに保存されません。<br>[EW26076]
+    </p>
+  </li>
+  
+</ul>
+
+
+<h4><A NAME="his750">V7.50 2015-11-10</A></h4>
+<b>プログラム修正</b>
+<ul>
+  <li>
+    <p>
+ユーザ指定のセクション/セグメントに配置され、ゼロの値で明示的に初期化された変数は、コンパイラによって誤って最適化され、copy initではなくzero initとなります。<br>[EW25498]
+    </p>
+  </li>
+
+  <li>
+    <p>
+割り当てられたヒープ空間の外への間違った書込みを検出するデバッグヒープの能力が向上しました。間違った書込みが検出されないことはまだありますが、大半は検出されるようになりました。<br>[EW25682]
+    </p>
+  </li>
+
+  <li>
+    <p>
+ヒープのリークチェックを実行する際、ペイロードのサイズが0(通常は<code>malloc(0)</code>呼出しの結果)のヒープブロックが常にリークと見なされます。<br>[EW25684]
+    </p>
+  </li>
+
+  <li>
+    <p>
+ヒープのリークチェックを実行する際、遅延リストがアクティブになっていると、遅延リストにあるすべてのヒープブロックがリークとして報告されます。<br>[EW25685]
+    </p>
+  </li>
+
+  <li>
+    <p>
+VFPに対してコンパイルする際、<code>VLDR</code>命令がアラインメントされていないデータのロードに使用される可能性があります。これは、<code>__packed</code>または<code>#pragma pack</code>が使用されている場合に起こります。その結果、アドレスが実際にアラインメントされていなければ、「ハード障害」割込みとなります。<br>[EW25708]
+    </p>
+  </li>
+
+  <li>
+    <p>
+スタック上の変数の寿命が、<code>setjmp</code>への呼出しを介して正しく処理されません。これによって、重複していない寿命を持つ2つの変数がスタック上の同じ位置に割り当てられ、<code>setjmp</code>呼出しで変数の寿命に対して値が保持されないことがあります。<br>[EW25735]
+    </p>
+  </li>
+
+  <li>
+    <p>
+最適化レベル「高」の場合、変数(v)を使用すると次の場合に誤って最適化されることがあります。<br>1) その定義におけるvの前回の使用が別の変数(c)のバイナリ処理に現れる、<br> 2) 1つまたは複数の基本ブロックのプレデセッサにおいてcに定数値が割り当てられている、<br> 3) バイナリ処理がcが割り当てられている定数のいずれかに対する識別処理である、<br> 4) vに間接的な定義がある。<br> [EW25739]
+    </p>
+  </li>
+
+  <li>
+    <p>
+<code>Long long</code>による<code>0xFFFFFFFF00000000</code>追加または<code>0x100000000</code>減算が間違って最適化されることがあります。<br>[EW25745]
+    </p>
+  </li>
+
+  <li>
+    <p>
+最適化レベル「高」でThumb-2コードを生成する場合、スタック上の配列へのバイト割当てによって、稀に予期しない<code>STRB</code>命令が生じることがあります(スタックポインタがオフセットレジスタとして使用されます)。<br>[EW25778]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+EWARM 7.50.2 では、Neon組込み関数 <code>vcombine_&lt;type&gt;(X,Y)</code> は、現在必要な時に <code>VSWP</code> 命令を出力できます。<br>[EW25765]
+    </p>
+  </li>
+
+  <li>
+    <p>
+EWARM 7.50.2 では、ベクトル化が有効なときは、同じポインタ変数を介したデクリメント前/後の複数のアクセスを含んでいるループでは、インターナルエラーが発生する可能性があります。<br>[EW25794]
+    </p>
+  </li>
+  
+  <li>
+  <p>
+EWARM 7.50.3:<br>最適化レベルが「高」のときは、複数の基本ブロック、1つ以上のインラインアセンブラの文、および引数としてインラインアセンブラの文に渡す配列アクセスが含まれてル場合は、ループが正しく最適化されないことがあります。<br>[EW25814]
+  </p>
+  </li>
+
+  <li>
+  <p>
+EWARM 7.50.3:<br>最適化レベルが「高」のときは、無限ループができますが、まれにコンパイラが無限ループで停止することがあります。<br>[EW25831]
+  </p>
+  </li>
+
+  <li>
+  <p>
+EWARM 7.50.3:<br><code>char</code>から<code>int</code> (または<code>short</code>から<code>long long</code>)にキャストが含まれている場合は、減少ループが正しくベクトル化されないことがあります。<br>[EW25833]
+  </p>
+  </li>
+
+  <li>
+  <p>
+EWARM 7.50.3:<br>最適化レベルが「中」および「高」のときは、状況によっては、1つのエレメントだけの自動配列でインターナルエラーが発生する可能性があります。<br>[EW25903]
+  </p>
+  </li>
+</ul>
+
+
+<h4><A NAME="his740">V7.40 2015-02-19</A></h4>
+<b>プログラム修正</b>
+<ul>
+
+<li>
+  <p>
+単精度の浮動小数点の値2つを乗算するときにCortex-M0/M0+/M1 (ARMv6-M)で使用されるライブラリ関数で、入力の値によっては、結果の最下位ビットに間違った値が生成されることがあります。<br>[EW25075]
+  </p>
+</li>
+
+<li>
+  <p>
+擬似命令が複数の命令に拡張される場合(<code>MOV32</code>が2つの命令に拡張)、インラインアセンブラがITブロックの擬似命令を正しく処理していませんでした。これが影響するのはTHUMBモードで、IT命令(ARMv6T2、またはそれ以降: ARMv6-M以外)を持つアーキテクチャのみです。<br>[EW25112]
+  </p>
+</li>
+
+<li>
+  <p>
+C-RUNで、アドレス0に保存されたポインタの境界をトラッキングする際、フラッシュメモリへのライト処理が行われなくなりました。その代わりに、ランタイムエラーが報告されます。この問題は、Cortex-MベクタテーブルがCまたはC++で記述された場合に見られました。つまり、最初のスタックポインタがアドレス0にあり、その境界がトラッキングされる場合です。解決方法として、ポインタ境界のトラッキングをしないベクタテーブルをビルドする方法があります。<br>[EW25122]
+  </p>
+</li>
+
+<li>
+  <p>
+減少パターンによって、ベクトル化の際にインターナルエラーが発生することがあります。<br>[EW25144、EW25154]
+  </p>
+</li>
+
+<li>
+  <p>
+<code>stdarg.h</code>のインクルードは、大文字/小文字を区別します。<code>Stdarg.h</code>をインクルードしようとすると、コンパイラは不完全なファイルをインクルードします。代わりに、コンパイラは<code>Fatal error[Pe1696]: cannot open source file</code>というメッセージを報告するようになりました。<br>[EW25156]
+  </p>
+</li>
+
+<li>
+  <p>
+コンパイラがテンプレートクラスPOD型の<code>const static</code>メンバ変数の動的初期化を処理する際に、インターナルエラーで終了することがあります。例：
+<pre><code>template&lt;class T&gt;
+struct C
+{
+static const int a;
+};
+extern const int k; 
+template&lt;class T&gt; const int C&lt;T&gt;::a = k;</code></pre>
+[EW25157]
+  </p>
+</li>
+
+<li>
+  <p>
+レベルとゴールの両方のフラグのある<code>#pragma optimize</code>を持つ関数が、正しく最適化されません。<br>[EW25169]
+  </p>
+</li>
+
+<li>
+  <p>
+仮数部の正規化ループに、仮数部のMSBが設定されているかどうかに関わらず、初期テストがありませんでした。場合によって結果が不完全であったり、ときには正規化によって無限ループが生じたりすることもありました。この問題は、ARMv4命令セットに適用された<code>fmod()</code>関数でのみ発生していました。<br>[EW25170]
+  </p>
+</li>
+
+<li>
+  <p>
+VFPを持たないARMv7-Mコアの例外を使用してC++アプリケーションをリンクし、明示的な<code>--cpu</code>オプションを用いる場合、リンカは<code>rt7M_tl.a</code>の例外エンジンがNo vfpと互換性のないVFP命令を使用しているとして間違ったエラーを報告していました。<br>[EW25188]
+  </p>
+</li>
+
+<li>
+  <p>
+C++例外とVFPのサポートを有効にしてコンパイルする際、<code>std::complex&lt;&gt;</code>型のパラメータを受け入れる関数または関数タイプ、あるいは<code>std::complex&lt;&gt;</code>型のオブジェクトを戻す関数または関数タイプが、モジュール内の最初のパブリック変数もしくは関数定義より先に発生する場合、その関数のコードまたはその関数タイプの呼出しが間違って生成されることがあります。<br>[EW25215]
+  </p>
+</li>
+
+<li>
+  <p>
+テンプレートコード内にある自動記憶寿命変数の集合初期化で、少なくとも1つの集合要素が定数でない場合に、コンパイラがインターナルエラーで終了することがあります。<br>[EW25228]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.2:<br>コンパイラが、静的記憶寿命を持つ構造体変数の配列フィールドにアクセスする際、MISRA-C:2004 規則17.4 (配列のインデックス化は配列を持つ場合のみ)に対する違反を誤って報告することがあります。<br>[EW25240]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.2:<br>構造体変数の初期化によって最後にフレキシブルな配列メンバに値が供給されると、コンパイラがインターナルエラーで終了することがあります。<br>[EW25245]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.2:<br>構造体変数のアドレスを別の型で異なるサイズの構造体変数にキャストし、構造体の割当てを実行すると、最適化レベル「高」でインターナルエラーが発生する可能性があります。<br>[EW25249、EW25296]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.3:<br>アーキテクチャプロファイルMでないARMv6またはそれ以降のコアで、空のネストされた割込み関数をコンパイルする際、インターナルエラーが報告されていました。<br>[EW25229]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.3:<br>スタックパラメータを受け入れて、異なるサイズのNEONレジスタを多数使用する関数が、ごく稀にスタック変数に対して間違ったオフセット値を持つことがあります。<br>[EW25336]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.3:<br>まれな場合として、複雑な条件コードを持つ関数を自動関数インライン化すると、インターナルエラーを引き起こす可能性があります。<br>[EW25346]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.3:<br><code>##</code>演算子をコンマと<code>__VA_ARGS__</code>間で使用し、<code>__VA_ARGS__</code>がトークンに展開しない場合、コンパイラでワーニングPe1665 (連結で有効なトークンが作成されない)が間違って出力されます。<br>[EW25348]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.3:<br>移動先が固定の場合、移動可能なブロック内からそのブロック外への相対的な再配置が使用可能になりました。その効果として、位置に依存しないコード(<code>--ropi</code>でコンパイル)が位置に依存するコードを呼び出せるようになりました。<br>[EW25359]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.3:<br>最適化レベル「高」、「サイズ」を使用する際、最適化<code>while (n--)</code>ループが誤って最適化されることがあります。最適化されたループは、最終の繰返しで実行されません。<br>[EW25383]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.3:<br>最適化された静的関数が<code>#pragma</code>コール ディレクティブで使用された場合、コンパイラがインターナルエラーで終了することがあります。<br>[EW25387]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.3:<br>ゼロ初期化データのサイズが4の倍数でない場合、ゼロ初期化によって次のブロックの先頭が上書きされなくなりました。<br>[EW25395]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.3:<br><code>VLDR</code>と<code>VSTR</code>命令が、後で浮動小数点値に変換される整数のアラインメントされていないアクセスに使用されなくなりました。<br>[EW25407]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.3:<br>最適化レベル「中」を使用する場合、ポインタ間接を含む共通部分式のシーケンスを最適化すると、シーケンスが並行したコントロールの流れの中で発生するときに、間違って最適化されることがあります。<br>[EW25415]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.3:<br>小さい自動配列のアドレスをポインタ型にキャストして、その配列全体に別のタイプのオブジェクトを割り当てる場合、インターナルエラーが発生することがあります。<br>[EW25442]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br>最適化レベル「高」で、不変の浮動小数点値を追加すると、<code>--relaxed_fp</code>を有効にしていなくてもループ外にホイストされることがあります。これによって、値の丸め方に影響することがあります。<br>[EW25450]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br>命令スケジューリングによって、命令が誤って移動することがあります。たとえば、<code>WFI</code>や<code>WFE</code>など、ストア命令が副作用のある命令を含むITブロックの後に来る場合です。本来であれば、こうした移動は禁じられています。この場合の効果として、コアが動作状態に戻る前ではなく、戻るまでストア命令が実行されないことになります。<br>[EW25466]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br>組み込み関数<code>__get_LR</code>、<code>__set_LR</code>、<code>__get_SP</code>、および<code>__set_SP</code>の宣言が、ヘッダファイル<code>intrinsics.h</code>にありません。<br>[EW25471]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br><code>::</code>演算子がクラスや名前空間ではない何かの後に使用されるソースコードによって、コンパイラが問題の診断後にインターナルエラーで終了することがあります。<br>[EW25478]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br>関数ローカルの静的記憶寿命変数がフレキシブルな配列メンバを拡張する場合、コンパイラがインターナルエラーで終了する可能性があります。<br>[EW25483]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br>ポインタ経由の呼出しをコンパイラが間違ってメンバ関数にコンパイルし、メンバ関数がコピーのコンストラクタを呼び出してオブジェクトを返すことがあります。<br>[EW25501]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br><code>#pragma default_function_attributes</code>および<code>#pragma default_variable_attributes</code>設定が、<code>--mfc</code>(複数ファイルのコンパイル)を使用する際に各コンパイルユニットの開始部分でリセットされません。<br>[EW25508]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br>任意のシステムヘッダファイルを使用したコードのプリプロセッサ出力に、内蔵タイプ<code>_VA_LIST</code>への参照が含まれ、出力がその後の処理で役に立たなくなります。<br>[EW25553]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br><code>#pragma weak</code>が使用され、複数のソースファイルが一緒にコンパイル(<code>--mfc</code>)されると、コンパイラが<code>Pe1152</code>エラーで失敗する可能性があります。<br>[EW25556]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br>同じループ内に複数のアキュムレータを持つループが、間違ってベクトル化されることがあります。.<br>[EW25574]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br>VFP用にコンパイルする際、3つ以上の浮動小数点値を持つ2つの重複する同一の構造体間の割当てが失敗することがあります。<br>[EW25576]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br><code>--no_unaligned_access</code>がthumb2コードとともに使用されると、パックされたshortおよびunsigned shortの読取り処理で間違った結果が出ることがあります。<br>[EW25578]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br>C-RUN:オーバフローのチェックを伴う64ビットの符号付き乗算が、正の結果<code>X</code>となっていました。この場合の正しい結果は<code>-X</code>です。<br>[EW25587]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br>オプティマイザが、<code>const __weak</code>シンボルのイニシャライザからの値を誤って使用することがあります。<br>[EW25617]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br>関数ポインタの整数へのキャストが、正しく処理されるようになりました。<br>[EW25620]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br>スタックから、またはスタックへのコピーを実行するループが認識され、<code>__aeabi_memcpy</code> (または<code>__aeabi_memcpy4</code>)への呼出しとして書き換えられ場合があります。両方が同時にスコープ内にある場合でも同じスタック一に別のスタック変数が割り当てられます。<br>[EW25663]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br>外部にホイストする最適化が、メモリ依存の順序で実行されます。この結果、環境のわずかな変化に応じて異なるコードが生成されます。<br>[EW25672]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br>ヒープのリークチェックを実行し、何らかのRAMの内容が連続して配置されていなければ(一部のRAMの内容が<code>0x20000000</code>、別の内容が<code>0x40000000</code>にある場合など)、リークチェッカーが間違って領域間のメモリにアクセスする可能性があります。これによって、アクセス違反および/または間違った診断となる恐れがあります。<br>[EW25683]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.7:<br>ごくまれに、生成されたコードに役に立たない命令が混ざり、予期しない結果となることがあります。これは修正されました。<br>[EW25702]
+  </p>
+</li>
+
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+  <li>
+なし
+  </li>
+</ul>
+ 
+<h4><A NAME="his730">V7.30 2014-09-24</A></h4>
+<b>プログラム修正</b>
+ 
+<ul>
+
+<li>
+  <p>
+シンボルが使用されているかどうかをチェックする特殊なアルゴリズムによって、コンパイラから予期しないワーニングメッセージが表示されることがあります。<br>[EW23132]
+  </p>
+</li>
+
+<li>
+  <p>
+集合イニシャライザの配列名で何らかの括弧が省略されている場合、コンパイラで配列が未使用であるというワーニングが表示されることがあります。<br>[EW23448]
+  </p>
+</li>
+
+<li>
+  <p>
+コンパイラでMISRA-C:2004の規則5.4をチェックすると表示されますが、実際にはチェックされません。<br>[EW24679]
+  </p>
+</li>
+
+<li>
+  <p>
+クラスタリングがオンでリテラルがコード内に定数として配置された場合、配列サイズが不明な変数について、コンパイラで括弧内の文字列リテラルイニシャライザのサイズが間違った値になります。<br>[EW24888]
+  </p>
+</li>
+
+<li>
+  <p>
+<code>memcpy</code>、<code>memset</code>、または<code>memclr</code>への呼出しに置換できるループが、最適化<b>「高」、サイズ</b>でループのテストにインクリメント前後の演算が含まれる場合に、誤って最適化されることがあります。<br>[EW24928]
+  </p>
+</li>
+
+<li>
+  <p>
+MISRA-C:2004の規則9.2によって、複雑な型のイニシャライザ<code>{0}</code>が誤ってトリガされます。<br>[EW24938]
+  </p>
+</li>
+
+<li>
+  <p>
+コンパイラで、インラインアセンブラ命令内のレジスタ名を変更しようとしなくなりました。<br>[EW24942]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.3:<br>ARMv7-Mの命令スケジューリングで、<code>IT</code>ブロックの最後の命令が分岐命令の場合にインターナルエラーが発生し、分岐ターゲットに対する他のコントロールフローがありません。<br>[EW24982]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.3:<br> MISRA-C:2004の規則14.2で、<code>assert()</code>マクロのメッセージが表示されます。<br>[EW24992]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.3:<br>配列アドレスが既知の低数値である配列式により、ベクトル化が有効な場合にインターナルエラーが発生することがあります。<br>[EW25012]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.3:<br>個々のビットフィールドが<code>volatile</code>(構造体/共用体全体が<code>volatile</code>として宣言されている場合ではなく)として宣言されている場合、ビットフィールドへのアクセスをコンパイラが保持できません。<br>[EW25020]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.3:<br>EC++/C++の匿名共用体のメンバについて指定されたイニシャライザが拡張言語モードで使用される場合、何らかの括弧が省略されると、コンパイラが間違って<code> Error[Pe2358]: a designator for an anonymous union member can only appear within braces corresponding to that anonymous union </code>を表示することがあります。<br>[EW25025]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.3:<br><code>char</code>配列メンバがコンストラクタの文字列リテラルにより初期化されると、コンパイラがインターナルエラーで終了することがあります。<br>[EW25046]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.4:<br>最適化レベル「高」で、次の場合にループが間違って最適化されることがあります。<br> 1) 変数(V)に関数呼出しの結果が割り当てられている、<br> 2) 関数呼出しがインライン化されている、<br> 3) Vがブレークによりループを終了する条件付きコード内で使用されている。<br>[EW25027]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.4:<br>ベクトル化されたコードで、未知のシフトカウントを持つ右シフトの切捨てが正しく処理されません。<br>[EW25061]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.4:<br>ベクトル化が有効な場合に、ポインタタイプへの整数変数キャストが配列アクセスのベースアドレスとして使用されていると、インターナルエラーが発生することがあります。<br>[EW25067]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.4:<br>複数ファイルのコンパイルモードでコンパイルする際、2つ以上のソースファイルに含まれるヘッダファイル内の<code>typedef</code>に対して、MISRA-C:2004規定5.3のメッセージが間違って表示されます。<br>[EW25081]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.4:<br><code>static</code>で初期化された変数が、モジュールで参照されない指定のセクション(<code>#pragma location</code>または<code>@</code>演算子を使用)に配置されていると、コンパイラでインターナルエラーが発生することがあります。<br>[EW25096]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.4:<br>ベクタの最小値または最大値を算出する際、ベクトル化が有効になっていると、サイズが異なるタイプの特定のパターンによってインターナルエラーが発生することがあります。<br>[EW25102]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.4:<br>ベクトル化が有効な場合、可変シフトカウントを持つシフトを含むループによってインターナルエラーが発生することがあります。<br>[EW25104]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.4:<br>最適化レベル「高」で、ループ変数が関数で割り当てられていない場合、ループ条件のループ変数が事後インクリメントまたは事後デクリメントするループが間違って最適化されることがあります。<br>[EW25124]
+  </p>
+</li>
+
+</ul>
+ 
+<b>新機能</b>
+ 
+<ul>
+  <li>
+なし
+  </li>
+</ul>
+
+
+<h4><A NAME="his720">V7.20 2014-05-19</A></h4>
+<b>プログラム修正</b>
+ 
+<ul>
+
+<li>
+  <p>
+<code>#pragma pack</code>ディレクティブでアラインメントを16より高く設定すると、コンパイラでインターナルエラーが発生する可能性があります。<br>[EW24509]
+  </p>
+</li>
+
+<li>
+  <p>
+<code>time.h</code>の<code>strftime</code>ライブラリ関数がAEABIモードで使用できません。また、AEABIモードでは<code>time.h</code>をC++ソースモジュールにインクルードすることができません。<br>[EW24666]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.20.2:<br>ステップ式で整数のオーバフローに依存するループが、間違って最適化されることがありました。<br>[EW24248、EW24256]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.20.2:<br>ブール関数が、関数呼出しの直後の式でその結果が使用され、その式にポインタを介した間接的なアクセスが含まれる場合に、間違って最適化されることがありました。<br>[EW24710]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.20.2:<br>空のステップ式を持つ<code>while</code>ループと<code>for</code>ループが、ループの最後の文が別のループである場合に、間違って初期化されることがあります。<br>[EW24742]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.20.2:<br>EC++/C++で、<code>stdarg.h</code> (または<code>cstdarg</code>)がその他の標準ヘッダより前にインクルードされていた場合、<code>(std::)va_list</code>が定義されていませんでした。<br>[EW24746]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.20.2:<br>ごくまれな場合に、条件付きコードにおけるポインタを介したグローバル変数または間接割り当てへの割り当てが、間違って最適化されることがあります。<br>[EW24748]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.20.5:<br>符号なし整数のオーバフローに対するランタイムチェックにより、デクリメント前後に間違った正の値が生じることがあります。これは、負の値を持った追加としての中間の表現が原因で、符号なし算術においてはほとんどの場合にオーバフローとなります。<br>[EW24763、EW24851、EW24916]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.20.5:<br>文字列リテラルに構文エラーがある場合、コンパイルが終了しなかったり、インターナルエラーで終了することがあります。<br>[EW24806]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.20.5:<br>共通部分式最適化の結果、挿入された境界チェックコードにより間違ってコンパイラでインターナルエラーが生成されることがあります。<br>[EW24849、EW24853、EW24913]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.20.5:<br>ワーニングメッセージが修正され、<code>to complex</code>から<code>too complex</code>に変更されました。<br>[EW24869]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.20.5:<br>自動集合が定数以外の値のみによって部分的に初期化される場合、コンパイラが集合の残りの部分をゼロ初期化するコードを出力できません。<br>[EW24920]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.20.5:<br> 最適化レベル「中」で、条件内の関数呼出し周辺でコードが間違って最適化されることがあります。条件の後に両方のパスにおいて発生する非間接的なロードが、呼出しより先に誤って実行されることがあります。<br>ビットフィールドの代入について、同じビットフィールドコンテナの他のビットフィールドが呼出し以前の値にリセットされることがあります。<br>[EW24922]
+  </p>
+</li>
+
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+  <li>
+なし
+  </li>
+</ul>
+
+
+<h4><A NAME="his710">V7.10 2014-02-21</A></h4>
+<b>プログラム修正</b>
+ 
+<ul>
+
+<li>
+  <p>
+エラーメッセージ<code>Pa053</code>と<code>Pa054</code>でELFの用語を使用するようになりました。<br>[EW24093]
+  </p>
+</li>
+
+<li>
+  <p>
+構造体が<code>__packed</code>で定義されていない場合、<code>__packed</code>により宣言された構造体を参照すると、コンパイラはエラーを表示します。以前に<code>__packed</code>を使用した宣言がある場合、<code>__packed</code>なしに構造体を定義すると、ワーニングが表示されます。<code>__packed struct X {...} * x;</code>は、<code>__packed</code>を<code>struct X</code>と<code>x</code>の両方に追加するべきではありません。<br><br>
+
+このプログラムの修正は、EWARM 6.70.2におけるEW24270の暫定的な解決方法についての通知（「IARにより拡張された、Cにおけるフィールド宣言の型より前の型属性は、誤ってフィールドではなく型に適用されています」）に優先します。<br>[EW24270]
+  </p>
+</li>
+
+<li>
+  <p>
+(<code>#pragma location</code>または<code>@</code>を使用して)グローバルレジスタ内に配置された変数<code>v</code>のincの前後(<code>++v</code>または<code>v++</code>)によって、インターナルエラーが発生していました。<br>[EW24381]
+  </p>
+</li>
+
+<li>
+  <p>
+Thumb-1モードで乗算のコードを生成すると、インターナルエラーが発生することがありました。<br>[EW24385]
+  </p>
+</li>
+
+<li>
+  <p>
+関数を含むエラーを報告する際、コンパイラがインターナルエラーにより終了する場合がありました。<br>[EW24387]
+  </p>
+</li>
+
+<li>
+  <p>
+DLIBライブラリの<code>fileno</code>が、正規のファイルにエラーのステータスを返されていました。<br>[EW24393]
+  </p>
+</li>
+
+<li>
+  <p>
+c99を使用する際、MISRA-C規則14.10が正しくチェックされていませんでした。<br>[EW24402]
+  </p>
+</li>
+
+<li>
+  <p>
+パラメータがスタック上で渡されて後でその位置で更新された場合、古い値の上位部分と新しい値の下位部分が、32ビットより小さいパラメータ変数からロードされることがありました。<br>[EW24429]
+  </p>
+</li>
+
+<li>
+  <p>
+小さいアラインメントされていないコピーで<code>--no_unaligned_access</code>を使用してビルドする際、コピーするデータによっては、ARMv7-Mでループカウンタが<code>memcpy()</code>で誤ってラップされることがありました。<br>[EW24432]
+  </p>
+</li>
+
+<li>
+  <p>
+構造体の変数からそれ自身への割当ては、その変数のアドレスの直後にあるメモリへの書込みにつながる可能性があります。<br>[EW24458]
+  </p>
+</li>
+
+<li>
+  <p>
+最適化レベルが「中」または「高」の場合、拡張されたビットがビット単位の論理演算の後に保持されることが分かっている場合、ゼロ拡張がループ外にホイストされる可能性があります。また、拡張されたビットが保持されないことが分かっている場合の符号拡張演算についても最適化が実行されます。<br>[EW24459]
+  </p>
+</li>
+
+<li>
+  <p>
+ごく稀に、静的クラスタに関連して間違ったコードが生成される場合があります。<br>[EW24464]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.10.3:<br>ARMモード、およびThumb-2 ISAを備えたデバイスにおけるThumbモードで、自動エリアのサイズがかなり大きい場合に、自動エリアのバックトレース調整が行われないか、または不具合となることがあります。こうなった場合、C-SPYはたとえば[ローカル]ウィンドウなど、自動エリアに配置された変数について不正なアドレスを表示します。<br>[EW24499]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.10.3:<br><code>#pragma default_variable_attributes</code>が、constまたはvolatile型の変数に対して効果がありません。<br>[EW24525]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.10.3:<br> MISRA-C:2004の規則14.10によって、構造体<code> if (x) f1(); else { if (y) f2(); }</code>で間違ってエラーが発生します。<br>[EW24533]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.10.3:<br>ネストされたif文を使用する場合、コンパイラが間違って、存在しないMISRA-C 2004の規則14.10違反(<code> if...else if</code>の後にある最後の <code>else </code>)を報告することがあります。<br>[EW24545]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.10.3:<br>場合によっては、<code> x &amp; ~(y &lt;&lt; k)</code>に一致するフォーム<code> ~x &amp; (y &lt;&lt; k) </code>上の式について、コンパイラがコードを生成していました。これは、<code>LSL</code>命令が<code>BIC</code>命令内でシフトオペランドに置換され、<code>BIC</code>命令のオペランドが可換の演算でない場合でも置換される場合に発生していました。<br>[EW24548]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.10.3:<br>Thumb-2用にコードを生成する際、あるオペランドが否定され、そのオペランドの値がゼロの場合に、符号なしのcompare less/greater-than (またはequal)についてテストで問題が生じることがあります。<br>[EW24561]
+  </p>
+</li>
+
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+  <li>
+なし
+  </li>
+</ul>
+
+
+<h4><A NAME="his670">V6.70 2013-10-29</A></h4>
+<b>プログラム修正</b>
+
+<ul>
+
+<li>
+  <p>
+最適化レベルが「中」および「高」の場合、ポインタ変数<code> p </code>に配列エレメントのアドレスが割り当てられ、インデックス式が他の配列式または間接的なロードで、インデックス式の値が<code> p </code>の割当てと<code> p</code>の使用で変わる場合、<code> p </code>が間違って最適化されることがありました。<br>[EW24173]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.70.2:<br>Thumb1用にコードを生成する際、明示的またはコンパイラの最適化を通じてSPからマイナスのオフセットを取得するスタックアクセスによって、インターナルエラーが発生しました。<br>[EW24231]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.70.2:<br>2つ以上の式を含むループで、ループ変数<code>+/-</code>定数オフセットにループ不変式が乗算される場合、定数オフセットが式によって異なるとループが間違って最適化される可能性がありました。<br>[EW24238]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.70.2:<br>ループ不変の切り詰めによる型変換が、変換前の値を使用する前のアドレスに間違ってホイストされる可能性がありました。<br>[EW24243]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.70.2:<br>Thumb2でVFP用にコードを生成する際、プログラムに2つの浮動小数点値の小さい方を選択するコードシーケンスが含まれていると、コンパイラがインターナルエラーを起す可能性がありました。<br>[EW24246]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.70.2:<br> ループ本体または条件付きブロックの最後にローカルのshort変数の部分的更新を設定すると、コンパイラがクラッシュすることがありました。<br>[EW24247]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.70.2:<br>値を作成するマスクが見つかった場合に、符号つきまたはゼロ拡張された処理が過剰に最適化される可能性があり、その前の拡張が効果を持たなくなります。マスクが拡張処理に依存する場合にも、こういうことが起こる可能性があり、その場合は拡張を削除すると間違った値が生成されます。<br>[EW24255]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.70.2:<br> CSmithで、コンパイラが間違ったコードを生成する問題が見つかりました。
+    <ul>
+<li>パックされた構造体で、ビットフィールドの直前にパディングがある場合、そのコンテナの一部のみが使用されます。</li>
+<li>構造体の変数に対するイニシャライザ。</li>
+<li>コンパイラがイニシャライザから値を減らすことがあります。</li>
+</ul><br> 上記すべてが発生すると、コンパイラはビットフィールドの間違った値を伝播します。<br> [EW24258]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.70.2:<br>最適化レベル「高」の場合、関数内で<code>g</code>が他に使用されることがない場合、マスキングの代入(<code>&amp;&amp;</code>または<code>||</code>条件内で使用される<code>g &amp;= 1</code>など)があやまって最適化されることがあります。<br>[EW24278]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.70.2:<br>符号なしのループ変数を持つループで、負の値で初期化されるものが、間違って最適化されることがあります。<br>[EW24280]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.70.2:<br>完全なマクロ呼出しが同じ行で前に存在する場合、診断列の位置が間違っていることがあります。<br>[EW24308]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.70.2:<br>厳密でないC89/(E)EC++/C++モードにおいて、<code>LONG_MAX</code>よりも大きく<code>ULONG_MAX+1</code>よりも小さい、サフィックスを持たない整数リテラルに、<code>long long</code>ではなく<code>unsigned long</code>型が誤って割り当てられます。特に、プレフィックス<code>-</code>演算子を持つ式で使用される場合、結果は予想通り、負の<code>long long</code>値ではなく正の<code>unsigned long</code>値となります。例: -2388135082が1906832214になります。<br>[EW24323]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.70.2:<br>複数または仮想の継承が関係する場合、一部の仮想関数呼出しについて、コンパイラがスタック使用分析の情報を生成しません。<br>[EW24329]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.70.2:<br>データメンバへのC++ポインタを使用するコードについて、<code>lower_il.c</code>、行13418におけるアサートが間違ってトリガされることがあります。<br>[EW24331]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.70.2:<br>MISRA-C規則5.1 (31の重要な文字)の違反診断メッセージが、IARシステムズのランタイムルーチン<code>__iar_unaligned___aeabi_memmove4</code>と<code>__iar_unaligned___aeabi_memmove8</code>を利用するプログラムに対して、間違って出力されます。<br>[EW24337]
+  </p>
+</li>
+
+
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+  <li>
+なし
+  </li>
+</ul>
+ 
+ 
+<h4><A NAME="his660">V6.60 2013-06-27</A></h4>
+<b>プログラム修正</b>
+ 
+<ul>
+
+<li>
+  <p>
+整数タイプへキャスティングされて、スイッチ表現式に使用されるポインタパラメータが、関数インライン化中に内部エラーを起こさなくなりました。<br>[EW23758,EW23941]
+  </p>
+</li>
+
+<li>
+  <p>
+割り込み関数へC++例外のフローがある場合でも、VFPサポートによるC++のコンパイルを実行しているときにインターナルエラーは発生しなくなりました。<br>[EW23804]
+  </p>
+</li>
+
+<li>
+  <p>
+MISRA-C:2004の規則5.4が正常にサポートされるようになりました。<br>[EW23907]
+  </p>
+</li>
+
+<li>
+  <p>
+Thumb2でコンパイルする際の一部のケースでは、シフトカウントが一定でない場合、右シフトを実行する前に、コンパイラは必要に応じて16ビット値を符号拡張またはゼロ拡張しませんでした。これは修正されました。<br>[EW23961]
+  </p>
+</li>
+
+<li>
+  <p>
+コンパイラは、明示的な<code>C</code>キャストにおいて基底にあるMISRA-C:2004タイプを変更しません。これにより、根底型に対してチェックを実施するルールで、MISRA-C:2004エラーが誤って生成されることがあります。<br>[EW23988]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.60.2:<br>高度な最適化レベルでThumb2向けにコンパイルされるleaf関数において、関数内のその他の文が比較的シンプルである場合、一部のケースでゼロと乗算の比較によって、比較に対する欠陥コードが生成されることがありました。<br>[EW24014]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.60.2:<br><code>memcpy</code>を使用して<code>int</code>より短い型の自動変数の内容を変更すると、コンパイラでインターナルエラーが発生することがあります。この問題を引き起こす例:
+<pre><code>void f (int *x)
+{
+short a; 
+memcpy (&amp;a, 0, 0); 
+if (a == 1 || a == 2)
+*x = 0;
+}</code></pre>
+[EW24037]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.60.2:<br> 同じファイルをコンパイルした2つの結果が、同じにならないことがごく稀にあります。<br>[EW24044]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.60.2:<br>パック構造へのポインタなど、アラインメントされていないソースから16ビットの値を読み込む場合、それを反対の符号にキャストしてから32ビットの値にキャストすると、無効なコードが生成されることがあります。<br>[EW24066]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.60.2:<br><code>assert()</code>がメッセージを生成します。6.60.2から動作が変更されました。詳しくは<A href="csarm.JPN.html#important">ARM用IAR C-SPYデバッガのリリースノート</A>を参照してください。<br>[EW24102]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.60.2:<br><code>#pragma</code>呼出しで非静的なメンバ関数を指定すると、エラーPe028 (式には定数値が必要)が発生します。<br>[EW24137]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.60.2:<br>テンプレート名をマングル化する際、テンプレートの型引数で<code>__packed</code>のようなIARシステムズの型修飾子が考慮されず、コンパイラでインターナルエラーまたはリンクする際にエラーが発生するか、不正なコードが警告なしに使用されます。例：
+<pre>
+テンプレート
+<code>template&lt;typename T&gt; struct X; </code>
+の
+<code>X&lt;int&gt;</code>
+および
+<code>X&lt;int __packed&gt;</code>
+の両方が同じマングル化された名前となります。
+</pre>
+同じテンプレートがテンプレート型引数の型修飾子のみに違いがある形でインスタンス化された場合、このバグは問題となります。メモリ修飾子は正しく考慮されます。<br>[EW24140]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.60.2:<br>符号付き右シフトのマスクされた結果の左シフト(ビット単位AND)が、右シフトなしで表現されることがあります。最適化が正しい場合でも、OSにより割り当てられたアドレス間の順序によっては実行されないこともあります。<br>[EW24143]
+  </p>
+</li>
+
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+
+<li><p><b>高度なヒープの更新</b><br>高度なヒープの利用可能な機能は<code>arm\inc\c\iar_dlmalloc.h</code>に記載されています。高度なヒープの静的機能は、このヘッダファイルを通して使用できます。
+  </p></li>
+
+</ul>
+ 
+ 
+<h4><A NAME="his650">V6.50 2012-11-10</A></h4>
+<b>プログラム修正</b>
+ 
+<ul>
+
+<li>
+  <p>
+ライセンスのタイムシステムで、うるう日の計算が間違っていました。これは修正されました。<br>[EW23273]
+  </p>
+</li>
+
+<li>
+  <p>
+ごく稀にコンパイラが無限ループの状態になることがありました。これは修正されました。<br>[EW23308, EW23573]
+  </p>
+</li>
+
+<li>
+  <p>
+<code>--macro_positions_in_diagnostics</code>の使用時に、コンパイラがインターナルエラーで終了しなくなりました。<br>[EW23337]
+  </p>
+</li>
+
+<li>
+  <p>
+VARARGSのコンストラクタについて間違ったコードが生成される場合がありました。これは修正されました。<br>[EW23358]
+  </p>
+</li>
+
+<li>
+  <p>
+コンパイラで、リターン値のない割込み関数についても役に立つスタックバックトレースが生成されるようになりました。<br>[EW23363]
+  </p>
+</li>
+
+<li>
+  <p>
+<code>__section_size()</code> (およびそのエイリアス<code>__segment_size()</code>)演算子の根底型は間違っていました。これはたとえば、その演算子が使用されるときに、MISRA-C:2004の規則10.1のエラーになることがありました。これは修正されました。<br>[EW23390]
+  </p>
+</li>
+
+<li>
+  <p>
+割込み関数(<code>__irq</code> または <code>__fiq</code>)の関数の開始/終了地点で、VFPレジスタ<code>D16</code>～<code>D31</code>が格納/リストアされるようになりました(使用可能な場合)。<br>[EW23418]
+  </p>
+</li>
+
+<li>
+  <p>
+コンパイラで、無限ループで終わる関数内のスタック上に配置された変数について、正しいデバッグ情報が生成されるようになりました。<br>[EW23422, EW23439]
+  </p>
+</li>
+
+<li>
+  <p>
+あるポインタからより小さい整数へキャストする際、エラー<code>Pa128</code>(定数式におけるキャストの切り詰め)が非表示またはワーニングに切り替えらると、コンパイラがインターナルエラーで終了していました。これは修正されました。<br>[EW23444]
+  </p>
+</li>
+
+<li>
+  <p>
+揮発性の自動構造体へのアクセスが、間違って最適化されることがありました。これは修正されました。<br>[EW23458]
+  </p>
+</li>
+
+<li>
+  <p>
+配列インデックス式における左シフト、右シフト、2乗の乗算、2乗の除算が、誤って最適化されることがありました。これは修正されました。<br>[EW23526]
+  </p>
+</li>
+
+<li>
+  <p>
+初期化されたグローバルまたは静的<code>const</code>ポインタからの間接的な式が、誤って最適化されることがありました。これは修正されました。<br>[EW23543]
+  </p>
+</li>
+
+<li>
+  <p>
+配列インデックス式がループ(L)で使用され、Lで不変である値が変数(V)に割り当てられ、Vがインデックス式で複数回発生する場合、配列インデックス式が誤って最適化されることがありました。<br>[EW23571]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.2:<br>まれなケースとして、例えば、関数呼出しや間接アクセスとして、内部ループが潜在的なエイリアスを含んでいて、内部ループと外部ループの両方で変数が修正された場合、ネストされたループの静的変数あるいはグローバル変数は誤って最適化されることがありました。これは修正されました。<br>[EW23566]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.2:<br>パターンでポインタの演算にポインタに対するポインタが使用された場合でも、インターナルエラーが発生しなくなりました。<br>[EW23579]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.2:<br>配列のアドレスがエレメントタイプよりも大きなデータ型へのポインタにキャストされ、いくつかの配列エレメントが同時にアクセスされる場合でも、インターナルエラーは発生しなくなりました。<br>[EW23581]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.2:<br>Cortex-M4Fにおいて、標準ライブラリコール<code>longjmp</code>は、VFPレジスタを正常に復旧するようになりました。<br>[EW23583]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.2:<br><code>__iar_Mutex</code>は、通常のライブラリでロックを割り当てることはなくなりました。<br>[EW23584]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.2:<br><code>void</code>への自動変数キャストのアドレスによって、インターナルエラーがトリガされることはなくなりました。<br>[EW23602]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.2:<br>右シフト（演算と論理）で<code>ZeroExt</code>プロパティが負になることはなくなりました。<br>[EW23613]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.2:<br><code>data_init.c</code>ファイル (<code>data_init3.c</code>の代わり)および<code>rle_init.c</code> (<code>rle_init3.c</code>の代わり)は、IAR Embedded Workbenchインストールから消失しなくなりました。<br>[EW23616]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.3:<br>ループ変数の初期化での部分割り当てはインターナルエラーを引き起こすことがあります。これは修正されました。<br>[EW23634]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.3:<br>ARMモードにおいて、0とのシフト値の符号比較、例えば<code>(x &gt;&gt; 16) &lt; 0</code>は、インターナルエラーを引き起こすことがありました。これは修正されました。<br>[EW23665]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.3:<br>メディア命令<code>SMMUL</code>は、符号なし（ゼロ拡張）オペランドにおいて誤って生成されました。これは修正されました。<br>[EW23682]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.3:<br>ヘッダファイル<code>init_streams.h</code>は、製品に同梱されて出荷されるライブラリソースコードに含められるようになりました。<br>[EW23709]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.3:<br>MISRA-C:2004 規則12.7は根底型を使用して、規則が破られていないかどうかを決定できるようになりました。<br>[EW23717]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.4:<br>右辺の式が定数によってマスクされて、唯一の用途はテストで値をゼロと比較することであり、場合によってはその値が割り当てと同じ定数またはより少ないビットセットを持つ定数によってマスクされた場合、間接割り当てが誤って最適化されることがありました。例:<br><code>p-&gt;foo = x &amp; 0x02;<br> ...<br> if (p-&gt;foo &amp; 0x02)</code><br>これは修正されました。<br>[EW23796]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.4:<br>アドレス式がループ依存変数とループ不変変数の両方で構成される間接割り当てを含むループは、ループの後に同じアドレス式への割り当てが続く場合、誤って最適化されることがあります。これは修正されました。<br>[EW23815]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.6:<br>最適化レベル高(-Oh、-Ohs、または(<code>-Oh</code>、<code>-Ohs</code>、または<code>-Ohz</code>)を有するThumb2でコンパイルする際、<code>switch</code>式の値を評価後、追加使用した場合、まれなケースながらこれらの使用で別の値が生成されることがあります。<br>[EW23873]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.6:<br>配列を初期化するために文字列リテラルを使用し、文字列リテラルに含まれるバイトが少なすぎる場合、コンパイラは配列の最後のバイトを正しく初期化しませんでした。失われたバイトは文字列リテラルの後から読み取られました。これは修正されました。<br>[EW23891]
+  </p>
+</li>
+
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+  <li>
+なし
+  </li>
+</ul>
+ 
+<h4><A NAME="his640">V6.40 2012-06-05</A></h4>
+<b>プログラム修正</b>
+ 
+<ul>
+
+<li>
+  <p>
+16ビットと8ビットの整数変数をビットフィールドとして使用しても、インターナルエラーが発生しなくなりました。<br>[EW22858]
+  </p>
+</li>
+
+<li>
+  <p>
+複数のシフトを含む符号付きの式をコンパイルする際に、ごくまれにコンパイラがループする可能性がありました。これはもう発生しなくなりました。<br>[EW22896]
+  </p>
+</li>
+
+<li>
+  <p>
+複数ファイルのコンパイル、<code>--mfc</code>とインラインアセンブラの文を使用するファイルを併用すると、インターナルエラーになることがありました。<br>[EW22905]
+  </p>
+</li>
+
+<li>
+  <p>
+ごくまれに関数のスタックフレームが、デバッグ情報が間違っているような形で(たとえば、4つずれているなど)最適化されることがありました。これはデバッガにおいて、スタック変数が予期される値をおそらく保持しない場所にあるかもしれないということです。これはもう発生しなくなりました。<br>[EW22907]
+  </p>
+</li>
+
+<li>
+  <p>
+仮想関数のメンバ関数定数へのポインタを含むモジュールが、コンパイラで所有クラスのtypeinfoオブジェクトに対して、インターナルエラー<code>symbol_lookup_M31</code>となることがありました。<br>[EW22918]
+  </p>
+</li>
+
+<li>
+  <p>
+揮発性のロードが、遠くにシフトされてロードのビットがまったく使用されないような式の一部である場合に、間違って削除されることがありました。<br>[EW22974]
+  </p>
+</li>
+
+<li>
+  <p>
+コンストラクタの呼び出し直後に続く<code>asm</code>文によって、インターナルエラーが発生していました。<br>[EW22982]
+  </p>
+</li>
+
+<li>
+  <p>
+正しくないビットフィールドの処理のために、共通部分式除去(CSE)が誤って解除されていました。これは修正されました。<br>[EW22988]
+  </p>
+</li>
+
+<li>
+  <p>
+<code>__weak</code>関数定義で<code>#pragma call_graph_root</code>を使用する際の問題が修正されました。Thumbモードでは、結果がコンパイラのインターナルエラーとなっていました。Armモードでは、場合によってリンカが、これらの関数の関数シンボルではなく、セクションシンボル(<code>.text_17</code>など)を使用していました。<br>[EW22996]
+  </p>
+</li>
+
+<li>
+  <p>
+モジュール内にある関数のローカルラベルを含む<code>asm</code>文で、関数が2度インライン化されている場合に、インターナルエラーが発生していました。これは修正されました。<br>[EW23006]
+  </p>
+</li>
+
+<li>
+  <p>
+コンパイラが、<code>IT</code>ブロック内で<code>IT</code>命令を生成しなくなりました。これはインターナルエラーの原因となっていました。<br>[EW23020、EW23083]
+  </p>
+</li>
+
+<li>
+  <p>
+C99複合リテラルのアドレスを使用して集合内のポインタを初期化すると、コンパイラでインターナルエラーが発生していました。<br>[EW23021]
+  </p>
+</li>
+
+<li>
+  <p>
+ごくまれに特定のアクセスが間違って最適化されることがありました。<br>[EW23028]
+  </p>
+</li>
+
+<li>
+  <p>
+コンパイラに、スタックにより割り当てられたローカル変数の表示がC-SPY以外のデバッガで不正確になるというバグがありました。<br>[EW23042, EW23047]
+  </p>
+</li>
+
+<li>
+  <p>
+静的イニシャライザで<code>unsigned long</code>から<code>unsigned int</code>へのキャストを行っても、エラーが発生しなくなりました。<br>[EW23054]
+  </p>
+</li>
+
+<li>
+  <p>
+コンパイラ、リンカ、elftoolsが、オプションを指定しないで実行するとエラーステータスを返していました。これは修正されました。<br>[EW23057]
+  </p>
+</li>
+
+<li>
+  <p>
+クロスコールの最適化が、ラベルから始まって、シーケンス内でそのラベルへの後方へのジャンプが1度あり、シーケンスの後にそこへの後方ジャンプが1度あるシーケンスを初期できませんでした。これは修正されました。<br>[EW23063]
+  </p>
+</li>
+
+<li>
+  <p>
+揮発性の引数を持つインラインアセンブラの式が、レジスタの割当てに失敗することがありました。<br>[EW23086]
+  </p>
+</li>
+
+<li>
+  <p>
+場合によっては、共通部分式を、その式の実行を制御する条件全体にホイストすることができました。<br>[EW23087]
+  </p>
+</li>
+
+<li>
+  <p>
+符号付きと符号なしの型が混在するインデックス式によって、まれにインターナルエラーが発生することがありました。<br>[EW23088]
+  </p>
+</li>
+
+<li>
+  <p>
+コンパイラで、<code>__weak</code>関数定義が誤ってインライン化されることがありました。<br>[EW23112]
+  </p>
+</li>
+
+<li>
+  <p>
+デバッグされたアプリケーションにcやdという名前のCシンボルが含まれていても、C-SPYでエラーが発生しなくなりました。<br>[EW23131]
+  </p>
+</li>
+
+<li>
+  <p>
+低い最適化レベルを使用する際、時間のインタフェースに64ビットの実装を使用すると機能しませんでした。これは修正されました。<br>[EW23162]
+  </p>
+</li>
+
+<li>
+  <p>
+コード<code>(void (**)(void)) 1</code>にMISRA-C:2004の規則17.5の違反がないかチェックする際、コンパイラがインターナルエラーを発行していました。これは修正されました。<br>[EW23164]
+  </p>
+</li>
+
+<li>
+  <p>
+コードを持たないアプリケーションをリンクするときや、Cortex-Mデバイスで、リンカが正しいライブラリを選&#xFFFD;&#xFFFD;するようになりました。<br>[EW23204]
+  </p>
+</li>
+
+<li>
+  <p>
+Thumb2で、最適化レベルが[中]の場合、フォーム<code>(x &gt;&gt; K) &amp; M</code>の式によって、消去されたビットが多すぎるコード(定数<code>K &gt; 0</code>および<code>M = (1 &lt;&lt; N) - 1</code> 定数<code>N &gt; 0</code>)が作成されていました。<br>[EW23214]
+  </p>
+</li>
+
+<li>
+  <p>
+ポインタと配列のエンディアン属性がコンパイラでサポートされるようになり、この問題はなくなりました。<br>[EW23220]
+  </p>
+</li>
+
+<li>
+  <p>
+静的変数が静的配列でインデックス式を使用するとインターナルエラーが引き起こされる可能性があるという、異常な問題を修正しました。<br>[EW23229]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.2:<br><code>LDRD</code>命令を使用して、4バイト未満のアラインメントを持つ8バイトの<code>struct</code>をコピーできましたが、これはアプリケーションの実行時に例外(ハード障害)となることがありました。これはもう発生しなくなりました。<br>[EW23272]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.2:<br>Thumb2でコンパイルする際、スタック上の単一バイトの配列をゼロに初期化することで、2バイトのメモリをクリアするコードが生成されなくなりました。<br>[EW23298]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.3:<br>8ビットの変数と8ビットより広い定数の間にあるビット単位AND(<code>&amp;</code>)によって、インターナルエラーが発生しなくなりました。<br>[EW23295, EW23362, EW23365]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.3:<br>まれに、同じ変数の複数のテストが誤って最適化されることがありました。これは修正されました。<br>[EW23360]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.3:<br>最適化レベル「中」(または「高」)で、<code>__PLD</code>や<code>__PLI</code>組込み関数に渡されたアドレスの更新が、最適化され続けることがありました。これは修正されました。<br>[EW23387]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.4:<br>複数の終了テスト(<code>&amp;&amp;</code>や<code>||</code>を含むテストは複数のテストとみなされます)を持つループが、あるテストが1つのループカウンタでテストされ、別のテストがポインタから間接的にロードされた値をテストし、そのポインタがループにしたがって繰り返されるたびにインクリメント/ディクリメントされる場合、誤って最適化されることがありました。<br>[EW23318]
+  </p>
+</li>
+
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+  <li><p>
+<b>インラインアセンブラ</b><br> 新しいオペランドの制約と修飾子。
+  </p></li>
+  <li><p>
+<b>CMSISの更新</b><br> CMSISバージョン3.01が製品に含まれるようになりました。
+  </p></li>
+</ul>
+ 
+<h4><A NAME="his630">V6.30 2011-10-22</A></h4>
+<b>プログラム修正</b>
+ 
+<ul>
+<li>
+  <p>
+MISRA-C 2004を選択したときに、診断メッセージに正しい規則番号が記載されるようになりました。<br>[EW22347]
+  </p>
+</li>
+
+<li>
+  <p>
+定数式の根底型が他の式と同じように評価されるようになりました。これは、MISRA-C:2004 6.10.4の特定の定数式に関する規則から逸脱します。IARシステムズとMISRA-C委員会はどちらも、この規則に意図が反映されていないと考えています。<br>[EW22373]
+  </p>
+</li>
+
+<li>
+  <p>
+クラスコンストラクタに文字列リテラルがあるメンバ<code>char</code>配列を初期化しても、インターナルエラーが発生しなくなりました。<br>[EW22503]
+  </p>
+</li>
+
+<li>
+  <p>
+Cortex-M0でコンパイルする際に、<code>__REV16</code>組込み関数が使用できるようになりました。<br>[EW22715]
+  </p>
+</li>
+
+<li>
+  <p>
+符号のない式の補数<code>~</code>が、式に右シフトや定数を持つビット単位が含まれる場合に、誤って最適化されなくなりました。<br>[EW22725]
+  </p>
+</li>
+
+<li>
+  <p>
+ファイルスコープや名前空間スコープの変数を初期化するときに、C++ 一時オブジェクトが、正しく作成されるようになりました。<br>[EW22751]
+  </p>
+</li>
+
+<li>
+  <p>
+テストの直前にシフトされた式の「未満」、「以下」、「より大きい」、「以上」の符号付きテストで、正しい結果が出るようになりました。<br>[EW22752]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.3:<br>テンプレート関数が関係する状況で<code>__packed</code>属性を使用しても、インターナルエラーが発生しなくなりました。<br>[EW22776]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.3:<br> 最適化レベル「高」で、複雑な配列インデックス式にsignedとunsignedの値が混在していても、インターナルエラーが発生しなくなりました。<br>[EW22787]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.3:<br>定数を引数として、特定のアセンブラ命令を挿入する組込み関数に引き渡す場合、C++モードでインターナルエラーが発生しなくなりました。<br>[EW22808]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.3:<br>帰納変数の初期化で、まれにインターナルエラーが発生することがありました。これは修正されました。<br>[EW22815]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.3:<br>複数ファイルのコンパイルオプション<code>--mfc</code>を1つ以上のサイズがゼロのソースファイルと使用しても、コンパイラがインターナルエラーで終了しなくなりました。<br>[EW22828]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.3:<br>ELFファイルのデバッグ情報が、コマンドラインオプション<code>--preinclude</code>の使用時に正しいソースファイル名を参照するようになりました。<br>[EW22848]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.3:<br>一部の診断(特に、順序通りでないアクセスについての未定義の動作のワーニングなど)が、ブロックローカルの匿名構造体/共用体変数のフィールドの使用に対してトリガされた場合、コンパイラがインターナルエラーで異常終了していました。この問題は修正されました。<br>[EW22850]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.3:<br>thread-exit関数が、割当てられた可能性のある夏時間の構造体を正しく割当解除するようになりました。<br>[EW22862]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.3:<br>IT-ブロック内の命令は、不要なコードの削除候補ではなくなりました。これを削除すると、IT-命令が不整合となるためです。<br>[EW22864]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.5:<br>同等のビットごとまたは式が複数の場所で発生して、すべてではなく少なくとも1つがビットフィールド命令として書き直された場合に、共通部分式除去(CSE)が正常に機能しなくなることがありました。これはもう発生しなくなりました。<br>[EW22932]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.6:<br> 関数には2つの<code>が含まれていますか?:</code>式(または同等の<code>if</code>文)を持つ関数に、2つの異なる変数に同じ値が割り当てられた同一のテストがある場合、最初の変数が<code>? :式の後に続く基本ブロックに再び割り当てられると、正しく最適化されないことがありました。:</code>式の後に続く基本ブロックに再び割り当てらると、正しく最適化されないことがありました。これは修正されました。<br>[EW22965]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.6:<br>コンパイラが、式<code>uchar = ~0 (int &amp; 1)</code>を誤って最適化することがありました。これは修正されました。<br>[EW22972]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.8:<br>左側が間接(ポインタや参照を通して)またはグローバル変数や静的変数で、右側が関数呼出しの場合に、一部の代入が誤って最適化されることがありました。これらの呼出しからスローされる例外は、正しく処理されませんでした。<br>最適化しようとするシーケンスのどれかが例外コードであった場合、最適化の内部クロスジャンプによって、正しいコードが作成されるとは限りませんでした。これは修正されました。<br>[EW23094, EW23185]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.8:<br><code>((unsigned char) x)-48 &lt; 10</code>のような範囲のチェックが、変数<code>x</code>をゼロ拡張せずに実行されるときがありました。<br>[EW23141]
+  </p>
+</li>
+
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+<li>なし</li>
+</ul>
+ 
+<h4><A NAME="his621">V6.21 2011-07-05</A></h4>
+<b>新機能</b>
+<ul>
+<li>なし</li>
+</ul>
+
+<b>プログラム修正</b>	
+<ul>
+<li>
+  <p>
+アドレス情報(<code>#pragma location</code>または<code>@</code>演算子から)が、関数の宣言から関数定義へと正しく引き継がれるようになりました。<br>例:<br><code>int foo(void) @ &quot;XXX&quot;;<br> int foo(void) { return 1; }<br></code>セクション<code>XXX</code>に関数<code>foo()</code>が配置されるべきですが、そうなっていませんでした。<br>[EW22448]
+  </p>
+</li>
+
+<li>
+  <p>
+一致しないアドレス文字列で<code>main</code>を再度宣言して結果のエラーを無効化すると、コンパイラでインターナルエラーが発生していました。この場合、エラーを無効化できなくなりました。<br>[EW22450]
+  </p>
+</li>
+
+<li>
+  <p>
+複数の定数を持つ可換の演算が、1つまたは複数の演算がより小さい型の場合であっても、間違って最適化されなくなりました。<br>[EW22470, EW22484]
+  </p>
+</li>
+
+<li>
+  <p>
+ネストされた割込みハンドラについて、<code>LR</code>が調整されました。<br>[EW22472]
+  </p>
+</li>
+
+<li>
+  <p>
+インラインテンプレート関数内の文字列リテラルが、constでない変数に変換されていました。これらの変数は<code>const</code>となり、仕様のとおりにROM内に配置されます。<br>[EW22475]
+  </p>
+</li>
+
+<li>
+  <p>
+インターナルエラーを修正しました。<br>[EW22479]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.21.4:<br>特定の小さい切替え文で、コンパイラが呼び出しごとに異なるコードを生成していました。これは修正されました。<br>[EW22520]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.21.4:<br>自動オブジェクト内の構造体メンバに対するストアが、オブジェクトのメンバがオブジェクトのアドレスが関数に引き渡される前に一度読み込まれる場合に、誤って最適化されていました。<br>[EW22537]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.21.4:<br>コンパイラが、部分的な定義の範囲拡張を回避するようになりました。<br>[EW22539]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.21.4:<br>Thumb-1命令<code>ADD.N Rdn,Rdn,SP</code>の範囲が拡張されるとき、<code>ADD.W Rdn,SP,Rdn</code>は予測不可能なため、同等のThumb-2命令<code>ADD.W Rdn,Rdn,SP</code>が使用されます。<br>[EW22555]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.21.4:<br>コンパイラが、分岐とターゲット間に非常に多くの定数や文字列リテラルを配置しなくなりました。<code>LR</code>がプッシュされないThumb-1関数によって、&quot;Internal error: Jump distance to far for B&quot;が発生することがありました。<br>また、コンパイラが<code>ADR</code>命令とそのターゲットの間に多数の定数や文字列リテラルを配置しなくなりました。これによって、&quot;Internal error:[AsmLine - OgAsm]: Error[400]: Expression out of range&quot;が発生することがありました。<br>[EW22611]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.21.4:<br><code>ASR</code>、<code>LSR</code>、<code>LSL</code>、<code>ROR</code>、または<code>RRX</code>への参照をコンパイルするときに、コンパイラがクラッシュしなくなりました。<br>[EW22614]
+  </p>
+</li>
+</ul>
+
+<h4><A NAME="his620">V6.20 2011-04-29</A></h4>
+<b>新機能</b>
+  <ul>
+       <li><p>
+<code>time.h</code>に-9999から9999までの年号をサポートするオプションの64ビットインタフェースが付属になりました。詳しくは、<A href="../EWARM_DevelopmentGuide.JPN.pdf">開発ガイド</A>を参照してください。
+       </p></li>
+
+  </ul>
+<b>プログラム修正</b>	
+  <ul>
+ 
+<li>
+  <p>
+<code>--use_c++_inline</code>オプションを使用してCファイルをコンパイルするときに、publicインライン関数の定義がインターナルリンケージを持つ関数や変数を参照できないというC99の規則がチェックされなくなりました。<br>[EW22161]
+  </p>
+</li>
+
+<li>
+  <p>
+ループ本体の最後の文がswitchであるループによって、最適化レベルが「高」のときにインターナルエラーがトリガされなくなりました。<br>[EW22183]
+  </p>
+</li>
+
+<li>
+  <p>
+C++ Cシステムヘッダ(<code>errno.h</code>など)が、<code>extern &quot;C&quot;</code>ブロック内にインクルード可能になりました。<br>[EW22188]
+  </p>
+</li>
+
+<li>
+  <p>
+ループ本体に複数のリターンを持つ<code>while</code>ループによって、インターナルエラーがトリガされなくなりました。<br>[EW22195]
+  </p>
+</li>
+
+<li>
+  <p>
+コンパイラで、マルチバイトを含むマクロパラメータを処理できるようになりました。<br>[EW22214]
+  </p>
+</li>
+
+<li>
+  <p>
+非常に多くの定数データシンボルを持つモジュールのコンパイルが、かなり高速になりました。<br>[EW22243]
+  </p>
+</li>
+
+<li>
+  <p>
+マクロ引数内でユーザ定義マクロに<code>offsetof</code>マクロが使用される場合、コンパイラが<code>offsetof</code>マクロの内容に関して不要なワーニングを出力しなくなりました。<br>[EW22250]
+  </p>
+</li>
+
+<li>
+  <p>
+製品に付属のファイル<code>arm\src\lib\thumb\cstartup_M.c</code>とリンクするときに、シンボル<code>__vector_table</code>がインクルードされるようになりました。<br>[EW22252]
+  </p>
+</li>
+
+<li>
+  <p>
+コンパイラで、コメント内およびソース行の接合メカニズムでマルチバイト文字が正しく処理されるようになりました。<br>[EW22276]
+  </p>
+</li>
+
+<li>
+  <p>
+2番目のテストを使用して1回だけループの繰り返しを実行すると判断するときに、複数のテストと空白のループ本体を持つ1回きりのループが展開できるようになりました。<br>[EW22295]
+  </p>
+</li>
+
+<li>
+  <p>
+左シフトおよび減算の関係する複雑な式が、常に正しく最適化されるようになりました。<br>[EW22306]
+  </p>
+</li>
+
+<li>
+  <p>
+場合によっては、コンパイラがマイナス8ビットのイミディエイトを持つThumb-2 <code>ADD</code>命令を生成することがあり、これがアセンブラによってnarrowThumb-1 <code>SUB</code>命令に変換されていました。これは修正されました。<br>[EW22308]
+  </p>
+</li>
+
+<li>
+  <p>
+MISRA-C規則が、<code>#pragma location</code>内や<code>@</code>演算子の後のアドレスに誤って定数式に適用され、MISRA-Cチェックが有効な場合に間違った診断が行われていました。これは修正されました。<br>[EW22321]
+  </p>
+</li>
+
+<li>
+  <p>
+アドレスのオペランドが<code>[&lt;Rn&gt;,&lt;Rm&gt;,#&lt;imm&gt;]</code>の形式のときに、Thumb-2のコードを生成して64ビットのストアを32ビットのストアに分割しようとしても(アラインメントのためなど)、インターナルエラーが出力されなくなりました。<br>[EW22324]
+  </p>
+</li>
+
+<li>
+  <p>
+メンバへのポインタへの関数の非標準の暗黙的キャストに対して、コンパイラでエラーが出力されるようになりました。<br>[EW22337]
+  </p>
+</li>
+
+<li>
+  <p>
+トランポリン関数<code>__iar_via_rw_&lt;Rn&gt;</code>が書込み可能なセクションフラグメントとして生成されるようになり、こうした関数が必要なケースでも<code>__ramcode</code>関数が使用可能になりました。<br>[EW22346]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.20.2:<br>条件付きのジャンプを最適化するときに、コンパイラがインターナルエラーで終了しなくなりました。<br>[EW22404]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.20.2:<br>メディア拡張を持つコアの場合、コンパイラで<code>{S,U}XTA{B,H}</code>ではなく<code>ADD</code>が生成されなくなりました。<br>[EW22407]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.20.2:<br>アドレスのオペランドが<code>[&lt;Rn&gt;,&lt;Rm&gt;,#&lt;imm&gt;]</code>の形式のときに、Thumb-2のコードを生成して64ビットのロードを32ビットのロードに分割しようとしても(アラインメントのためなど)、インターナルエラーが出力されなくなりました。<br>[EW22415]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.20.2:<br>構造体または構造体配列の静的初期化において、名前のないビットフィールドに続くフィールドで間違った値が取得されなくなりました。<br>[EW22416]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.20.2:<br>構造体またはクラス定義に対してキーワード<code>__packed</code>を使用する際に、コンパイラが間違ってワーニングPe021(この場合、型修飾子は無効)を出力していました。<br>[EW22417]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.20.2:<br><code>goto</code>文を持つループで、すべてのケースについてインターナルエラーがトリガされなくなりました。<br>[EW22420]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.20.2:<br>定数の整数だけからなる集合イニシャライザで、イニシャライザで指定されていない部分にある2つより下位レベルにネストされた非整数と非集合型が関係する場合、コンパイラがインターナルエラーにより終了しなくなりました。<br>[EW22424]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.20.3:<br>Thumb-2コードを生成する際、大きなスタックフレーム上で32ビットの浮動小数点値にアクセスしてもインターナルエラーが発生しなくなりました。<br>[EW22439]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.20.3:<br>整数からのキャストを含むポインタ定数が、間違った型を取得することがあり、不正なエラーやインターナルエラーの原因となっていました。これは修正されました。<br>[EW22441]
+  </p>
+</li>
+  </ul>
+
+
+<h4><A NAME="his610">V6.10 2010-11-04</A></h4>
+<b>新機能</b>
+  <ul>
+<li><p> 本製品は1999年に定義された最新のC規格(C99)をデフォルトのC言語として使用しています。本製品の以前のメジャーバージョンでは、1989年に定義された古いC規格(C89)を使用していました。<code>--c89</code>オプションを使用すると、コンパイラでC89をまだ使用することができます。一部のC99の機能のサポートが中止されているため、この製品は旧バージョンと完全に互換性があるわけではありません。C99の可変長配列、VLAは、デフォルトのC言語ではサポートされていません。オプション<code>--vla</code>を使用すると、これらを有効にできます。CライブラリはすべてのC99機能をサポートしていますが、C99言語か任意のC++言語と併用している場合に限ります。C89言語と併用する場合、C99で追加された機能は使用できません。</p></li>
+<li><p> EC++およびEEC++の実装は、大きくは変わってはいません。</p></li>
+<li><p> C++言語のサポートが追加されました。デフォルトでは、2003 C++規格が完全にサポートされていますが、<code>--no_exceptions</code>および<code>--no_rtti</code>を使用することにより、例外とランタイム型情報をそれぞれ無効にした状態で使用できます。</p></li>
+<li><p>スレッドセーフライブラリ<br />DLIBライブラリは、スレッド環境での使用をサポートするようになりました。ヒープやファイル構造と同じように、一部のライブラリシステムはロックにより保護されます。<code>locale</code>や<code>errno</code>のような他のライブラリシステムは、静的データがスレッドのローカル記憶に割り当てられます。DLIBスレッドのサポートはユーザが選択したRTOSでサポートされるか、または手動で実装できます。詳しくは、<A href="../EWARM_DevelopmentGuide.JPN.pdf">開発ガイド</A>を参照してください。
+          </p></li>
+<li><p> コンパイラとアセンブラは、ライブラリのシステムヘッダファイルがある場所を自動的に認識できるようになりました。以下のオプションを使用してコンパイラを制御できます。 
+               <ul>
+<li><code>--dlib_config</code>を使用して、DLIBライブラリの構成を選択します。</li>
+<li><code>--system_include_dir</code>を使用すると、システムヘッダのベースとして使用するディレクトリをオーバライドできます。</li>
+<li><code>--no_system_include</code>を使用して、自動化をオフにすることができます。
+                     </li>
+               </ul></p></li>
+<li><p> コンパイラでオプション<code>--relaxed_fp</code>を使用すると、一部の浮動小数点式をより良く最適化できるようになりました。有効にした場合、コンパイラは浮動小数点式でより小さい浮動小数点型を小さくしようと試みます。これによって精度の劣化が小さくなります。
+          </p></li>
+  </ul>
+<b>プログラム修正</b>
+  <ul>
+<li>
+  <p>
+ライブラリ関数<code>fpclassify()</code>は、正規化数と非正規化数を正しく処理できるようになりました。<br>[EW21098]
+  </p>
+</li>
+
+<li>
+  <p>
+小さい<code>memcpy</code>の呼出しは、ソースと目的地のアドレスのアラインメントがどちらも正しい場合、代入に変換されなくなりました。<br>[EW21193]
+  </p>
+</li>
+
+<li>
+  <p>
+コンパイラは、異なる種類の変数が同じセクションに配置されていないかをチェックするようになりました。<br>[EW21351]
+  </p>
+</li>
+
+<li>
+  <p>
+<code>__segment_begin()</code>または<code>__segment_end()</code>が条件付きコードで使用されていても、インターナルエラーが発生しなくなりました。<br>[EW21770、EW21838、EW21905]
+  </p>
+</li>
+
+<li>
+  <p>
+符号なしのループカウンタでゼロを通り越してループがデクリメントすると、間違って最適化されることがありました。<br>[EW21795]
+  </p>
+</li>
+
+<li>
+  <p>
+すべてのシステムヘッダがMISRAエラーを出力しなくなりました。<br>[EW21799]
+  </p>
+</li>
+
+<li>
+  <p>
+最適化の実行中に、コンパイラがオフセットを持つ関数ポインタを含むイニシャライザを処理するようになりました。<br>[EW21870]
+  </p>
+</li>
+
+<li>
+  <p>
+エンディアン属性は、ポインタや配列ではサポートされていません。ポインタや配列については、エンディアン属性が指定できないようになりました。<br>[EW21887]
+  </p>
+</li>
+
+<li>
+  <p>
+バイトオーダの逆順が、エンディアン属性およびアラインメントされていないアクセスの組合せに対しても正しく実行されるようになりました。これまでは、これが処理されないときがありました。<br>[EW21888]
+  </p>
+</li>
+
+<li>
+  <p>
+最適化レベル[高]で、以下のような小さいループの速度を最適化した場合
+    <pre><code>
+int test(int n)
+{
+while (n-- &gt; 0)
+if (!foo(n))
+break; 
+return n;
+}
+      </code></pre>
+間違って展開されて、インターナルエラーが発生することがありました。<br>[EW21949]
+  </p>
+</li>
+
+<li>
+  <p>
+名前のない構造体であるメンバを持つクラス、または名前のない構造体の配列で、少なくともメンバの1つがPoDでない場合、コンパイル中にインターナルエラーが発生することがありました。<br>[EW21958]
+  </p>
+</li>
+
+<li>
+  <p>
+ループテストで事前インクリメントまたは事前デクリメントを持つwhileループが、ループ本体の最終部分がdoループの場合に、間違って最適化されることがありました。<br>[EW21999]
+  </p>
+</li>
+
+<li>
+  <p>
+コンパイラが、Thumb-2比較および分岐命令(<code>CBZ</code>または<code>CBNZ</code>)のレジスタオペランドによって、同等でない命令シーケンスを(クロスコールまたはクロスジャンプ初期化によって)マージしなくなりました。<br>[EW22000]
+  </p>
+</li>
+
+<li>
+  <p>
+<code>enum</code>が定義される前にパラメータまたはリターン型として指定された場合、コンパイラが間違ったnumサイズ(属性<code>Tag_ABI_enum_size</code>)をELFファイルに記録しなくなりました。<br>[EW22013]
+  </p>
+</li>
+
+<li>
+  <p>
+Thumb-2では、コンパイラが後に続く命令またはラベルの4バイトアラインメントを実現するために<code>MULS.N</code>を<code>MULS.W</code>(これはThumb-2命令ではありません)に拡げようとしても、インターナルエラーが発生しなくなりました。<br>[EW22018]
+  </p>
+</li>
+
+<li>
+  <p>
+コンパイラが関数シンボルを、<code>memcpy</code>のようなコンパイラにより最適化された関数への引数として処理できるようになりました。<br>[EW22052]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.10.2:<br>ネストされた<code>for</code>ループで、内部ループの初期または最終の値が外部ループの変数に定数の倍率係数や定数オフセットを掛けたものである場合、最適化レベル「高」でインターナルエラーが発生しなくなりました。<br>[EW22078]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.10.2:<br>複数の出口を持つ一部の<code>while</code>ループで、最適化レベル「高」のときにインターナルエラーが発生しなくなりました。<br>[EW22080]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.10.2:<br>コンパイラが直接の<code>ADR</code>参照を生成してない場合に、定数データが<code>.rodata</code>セクションに配置されるようになりました。<code>ADR</code>参照がある場合、定数データは<code>.text</code>セクションに配置されます。<br>[EW22081]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.10.2:<br>標準C++がkickstart製品でも有効になりました。<br>[EW22089]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.10.2:<br>MISRA-C:2004規則20.2チェッカが、長いプリプロセッサシンボル定義を処理できるようになりました。<br>[EW22117]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.10.2:<br>Cortex-M3で、ソフトウェア割込み関数(<code>SWI</code>)への呼出しで終わる同一の命令シーケンス(クロスコール)に対して、コンパイラがサブルーチンを生成しなくなり、インターナルエラーも発生しなくなりました。<br>[EW22118]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.10.2:<br>コンパイラが、<code>STREX</code>命令の結果を使用するコードを削除しなくなりました(この命令は、<code>__STREX</code>組込み関数を使用して生成できます)。<br>[EW22119]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.10.2:<br>コンパイラが符号付き16ビットの値を、<code>MOVT</code>命令のイミディエイトのオペランドとして使用しなくなりました。代わりに、16ビットの符号なしの値が使用されます。この理由は、<code>MOVT</code>が0から65535のイミディエイト値を想定するためです。<br>[EW22121]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.10.2:<br>結果を使用せずに関数アドレスを評価しても、インターナルエラーが発生しなくなりました。<br>[EW22146]
+  </p>
+</li>
+  </ul>
+
+<h4><A NAME="his550">V5.50 2010-04-21</A></h4>
+<b>新機能</b>  
+  <ul>
+      <li>
+        <p>
+VFPを持たないデバイスについて、次のCライブラリ浮動小数点関数の速度どサイズが最適化されています:<br> <code>sqrt</code>, <code>sqrtf</code>, <code>modf</code>, <code>modff</code>, <code>fabs</code>, <code>fabsf</code>, <code>fmod</code>, <code>fmodf</code>, <code>floor</code>, <code>floorf</code>, <code>ceil</code>, <code>ceilf</code>, <code>ldexp</code>, <code>ldexpf</code>, <code>frexp</code>, <code>frexpf</code>。 
+        </p>
+      </li>
+      <li>
+        <p>
+VFPを持つデバイスについて、次のCライブラリ浮動小数点関数のスピードどサイズが最適化されています:<br> <code>sqrt</code>, <code>sqrtf</code>, <code>modf</code>, <code>modff</code>, <code>fabs</code>, <code>fabsf</code>, <code>fmod</code>, <code>fmodf</code>, <code>floor</code>, <code>floorf</code>, <code>ceil</code>, <code>ceilf</code>, <code>ldexp</code>, <code>ldexpf</code>, <code>frexp</code>, <code>frexpf</code>, <code>asin</code>, <code>asinf</code>, <code>acos</code>, <code>acosf</code>, <code>atan</code>, <code>atanf</code>, <code>atan2</code>, <code>atan2f</code>。 
+        </p>
+      </li>
+  </ul>
+<b>プログラム修正</b>
+  <ul>
+        <li>
+          <p>
+関数の最後に到達するのを妨げるコードを含んだ関数を最適化する際に、最後に到達可能な命令の後にコンパイラが誤ってラベルを残していました。このラベルが後で、関数からの制御の流れの漏れと認識され、インターナルエラーが発生していました。<br>[EW21541]
+          </p>
+        </li>
+
+        <li>
+          <p>
+ベースタイプでもキーが見つからない場合に、マップインデックス演算子の呼出しがデフォルトで値を生成するようになりました。<br>[EW21592]
+          </p>
+        </li>
+
+        <li>
+          <p>
+C++動的初期化を必要とする静的記憶寿命オプションを持つ指定のイニシャライザ(IAR拡張が有効な場合にEC++で使用可能なC99機能)を使用する際に、誤った初期化が行われる可能性がありました。<br>[EW21649]
+          </p>
+        </li>
+
+        <li>
+          <p>
+<code>LDC</code>および<code>STC</code>に組込みを使用した場合に、コンパイラがクラッシュすることがありました(アクセス違反)。<br>[EW21657]
+          </p>
+        </li>
+
+        <li>
+          <p>
+関数<code>f</code>がグローバル変数を更新する際、以下の場合に誤って最適化されることがありました。<br>
+            <ul>
+<li><code>f</code>に複数のリターン文がある。</li>
+<li>リターン文のどれか１つがループ内にあり、</li>
+<li><code>f</code>が別の関数内にインライン化されている。</li>
+            </ul>
+[EW21666]
+          </p>
+        </li>
+
+        <li>
+          <p>
+スタックパラメータを生成するためにコンパイラが<code>memcpy</code>への呼出しを挿入する関数呼出しの場合、レジスタ<code>R1</code>が<code>memcpy</code>の呼出し後も有効であると見なされなくなりました。<br>[EW21668]
+          </p>
+        </li>
+
+        <li>
+          <p>
+コンパイラがアラインメントされていないCortex-M0のメモリアクセスを生成しなくなりました。<br>[EW21687]
+          </p>
+        </li>
+
+        <li>
+          <p>
+Thumb-2対応のコアについて、サイズ指定子(<code>.W</code>または<code>.N</code>)なしにはコンパイラが分岐命令を生成しなくなりました(Thumbモードの場合)。これを行うと、場合によってインターナルエラーが発生する恐れがあるためです。<br>[EW21699]
+          </p>
+        </li>
+
+        <li>
+          <p>
+EWARM 5.50.5:<br>列挙子の定数を直接的に浮動小数点値として使用しても、破損した値が生成されなくなりました。<br>[EW21704]
+          </p>
+        </li>
+
+        <li>
+          <p>
+EWARM 5.50.5:<br>テンプレートパラメータに依存するサイズを持つブロックローカル静的配列の配列ポインタディケイで、インターナルエラーが発生しなくなりました。<br>例：<br>
+            <pre>
+template<typename C>struct Q
+{
+C * get()
+{
+static long x[sizeof(C)]; 
+return (C *)x;
+}?              };</pre>
+[EW21728]
+          </p>
+        </li>
+
+        <li>
+          <p>
+EWARM 5.50.5:<br>ARM11の命令スケジューリングで、シフトオペランドを持つ<code>PKHBT</code>をスケジューリングする際に、インターナルエラーが発生しなくなりました。<br>[EW21745]
+          </p>
+        </li>
+
+        <li>
+          <p>
+EWARM 5.50.5:<br><code>USAT</code>命令(飽和演算用)が、Thumb-2モードでも正しいビット幅により生成されるようになりました(1つずれていました)。<br>[EW21768]
+          </p>
+        </li>
+
+        <li>
+          <p>
+EWARM 5.50.5:<br><code>double</code>から<code>long long</code>へのキャストによって、少数部分がゼロではない非常に大きな入力についても間違った値が生成されなくなりました。範囲[2^32, 2^52]の値が影響を受けていました。<br>[EW21786]
+          </p>
+        </li>
+
+        <li>
+          <p>
+EWARM 5.50.5:<br>インターナルエラーがある条件でも発生しなくなりました。その条件において、テストは<code>?:</code>フォームでの式:<br><code>if ((condition1 &amp;&amp; condition2) ?1 :0)</code><br>[EW21807]
+          </p>
+        </li>
+
+        <li>
+          <p>
+EWARM 5.50.5:<br> 関数パラメータのアドレスの範囲チェックは、正しく変換されるようになりました: 以前はインターナルエラーになることがありました。<br>[EW21826]
+          </p>
+        </li>
+
+        <li>
+          <p>
+EWARM 5.50.5:<br>コンパイラで、本体で<code>__noreturn</code>属性を持つ関数を呼び出す関数をインライン化することが可能になりました。<br>[EW21841]
+          </p>
+        </li>
+
+        <li>
+          <p>
+EWARM 5.50.7:<br>複数の定数テーブル参照が、<code>LDR (immediate)</code>命令が関数の外にたどり着けないほどの)大きい関数と同じITブロックに配置された場合に、インターナルエラーが出力されなくなりました。<br>[EW21968]
+          </p>
+        </li>
+
+        <li>
+          <p>
+EWARM 5.50.7:<br>不変ポインタ変数を通して条件付きアクセスを含むループが、間違って最適化されなくなりました。<br>[EW21992]
+          </p>
+        </li>
+
+        <li>
+          <p>
+EWARM 5.50.7:<br>マイナスの除算を持つ式の符号付き除算が、最適化されて符号なしの除算を使用することがなくなりました。<br>[EW22043]
+          </p>
+        </li>
+  </ul>
+
+<h4><A NAME="his541">V5.41 2009-12-14</A></h4>
+<b>新機能</b>    
+  <ul>
+    <li>
+なし
+    </li>
+  </ul>
+<b>プログラム修正</b>
+  <ul>
+<li>
+  <p>
+<code>cstartup_M.c</code>にデフォルトの割込みハンドラが含まれています。<br>[EW21314]
+  </p>
+</li>
+
+<li>
+  <p>
+フォーム<br><code>if (expr &lt; 0) v = -expr;</code><br>の式が、正しく最適化されるようになりました。<br>  [EW21340]
+  </p>
+</li>
+
+<li>
+  <p>
+次の場合に、ループ内のテストが正しく最適化されるようになりました。<br> a) ループの初回および最後の繰返しの値が一定である。<br> b) テストで式が定数と比較されている。<br> c) 式の計算によって初回または最後の繰返しのどちらかがオーバフローまたはアンダーフローとなる。<br>[EW21363]
+  </p>
+</li>
+
+<li>
+  <p>
+最適化の途中で、複雑な|-式が無限ループにならなくなりました。<br>[EW21380]
+  </p>
+</li>
+
+<li>
+  <p>
+レジスタよりもライブの変数が多いと、レジスタがスタックフレームにあふれることがありました。あふれた大きい（8バイトを超える）レジスタパラメータによるインターナルエラーが発生しなくなりました。<br>[EW21386]
+  </p>
+</li>
+
+<li>
+  <p>
+明示的に指定されたライブラリを使用したリンクでの属性チェックに関して、リンカがより柔軟になりました。<br>[EW21387]
+  </p>
+</li>
+
+<li>
+  <p>
+絶対アドレスの変数アクセスによって、最適化の際に<code>volatile</code>属性が失われなくなりました。<br>[EW21400]
+  </p>
+</li>
+
+<li>
+  <p>
+基本ベースが仮想的に継承された基底クラスから継承するクラスのデバッグ情報が、正しく生成されるようになりました。以前はこの問題によって、C-SPYで基底クラスが間違って表示されることがありました。<br>[EW21411]
+  </p>
+</li>
+
+<li>
+  <p>
+インラインアセンブラコードのアセンブラエラーが、コンパイラのインターナルエラーとして報告されなくなりました。<br>[EW21436]
+  </p>
+</li>
+
+<li>
+  <p>
+コンパイラで、エスケープシーケンスを使用して文字の値255が文字列リテラルにエンコードされるようになりました。これは、アセンブラがこうした値をファイル末尾として認識することを回避するためです。<br>[EW21443]
+  </p>
+</li>
+
+<li>
+  <p>
+未使用のレジスタが名称変更の後に使用される場合に、こうしたレジスタがスタックに保存されなくなるのを防ぐため、レジスタが名称変更されなくなりました。<br>[EW21449]
+  </p>
+</li>
+
+<li>
+  <p>
+すべての参照からアクセスできるように定数テーブルのエントリがコピーされる場合に、コンパイラがインターナルエラーを報告する代わりに、正しいコードを生成するようになりました。<br>[EW21471]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 5.41.2:<br> ループ内の整数式で、式が変数<code>(x + ...+ C)</code>に定数を追加したり、変数から定数を差し引く場合に誤って最適化されなくなりました。また、定数ループインデックス変数 <code>(x = i - C)</code>から差し引かれたもの、またはこの変数に追加されたものと同じ定数が変数に割り当てられます。<br>[EW21493]
+  </p>
+</li>
+
+
+<li>
+  <p>
+EWARM 5.41.2:<br>フォーム<br><code>expr1 &gt; c1 &amp;&amp; expr2 &lt; c2</code><br>または<br><code>expr1 &lt; c1 || expr2 &gt; c2</code><br>に対する2つのテストは、<code>expr1</code>が<code>expr2</code>と同じでない場合に範囲テストとして誤って最適化されなくなりました。<br>  [EW21498]
+  </p>
+</li>
+
+
+<li>
+  <p>
+EWARM 5.41.2:<br>定数とメモリからロードされた値間のビットごとのand処理が、ロードが切り詰められた状態に変換されることがあり、この場合は変数の一部しかメモリからロードされません。64ビットの変数の場合(つまり<code>long long</code>)、ロードが切り詰められでもインターナルエラーが発生しなくなりました。<br>[EW21517]
+  </p>
+</li>
+
+
+<li>
+  <p>
+EWARM 5.41.2:<br> ループに複雑な配列インデックス式があっても、インターナルエラーが発生しなくなりました。<br>[EW21545]
+  </p>
+</li>
+
+
+<li>
+  <p>
+EWARM 5.41.2:<br> 32ビットより小さい型で、(たとえば<code>CMP</code>、<code>TST</code>、<code>TEQ</code>を使用して)比較する前に、符号拡張またはゼロ拡張しなければならないことがありました。ビットごとのand/xor処理の結果がゼロと比較される場合(つまり、<code>TST</code>または<code>TEQ</code>命令が生成される場合)<br>、必要があれば符号拡張およびゼロ拡張が生成されるようになりました。[EW21550]
+  </p>
+</li>
+
+
+<li>
+  <p>
+EWARM 5.41.2:<br>組み込み<code>__CLZ</code>、<code>__REV</code>、または<code>__REVSH</code>が定数の引数とともに使用されるときに、正しい値が生成されるようになりました。<br>[EW21561]
+  </p>
+</li>
+  </ul>
+
+<h4><A NAME="his540">V5.40 2009-07-10</A></h4>
+<b>新機能</b>  	
+  <ul>
+    <li>
+なし
+    </li>
+  </ul>
+<b>プログラム修正</b>  
+  <ul>
+
+<li>
+  <p>
+if-then-else文が最適化レベル「低」でも疑問符の式に最適化できてしまい、どちらが最新の文なのかデバッガが混乱していました。最適化レベル「低」および」「なし」での最適化が無効にされました。<br>[EW20828]
+  </p>
+</li>
+
+<li>
+  <p>
+オプション<code>--strict_ansi</code>および<code>--warnings_are_errors</code>が使用されていても、システムヘッダでの<code>long long</code>の使用に対して、コンパイラによりメッセージが生成されなくなりました。<br>[EW20844]
+  </p>
+</li>
+
+<li>
+  <p>
+<code>memcpy</code>または<code>memset</code>の呼び出しに変換されたループ内の最後の値が、場合によって1つずれていることがありました。<br>[EW20886]
+  </p>
+</li>
+
+<li>
+  <p>
+行外のテンプレートメンバ関数定義を正しい宣言に突き合せようとする際の、コンパイラのインターナルエラーを修正しました。2つ以上のテンプレートメンバ関数が、メンバ関数型のパラメータへのポインタのthis修飾子で異なる場合に、この問題が発生していました。<br>例：<br><code><pre>
+struct X
+{
+template<typename Y, typename Z>int fun(Y (Z::*fp)()); 
+template<typename Y, typename Z>int fun(Y (Z::*fp)() const);
+};
+
+template<typename Y, typename Z>
+int X::fun(Y (Z::*fp)())
+{
+return 1;
+}</pre></code>[EW20920]
+  </p>
+</li>
+
+<li>
+  <p>
+MISRA-Cエラー<code>Pm020</code>がワーニングとして誤って報告され、対応する規則番号がエラーメッセージから省略されていました。<br>[EW20925]
+  </p>
+</li>
+
+<li>
+  <p>
+複数の入力ファイル(<code>--mfc</code>)をEmbedded C++モードでコンパイルする際、コンパイラで<code>[assertion failed at: &quot;.\src\parser\edg\lower_il.c&quot;, line 2484]</code>というインターナルエラーが出力される場合がありました。<br>[EW20927]
+  </p>
+</li>
+
+<li>
+  <p>
+グローバル変数(<code>g</code>)が結果(<code>g</code>はループの繰返しの最中に値を引き渡さない)を保持するループが、誤って最適化される場合がありました。
+    <pre>
+for (...) {
+g = ...
+if (...) break; 
+g = ...
+}</pre>
+[EW20952]
+  </p>
+</li>
+
+<li>
+  <p>
+コンパイラおよびアセンブラがオブジェクトファイルを生成し、グループセクションヘッダテーブルのエントリが、ELFフォーマットで要求されているとおりに、すべてのメンバのエントリの前に表示されませんでした。<br>[EW20988]
+  </p>
+</li>
+
+<li>
+  <p>
+<code>memcpy</code>の呼出しの後、バッファ(<code>b</code>)に<code>n</code>文字が長さ<code>n</code> (ゼロ終了以外のすべての文字)の文字列リテラルから割当てられ、代入<code>b[n] = 0</code>が誤って削除されていました。<br>[EW20991]
+  </p>
+</li>
+
+<li>
+  <p>
+除算と剰余の演算を両方含む関連付きの式が、ごく稀な場合に誤って最適化されることがありました。<br>[EW21010]
+  </p>
+</li>
+
+<li>
+  <p>
+3つ以上のクラスから継承するクラス（仮想メソッドが3つ以上の引数を持つ場合）であるTHUMB向けのEEC++をコンパイルする際、生成されたサンクのいずれかにエラーがありました（複数の継承がある場合にコンパイルする際、'this'ポインタを調整する小さなコードが必要なときがあります。このコードを'サンク'と呼びます)。<br>[EW21014]
+  </p>
+</li>
+
+<li>
+  <p>
+2つのフィールド<code>a</code>および<code>b</code>によってレジスタ変数として割当てられた、8バイト以上の構造体<code>x</code>の場合、疑問符の式(<code>x.a &lt; x.b ? x.a : x.b</code>など) に短縮可能な、単純なif文がインターナルエラーの原因となることがありました。<br>[EW21017, 21108]
+  </p>
+</li>
+
+<li>
+  <p>
+<code>memcpy</code>によって割当てられた自動構造体へのメンバアクセスが、誤って最適化される場合がありました。<br>[EW21020]
+  </p>
+</li>
+
+<li>
+  <p>
+VFP用にコンパイルする際、変数引数リストを用いた関数呼出しで、スタック上で引き渡された引数が<code>double</code>から<code>int</code>に変換され、結果として間違ったスタックポインタ値になる可能&#xFFFD;&#xFFFD;&#xFFFD;がありました。<br>[EW21023]
+  </p>
+</li>
+
+<li>
+  <p>
+Thumbモードの<code>--legacy RVCT3.0</code>を用いてコンパイルする場合に、同じコンパイルユニットの関数同士で定数が共有され、2バイトのアラインメントを持つ1つのセグメントパート内に関数のいずれかが生成されることがありました。こうした場合に<code>R_ARM_THM_PC8</code>の再配置を正しく解決するには、4バイトのアラインメントが必要です。<br>[EW21031]
+  </p>
+</li>
+
+<li>
+  <p>
+コードジェネレータが、タイプで要求されたものよりも厳密なアラインメントを用いて配置されたオブジェクトを検出できないことがありました。これによって、後の段階でコードジェネレータが上位のアラインメントを必要とした場合に、コンパイラがクラッシュする可能性がありました。<br>[EW21059]
+  </p>
+</li>
+
+<li>
+  <p>
+ループ内の切替え文がマイナスのオフセットを持つテーブルとして生成される場合、テーブルルックアップで同じレジスタが2つの異なる目的で再利用できました。<br>[EW21100]
+  </p>
+</li>
+
+<li>
+  <p>
+テンプレートクラス内で定義されたenum型がある場合に、コンパイラがインターナルエラーにより終了することがありました。<br>[EW21101, 21112]
+  </p>
+</li>
+
+<li>
+  <p>
+ループを最適化するときに、ループの制限が、ビット単位のAND演算におけるマイナスの値が関係する式の結果である場合、ループ本体が少なくとも1回は実行され、制限に対する初期イテレータ値のテストを削除するものとして、コンパイラが間違った結論を出す恐れがありました。ループ本体がまったく実行されるべきでない場合でも、結果として間違ったループコードになっていました。<br>[EW21118,21120]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 5.40.4:<br> ランタイムライブラリが、Cortex-M0またはCortex-M1でアラインメントされていないアクセスがサポートされていると想定しないようになりました。<br>[EW21262]
+  </p>
+</li>
+<li>
+  <p>
+EWARM 5.40.4:<br>32ビットより小さいスカラスタックパラメータは、関数が呼び出される前に正しく符号またはゼロで拡張されるようになりました。<br>[EW21271]
+  </p>
+</li>
+<li>
+  <p>
+EWARM 5.40.4:<br>組み込み<code>__get_interrupt_state</code>または<code>__set_interrupt_state</code>のどちらかを使用したファイルのコンパイルで、インターナルエラーが発生しなくなりました。<br>[EW21272]
+  </p>
+</li>
+<li>
+  <p>
+EWARM 5.40.4:<br> MISRA CはEWARM-CMで利用できるようになりました。<br>[EW21324]
+  </p>
+</li>
+<li>
+  <p>
+EWARM 5.40.4:<br>コンパイラで、別のモジュールで定義されたC++メンバ関数の呼出しに対して、正しいデバッグ情報が生成されるようになりました。こうした呼出し用の<b>step into</b>デバッガコマンドが現在は正常に機能します。<br>[EW21327]
+  </p>
+</li>
+  </ul>
+
+<h4><A NAME="his530">V5.30 2009-01-23</A></h4>
+<b>新機能</b>  	
+    <ul>
+<li><b>__task拡張キーワード</b><br> デフォルトでは、関数は使用された保護レジスタの内容を入口でスタックに保存し、出口で復元します。<code>_task</code>を使用して宣言された関数の場合、レジスタを保存しないため、必要なスタックエリアが小さくなります。これは通常、リアルタイムOSで使用されます。
+      </li>
+	</ul>
+<b>プログラム修正</b>
+	<ul>
+
+      <li>
+        <p>
+フィールドのどれかにタイプエラーがある状態でタイプがクラス/構造体/共用体の変数を作成すると、インターナルエラーを引き起こすことがありました。これは修正されました。<br>[EW20367]
+        </p>
+      </li>
+
+      <li>
+        <p>
+ごく稀な場合に、コンパイラが異常終了することがありました。異常終了が回避されるようになりました。<br>[EW20380]
+        </p>
+      </li>
+
+      <li>
+        <p>
+リストファイルで報告されるスタックの使用は、再び安全な近似値になりました。<br>[EW20410]
+        </p>
+      </li>
+
+      <li>
+        <p>
+連続する2つの式の前後のインクリメント/ディクリメントによって、インターナルエラーが起きることがありました。この問題は修正されました。<br>[EW20419]
+        </p>
+      </li>
+
+      <li>
+        <p>
+ごく稀に、不規則なループが間違って最適化される場合がありました。この問題は修正されました。<br>[EW20428]
+        </p>
+      </li>
+
+      <li>
+        <p>
+複数レベルの匿名共用体/構造体の内部にあるフィールド上で指示されたイニシャライザを指定すると、コンパイラでインターナルエラーとなることがありました。この問題は修正されました。<br>[EW20439]
+        </p>
+      </li>
+
+      <li>
+        <p>
+インラインアセンブラの操作によって、ELFで絶対アドレッシングに対してエラーが正しく生成されるようになりました。<br>[EW20489]
+        </p>
+      </li>
+
+      <li>
+        <p>
+特定のループコンストラクトにコードを生成するときに、コンパイラが失敗することがありました。これは修正されました。<br>[EW20503]
+        </p>
+      </li>
+
+      <li>
+        <p>
+ネストされた2つのループ内にあるアドレス式が、値を割当てられる前に変数を使用できる場合がありました。これは修正されました。<br>[EW20531]
+        </p>
+      </li>
+
+      <li>
+        <p>
+Cortex-M3の最適化レベル「中」（またはそれ以上）の場合、定数256と疑問符演算子(<code>a?b:c</code>)の特定の組合せをコンパイルすると、&quot;illegal state&quot;（無効なステート）というメッセージが出力されてインターナルエラーとなることがありました。これは修正されました。<br>[EW20537]
+        </p>
+      </li>
+
+      <li>
+        <p>
+小さい型(<code>char</code>など)の変数が、ラップされる可能性がありながらも、ループカウンタとして間違って巻き上げられることがありました。これは修正されました。<br>[EW20563]
+        </p>
+      </li>
+
+      <li>
+        <p>
+連続するshort、integer、long longをコピーする<code> do </code>ループが、memcpy呼出しに変換されたときに、正しいバイトカウントを持つようになりました。<br>[EW20570]
+        </p>
+      </li>
+
+      <li>
+        <p>
+リターン値ポインタを使用する関数に作成されたリターン値の一時値が、アドレスを取得済みとしてマークされませんでした。これは修正されました。<br>[EW20572]
+        </p>
+      </li>
+
+      <li>
+        <p>
+同じメモリアドレスにアクセスするために異なるタイプのポインタが使用されていると、コードが誤って最適化される場合がありました。これは修正されました。<br>[EW20581]
+        </p>
+      </li>
+
+      <li>
+        <p>
+整数型のテンプレート静的データメンバが関係する特定の操作(通常はビットの操作)によって、テンプレートコードのコンパイル時にインターナルエラーが発生する場合がありました。これは修正されました。<br>[EW20608]
+        </p>
+      </li>
+
+      <li>
+        <p>
+グローバル変数と同じタイプの間接的なストアの後に続くグローバル変数をループが更新するときに、間違って最適化される場合がありました。<br>[EW20627]
+        </p>
+      </li>
+
+      <li>
+        <p>
+コンパイラがIT-ブロックに<code>CPSIE/CPSID</code>を入れようとしなくなりました。<br>[EW20652]
+        </p>
+      </li>
+
+      <li>
+        <p>
+最小および最大のテンプレートが、関数インライン化の後に正しく最適化されるようになりました。<br>[EW20654]
+        </p>
+
+      <li>
+        <p>
+コンパイラが、エラーPe020を出力した後にクラッシュしなくなりました。<br>[EW20684]
+        </p>
+
+      <li>
+        <p>
+組込み関数__set_CPSR() が、間違ったアセンブラ命令を生成していました。これは修正されました。<br>[EWARM-268]
+        </p>
+
+      </li>
+
+    </ul>
+
+<h4><A NAME="his520">V5.20 2008-06-24</A></h4>
+<b>新機能</b>  
+    <ul>
+      <li>
+        <p>
+	  ベクタ浮動小数点(VFP)コプロセッサのサポート。
+	</p>
+      </li>
+	  </ul>
+<b>プログラム修正</b>
+	  <ul>
+      <li>
+        <p>
+コンパイラが、初期化されていない揮発性の自動変数からのリードを、コードから削除しなくなりました。<br>[EW19167]
+        </p>
+      </li>
+      <li>
+        <p>
+フォールスルーを持つサンクが、必要なときにいつでも正しくパッドされるようになりました。<br>[EW19481]
+        </p>
+      </li>
+      <li>
+        <p>
+<code> #line </code>ディレクティブの後のソース行が、コンパイラのリストファイルにインクルードされるようになりました。<br>[EW19654]
+        </p>
+      </li>
+      <li>
+        <p>
+コンパイラが、アセンブラ命令やレジスタ名などと同じセグメント/セクション名を処理できるようになりました。<br>[EW19674]
+        </p>
+      </li>
+      <li>
+        <p>
+テンプレートクラスのメンバ関数の行外の定義が、正しく仮になるようになりました。<br>[EW19678]
+        </p>
+      </li>
+      <li>
+        <p>
+クラス固有の2つのオペランドを持つ演算子、<code> delete </code>をクラステンプレートで宣言しても、コンパイラがクラッシュしなくなりました。<br>[EW19707]
+        </p>
+      </li>
+      <li>
+        <p>
+外部の<code> typename </code>キーワードがテンプレートにあるというエラーを出力した後に、コンパイラがクラッシュしなくなりました。<br>[EW19796]
+        </p>
+      </li>
+      <li>
+        <p>
+MISRA-C規則23で、コード以外のシンボルにエラーが出力されなくなりました。<br>[EW19802]
+        </p>
+      </li>
+      <li>
+        <p>
+Reallocが、ヒープにある以上のメモリを割り当てようとする呼出しの後で、ヒープを破損したステートのままにしなくなりました。<br>[EW19803]
+        </p>
+      </li>
+      <li>
+        <p>
+10以上の定数を持つクラスによってスコープされた<code> enum </code>型のクラス外部<code> typedef </code>にDWARFデバッグ情報を生成するときに、コンパイラがクラッシュすることがなくなりました。<br>[EW19820]
+        </p>
+      </li>
+      <li>
+        <p>
+Cortex-M3で<code> memcpy </code>を実行していて、ソースと対象へのポインタのアラインメントが異なる場合、サイズが以下のときに最後の16バイトがコピーされるようになりました。<br><code>size = 32 + ((4 -(DstPtr &amp; 3)) &amp; 3) + (y * 16);       // y = 0, 1, 2 e.t.c.<br></code> [EW19837]
+        </p>
+      </li>
+      <li>
+        <p>
+命令スケジューリングが、関数/ライブラリの呼出しよりもLRのポップを優先しなくなりました。<br>[EW19872]
+        </p>
+      </li>
+      <li>
+        <p>
+アラインメントされたパラメータを持つ<code> memmove </code>への呼出しが、<code> __aeabi_memmove4</code>ではなく、誤って<code> __aeabi_memcpy4 </code>に変換されることがなくなりました。<br>[EW19878]
+        </p>
+      </li>
+      <li>
+        <p>
+<code> long long </code>値のマスクが機能するようになりました。<br>[EW19908]
+        </p>
+      </li>
+      <li>
+        <p>
+関数の呼出し（あるパラメータが、同じサイズの符号なしの型へのポインタのキャストである符号付き整数型へのポインタであるか、またはその逆の場合）、関数の呼出しがインライン化されるときにインターナルエラーが起こらなくなりました。<br>[EW19933]
+        </p>
+      </li>
+      <li>
+        <p>
+0から1へと変わる符号なしのループ変数を持つループが、間違って最適化されなくなりました。<br>[EW19973]
+        </p>
+      </li>
+      <li>
+        <p>
+Thumb2コードの定数テーブルのレイアウト生成が調整されました。<br>[EW19984]
+        </p>
+      </li>
+      <li>
+        <p>
+ソースが増分された前または後のポインタの間接であるときに、構造体の割当てが間違って最適化される場合が稀にありました。これは修正されました。<br>[EW20071]
+        </p>
+      </li>
+      <li>
+        <p>
+Thumb2コード内の大きなレジスタ(<code>r8-r14</code>)の変数のデバッグ情報が改善されました。<br>[EW20098]<br>[EW20100]
+        </p>
+      </li>
+      <li>
+        <p>
+クラスタ化で、セグメント/セクションにより配置された初期化済みの変数が処理できるようになりました。<br>[EW20149]
+        </p>
+      </li>
+      <li>
+        <p>
+ごく稀に、レジスタへのメモリセル(グローバル変数や構造体メンバなど)を一時的に巻き上げる最適化によって、コードが正しく変換されず、1つまたは複数の使用がそのメモリセルを参照したままになることがありました。これは修正されました。<br>[EW20150]
+        </p>
+      </li>
+      <li>
+        <p>
+ARM関数からthumb関数へのフォールスルーが、生成されなくなりました。<br>[EW20164]
+        </p>
+      </li>
+      <li>
+        <p>
+無効な命令でインターナルエラーが生成されなくなりました。<br>[EW20199]
+        </p>
+      </li>
+      <li>
+        <p>
+<code>Tag_ABI_enum_size </code>が、使用される<code> enum </code>の実際のサイズを反映するようになりました。<br>[EW20203]
+        </p>
+      </li>
+    </ul>
+
+<h4><A NAME="his511">V5.11 2007-12-11</A></h4>
+<b>新機能</b>  
+    <ul>
+      <li>
+	  Cortex-M1およびCortex-M3のサポート。
+      </li>
+     </ul>
+<b>プログラム修正</b>
+	 <ul>
+      <li>
+        <p>
+コードジェネレータが集合タイプの小さなオブジェクトをレジスタ内に配置できなかった場合、代わりにオブジェクトをスタック上に配置しようとしても失敗することがありました。オブジェクトのアラインメントが集合メンバのサイズと一致せず、アラインメント境界上に配置されたものを除くすべてのメンバに間違ったオフセットが使用されるときに、この問題が発生していました。<br>[EW19478]
+        </p>
+      </li>
+      <li>
+        <p>
+最上位ビットを除くすべてに対する32ビットのマスク処理と、同じ変数の最上位ビットへのテストが、Thumbモードで間違ったコードを生成する場合がありました。<br>[EW19480]
+        </p>
+      </li>
+      <li>
+        <p>
+セクション&quot;.textrw&quot; の名前を変更できるようになりました。<br>[EW19672]
+        </p>
+      </li>
+      <li>
+        <p>
+コンパイラで、アセンブラ命令、レジスタなどと同じ名前を持つセグメント/セクションを処理できるようになりました。<br>[EW19674]
+        </p>
+      </li>
+      <li>
+        <p>
+テンプレートクラスのメンバ関数の行外の定義が、正しく仮のものにならず、リンクの際に誤って'重複する定義'となっていました。これは修正されました。<br>[EW19678]
+        </p>
+      </li>
+      <li>
+        <p>
+クラス固有の2つのオペランドを持つ演算子、 deleteをクラステンプレートで宣言しても、コンパイラがクラッシュしなくなりました。<br>[EW19707]
+        </p>
+      </li>
+      <li>
+        <p>
+関数の宣言の不正な構文によって、インターナルエラーが生成されなくなりました。<br>[EW19718]
+        </p>
+      </li>
+      <li>
+        <p>
+Doubleが正しく丸められるようになりました。<br>[EW20026]
+        </p>
+      </li>
+    </ul>
+
+<h4><A NAME="his510">V5.10 12.06.07</A></h4>
+<b>新機能</b>  
+    <ul>
+      <li>
+オブジェクトファイルがELF/DWARFフォーマットで生成されるようになりました。
+      <li>
+	      AEABIのサポート（ARM EABIに準拠する他のツールとの相互運用性）
+      </li>
+	 </ul>
+<b>プログラム修正</b>
+	 <ul>
+      <li>
+	  静的変数のイニシャライザにビットフィールドメンバのアドレスが含まれる場合に、コンパイラがエラーを出力するようになりました。<br>[EW17962]
+      <li>
+	  関数に類似したマクロで、事前定義されたIAR属性名として名前が付けられていても、コンパイラが異常終了しなくなりました。<br>[EW18386]
+      <li>
+	  ごく稀な場合に、64ビット変数の上位部分だけがロードされました。<br>[EW18735] 
+      <li>
+	  組込み関数<code>__no_operation()</code>を使用して挿入されたNOP命令が、コード内の希望する位置に表示されないままスケジュールされていました。<br>[EW18767] 
+      <li>
+ヘッダファイル<code>MtxWrapper.h</code>がC++から動作するようになりました。<br>[EW18769]
+      <li>
+	  <code> char </code>型のインデックス式を持つ配列アクセスを含むループが、間違って最適化される場合がありました。<br>[EW18815,EW18963]
+      <li>
+	  宣言同士の不一致、または同じ関数の宣言と定義の不一致について、正しい診断結果が出るようになりました。<br>[EW18818]
+      <li>
+	  ヘッダファイル<code>Dlib_Product.h</code>がMISRA-Cと互換になりました。<br>[EW18843]
+      <li>
+	  ゼロおよび同じ構造体からのリードを持つ、織り交ざったストアが、以前は間違った順序で行われていました。<br>[EW18845]
+      <li>
+	      ア&#xFFFD;&#xFFFD;インメントされていない構造体をビッグエンディアンモードでパラメータとして引き渡す際に、間違ったコードが生成されました。<br>[EW18900]
+      <li>
+	      <code>swprintf</code>と<code>vswprintf</code>で、末尾の<code>\0</code>が正しく処理されるようになりました。<br>[EW18948]
+      <li>
+	      ごく稀な場合に、同じ構造体の他のメンバと定数 (<code>p-&gt;y == 0</code>)間の等式テストが式の前にあると、構造体ポインタ(<code>p-&gt;x</code>)を含む共通部分式が、間違って最適化されていました。<br>[EW19015]
+      <li>
+<code>__irq</code>と<code>__fiq</code>を持つ関数が、vfpについてコンパイルする際に、vfpステータスレジスタを保存するようになりました。<br>[EW19047]
+      <li>
+コンパイラが、ファイルでスコープ化された初期化で使用される複合リテラルに間違った定数を生成しなくなりました。<br>[EW19076]
+      <li>
+<code>swprintf</code>が大きな文字列を正しく処理するようになりました。<br>[EW19105]
+      <li>
+大きな関数では次のインターナルエラーが発生することがありました: <code>Internal Error: [CoreUtil/General]: Jump distance to far for B</code>。<br>[EW19179]
+      <li>
+クラスタ化によって、ゼロに初期化されたデータが、ゼロ初期化を使用するのでなく、ROM空間を占有する場合がありました。<br>[EW19232]
+      <li>
+<code>char</code>バッファ内のバイト上にある<code> ! </code>演算子(例: <code> return !buf[0];</code>)によって、次のインターナルエラーが発生していました:<br> <code>Const_Folding - Internal error Unequal types for operator != <br>Internal Error: [CoreUtil/General]: Const_Folding - Internal error</code><br> [EW19337] 
+    </ul>
+    </div>
+</body>
+</html>

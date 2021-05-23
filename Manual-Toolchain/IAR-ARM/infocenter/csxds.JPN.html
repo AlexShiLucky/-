@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+          "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemalocation="http://www.w3.org/MarkUp/SCHEMA/xhtml11.xsd"
+      xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" 
+          content="application/xhtml+xml; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+
+    <title>IAR C-SPY XDS ドライバ用リリースの―ト </title>
+    <link type="text/css" rel="stylesheet" media="all" 
+          href="style/ewic.css" />
+  </head>
+  <body>
+    <div id="titlebanner">
+      <div>
+        <h>IAR C-SPY XDS ドライババージョン8.40.2用リリースの―ト</h1>
+      </div>
+    </div>
+    <div class="breadcrumb">
+      <a href="index.JPN.html">Arm用IARインフォメーションセンタ</a> | 
+      <a href="release_notes.JPN.html">リリースノート</a> | 
+      <a href="components.JPN.html">コンポーネント</a> | 
+      IAR C-SPY XDS 用 リリースノート
+    </div>
+    <div class="mainblock">
+      <ul>
+        <li><a href="#important">重要な情報</a> </li>
+        <li><a href="#features">新機能</a> </li>
+        <li><a href="#problems">既知の問題</a> </li>
+        <li><a href="#pcorr">プログラム修正</a> </li>
+        <li><a href="#manuals">ユーザガイドの訂正</a> </li>
+        <li><a href="#misc">その他</a> </li>
+        <li><a href="#history">リリース履歴</a> </li>
+      </ul>
+      <!--======================================================================-->
+      <!-- IMPORTANT INFORMATION                                                -->
+      <!--======================================================================-->
+      <h3>
+        <a name="important" id="important"></a>重要な情報
+      </h3>
+﻿<ul>
+
+<li><p><b>ファームウェアの更新には、XDS200 プルーブが必要</b><br> EWARM 7.60.2 で TI エミュパックをインストールしている場合は、お使いの XDS200 プルーブが最新のファームウェア(v1.0.0.8).を持っていることを確認してください。.<br>ファームウェアの更新ツールがお使いの TI エミュパックのインストールに見つかりました<code>C:\ti\ccs_base\common\uscif\xds2xx</code>
+  </li>
+
+<li><p><b>TI XDSデバッガプローブのUSBドライバのインストール</b><br>
+
+ARM用Embedded Workbench(EWARM)をインストールする際に、TI USBドライバをインストールすることができます。<br><br>
+
+ただし、ドライバを手動でインストールしなければならない場合は、次の手順に従います:<br>
+
+    <ol>
+
+      <li>
+TI XDS100/110/200エミュレータを使用する場合、このEWARMのリリースに同梱されたTIエミュパックのバージョンを推奨ディレクトリ<code>C:\ti</code>にインストールする必要があります。<br><br>
+
+TIエミュパックのインストーラは、EWARMのインストールの<code>arm\drivers\ti-xds</code>ディレクトリにあります。<br><b>注：</b>TIエミュパックをインストールするには、コンピュータ上でフルの管理者権限を持っている必要があります。そのためには、インストーラを起動する際に<b>管理者として実行</b>してください。<br><br>
+
+以下のUSBドライバがTIエミュパックのインストールに含まれており、インストール手順の一部としてシステムにインストールされます:<br><br>
+        <ul>
+          <li>
+TI XDS110の場合、USBドライバは<code>C:\ti\ccs_base\emulation\windows\xds110_drivers</code>ディレクトリにあります。
+          </li>
+
+          <li>
+TI XDS100の場合、USBドライバは<code>C:\ti\ccs_base\emulation\windows\xds100_drivers</code>ディレクトリにあります。
+          </li>
+
+          <li>
+TI XDS200の場合、USBドライバは<code>C:\ti\ccs_base\emulation\windows\xds2xx_drivers</code>ディレクトリにあります。
+          </li>
+        </ul>
+        <br>
+     </li>
+
+     <li>
+一部のTI XDS110ボードでは、USBディレクトリを明示的にEWARMインストールの<code>arm\drivers\StellarisICDI</code>ディレクトリにインストールする必要があります。USBドライバは、EWARMのインストール時にもインストールが可能です。
+     </li>
+
+  </ol>
+
+  </p></li>
+
+<li><p>TI XDSエミュレータ用のC-SPYドライバは、現在次の TI デバイスファミリーをサポートしています。AM1xx、AM3xx、AM43xx CC13xx、CC2538、CC26xx、CC32xx、F28M3x、LM3S、LM4F、MSP432、OMAPL138、RM48L、TMS470M、TMS570。
+  </p></li>
+
+</ul>
+      <!--======================================================================-->
+      <!-- NEW FEATURES                                                         -->
+      <!--======================================================================-->
+      <h3>
+        <a name="features" id="features"></a>新機能
+      </h3>
+﻿<ul>
+<li><p><b>SWO では TI XDS110 をサポート</b><br /> IAR C-SPY デバッガは現在、TI XDS110 デバッグ プローブからの SWO トレースデータをサポートしています。
+  </p></li>
+</ul>
+      <!--======================================================================-->
+      <!-- Known Problems-->
+      <!--======================================================================-->
+      <h3>
+        <a name="problems" id="problems"></a>既知の問題
+      </h3>
+﻿<ul>
+<li><p>ARM9、Cortex-A、Cortex-Rコアを持つXDS100の場合、USRモードレジスタ<code>R8_USR</code>～<code>R14_USR</code>は正しい値を持つとは限りません。このため、スタック使用率の関数で間違ったワーニングが報告されることがあります。スタックチェック関数を無効にするには、<b>[ツール]&gt;[オプション]</b>ダイアログを開いて<b>[スタック]</b>カテゴリのすべてのオプションを選択解除します。
+  </p></li>
+
+  <li><p>
+XDS100デバッガドライバを使用中、フラッシュダウンロードの後にセミホスティング (ターミナル I/O) が正しく機能しません。回避方法は、デバッガを停止してからダウンロードせずにデバッグを開始します。
+  </p></li>  
+
+  <li><p>	
+XDS100デバッガドライバで<code>FIQ</code>レジスタグループを読み込む際、間違った値が記録されます。実際の動作は、現在のCPUモードによって異なります。これによって、スタックチェックで間違ったワーニングがログウィンドウに出力されます。回避方法は、スタックチェックをメニュー<b>[ツール]-&gt;[オプション]-&gt;[スタック]</b>でオフにし、すべてのスタックオプションを無効にします。<br>[EW22839]
+  </p></li>
+</ul>
+      <!--======================================================================-->
+      <!-- Program Corrections                                                  -->
+      <!--======================================================================-->
+      <h3>
+        <a name="pcorr" id="pcorr"></a>プログラム修正
+      </h3>
+﻿<ul>
+  <li>
+なし
+  </li>
+</ul>
+      <!--======================================================================-->
+      <!-- USER GUIDE CORRECTIONS                                               -->
+      <!--======================================================================-->
+      <h3>
+        <a name="manuals" id="manuals"></a>ユーザガイドの訂正
+      </h3>
+﻿<ul>
+<li>なし</li>
+</ul>
+      <!--======================================================================-->
+      <!-- MISCELLANEOUS                                                        -->
+      <!--======================================================================-->
+      <h3>
+        <a name="misc" id="misc"></a>その他
+      </h3>
+﻿<ul>
+  <li>
+なし
+  </li>
+</ul>
+      <!--======================================================================-->
+      <!-- RELEASE HISTORY                                                      -->
+      <!--======================================================================-->
+      <h3>
+        <a name="history" id="history"></a>リリース履歴
+      </h3>
+﻿<h4>V8.10 2017/03/10</h4>
+<b>プログラム修正</b>
+<ul><li>なし</li></ul>
+<b>新機能</b>
+<ul><li>なし</li></ul>
+
+<h4>V7.50 2015-11-10</h4>
+<b>プログラム修正</b>
+  <ul><li><p>
+EWARM 7.50.2<br>SWO オートスピード選択が正常に作動しませんでした。<br>[EW25801]
+  </p></li></ul>
+<b>新機能</b>
+<ul><li>なし</li></ul>
+
+<h4>V7.10 2014-02-21</h4>
+<b>プログラム修正</b>
+<ul><li>なし</li></ul>
+<b>新機能</b>
+<ul><li>なし</li></ul>
+
+<h4>V6.70 2013-10-29</h4>
+<b>プログラム修正</b>
+<ul><li>なし</li></ul>
+<b>新機能</b>
+<ul><li>なし</li></ul>
+
+<h4>V6.60 2013-06-27</h4>
+<b>プログラム修正</b>
+<ul><li>なし</li></ul>
+<b>新機能</b>
+  <ul>
+<li><p><b>Texas Instruments XDS200のサポート</b><br>Texas Instruments XDS200デバッグプローブのサポートが追加されました。
+    </p></li>
+  </ul>
+
+<h4>V6.50 2012-11-10</h4>
+<b>プログラム修正</b>
+<ul><li>なし</li></ul>
+<b>新機能</b>
+  <ul>
+<li><p>デバッガドライバTI XDS100で、PCに接続された複数のプローブが処理可能になりました。
+    </p></li>
+  </ul>
+
+<h4>V6.40 2012-06-05</h4>
+<b>プログラム修正</b>
+  <ul>
+    <li>
+      <p>
+EWARM 6.40.2:<br><b>[プロジェクト]&gt;[オプション...]&gt;[TI XDS100]&gt;[設定]&gt;[TIエミュレーションパッケージのインストールパス]</b>のデフォルト値が正しく処理されるようになりました。<br>[EW23158]
+      </p>
+    </li>
+    <li>
+      <p>
+EWARM 6.40.2:<br>TI XDS100でのデバッガドライバの問題が修正されました。
+      </p>
+    </li>
+  </ul>
+<b>新機能</b>
+<ul><li>なし</li></ul>
+
+<h4>V6.30 2011-10-22</h4>
+<b>プログラム修正</b>
+<ul><li>なし</li></ul>
+<b>新機能</b>
+<ul><li>なし</li></ul>
+
+<h4>V6.21 2011-07-05</h4>
+<b>プログラム修正</b>
+<ul><li>なし</li></ul>
+<b>新機能</b>
+  <ul>
+<li><p><b>Texas Instruments XDS100v2のサポート</b><br> Texas InstrumentsのデバッグプローブXDS100v2が、TI TMS570デバイス対応になりました。XDS100v2を使用するには、[デバッガ]&gt;[設定オプション]ページの<b>[ドライバ]</b>ドロップダウンリストで<b>[TI XDS100]</b>を選択してください。XDS100v2デバッグドライバには、Texas Instrumentsのエミュレータパッケージをインストールする必要があります。エミュレータパッケージをインストールするには、<code>...\arm\drivers\ti-xds\ti_emupack_setup.exe</code>を開始してインスト&#xFFFD;&#xFFFD;&#xFFFD;ルの手順に従います。エミュレータパッケージは推奨されたデフォルトの場所にインストールしてください。これによって、デバッガがエミュレータパッケージを自動的に見つけることができます。何らかの理由でパッケージがカスタムの場所にインストールされる場合、オプション<code>--xds_rootdir=<em>path</em></code>を[デバッガ]&gt;[その他のオプション]のオプションページで指定する必要があります。
+    </p></li>
+  </ul>
+    </div>
+  </body>
+</html>

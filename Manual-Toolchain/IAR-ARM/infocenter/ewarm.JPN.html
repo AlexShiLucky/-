@@ -1,0 +1,3835 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemalocation="http://www.w3.org/MarkUp/SCHEMA/xhtml11.xsd" 
+      xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" 
+	  content="application/xhtml+xml; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+
+    <title>Arm IAR Embedded Workbench製品パッケージのリリースノート
+    </title>
+    <link type="text/css" rel="stylesheet" media="all" href="style/ewic.css" />
+  </head>
+  <body>
+    <div id="titlebanner">
+      <div>
+        <h1>Arm IAR Embedded 
+	  Workbench製品パッケージバージョン8.40.2のリリースノート</h1>
+      </div>
+    </div>
+    <div class="breadcrumb">
+      <a href="index.JPN.html">Arm用IARインフォメーションセンタ</a> | 
+      <a href="release_notes.JPN.html">リリースノート</a> | 
+      <a href="components.JPN.html">コンポーネント</a> | 
+      Arm IAR Embedded Workbench製品のリリースノート
+    </div>
+    <div class="mainblock">
+      <ul>
+	<li><a href="#important">重要な情報</a> </li>
+	<li><a href="#features">新機能</a> </li>
+	<li><a href="#problems">既知の問題</a> </li>
+	<li><a href="#pcorr">プログラム修正</a> </li>
+	<li><a href="#manuals">ユーザガイドの訂正</a> </li>
+	<li><a href="#misc">その他</a> </li>
+	<li><a href="#history">リリース履歴</a> </li>
+      </ul>
+      <!--======================================================================-->
+      <!-- IMPORTANT INFORMATION                                                -->
+      <!--======================================================================-->
+      <h3>
+	<a name="important" id="important"></a>重要な情報
+      </h3>
+﻿<ul>
+<li><p><a name="upgrade"><b>アップグレード情報</b></a></p>
+    <ul>
+<li><p><b>インストールする前に</b><br>問題を回避するため、以前にARM用IAR Embedded Workbenchのバージョン7.x、6.x、5.x、4.x、3.x、2.xがインストールされているディレクトリにリリース8.xをインストールしないでください。<br>以前の製品をアンインストールするか、本リリースを別のディレクトリにインストールしてください。ただし、以前と同様に、バージョン8.xの汎用IDEコンポーネントを使用した異なる製品を同じルートディレクトリにインストールすることはできます。
+      </p></li>
+    </ul>
+  </li>
+</ul>
+      <!--======================================================================-->
+      <!-- NEW FEATURES                                                         -->
+      <!--======================================================================-->
+      <h3>
+	<a name="features" id="features"></a>新機能
+      </h3>
+﻿<ul>
+  <li>
+なし
+  </li>
+</ul>
+      <!--======================================================================-->
+      <!-- Known Problems-->
+      <!--======================================================================-->
+      <h3>
+	<a name="problems" id="problems"></a>既知の問題
+      </h3>
+﻿<ul>
+     <li>
+        <p>
+<b>[<a name='EWARM-6288'>EWARM-6288</a>]</b><tt>STM32F446.svd</tt>ファイルには次のレジスタの定義が含まれていません:<tt>FMC_BCR1</tt>、<tt>WFDIS?CPSIZE[2:0]</tt>、<tt>FMC_BWTRx</tt>、および<tt>BUSTURN[3:0]</tt>。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6101'>EWARM-6101</a>]</b><tt>STM32F412.svd</tt>ファイルでは、MRLV DSおよびLRLV DSまたは<tt>CR</tt>レジスタのビットを定義していません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6087'>EWARM-6087</a>]</b><tt>STM32F7x5.svd</tt>ファイルでは、RCCグループの<tt>BDCR</tt>レジスタのLSEDRVビットを定義していません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5986'>EWARM-5986</a>]</b><tt>STM32F7x7.svd</tt>ファイルに<tt>DBGMCU_APB1_FZ</tt>レジスタの定義が見つかりません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5975'>EWARM-5975</a>]</b><tt>STM32F446.svd</tt>ファイルにレジスタ<tt>FMPI2C1</tt>の定義がありません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5967'>EWARM-5967</a>]</b> RCC RTC イネーブルビット(<tt>RCC_APB1ENR_RTCEN</tt>)の定義が<tt>STM32F7x7.svd</tt>ファイルにありません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5841'>EWARM-5841</a>]</b>DFSDMとTIM1_CR2のレジスタ情報が、<tt>STM32F7x5.svd</tt>ファイルに見つかりません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5802'>EWARM-5802</a>、<a name='EW26721'>EW26721</a>]</b>レジスタ<tt>RCC_APB2ENR</tt>の定義がSTM32F412ZGのsvdファイルで見つかりません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5753'>EWARM-5753</a>、<a name='EW26646'>EW26646</a>]</b>LCD周辺レジスタの定義がSTM32L476VGのsvdファイルで不明です。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5734'>EWARM-5734</a>, <a name='EW26614'>EW26614</a>]</b> Atmelヘッダーファイル<tt>...\arm\inc\Atmel\samc20\instance\gclk.h</tt>に<tt>GCLK_SOURCE_OSC48M</tt>の定義がなく、<tt>GCLK_SOURCE_DFLL48M</tt>は</font>間違って定義されています。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5700'>EWARM-5700</a>, <a name='EW26547'>EW26547</a>]</b> Atmel SAMA5D2シリーズのUSBホスト高速ポート(<tt>UHPHS</tt>)に関するレジスタ情報が見つかりません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5648'>EWARM-5648</a>, <a name='EW26470'>EW26470</a>]</b> エディタウィンドウでAlt+左向き矢印または右向き矢印(挿入ポイント履歴内を移動するためのショートカット)を押すと、エディタウィンドウに文字が挿入されます。</font>
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5624'>EWARM-5624</a>、<a name='EW26436'>EW26436</a>]</b>QUADSPIレジスタが<tt>STM32L4x3.svd</tt>に見つかりません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5617'>EWARM-5617</a>, <a name='EW26424'>EW26424</a>]</b>NXP Kinetis K64で消去したメモリをフラッシュすると、 デバッガエラーになります。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5429'>EWARM-5429</a>, <a name='EW26066'>EW26066</a>]</b> STM32F205VB用のSVDファイルの<tt>DBGMCU_APB1_FZ</tt>レジスタに、<tt>DBG_RTC_STO</tt> ビットの定義がありません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5425'>EWARM-5425</a>, <a name='EW26060'>EW26060</a>]</b> STM32F334C8 用の SVD ファイルのレジスタ<tt>ADC2</tt>の定義が見つかりません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5402'>EWARM-5402</a>, <a name='EW26024'>EW26024</a>]</b> ST STM32F746用の SVD ファイルのレジスタ<tt>SPI1-&gt;CR2</tt>の FIFO 定義が見つかりません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5369'>EWARM-5369</a>, <a name='EW25951'>EW25951</a>]</b> STM32L152の SVD ファイルで<tt>SYSCFG_PMC</tt>レジスタの<tt>LCD_CAPA</tt>(ビット 5:1) が不明です。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5362'>EWARM-5362</a>, <a name='EW25935'>EW25935</a>]</b> STM32F446用のSVDファイルのUSB (<tt>OTG_FS_GLOBAL</tt>)レジスタの定義が間違っています。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5319'>EWARM-5319</a>、<a name='EW25845'>EW25845</a>]</b>CAN1 および CAN2 でレジスタを共有する場合、STM32F105xx.svd ファイルは正しくありません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5263'>EWARM-5263</a>, <a name='EW25722'>EW25722</a>]</b> STM32F091RC用のSVDファイルのレジスタ<tt>USART6EN</tt>、<tt>USART7EN</tt>、および<tt>USART8EN</tt>の定義が見つかりません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5082'>EWARM-5082</a>、<a name='EW25345'>EW25345</a>]</b>STM32F072のSVDファイルには、EXTI_PRレジスタのビット19-22についての情報が見つかりません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5039'>EWARM-5039</a>、<a name='EW25246'>EW25246</a>]</b>STM32F429x.svdでは、RCCレジスタにPLLSAICFGRとDCKCFGRの定義がありません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5024'>EWARM-5024</a>, <a name='EW25198'>EW25198</a>]</b> TIM10とTIM11のSMCRレジスタがstm32L15xxE.svdで見つかりません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-4940'>EWARM-4940</a>、<a name='EW24975'>EW24975</a>]</b>リアルタイムの割込みを使用するアプリケーションで、ゼロによる除算と未処理のswitch caseのC-RUNチェックを同時にを挿入すると、デバッガがクラッシュすることがあります。</font>
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-4909'>EWARM-4909</a>、<a name='EW24908'>EW24908</a>]</b>STM32F429x.svdでは、RCCレジスタにPLLSAICFGRとDCKCFGRの定義がありません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-4862'>EWARM-4862</a>、<a name='EW24802'>EW24802</a>]</b>DACモジュールのSTM32F072xx Channel 2が、デバッガのレジスタウィンドウにありません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-4473'>EWARM-4473</a>、<a name='EW23846'>EW23846</a>]</b>[ワークスペース]ウィンドウ内で折りたたまれたファイルのグループが、次回プロジェクトがビルドされるときに時に</font>リビルドされる予定のファイルを含んでいる場合、ビルドステータスコラムには、赤い星印のアイコンが表示されないことがあります。ただし、ファイルグループを展開すると</font>アイコンは正常に表示されます。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-4226'>EWARM-4226</a>、<a name='EW23217'>EW23217</a>]</b>EWプロジェクトに、同じ名前で2つの異なるパスのファイルを持つことはできません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-4141'>EWARM-4141</a>、<a name='EW22976'>EW22976</a>]</b>Windows XP OS で、言語を変更するためのクリック可能な領域がフラグアイコンの左半分に限られています。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-4077'>EWARM-4077</a>、<a name='EW22817'>EW22817</a>]</b><b>リンカ設定ファイルエディタ</b>が、リンカ設定ファイルが読取専用であるために変更できない場合、これが報告されません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-3986'>EWARM-3986</a>、<a name='EW22481'>EW22481</a>]</b>出力コンバータの設定がIDEで変更され、IDEが実行中のままである場合、iarbuild</font>を実行しようとすると終了コード1とともに非表示で終了します。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-3921'>EWARM-3921</a>、<a name='EW22313'>EW22313</a>]</b> オンラインヘルプシステムを使用していると、Ctrl VとCtrl Cに問題にあります。回避方法として、コンテキストメニューからコピーと貼り付けを使用できます。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-3813'>EWARM-3813</a>、<a name='EW21960'>EW21960</a>]</b>TI RDK-IDMのサンプルプロジェクトがRev C16ボードで機能しません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-3594'>EWARM-3594</a>、<a name='EW21166'>EW21166</a>]</b>出力コンバータからの出力先を拡張子.outを持つファイルに指定すると、EWARMがハングします。
+        </p>
+     </li>
+<li><p><a href='../../../common/doc/KnownProblems.html'>IAR Embedded Workbench IDE - 既知の問題</a></p></li>
+</ul>
+      <!--======================================================================-->
+      <!-- Program Corrections                                                  -->
+      <!--======================================================================-->
+      <h3>
+	<a name="pcorr" id="pcorr"></a>プログラム修正
+      </h3>
+﻿<ul>
+     <li>
+        <p>
+<b>[<a name='EWARM-6769'>EWARM-6769</a>, <a name='TPB-3120'>TPB-3120</a>]</b> <tt>xtgmath.h</tt>の浮動小数点関数宣言にはマクロ__ATTRIBUTESがありません。これが原因でコンパイラは<tt>math.h</tt>および<tt>xtgmath.h</tt>で宣言されている関数の誤った再宣言を訴えます。</font>
+        </p>
+     </li>
+<li><p><a href='../../../common/doc/CorrectedProblems.html'>IAR Embedded Workbench IDE - 修正された問題</a></p></li>
+</ul>
+      <!--======================================================================-->
+      <!-- USER GUIDE CORRECTIONS                                               -->
+      <!--======================================================================-->
+      <h3>
+	<a name="manuals" id="manuals"></a>ユーザガイドの訂正
+      </h3>
+﻿<ul>
+<li>なし</li>
+</ul>
+      <!--======================================================================-->
+      <!-- MISCELLANEOUS                                                        -->
+      <!--======================================================================-->
+      <h3>
+	<a name="misc" id="misc"></a>その他
+      </h3>
+﻿<ul>
+
+<b>CMSIS統合</b><br> CMSISの統合バージョンの詳細は、<a href="../../CMSIS/Documentation/index.html" target="_blank">CMSISリリースノートおよびドキュメント</a>.<br><br>にあります。
+
+<b>デバイスサポートの追加</b><br> ARM用IAR Embedded Workbenchにデバイスサポートを追加する方法を記したドキュメントのセットが用意されています。<br><br>
+
+        <table border="1" cellpadding="2" cellspacing="0"
+        bordercolor="#808080" bordercolordark="#FFDE00"
+        bordercolorlight="#808080" ID="Table2">
+            <tr>
+<td align="center"><p align="left"><font size="2"><b>ドキュメント</b></font></p>
+                </td>
+<td align="center"><font size="2"><b>説明</b></font></td>
+<td align="center"><font size="2"><b>テンプレート</b></font></td>
+            </tr>
+            <tr>
+<td><font size="2">フラッシュローダ</font></td>
+                <td align="center"><a                 href="../FlashLoaderGuide.JPN.pdf"><font                 size="2"><img src="images/pdf.gif" border="0" width="25"                 height="25"></font></a></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+<td><font size="2">デバイスヘッダフォーマット</font></td>
+                <td align="center"><a                 href="../EWARM_HeaderFormat.pdf"><font                 size="2"><img src="images/pdf.gif" border="0" width="25"                 height="25"></font></a></td>
+                <td align="center"><a                 href="../EWARM_HeaderTemplate.pdf"><font                 size="2"><img src="images/pdf.gif" border="0" width="25"                 height="25"></font></a></td>
+            </tr>
+            <tr>
+<td><font size="2">DDFフォーマット</font></td>
+                <td align="center"><a                 href="../EWARM_DDFFormat.pdf"><font                 size="2"><img src="images/pdf.gif" border="0" width="25"                 height="25"></font></a></td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+  <p>
+
+<b>プロジェクトマネージャカスタムビルドからのGUIベースのプログラムを実行</b><br> GUIベースのプログラムをカスタムビルドから実行するには、プログラムが<code>cmd /c</code>で囲まれている必要があります。例：<br> <code>cmd /c prog.exe $PROJ_PATH$</code>
+  <p>
+
+<b>プロジェクトヘッダファイルのパスをビルドに追加する</b><br> この機能を有効にするには、[プロジェクトオプション]ダイアログの[C/C++コンパイラ]カテゴリの[追加オプション]ページで特殊変数<code>$PATHS_OF_PROJECT_HEADER_FILES$</code>を追加します。その結果、-I コマンドラインオプションを使用して、プロジェクト内の各メンバヘッダファイルのディレクトリパスがコマンドラインに追加されます。たとえば、プロジェクトにヘッダファイル<code>C:/a/fa.h</code>と<code>C:/b/fb.h</code>が含まれる場合、コンパイラのコマンドラインは追加の引数<code>-IC:/a/</code>と<code>-IC:/b/</code>を取得します。 
+</ul>
+      <!--======================================================================-->
+      <!-- RELEASE HISTORY                                                      -->
+      <!--======================================================================-->
+      <h3>
+	<a name="history" id="history"></a>リリース履歴
+      </h3>
+﻿<h4>V8.32 2018-10-12</h4>
+<b>プログラム修正</b>
+ 
+<ul>
+     <li>
+        <p>
+EWARM 8.32.4<br> <b>[<a name='EWARM-6766'>EWARM-6766</a>]</b> MCAN階層のレジスタは、Atmel ATSAMA5シリーズの<tt>.svd</tt>ファイルにありません。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.32.4<br> <b>[<a name='EWARM-6736'>EWARM-6736</a>]</b> STM32L4x1.svdファイルは、バージョン8.20.2と比べて、バージョン8.32.3のは古いバージョンです。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.32.4<br> <b>[<a name='EWARM-6711'>EWARM-6711</a>]</b> EFR32FG12P433F1024GL125デバイスのブートローダ領域にコードをダウンロードすることはできません。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.32.3<br> <b>[<a name='EWARM-6686'>EWARM-6686</a>]</b> <tt>INIT_DOMAIN1</tt>および<tt>INIT_DOMAIN2</tt>の定義がファイル<tt>7iotms570ls3137pge.ddf</tt>で見つかりません。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.32.3<br> <b>[<a name='EWARM-6665'>EWARM-6665</a>]</b> NXP LPC54605J256のフラッシュローダRAM設定が間違っています。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.32.2<br> <b>[<a name='EWARM-6609'>EWARM-6609</a>]</b> LPC54608J512&Acirc;&nbsp;デバイスのチップ内蔵のフラッシュメモリマップのデバッガが、間違って512KBではなく256 KBに設定されています。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.32.2<br><b>[<a name='EWARM-6599'>EWARM-6599</a>]</b>ThreadXプラグインは64スレッド以上を扱うことはできません。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.32.2<br><b>[<a name='EWARM-6563'>EWARM-6563</a>]</b>Embedded Workbench インストールで提供されるインクルードファイルとライブラリソースファイルには、Windowsラインエンディングではなく、Unixラインエンディングがあります。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.32.2<br><b>[<a name='EWARM-6556'>EWARM-6556</a>]</b>インストーラは、<tt>arm/src/dlib</tt>ではなく<tt>arm/arm/src/dlib</tt>のライブラリソースファイルに配置されます。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6525'>EWARM-6525</a>]</b>Microchip SAMA5D3の場合、C-SPYセットアップマクロが間違ってでRAMを無効にし、コードのダウンロードに失敗します。
+        </p>
+     </li>
+<li><p><a href='../../../common/doc/CorrectedProblems.html'>IAR Embedded Workbench IDE - 修正された問題</a></p></li>
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+<li><p><b>向上したソースブラウザ</b><br />次のことがソースブラウザで向上しています。</bl>
+            <ul>
+                <li>
+ソースブラウザデータは、独立したスレッドとして実行するようになり、より高速に生成されます。</font>
+                </li>
+                <li>
+新しいソースブラウザ ログウィンドウ。
+                </li>
+                <li>
+ステータスバーのステータスインジケーター。.
+                </li>
+                <li>
+ソースの表示データが生成できない場合のフィードバック</font>が向上。
+                </li>
+            </ul>
+  </p></li>
+<li><p><b>ドキュメントのコメント</b><br />エディタでは、ドキュメントのコメントとして/**、/*!、///、または//!で始まるコメントを識別できます。ドキュメントのコメント内で、エディタは \ または @ で始まるキーワードを識別できます。キーワードがdoxygenキーワードとして識別される場合、ドキュメントのコメントは、変数や関数のツールチップやパラメータのヒントに表示されます。詳細については、<a href="../EWARM_IDEGuide.ENU.pdf">IAR Embedded Workbench IDEプロジェクト管理およびビルドガイド</a>を参照してください。
+  </p></li>
+<li><p><b>CMSIS-Pack .gpdsc</b><br /> CMSIS-PackマネージャはGenerator Package Description Files (.gpdsc)をサポートするようになりました。
+  </p></li></ul>
+ 
+ 
+<h4>V8.30 2018-06-15</h4>
+<b>プログラム修正</b>
+ 
+<ul>
+     <li>
+        <p>
+EWARM 8.30.2<br><b>[<a name='EWARM-6372'>EWARM-6372</a>]</b>ST STM32H7リンカ設定ファイルには、間違ったRAM領域設定があります。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.30.2<br><b>[<a name='EWARM-6325'>EWARM-6325</a>]</b>Toshiba TMPM341FDXBGデバイスにはフラッシュメモリの512 KBがありますが、リンカ設定ファイルは間違って256 KBを指定しています。 
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.30.2<br><b>[<a name='EWARM-6278'>EWARM-6278</a>]</b>Renesas RZ/T1 MCUに接続しようとすると、デバッグ認証に失敗します。 
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.30.2<br><b>[<a name='EWARM-6276'>EWARM-6276</a>]</b>Renesas Synergyプロジェクトでは、ThreadXソースコードがプロジェクトの一部の場合、完全な再構築が実行され、ビルドも更新されます。 
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.30.2<br><b>[<a name='EWARM-6223'>EWARM-6223</a>]</b>初期化されてないECC RAMによりトリガされた例外障害が原因で、NXP S32K116フラッシュローダーがクラッシュします。 
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.30.2<br><b>[<a name='EWARM-6163'>EWARM-6163</a>]</b><tt>.dmac</tt>ファイルはMicrochip ATSAME5デバイスで見つかりません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6350'>EWARM-6350</a>]</b>STM32L151CB-Aのデフォルトのリンカ設定ファイルはRAM サイズを間違って32 KBではなく16 KBに設定します。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6248'>EWARM-6248</a>, <a name='TPB-2984'>TPB-2984</a>]</b>多重継承のC++モジュールおよびスタック保護でコンパイルされる仮想関数は、インターナルエラーを引き起こします。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6186'>EWARM-6186</a>]</b>ioat91x40.hなどの一部のMicrochipヘッダファイルは、アセンブラにより使用できません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6037'>EWARM-6037</a>]</b> マクロファイル<tt>フラッシュローダーがすでにフラッシュメモリをアンロックしていても、FlashSTM32H7xxx.mac</tt>は誤ってアンロックします。
+        </p>
+     </li>
+<li><p><a href='../../../common/doc/CorrectedProblems.html'>IAR Embedded Workbench IDE - 修正された問題</a></p></li>
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+  <li>
+なし
+  </li>
+</ul>
+ 
+ 
+<h4>V8.22 2018-01-22</h4>
+<b>プログラム修正</b>
+ 
+<ul>
+     <li>
+        <p>
+<b>[<a name='EWARM-6150'>EWARM-6150</a>]</b>Renesas RZ/T1ヘッダファイルior7s910xxx.hは、古いバージョンを基にしていました。改訂1.4に更新されています。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6149'>EWARM-6149</a>]</b>NXP i.MX6ヘッダファイルにはOCOTP_CTRL_ADDR_MASKの重複定義が含まれています。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6106'>EWARM-6106</a>]</b>Renesas EC-1フラッシュローダはEC-1開発キットで使用されるシリアルフラッシュをサポートしていません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6088'>EWARM-6088</a>]</b>リンカ設定ファイルNordic nRF52832デバイスには正しくありません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6001'>EWARM-6001</a>]</b> XDS110 デバッグプローブのセミホスティングとEnergy Traceに対応するボードを使用すると、C-SPYがクラッシュします。これを回避するには、IDEの<b>[プロジェクト]&gt;[オプション]&gt;[デバッガ]&gt;[追加オプション]</b>ページでコマンドラインオプション<tt>--xds_disable_powertrace</tt>を追加してEnergy Traceをオフにします。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.22.2<br><b>[<a name='EWARM-5876'>EWARM-5876</a>]</b> STM32F7xx.dmacのトレース設定は、STM32H7デバイスには正しくありません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5992'>EWARM-5992</a>]</b> STM32H7デバイス用にフラッシュローダを使用して、メモリをフラッシュするためにアプリケーションをダウンロードすると、HardFault 例外を引き起こします。
+        </p>
+     </li>
+<li><p><a href='../../../common/doc/CorrectedProblems.html'>IAR Embedded Workbench IDE - 修正された問題</a></p></li>
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+<li><p><b>IDE パフォーマンスが向上</b><br />IDEセットアップ時間と全体のパフォーマンスが向上。2018年のQ2の新しいリリースでは、さらにパフォーマンスが向上します。
+  </p></li>
+<li><p><b>向上したAmazon FreeRTOS用のRTOS認識プラグイン</b><br /> タスクレベルでの実行におけるフルコントロールで、それぞれ個々のタスクのローカル実行コンテキストを表示できるようになりました。
+  </p></li>
+<li><p><b>マシン学習用のCMSIS NNを含むCMSIS バージョン5.3</b><br /> CMSISバージョン5.3には、CMSIS NN ソフトウェアライブラリ、およびCortex-Mプロセッサコア上で、最大限のパフォーマンスを引き出し、またニュートラルネットワークのメモリフットプリントを最小限にするために開発された、効率的なニュートラルネットワーク カーネルのコレクションが追加されています。
+  </p></li>
+<li><p><b>ST ST-LINK デバッグプローブTCPをサポート</b><br /> ST-LINKデバッグドライバは、TCPサーバーを使用するST-LINK共有モードに対応しています。
+  </p></li>
+<li><p><b>Nuvoton Nu-Linkデバッグプローブをサポート</b><br /> Nuvoton Nu-Linkデバッグプローブをサポートし、Armインストール用IAR Embedded Workbenchと統合されました。
+  </p></li>
+<li><p><b>Atollic TrueSTUDIOプロジェクトコンバーター</b><br />Atollic TrueSTUDIOプロジェクトをArm用IAR Embedded Workbenchに簡単に移植できる、プロジェクトコンバーターを使用できるようになりました。
+  </p></li>
+</ul>
+ 
+ 
+<h4>V8.20 2017-10-16</h4>
+<b>プログラム修正</b>
+ 
+<ul>
+     <li>
+        <p>
+EWARM 8.20.2<br><b>[<a name='EWARM-6039'>EWARM-6039</a>]</b> The  located in the <tt>\arm\config\debugger\Infineon</tt>ディレクトリに配置されるInfineon XMC4400デバッガ マクロファイル(<tt>.dmac</tt>)に構文エラーがあります。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.20.2<br><b>[<a name='EWARM-6037'>EWARM-6037</a>]</b> フラッシュローダーがすでにフラッシュメモリをアンロックしていても、マクロファイル<tt>FlashSTM32H7xxx.mac</tt> が誤ってフラッシュメモリをアンロックします。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.20.2<br><b>[<a name='EWARM-6032'>EWARM-6032</a>]</b> デバイスをデバッグしようとしたときに、古いjlinkscriptファイルのためJ-Link構文エラーがあります。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.20.2<br><b>[<a name='EWARM-6020'>EWARM-6020</a>, <a name='IDE-3994'>IDE-3994</a>]</b> IarBuildを開始したときに表示される日本語のメッセージが正しくなりました。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.20.2<br><b>[<a name='EWARM-5996'>EWARM-5996</a>]</b> サポートしているデバイスのリストに表示されていても、STM32L082CZはサポートされません。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.20.2<br><b>[<a name='EWARM-5987'>EWARM-5987</a>]</b> JTAG-chainが定義されていないために、TI AM5728 MCUをデバッグできません。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.20.2<br><b>[<a name='EWARM-5957'>EWARM-5957</a>, <a name='IDE-3749'>IDE-3749</a>]</b> デバッグセッションが異常中止した(例、ターゲットとの通信が切れる)場合、デバッグのウィンドウのレイアウトが、ワークスペース用に正しく保持されるようになりました。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.20.2<br><b>[<a name='EWARM-5952'>EWARM-5952</a>]</b><tt>.\arm\config\debugger\ST\STM32H7xx.dmac</tt>ファイルには、<tt>(</tt> ライン 203:<br/><tt>if ((dbgmcu_cr &amp;((0x3&lt;&lt;7) | (0x7&lt;&lt;0)) != ((0x3&lt;&lt;7) | (0x7&lt;&lt;0))) {</tt>が余分にあります。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.20.2<br><b>[<a name='EWARM-5901'>EWARM-5901</a>]</b> レジスタグループADCの定義が、STM32L471RGのsvdファイルで不明です。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.20.2<br><b>[<a name='EWARM-5870'>EWARM-5870</a>]</b> IDコードはI-jetでプログラムできるようになりました。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5849'>EWARM-5849</a>]</b>セクション<tt>Veneer$$CMSE</tt>は、<tt>v2m-mps2_s.icf</tt>ファイルの<tt>Veneers$$CMSE</tt>を誤って呼び出します。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5824'>EWARM-5824</a>]</b><tt>STM32L4x6.svd</tt>ファイルには、レジスタ<tt>ADC2</tt>と<tt>ADC3</tt>がそれぞれのアドレス<tt>0x50040100</tt>と<tt>0x50040200</tt>で見つかりません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5790'>EWARM-5790</a>, <a name='EW26702'>EW26702</a>]</b> STM32L4x6.svdには、ADC1、ADC2 &amp; ADC3のレジスタの定義がありません。[2019/03/15]
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5769'>EWARM-5769</a>、<a name='EW26668'>EW26668</a>]</b>設定名にdebugやreleaseの言葉がないプロジェクトの変換を試みると、Code Composer Studioプロジェクトの変換がクラッシュします。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5735'>EWARM-5735</a>, <a name='IDE-3803'>IDE-3803</a>]</b> すべてのデバッガウィンドウの背景を黒にできるようになりました。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5514'>EWARM-5514</a>, <a name='EW26227'>EW26227</a>]</b> nRF52フラッシュローダーはSoftDeviceを上書きできません。
+        </p>
+     </li>
+<li><p><a href='../../../common/doc/CorrectedProblems.html'>IAR Embedded Workbench IDE - 修正された問題</a></p></li>
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+<li><p><b>Arm v8-Rアーキテクチャの初期サポート</b><br />このリリースでは、Arm v8-R/R52アーキテクチャの基本的なサポートを提供します。
+  </p></li>
+<li><p><b>スタック保護</b><br />Arm用のIAR C/C++コンパイラは、スタック保護をサポートします。関数がそのアドレスに戻る前に、関数リターンアドレスの破損を検出するために、カナリー値はスタック変数とリターンアドレスの間になります。コンパイラに、ヒューリスティックを使用して関数にスタック保護が必要かどうかを決定します。定義したローカル変数に配列型、または配列型として含まれる構造体型がある場合、関数にはスタック保護が必要です。詳細については<a href="../EWARM_DevelopmentGuide.ENU.pdf">IAR C/C++開発ガイド</a>を参照してください。
+  </p></li>
+<li><p><b>障害例外ビューア</b><br />障害例外ビューアは新しいデバッガウィンドウで、障害例外の原因についての役立つ情報を提供します。それはシステム管理ブロック(SCB)の周辺レジスタをリストし、障害例外を管理し、その原因についての情報を提供します。すべてのCortex-Mプロセッサには、障害例外メカニズムが含まれており、この新しい機能でサポートされます。詳しくは、<a href="../EWARM_DebuggingGuide.ENU.pdf">IAR Embedded Workbench C-SPYデバッグガイド</a>を参照してください。
+  </p></li>
+<li><p><b>C-STAT MISRA C</b><br />C-STATのMISRA C:2004 パッケージは、約 20 のチェックが更新され、いくつかはデフォルトで有効です。
+  </p></li>
+</ul>
+ 
+ 
+<h4>V8.11 2017-04-11</h4>
+<b>プログラム修正</b>
+ 
+<ul>
+
+  <li><p>
+Renesas R-IN32M3-EC 評価版ボード osless_samle 例のビルドエラー。<br />[EW26468]
+  </p></li>
+
+  <li><p>
+Microchip SAMC20x18フラッシュローダが破損していました。<br />[EW26473]
+  </p></li>
+
+  <li><p>
+Microchip SAMC20の<code>GCLK</code>定義が間違っています。<br />[EW26474]
+  </p></li>
+
+  <li><p>
+EWARM 8.11.2:<br />デバッガレジスタのディスプレイに、<code>CNTP_CTL</code> ARM v7A/Rレジスタがありません。<br />[EW26500]
+  </p></li>
+
+  <li><p>
+EWARM 8.11.2:<br /><code>FEDACSTATUS</code>およびその他のレジスタがiorm48l950zwt.h とiorm48l950zwt.ddfのRM48に見つかりません。<br />[EW26532]
+  </p></li>
+
+  <li><p>
+EWARM 8.11.2:<br>レジスタTIMx DMA/割り込みが有効なレジスタ(<code>TIMx_DIER</code>)の表示が、STM32L151RDには誤って書き込み専用に設定されています。<br>[EW26578]
+  </p></li>
+
+  <li><p>
+EWARM 8.11.3:<br>次のレジスタがstm32l4x1.svdで見つかりません。<code>GPIOF</code>, <code>GPIOG</code>, <code>RCC.AHB2ENR.GPIOFEN</code>, <code>RCC.AHB2ENR.GPIOGEN</code>, <code>UART5</code>, <code>SAI1</code>, <code>TIM17</code>, <code>SAI2</code>, <code>TIM8</code>。<br />[EW26641]
+  </p></li>
+
+  <li><p>
+EWARM 8.11.3:<br>stm32f3x4.svdで<code>HRT</code>レジスタの定義が見つかりません。<br>[EW26651]
+  </p></li>
+
+  <li><p>
+EWARM 8.11.3:<br> stm32f105x8.icfとstm32f105xB.icfのRAMメモリ範囲の設定が間違っています。RAMに64 KBを指定する必要があります。<br>[EW26660]
+  </p></li>
+
+  <li><p>
+EWARM 8.11.3:<br>シンボル<code>_HSRUN_mode</code>が使用されましたが、Kxx_Trace.dmacで定義されていません。<br>[EW26379, EW26677]
+  </p></li>
+
+  <li><p>
+EWARM 8.11.3:<br>レジスタ<code>OTG_FS_GLOBAL</code>の<code>OTG_GLPMCFG</code>ビットが、STM32F412ZGのsvdファイルで見つかりません。<br>[EW26698]
+  </p></li>
+
+  <li><p>
+EWARM 8.11.3:<br> Kxx_Trace.dmacを使用しているNXP Kinetisデバイスは、トレースポート(portAまたはportE)を指定するために設定できませんでした。パラメータ<code>_TRACE_route</code>で portA (1)またはportE (0)のETMトレースピンを指定できるようになりました。デフォルトはportAです。<br>[EW26699]
+  </p></li>
+
+  <li><p>
+EWARM 8.11.3:<br><code>HRTIM</code>レジスタの定義が、STM32F334R8のsvdファイルに見つかりません。<br>[EW26724]
+  </p></li>
+
+  <li><p>
+<a href="../../../common/doc/CorrectedProblems.html">IAR Embedded Workbench IDE - 修正された問題</a>
+  </p></li>
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+  <li>
+なし
+  </li>
+</ul>
+ 
+ 
+<h4>V8.10 2017/03/10</h4>
+<b>プログラム修正</b>
+ 
+<ul>
+
+  <li><p>
+NXP S32K144でメモリの消去操作を実行中にエラー。<br />[EW26431]
+  </p></li>
+
+  <li><p>
+NXP MKL17ヘッダーファイルにFPGIO定義がありませんでした。<br />[EW26437]
+  </p></li>
+
+  <li><p>
+ST STM32F72xデバイスをフラッシュ中に間違ったフラッシュローダ消去操作を行いました。<br />[EW26452]
+  </p></li>
+
+  <li><p>
+<a href="../../../common/doc/CorrectedProblems.html">IAR Embedded Workbench IDE - 修正された問題</a>
+  </p></li>
+</ul>
+
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+<li><p><b>C11言語スタンダードをサポート</b><br> コンパイラおよびライブラリは最新のC言語スタンダードISO/IEC 9899:2012のサポートが追加されました。<br>注意: 新しいCライブラリ バイナリオブジェクト インターフェースは、EWARM の以前のバージョンと互換性がありません。詳細については<a href="iccarm.ENU.html">コンパイラリリースノート</a>を参照してください。</p></li>
+
+<li><p><b>C++14言語スタンダードをサポート</b><br>コンパイラおよびライブラリは最新のC++スタンダードISO/IEC 14882:2015をサポートしています。<br>注意: 新しいC++ライブラリ バイナリオブジェクト インターフェースは、EWARM の以前のバージョンと互換性がありません。詳細については<a href="iccarm.ENU.html">コンパイラリリースノート</a>を参照してください。</p></li>
+
+<li><p><b>更新されたIDEをルック・アンド・フィール</b><br> IDEには新しいアートワーク、ウィンドウ管理とドッキングの機能拡張、また修正された情報センターおよび新しいチュートリアルがあります。</p></li>
+
+<li><p><b>Unicodeを全般サポート</b><br> ツールチェーン全体が、コンパイラ、IDE、エディタおよびデバッガを含むUnicodeをサポートするようになりました。</p></li>
+
+<li><p><b>CMSISパックをサポート</b><br> プロジェクトマネージャは、ARM CMSIS-パックソフトウェアコンポーネントとの読み取りおよび操作が拡張されています。</p></li>
+
+<li><p><b>トレースフィルタリングおよび移動機能</b><br> 大量のトレースデータの取得の移動がループ、関数、割り込み、および文の境界での前/次への移動が簡単になるように考慮されています。</p></li>
+</ul>
+ 
+ 
+<h4>V7.80 2016-10-17</h4>
+<b>プログラム修正</b>
+ 
+<ul>
+  <li><p>
+...\examples\NXP\LPC43xx\LPC4300CMSIS\Drivers\include\lpc43xx_cgu.c/hのLPC4300 CGUコードが間違っています。<br>[EW26235]
+  </p></li>
+
+  <li><p>
+Renesas RZ/T1 RZ_T1_init_serial_boot 例のプロジェクトのrンかファイルのパスが間違っています。<br>[EW26247]
+  </p></li>
+
+  <li><p>
+NXP KinetisおよびS32K  FTFEフラッシュローダーへの変更:<br> 分割パラメータは、現在追加の第三のバイトを使用して、リセットビット上でEEPROM負荷をプログラムします。データフラッシュローダは、データのフラッシュを確認し、それに従ってフラッシュレイアウトを上書きします。<br>
+  </p></li>
+
+  <li><p>
+EWARM 7.80.3:<br> Atmel SAME70 フラッシュローダーを使用しているときのエラーが修正されました。修正で、IDEの.flash ファイルの引数を介して、フラッシュローダーからデバイスのTCM設定(ITCM/DTCM サイズ)を設定できるようになりました。<br>[EW26154]
+  </p></li>
+
+  <li><p>
+EWARM 7.80.3:<br> Atmel SAMG55フラッシュローダーは IAP ROMの存在を誤って想定しました。<br>[EW26287]
+  </p></li>
+
+  <li><p>
+EWARM 7.80.3:<br> 個々のブロックのAtmel SAMR21のフラッシュに失敗しました。<br>[EW26295]
+  </p></li>
+
+    <li><p>
+EWARM 7.80.4:<br> Kinetisのロック解除スクリプトarm\bin\jet\bin\Kinetis_unlock_jtag.bat.を削除します。<br>[EW26374]
+  </p></li>
+</ul>
+ 
+<b>新機能</b>
+<ul>
+<li><p><b>新しいIAR I-jet Trace for ARM Cortex-M XL デバッグトレースプローブをサポート</b><br> ARM Cortex-M XLのI-jet Traceは、トレースメモリサイズが256MbのARM Cortex-Mデバイス用の既存のトレースプローブよりも大きなバージョンです。 </b></p></li>
+</ul>
+ 
+
+<h4>V7.70 2016-06-17</h4>
+<b>プログラム修正</b>
+ 
+<ul>
+  <li><p>
+STM32F401xE デバイスを使用した古いプロジェクト ファイルは、STM32F401RE を使用するように変更されました。<br>[EW26093]
+  </p></li>
+
+  <li><p>
+いくつかの Atmel ヘッダファイルが不明な system_samxxx.h ファイルを参照しました。<br>[EW26097]
+  </p></li>
+
+  <li><p>
+SAMA5D3 デバイスの正しくない VFP 定義を修正しました。<br>[EW26107]
+  </p></li>
+
+  <li><p>
+EWARM 7.70.2<br> ATSAMG55J19 のフラッシュ ローダが、書き込み領域外のセクタを不正に消去します。<br>[EW26106]
+  </p></li>
+
+  <li><p>
+EWARM 7.70.2:<br> MISRAC++2008-5-0-6 のチェックで、「基底型（underlying type）」が不正に決定されることがあります。<br>[EW26118]
+  </p></li>
+
+  <li><p>
+EWARM 7.70.2:<br><code>++/--</code>演算子のために、誤判定除去分析中、正しく伝わらないことがあります。<br>[EW26119]
+  </p></li>
+
+  <li><p>
+EWARM 7.70.2:<br> ブール値からなる配列のエレメントを、条件式として使用すると、それらがブーリアン型（論理型）ではないと主張する誤判定を生成します。<br>[EW26121]
+  </p></li>
+
+  <li><p>
+EWARM 7.70.2<br><code>stm32f302xC.icf</code> における RAM メモリ レンジの定義が不正です。40 KBytes RAM を指定する必要があります。<br>[EW26129]
+  </p></li>
+  
+  <li><p>
+EWARM 7.70.2<br> STM32L4x2 SVD ファイルの USB ベース アドレスが不正です。<br>[EW26143]
+  </p></li>
+
+  <li><p>
+EWARM 7.70.2:<br> トレース情報のファイルパスが、再分析後に不正確になる場合があります。<br>[EW26168]
+  </p></li>
+
+  <li><p>
+<a href="../../../common/doc/CorrectedProblems.html">IAR Embedded Workbench IDE - 修正された問題</a>
+  </p></li>
+</ul>
+ 
+ 
+<b>新機能</b>
+<ul>
+<li><p><b>ARM Cortex-A/R/M デバッグ トレース プルーブのために 新しい IAR I-jet Trace をサポート</b><br> ARM Cortex-A/R/M の I-jet Trace は強力なプローブで、ARM CoreSight デバッグ インターフェイスのデバイスに幅広いデバッグおよびトレース機能を提供します。大容量のトレースメモリと、USB 3.0 および最大 350 MHz のトレースクロックを介して高速通信(ダブル データ レート)を提供します。I-jet Trace は、MIPI-20、MIPI-60、Mictor-38Cortex-A コネクタを使用した Cortex-R、Cortex-M デバイスの最大 16 トレース データラインまでの ETM、PTM、SWO トレース ストリームをサポートします。詳しくは、<a href="http://www.iar.com/ijettrace">I-jet Trace 製品ページ</a>および<a href="../I-jet-ARM.ENU.pdf">IAR デバッグ プローブ ユーザー ガイド</a>を参照してください。
+    </p></li>
+<li><p><b>新しい ARMv8-M 構造の初期サポート</b><br /> このリリースは、ARMv8-M Baseline および Mainline 実装の両方をサポートします。ARMv8-M 構造は、埋め込まれた IoT 市場のアプリケーションの安全性を確保することに焦点を当てています。詳細については、<a href="iccarm.ENU.html#features">コンパイラのリリースノート</a>を参照してください。
+    </p></li>
+<li><p><b>ARM Fastmodels の CADI</b><br /> 新しい CADI C-SPY デバッガ ドライバは、ARM 最初のモデルのハードウェア シミュレーション技術をサポートします。
+    </p></li>
+<li><p><b>Keil &mu;Vision プロジェクトのコンバータ</b><br /> Keil&mu;Vision バージョン 5 プロジェクトは IAR Embedded Workbench プロジェクトに統合できます。一番効果的なベースでプロジェクトは統合され、プロジェクト ファイルを階層的に統合し、保護します。統合ツールは、ソース コードのパターンを一致させることができます。また互換性のないコードのコンストラクトの変換で役に立つ交換を可能にします。<b>[ツール]</b> メニューからコンバータが開始されます。詳しくは、<a href="../EWARM_MigratingFromKeil.pdf">移行ガイド</a>を参照してください。
+    </p></li>
+</ul>
+
+ 
+ 
+<h4>V7.60 2015-03-31</h4>
+<b>プログラム修正</b>
+
+  <ul>
+    <li>
+なし
+    </li> 
+  </ul>
+
+<b>新機能</b>
+  <ul>
+<li><p><b>ARM Cortex-A/R/M デバッグ トレース プルーブのために 新しい IAR I-jet Trace をサポート</b><br> ARM Cortex-A/R/M の I-jet Trace は強力なプローブで、ARM CoreSight デバッグ インターフェイスのデバイスに幅広いデバッグおよびトレース機能を提供します。大容量のトレースメモリと、USB 3.0 および最大 350 MHz のトレースクロックを介して高速通信(ダブル データ レート)を提供します。I-jet Trace は、MIPI-20、MIPI-60、Mictor-38Cortex-A コネクタを使用した Cortex-R、Cortex-M デバイスの最大 16 トレース データラインまでの ETM、PTM、SWO トレース ストリームをサポートします。詳しくは、<a href="http://www.iar.com/ijettrace">I-jet Trace 製品ページ</a>および<a href="../I-jet-ARM.ENU.pdf">IAR デバッグ プローブ ユーザー ガイド</a>を参照してください。
+    </p></li>
+<li><p><b>新しい ARMv8-M 構造の初期サポート</b><br /> このリリースは、ARMv8-M Baseline および Mainline 実装の両方をサポートします。ARMv8-M 構造は、埋め込まれた IoT 市場のアプリケーションの安全性を確保することに焦点を当てています。詳細については、<a href="iccarm.ENU.html#features">コンパイラのリリースノート</a>を参照してください。
+    </p></li>
+<li><p><b>ARM Fastmodels の CADI</b><br /> 新しい CADI C-SPY デバッガ ドライバは、ARM 最初のモデルのハードウェア シミュレーション技術をサポートします。
+    </p></li>
+  </ul>
+  
+  
+<h4>V7.60 31.03.16</h4>
+<b>プログラム修正</b>
+ 
+<ul>
+  <li>
+    <p>
+STM32L083 の SVD ファイルで、MODER の MODExx に関する情報が抜けています。<br> [EW25401]
+    </p>
+  </li>
+
+  <li>
+    <p>
+Renesas R-IN32M3 SVD ファイルを読み込む場合に、警告が削除されました。<br>[EW25487]
+    </p>
+  </li>
+
+  <li>
+    <p>
+スタック使用解析制御ファイルのワイルドカードを使用した関数パターンと一致するものが 1 つ以上見つかった場合、リンカは間違ってエラーを表示します。<br>[EW25888]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+ior7s721020.h の Renesas RZ/A1L クロック パルス ジェネレータのレジスタのアドレスが、間違って指定されました。<br>[EW25948]
+    </p>
+  </li>
+ 
+  <li>
+    <p>
+CC2538 SWO trace_d0 は間違って無効になっていました。<br>[EW25952]
+    </p>
+  </li>
+
+  <li>
+    <p>
+NXP TWR-K64F ベア メタルの例は、現在オープン SDA USB/CDC シリアル ポートに代わって TWR-SER ボード ポートに印刷するように変更されています。<br>[EW25964]
+    </p>
+  </li>
+
+  <li>
+    <p>
+STM32F071VBH6 デバイスのデバッグ中 <b>レジスタ</b> ウィンドウの GPIOE レジスタが不明です。<br>[EW25965]
+    </p>
+  </li>
+
+  <li>
+    <p>
+リンカ コマンドファイル <code>stm32f410x.icf</code> には、RAM メモリ領域の正しくない定義があります。<br>[EW25969]
+    </p>
+  </li>
+
+  <li>
+    <p>
+<a href="../../../common/doc/CorrectedProblems.html">IAR Embedded Workbench IDE - 修正された問題</a>
+    </p>
+  </li>
+ 
+</ul>
+
+<b>新機能</b>
+ <ul>
+<li><p><b>C-STAT の機能拡張</b><br /> 静的分析ツール C-STAT には、約 150 の新しいチェックで拡張され、この中には新しい 90 個は MISRA C:2012 チェックおよび、2 個の新しいチェックのパッケージがあります。また新しいオプションで、分析の間違った正の値の終了フェーズを有効または無効にし、また分析からファイルを実行します。C-STAT メッセージの無効化は、現在ソースファイルのコメントにあるディレクティブで、コントロールできます。詳細については、<a href="iccarm.ENU.html#features">コンパイラのリリースノート</a>を参照してください。
+  </p></li>
+<li><p><b>フラッシュ ブレークポイント</b><br /> I-jet デバッグ プローブを使用している場合は、選択した Cortex-M  デバイスに無制限の数のブレークポイントを追加します。フラッシュブレークポイントは、コンテキストメニューから明示的に設定する必要があります。お使いのデバイスでフラッシュ ブレークポイントをサポートしているかどうか判断するには、次のセミコンダクタ ベンダーの指定するデバイスのリストを参照してください。
+  </p></li>
+<li><p><b>TI MSP-FET をサポート</b><br /> IAR C-SPY デバッガは、現在 TI MSP-FET デバッグ プルーブをサポートしています。
+  </p></li>
+<li><p><b>cJTAG サポート</b><br /> I-jet デバッグ プルーブを使用している場合は、IAR C-SPY デバッガが、TI 接続デバイス CC13xx/2538/26xx で cJTAG インターフェイスをサポートするようになりました。
+  </p></li>
+
+<li><p><b>SWO では TI XDS110 をサポート</b><br /> IAR C-SPY デバッガは現在、TI XDS110 デバッグ プローブからの SWO トレースデータをサポートしています。
+  </p></li>
+</ul>
+  
+<h4>V7.50 2015-11-10</h4>
+<b>プログラム修正</b>
+ 
+<ul>
+
+<li>
+  <p>
+Infineon XMCライブラリをバージョン2.0.0に更新しました。<br>[EW25680]
+  </p>
+</li>
+
+<li>
+  <p>
+Renesas RIN32M4に間違ったフラッシュローダが選択されていました。<br>[EW25723]
+  </p>
+</li>
+
+<li>
+  <p>
+Atmel SAMG55の<code>PIO_DRIVER</code>レジスタの定義がありません。<br>[EW25779]
+  </p>
+</li>
+
+<li>
+  <p>
+MKL25Z4ヘッダファイルで<code>NVIC_IP</code>の定義が間違っています。<br>[EW25786]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.50.2<br>パラレルビルドが有効な場合、ビルド後のアクションが実行されません。<br> [EW25327]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.50.2<br> デバッガ レジスタ定義ファイルの <code>COMP2-&gt;CSR</code> の定義が正しくありません。<br>[EW25640]
+  </p>
+</li>
+<li>
+  <p>
+EWARM 7.50.2<br> STM32L476RG-Nucleo ボードのいくつかの例のプロジェクトで、情報センターコントロール ファイルが不明です。<br />[EW25826]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.50.2<br><code>tms470r1B1m_bit_definitions.h</code> ファイルの <code>DMEN1</code>、<code>DMEN5</code>、<code>DMEN9</code>、および<code>DMEN13</code> の定義が正しくありません。<br>[EW25746]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.50.2<br><code>SRAM1</code> および <code>SRAM2</code> メモリ領域の定義が、STM32L4 デバイスのリンカ定義ファイルと入れ替わります。また、誤ってともに配置されています。<br>[EW25754]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.50.2<br> SAM9G45 に不明なレジスタ ビットフィールドを追加しました。<br>[EW25795]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.50.3<br> Freescale Vybrid の例のヘッダーファイル MVF50GS10MK50.h は、読み取り専用として誤って CNR を定義しました。<br>[EW25662]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.50.3<br> Freescale MK61F12 および MK60F12 SVD ファイルの間違った IRQ 割り当てです。<br>[EW25812]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.50.3<br> Infineon XMC4500.svd ファイルの割込み定義が不明です。<br>[EW25850]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.50.3<br> Atmel SAMG55 ヘッダー ファイルの PMC_PCER1、PMC_PCDR1、PMC_PCSR1 レジスタ定義が不明です。<br>[EW25930]
+  </p>
+</li>
+
+<li>
+  <p>
+<a href="../../../common/doc/CorrectedProblems.html">IAR Embedded Workbench IDE - 修正された問題</a>
+  </p></li>
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+<li><p><b>Cortex-M7のETMv4トレース</b><br /> IAR C-SPYデバッガが、Cortex-M7で使用されるARM ETMv4 (Embedded Trace Macrocellバージョン4)トレースをサポートするようになりました。ETMv4トレースにはI-jet Traceが必要です。『<a href="csjtagjet.ENU.html#important">IAR C-SPY I-jetおよびJTAGjetドライバのリリースノート</a>』を参照してください。
+  </p></li>
+<li><p><b>最近のCortex-AコアでのPTMトレースのサポート</b><br /> IAR C-SPYデバッガが、Cortex-A7/A9など最近のCortex-Aデバイスで使用されるPTM (Program Trace Macrocell)トレースをサポートするようになりました。PTMトレースには、I-jetを使用する場合、I-jet Traceまたはオンチップのトレースバッファ(ETBまたはETF)が必要です。『<a href="csjtagjet.ENU.html#important">IAR C-SPY I-jetおよびJTAGjetドライバのリリースノート</a>』を参照してください。
+  </p></li>
+<li><p><b>C-STATでの解析レポートの生成</b><br /> C-STATからhtml形式で解析レポートを生成できるようになりました。詳しくは、『<a href="../EW_CSTATGuide.ENU.pdf">C-STAT静的解析ガイド</a>』を参照してください。
+  </p></li>
+
+</ul>
+ 
+
+ 
+<h4>V7.40 2015-02-19</h4>
+<b>プログラム修正</b>
+ 
+<ul>
+
+<li>
+  <p>
+<code>$PROJ_DIR$</code>の相対ファイルパスを持つファイルをチェックインすることが可能な場合があります。<br>[EW24947]
+  </p>
+</li>
+
+<li>
+  <p>
+ソースブラウザの出力形式の変更によって、[コールグラフ]ウィンドウに表示される結果が不十分なことがあります。<br>[EW24979]
+  </p>
+</li>
+
+<li>
+  <p>
+デバッガで、STM32F302xBデバイスとSTM32F302xCデバイスについて正しいSVDファイルが使用されるようになりました。<br>[EW25152]
+  </p>
+</li>
+
+<li>
+  <p>
+Renesas RZ/A1サンプルブートローダが、デバッガの起動時にレースの状態になって失敗することがあります。<br>[EW25158]
+  </p>
+</li>
+
+<li>
+  <p>
+EFM32デバイスのトレースマクロが修正されました。<br>[EW25162]
+  </p>
+</li>
+
+<li>
+  <p>
+Flex NVMメモリを配置先として使用すると、Freescale Kinetisフラッシュローダが間違った場所にデータを配置することがあります。<br>[EW25189]
+  </p>
+</li>
+
+<li>
+  <p>
+Nordicsemiのメモリ構成を修正しました。<br>[EW25199]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.2:<br> SAMA5DにMultiprocessing Extensionsのサポートが追加されました。<br>[EW25216]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.2:<br> Windowsのファイルパスの長さ制限を超えるパスを持ったファイルにブレークポイントを設定すると、[ブレークポイント]ウィンドウを開いたときにIDEがクラッシュすることがあります。<br>[EW25247]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.2:<br>絶対パスに展開するカスタム引数変数が、<b>[プロジェクトオプション]</b>ダイアログボックスの<b>プロジェクト オプション&gt;一般オプション&gt;出力</b>ページで出力ディレクトリパスの一部として展開されると、そのように認識されません。<br>[EW25252]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.2:<br> 新しく作成されたワークスペースを保存する場合、[ワークスペース]ウィンドウの[概要]タブで「Untitled Workspace」という名前が付くことがあります。<br>[EW25266]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.2<br /><CODE>DebugSS_DRM</CODE>レジスタの定義がファイル<CODE>ioam3358.h</CODE>にありません。<br />[EW25304]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.2:<br> 大規模なプロジェクト(バージョン管理された100件未満のファイル)の場合、IDEがサブバージョンのステータス更新に失敗することがあります。<br>[EW25311]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.2:<br> 場合によっては、エディタウィンドウでブレークポイントをトグルすると、既存のブレークポイントを切り替える代わりに、新しいブレークポイントが作成されることがあります。<br>[EW25316]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.2:<br>IAR Embedded Workbench for ARMのインストーラには、<b>[インストール先フォルダの選択]</b>ダイアログボックスが、<b>[USBドライバのインストール]</b>ダイアログボックスよりも先に表示され、適切なドライブの使用可能なディスク容量がチェックされるようになりました。<br>[EW25318]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.3:<br>バッチビルドで<b>[ツール]&gt;[オプション...]&gt;[プロジェクト]&gt;[ビルド処理の停止条件]</b>オプションが無視されます。<br>[EW25309]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.3:<br> Toshiba TMPM470.hにヘッダファイルがありませんでした。<br>[EW25414]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.3:<br> Renesas RIN32M3-ECのSVDファイルにより、一部のGPIOフィールドおよびRTPORTフィールドに間違った値が表示されていました。<br>[EW25418]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.3:<br> iMX6のサンプルプロジェクトのコア数を修正しました。<br>[EW25421]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.3:<br> STM32F446シリーズのデバイスがiar.comおよびリリースノートに掲載されています。<br>[EW25429]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.3:<br> ユーザ引数変数のロードに対する依存のために、ユーザ引数変数のロードに失敗すると、後に続くロードが実行されなくなっていました。これは修正されました。<br>[EW25455]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br> Windowsが<code>eww</code>ファイルを開こうとすると、<code>There was a problem sending the command to the program</code>(プログラムへのコマンドの送信中に問題がありました)というメッセージが誤って表示されることがありました。<br>[EW23368]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br> LPC15xxシリーズになかったリセットスタイルが、I-jetおよびCMSIS-DAPに追加されました。<br>[EW24850]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br> SiLabs EFM32GG395F1024のPeriphUserDataのアドレス範囲が間違っていました。<br>[EW25342]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br><code>cspybat</code>で、スペースのあるパスが処理されません。<br>[EW25410]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br> Atmel SAM4S8Bで、セクター領域の不一致がありました。<br>[EW25477]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br> Freescale K21/K22 のデバイスが誤ってETBをサポートするために期待されていました。<br>[EW25484]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br> Infineon XMC1000ファミリのフラッシュローダのサポートが、特定デバイスのサポートという点で単純化されすぎていました。<br>[EW25488]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br> TMPM380-SKの音声デモのサンプルをダウンロードする際、フラッシュダウンロードのエラーが発生していました。<br>[EW25489]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br> Toshiba TMPM370FxFGフラッシュローダが、存在しないSPIフラッシュに間違って定義されていました。<br>[EW25497]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br> Freescale KV46ヘッダファイルにレジスタ定義がありませんでした。<br>[EW25502]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br> Toshiba TMPM470.hおよびTMPM475.hのインクルードファイルのエラー。<br>[EW25527]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br> STM32L0xxのデバイスシリーズに、正しいC-SPYマクロファイルが使用されるようになりました。<br>[EW25563]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br><b>プロジェクト&gt;オプション</b>ダイアログボックスで、Cortex-M0+とSWOの(適切な) 組合せが処理されるようになりました。<br>[EW25567]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br><b>NEON</b>チェックボックスが、32Dレジスタを持つCortex A5を選択してからCortex A8を選んだ後も、灰色表示されなくなりました。<br>[EW25584]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br> 一部のK64サンプルからETMクロック設定が削除されました。<br>[EW25585]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br> MSP432P401R SVDファイルにレジスタ定義がありません。<br>[EW25611]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br> 1Mのフラッシュメモリを持つFreescale K24について、正しいフラッシュローダが選択されるようになりました。<br>[EW25619]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br><b>[ファイル内で置換]</b>ダイアログボックスの<b>[置換後の文字列]</b>フィールドの文字列のサイズ制限がなくなりました。<br>[EW25642]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.5:<br><code>eww</code>ファイルをダブルクリックしても、IAR Embedded Workbenchの新しいインスタンスが起動しませんでした。<br>[EW25665]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.40.7:<br><b>[出力ディレクトリ]</b>ボックスで指定した相対パス(<b>[プロジェクト]&gt;[オプション]&gt;[一般オプション]&gt;[出力]</b>を選択して利用可能)が失敗することがあります。<br>[EW25709]
+  </p>
+</li>
+
+  <li><p>
+<a href="../../../common/doc/CorrectedProblems.html">IAR Embedded Workbench IDE - 修正された問題</a>
+  </p></li>
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+<li><p><b>I-jet Trace 1ビットおよび2ビットのサポート</b>(7.40.3)<br /> I-jet Traceで、1ビットおよび2ビット幅のトレースバスを持つETMトレースデータが収集できるようになりました。この機能を有効にするには、I-jet Traceのファームウェアをレビジョン5.4にアップグレードする必要があります。
+  </p></li>
+<li><p><b>TI XDSデバッグプローブの拡張サポート</b>(7.40.3)<br /> XDSプローブをC-SPYのCortex-Mデバイスと併用する際に、データブレークポイント、SWOトレース、ベクタキャッチを使用できるようになりました。プロジェクトオプションで、構成の可能性も改善されました。この新しい機能のサポートレベルは、使用するXDSプローブおよびその機能に応じて異なります。
+<li><p><b>C-STAT</b><br /> 静的分析のためのアドオン製品、C-STATがサポートされるようになりました。C-STATは、不具合やバグ、CERTやCommon Weakness Enumerationが定義するセキュリティの脆弱性を検出できる画期的な静的分析機能を備えているほか、コードをMISRA-C:2012/2004やMISRA-C++:2008などのコード標準に適合させる上で役立ちます。詳しくは、see <A href="../EW_CSTATGuide.ENU.pdf" >C-STAT静的分析ガイド</A>を参照してください。
+  </p></li>
+<li><p><b>パラレルビルド</b><br /> PCで使用可能なプロセッサコアを有効利用するため、いくつかの並列処理でコンパイラを実行できるようになりました。パラレルビルドを制御するには、<b>[ツール]&gt;[オプション]&gt;[プロジェクト]&gt;[パラレルビルドを有効化]</b>を選択します。
+  </p></li>
+<li><p><b>Cortex-M7デバイス</b><br /> Atmel (ATSAMx7)およびST (STM32F756)のCortex-M7デバイスのデバイスサポート。これには倍精度浮動小数点ユニットのサポートも含まれます。
+  </p></li>
+</ul>
+ 
+<h4>V7.30 2014-09-24</h4>
+<b>プログラム修正</b>
+ 
+<ul>
+
+<li>
+  <p>
+CMSISヘッダファイルの修正。<br>[EW24320]
+  </p>
+</li>
+
+<li>
+  <p>
+CMSISヘッダファイル<code>arm_math.h</code>が、C++でコンパイル可能になりました。<br>[EW24663、EW24855]
+  </p>
+</li>
+
+<li>
+  <p>
+Atmel SAM3SD8Cのフラッシュローダが破損しています。<br>[EW24760]
+  </p>
+</li>
+
+<li>
+  <p>
+<code>ioam3358.h</code>が、<code>EMIF_DDR_PHY_CTRL_1</code>の不十分な定義を保持しています。<br>[EW24927]
+  </p>
+</li>
+
+<li>
+  <p>
+<code>ioam3358.h</code>のRead DQS Slave Ratio Registerの定義が間違っています。<br>[EW24951]
+  </p>
+</li>
+
+<li>
+  <p>
+RM9200のメモリ構成を修正して、デバッガが読取り専用の領域に書き込まないようにしました。<br>[EW24957]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.3:<br> SCCサーバへの接続が不安定なため、SCCクライアントがファイルをチェックイン/チェックアウトできないことがあります。<br>[EW24794]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.3:<br> デバッグ開始およびデバッグ停止のコマンドにより、リソースのリークが発生します。<br>[EW24971]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.3:<br> [SFR設定]ウィンドウでリソースのリークが発生します。<br>[EW24973]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.3:<br> ソースブラウザを無効にした後、再び有効化されないときがあります。(ビルド中やデバッグセッションの開始時などに、ソースブラウザは一時的に無効にすることができます)。<br>[EW25018]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.3:<br> ワークスペースを開いたときに、プロジェクトの接続ファイルがプロジェクトから誤って削除されなくなりました。<br>[EW25022]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.3:<br><code>STM32F427x.svd</code>の<code>RTC.TSTR</code>のビットフィールド情報が間違っています。<br>[EW25024]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.3:<br><code>RTC.TAFCR</code>で抜けていたビットが、<code>STM32L151xBA.ddf</code>ファイルに追加されました。<br>[EW25057]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.3:<br> サンプルソースコードのパスに空白文字が含まれていると、Vybridのデュアルコアサンプルをビルドできません。<br>[EW25066]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.3:<br><code>NMI</code>割り込みの定義が<code>ioam3358.h</code>に追加されました。<br>[EW25087]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.3:<br> Atmelデバイス(フラッシュローダを持つものと持たないもの)のリストが修正されました。<br>[EW25090]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.4:<br> 一部のSTM32F05xデバイスのレジスタについて、[レジスタ]ウィンドウに間違ったレジスタ名が表示されます。<br>[EW24114]
+  </p>
+</li>
+<li>
+  <p>
+EWARM 7.30.4:<br> C-SPYでSTM32F303VCのレジスタが多数抜けています。<br />[EW24232]
+  </p>
+</li>
+<li>
+  <p>
+EWARM 7.30.4:<br><code>STM32F07xx.svd</code>で、GPIOEの定義が抜けています。<br>[EW24643]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.4:<br><code>STM32F07xx.svd</code>でFMC定義が抜けています。<br>[EW24674]
+  </p>
+</li>
+<li>
+  <p>        
+EWARM 7.30.4:<br> STM32F42x/43xで、I2Eレジスタが[レジスタ]ウィンドウに表示されるようになりました。<br />[EW24815]
+  </p>
+</li>
+<li>
+  <p>
+EWARM 7.30.4:<br> [レジスタ]ウィンドウで、STM32F42xxxデバイスとSTM32F43xxデバイスのFMCコントロールレジスタ名が間違って表示されています。<br />[EW24837]
+  </p>
+</li>
+<li>
+  <p>
+EWARM 7.30.4:<br>ADCレジスタが<code>STM32F30xxx.svd</code>にありません。<br />[EW24864]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.4:<br> ETBを持たないKinetisデバイス用のC-SPYマクロが修正されました。<br>[EW25094]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.4:<br> MK22FX512xxx12デバイスとMK22FN1M0xxx12デバイスのデフォルトのフラッシュローダが修正されました。<br>[EW25119]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.30.4:<br> Spansion FM3デバイスでI-jet Traceを使用する際、トレースクロックプリスケーラ1/1がデフォルトで使用されます。これにより、トレースのデコーディングに関する特定の問題を回避します。<br>[EW25139]
+  </p>
+</li>
+
+  <li><p>
+<a href="../../../common/doc/CorrectedProblems.html">IAR Embedded Workbench IDE - 修正された問題</a>
+  </p></li>
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+<li><p><b>新しいIAR I-jet Traceデバッグトレースプローブのサポート</b><br> Cortex-M用I-jet Traceは、充実したデバッグとトレースの機能を備えた強力なプローブです。大容量のトレースメモリを持ち、USB3を介して高速通信が可能です。I-jet Traceは、Cortex-Mデバイス用ETMとSWOのトレースストリームをどちらもサポートしています。詳しくは、<a href="http://www.iar.com/ijettrace">I-jet Trace製品のページ</a>および<a href="csjtagjet.ENU.html#manuals">ユーザドキュメント</a>を参照してください。
+    </p></li>
+<li><p><b>Cortex-M7倍精度</b><br> Cortex-M7の倍精度浮動小数点ユニット(オプション)がサポートされるようになりました。
+    </p></li>
+</ul>
+ 
+ 
+<h4>V7.20 2014-05-19</h4>
+<b>プログラム修正</b>
+ 
+<ul>
+
+<li>
+  <p>
+ビルド出力に関連する引数変数(<code>$TARGET_DIR$</code>や<code>$TARGET_BNAME$</code>など)が、出力ファイル自体が存在しないときに正しく拡張されるようになりました。<br>[EW21158, EW21197]
+  </p>
+</li>
+
+<li>
+  <p>
+プロジェクトのメンバでないファイルをチェックアウトすることはできますが、IDE SCC統合を使用して再びチェックインすることができません。<br>[EW23820]
+  </p>
+</li>
+
+<li>
+  <p>
+一部のFreescale Kinetis用フラッシュローダが修正されました。<br>[EW24538、EW24617]
+  </p>
+</li>
+
+<li>
+  <p>
+日本語モードのときに、サンプルをダウンロードする際の進行情報が間違っていました。<br>[EW24640]
+  </p>
+</li>
+
+<li>
+  <p>
+Toshiba TMPM354F10TFGのTCAPレジスタの名前が間違っています。<br>[EW24646]
+  </p>
+</li>
+
+<li>
+  <p>
+ioam3358.ddfのLCDCレジスタのベースアドレスが間違っています。<br>[EW24647]
+  </p>
+</li>
+
+<li>
+  <p>
+STM32F1xxxGのフラッシュローダが正しく機能するようになりました。<br>[EW24704]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.20.2:<br> UTF8の混在したActive Code Pageエンコーディングを使用して文字集合を変換する際の不一致によって、ソースブラウザで一部のパスが使用できなくなる恐れがあります。<br>[EW24585]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.20.2:<br> プロジェクトのファイルにアクセスするとき、Windows は次のエラーメッセージを表示します。<b>ユーザーがマップしたセクションが開いているファイルでは、リクエストした操作は実行できません。</b>この理由は、ソースブラウザがファイルをロックする可能性があるためでした。<br> [EW24659]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.20.2:<br> STM32F030デバイスのフラッシュローダが正しく機能するようになりました。<br>[EW24706]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.20.2:<br> 別のエディタウィンドウを閉じて間もない場合は、エディタウィンドウ内のショートカットを使用する前にウィンドウをクリックする必要があります。<br>[EW24716]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.20.2:<br> Renesas R-IN32M3-EC Board Liteのリセット構成が間違っています。<br>[EW24751]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.20.2:<br> NXP LPC175xを使用する際のフラッシュローダの問題。<br>[EW24754]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.20.2:<br> レジスタRCC_IOPENRのレジスタフィールド名が間違っています。<br>[EW24774]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.20.2:<br> iostm32f4x5x.ddfにTIM3およびTIM4のCCR3/CCR4の定義がありません。.<br>[EW24775]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.20.2:<br> NXP LPC1759について間違ったフラッシュローダが選択されています。<br>[EW24776]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.20.2:<br> ST STM32F030x4に間違ったフラッシュローダが選択されています。<br>[EW24782]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.20.5:<br> AM3517になかったFPUタイプの定義が追加されました。<br>[EW24847]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.20.5:<br> [ワークスペース]ウィンドウでアイコンリソースのリークが発生します。<br>[EW24874]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.20.5:<br> エディタウィンドウでコードの入力補完を使用すると、メンバ/関数/変数の名前が補完リストからの選択項目で正しく補完されません。<br>[EW24877]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.20.5:<br> 汎用ヘッダファイルのビット定義、およびFreescale Vybridデバイスのレジスタ定義を修正しました。<br>[EW24887]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.20.5:<br> 行数が通常より多いファイルを処理する際、ソースブラウザで非常に時間がかかるため、ビルドツールの動作を妨げることがあります。<br>[EW24905]
+  </p>
+</li>
+
+<li>
+  <p>
+In EWARM 7.20.5:<br> MKV46F15 SVDファイルで、ADC_PWR2、ADC_CTRL3、ADC_SCHLTENの各レジスタの位置が間違っています。[EW24910]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.20.5:<br> テキストエディタウィンドウが、リソースリークのために異常終了することがありました。[EW24940]
+  </p>
+</li>
+
+<li><p>
+<a href="../../../common/doc/CorrectedProblems.html">IAR Embedded Workbench IDE - 修正された問題</a>
+  </p></li>
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+<li><p><b>C-RUNランタイム分析</b><br> ランタイム分析用のアドオン製品、C-RUNがサポートされるようになりました。C-RUNは算術チェック、高度な境界チェック、ヒープチェックなどの機能を備えています。詳しくは、<a href="../EWARM_DebuggingGuide.ENU.pdf" target="_self">IAR Embedded Workbench C-SPYデバッグガイド</a>を参照してください。<br>ARM用IAR Embedded Workbenchの標準版とCM版は、評価に使用できるコードサイズ限定モードでC-RUNをサポートしています。
+    </p></li>
+</ul>
+ 
+ 
+<h4>V7.10 2014-02-21</h4>
+<b>プログラム修正</b>
+ 
+<ul>
+
+<li>
+  <p>
+ST STM32F05xxのライブラリヘッダファイルstm32f0xx_comp.hに定義がありませんでした。<br>[EW24454]
+  </p>
+</li>
+
+<li>
+  <p>
+Freescale i.MX28のヘッダファイルとDDFファイルにエラーがありました。<br>[EW24455]
+  </p>
+</li>
+
+<li>
+  <p>
+数多くのサンプルプロジェクトが、パスエラーのためにビルドに失敗していました。<br>[EW24466]
+  </p>
+</li>
+
+<li>
+  <p>
+自動インデントで、ファイルが読み取り専用であることを示す際に音だけが再生されまていました。<br>[EW24467]
+  </p>
+</li>
+
+<li>
+  <p>
+テキストエディタで絶対ファイルリンクを開いて保存すると、リンクが通常のファイルに置換されていました。<br>[EW24473]
+  </p>
+</li>
+
+<li>
+  <p>
+時間の経過とともに消去レベルが低くなるため、一部のSTM32フラッシュデバイスは消去されたものとして読み込まれることがあっても、それに書き込もうとすると失敗します。このため、消去の前にフラッシュメモリが空かどうかをチェックするオプションは、現在デフォルトで無効に設定されています。ただし、フラッシュローダのパラメータとしては使用可能です。<br>[EW24483]
+  </p>
+</li>
+
+<li>
+  <p>
+Freescale X-FREEDOM-KL25Zの点滅するLEDサンプルが、フラッシュの設定で正しく機能しませんでした。<br>[EW24507]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.10.3:<br>CMSIS-DSP関数<code>arm_mat_inverse_f32()</code>がCMSIS V4.00で修正され、EWARM 7.10.3に同梱されます。<br>[EW24177]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.10.3:<br> Spansion MB9A130Lシリーズのフラッシュローダが修正されました。<br>[EW24506]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.10.3:<br> IAR Embedded Workbenchと外部ツールとのプロジェクト接続が正しく機能するようになりました。<br>[EW24531]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.10.3:<br> 一部のFreescale Kinetisのサンプルにベクタテーブルが間違って入れられていました。<br>[EW24537]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.10.3:<br> Spansion FM4シリーズのフラッシュローダが修正されました。<br>[EW24540]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.10.3:<br> アーキテクチャの拡張であるSysTick SFR定義がFreescale Cortex M0+デバイスに追加されました。<br>[EW24541]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.10.3:<br> Atmel SAMD20のSFRの仕様が修正されました。<br>[EW24543]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.10.3:<br><code>DeviceMacros</code>の値が空になっているデバイス設定ファイル(<code>.i79</code>)を持つデバイスを選択したときに、IAR Embedded Workbenchが異常終了しなくなりました。<br>[EW24547]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.10.3:<br> ST STM32L05xデバイスとSTM32L06xデバイスが、正しいCortex-M0+コアではなく、間違ってCortex-M3コアにより設定されていました。<br>[EW24568]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.10.3:<br> 一部のFreescale Kinetis Kシリーズ用フラッシュローダが修正されました。<br>[EW24570]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.10.3:<br> Energy Micro EFM32xGでC-SPYマクロを有効にしていたトレースが修正されました。<br>[EW24588]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 7.10.3:<br> 不明なMicrosemi SFR定義を追加しました。<br>[EW24596]
+  </p>
+</li>
+
+  <li><p>
+<a href="../../../common/doc/CorrectedProblems.html">IAR Embedded Workbench IDE - 修正された問題</a>
+  </p></li>
+
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+  <li>
+<p><b>CMSISをバージョン4.0に更新</b><br> CMSIS-BASEランタイム誌ステムとCMSIS-DSPライブラリ。
+    </p>
+  </li>
+</ul>
+ 
+ 
+<h4>V6.70 2013-10-29</h4>
+<b>プログラム修正</b>
+<ul>
+
+<li>
+  <p>
+<b>[SFR設定]</b>ウィンドウが正しく機能するようになりました。<br>[EW23822]
+  </p>
+</li>
+
+<li>
+  <p>
+リンカ出力ファイルを指定するときに引数変数<code>$TARGET_BNAME$</code>および/または<code>$TARGET_BPATH$</code>を使用しても、異常終了することがなくなりました。<br>[EW24026]
+  </p>
+</li>
+
+<li>
+  <p>
+NXP <code>lpc1788.h</code>ヘッダファイルがC++モードでコンパイルしませんでした。<br>[EW24106]
+  </p>
+</li>
+
+<li>
+  <p>
+visualSTATEとともにインストールされたIAR Embedded Workbenchを使用して作成されたプロジェクトを、visualSTATEなしにインストールされたIAR Embedded Workbenchで開いた場合、<code>unknown tool 'Coder'<code>を参照するワーニングが表示されなくなりました。<br>[EW24176]
+  
+  </p>
+</li>
+
+<li>
+  <p>
+TM4CのフラッシュローダがTM4C129XNCZでも機能するようになりました。<br>[EW24184]
+  </p>
+</li>
+
+<li>
+  <p>
+フラッシュローダファイル<code>FlashSTM32L15x_L16x.mac</code>がない場合、STM32L15xおよびSTM32L16xデバイスのフラッシュダウンロードが失敗していました。<br>[EW24188、EW24203]
+  </p>
+</li>
+
+<li>
+  <p>
+NXPヘッダファイル<code>iolpc1313_48_01.h</code>にSSP1ビットがありませんでした。<br>[EW24191]
+  </p>
+</li>
+
+<li>
+  <p>
+NXP LPC18x0のヘッダおよびデバッガの記述ファイルに、間違ったSPIFIレジスタ仕様がありました。<br>[EW24197]
+  </p>
+</li>
+
+<li>
+  <p>
+自動補完、<b>[関数に移動]</b>ボタン、ツールチップ情報が、共通コンポーネントのバージョン6.6.2および6.6.3に基づいてIAR Embedded Workbench製品で機能していませんでした。<br>[EW24200、EW24211]
+  </p>
+</li>
+
+<li>
+  <p>
+STM32F205のデバッガ記述ファイルに、多数の割込み優先順位レジスタがありませんでした。<br>[EW24218]
+  </p>
+</li>
+
+<li>
+  <p>
+<b>[ファイル内で置換]</b>ダイアログボックスで<b>[すべて置換]</b>をクリックして文字を置換する際、切捨てが正しく機能しませんでした。つまり、置換文字列が置換対象の文字列より短い場合、置換後のファイルの最後に余分かつ不要な文字が含まれていました。<br>[EW24241]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.70.2:<br>特定の長さを超えた行が、<b>バッチビルド</b>ダイアログボックスで一部表示できなくなることがありました。<br>[EW23382]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.70.2:<br><b>[ファイル]&gt;[新規ファイル]</b>コマンドを使用してソースファイルを作成した場合、エディタでファイルを閉じてまた開くまでコードの入力補完が機能しませんでした。<br>[EW24273]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.70.2:<br> ST STM32F37xデバイスに対して、FPSCRが複数定義されていました。<br>[EW24286]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.70.2:<br> 一部のAtmelのデバイスにTrace_SAMxx.dmacファイルがありませんでした。<br>[EW24290]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.70.2:<br><b>[関数に移動]</b>ドロップダウンメニューの関数の最大数を、200から2000に増やしました。<br>[EW24303]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.70.2:<br> 一部のAtmel ATSAMxxx デバイスで、デバイスの選択が不具合となっていました。<br>[EW24332]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.70.2:<br> Atmel SAMA5D31のデバッガ記述ファイルのファイルリンクが壊れていました。<br>[EW24379]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.70.2:<br><b>[オプション]&gt;[C/C++コンパイラ]&gt;[プリプロセッサ]&gt;[標準のインクルードディレクトリを無視]</b>オプションを選択すると、ソースブラウザの機能が停止していました。<br>[EW24305]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.70.3:<br> Toshiba TMPM358FDTFGに間違ったフラッシュローダが選択されています。<br>[EW24415]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.70.3:<br> stm32f4x5x.ddfでレジスタ定義がエラー。<br>[EW24418]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.70.3:<br> STM32F2xx、STM32F3xx、STM32F4xx のフラッシュローダが、大きなプログラムで失敗していました。<br>[EW24430、EW24435、EW24440]
+  </p>
+</li>
+
+</ul>
+
+<b>新機能</b>
+<ul>
+<li><p><b>サンプル・オンデマンド</b><br> IAR Embedded Workbenchのダウンロードおよびインストールの速度を高めるために、製品のインストール内容にサンプルプロジェクトが含まれなくなりました。サンプルプロジェクトは、IAR Embedded Workbenchのインフォメーションセンタのサンプルページを使用してチップメーカからダウンロードすることができます。インターネットを利用できない場合は、インストール用DVDからもサンプルを入手できます。 
+    </p></li>
+
+<li><p><b>Freescale Processor Expertとの統合を改善</b><br> プロジェクトの内容をProcessor ExpertからIAR Embedded Workbenchにシームレスに渡すためのProject Connectionメカニズムが拡張され、デバイス名やリンカ設定ファイル、完全なパス情報も転送されるようになりました。
+    </p></li>
+
+<li><p><b>#pragma default_variable_attributesと#pragma default_function_attributes</b><br> 新しい2つのプラグマディレクティブが、変数/関数の宣言と定義用にデフォルトの配置および属性に追加されました。つまり、1つの#pragmaを使用して、複数の宣言や定義をオーバライドできることになります。
+    </p></li>
+</ul>
+
+
+<h4>V6.60 2013-06-27</h4>
+<b>プログラム修正</b>
+<ul>
+<li>
+  <p>
+エディタで、プリプロセッサ情報向けにさまざまなカラーやフォントが使用できるようになりました。<br>[EW23316]
+  </p>
+</li>
+
+<li>
+  <p>
+すべてのFreescale Kinetisデバイス固有IRQの値は、SVDファイルの16により誤ってオフセットされました。<br>[EW23788,EW23982]
+  </p>
+</li>
+
+<li>
+  <p>
+プロジェクトファイル（およびその依存関係）のタイムスタンプを余りに頻繁にモニタリングしている[ワークスペース]によって引き起こされる、CPUの高負荷の問題は改善されました。<br>[EW23817]
+  </p>
+</li>
+
+<li>
+  <p>
+外部の修正済みプロジェクトファイル(.ewp)のリロードで、デバッガは異常終了しなくなりました。<br>[EW23824]
+  </p>
+</li>
+
+<li>
+  <p>
+<code>iostm32f051x8.h</code>にある<code>GPIOx_BRR</code>に関するビットフィールドは間違いでした。<br>[EW23953]
+  </p>
+</li>
+
+<li>
+  <p>
+Atmel SAM3x2、SAM3x4、およびSAM3x8デバイスのフラッシュローダブロックサイズパラメータは間違いでした。<br>[EW23954]
+  </p>
+</li>
+
+<li>
+  <p>
+ST SPEAr320用ヘッダとデバッガ記述ファイル内のEMI および RASレジスタセットのエラーは修正されました。<br>[EW23963]
+  </p>
+</li>
+
+<li>
+  <p>
+例えば、ファイルパス内の引数変数<code>$DATE$</code> および <code>$USER_NAME$</code>使用すると、<b>[標準の複数ツールで出力ファイル名の作成に失敗しました]</b>エラーを招くことがありました。<br>[EW23983]
+  </p>
+</li>
+
+<li>
+  <p>
+上述の<a href="#important">重要な情報</a>を参照してください。<br>[EW23993]
+  </p>
+</li>
+
+<li>
+  <p>
+最後の空白はリンカ出力ファイルの名前からトリミングされないことがあるため、拡張子&quot;<code>.out</code>&quot;が&quot;<code>.out</code> &quot;とは異なるものとして認識されたとき、問題が発生することがありました。<br>[EW24009]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.60.2:<br> SDRAMではなく内部RAMを使用するように、Atmel ATSAM9XE512フラッシュローダを変更しました。<br>[EW23782]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.60.2:<br> 一部のFreescale Vybridサンプルが、ユーザの移動先ディレクトリに正しくコピーされませんでした。<br>[EW24041]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.60.2:<br> ライブラリをリビルドするための日本語版テンプレートプロジェクトが追加されました。<br>[EW24043]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.60.2:<br> Fujitsu MB9A130フラッシュローダの問題を修正しました。<br>[EW24062]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.60.2:<br> Fujitsu MB9AF31xK Dual Timerのサンプルが、ユーザの移動先ディレクトリに正しくコピーされませんでした。<br>[EW24064]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.60.2:<br> 一部のTI TMS570周辺レジスタのベースアドレスに誤りがありました。<br>[EW24065]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.60.2:<br> Atmel SAM4L4Cのフラッシュ値が間違って64 KBに設定されていました。正しい値は256 KBです。<br>[EW24077]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.60.2:<br>ファイル内で検索/置換によって、utf-8でエンコードされた文字を含むファイルで該当するものが見つからないことがありました。<br>[EW24078]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.60.2:<br>Renesas R-IN32M3サンプルにデバッガマクロファイルがありませんでした。<br>[EW24101]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.60.2:<br>実際のファイルとディレクトリの大文字小文字の組合せに一致しないインクルードパスが、ソースブラウザで無視されていました。<br>[EW24115]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.60.2:<br>場合によっては<code>IarBuild.exe</code>が環境変数に基づいて引数変数を展開できないことがありました。<br>[EW24169]
+  </p>
+</li>
+
+</ul>
+
+<b>新機能</b>
+<ul>
+<li><p><b>IAR I-scope電力測定プローブに対するサポート</b><br> I-scopeは、高精度の電流および電圧測定機能をI-jetに付加する小型プローブです。測定機能はすべてのARMコアでサポートされています。Cortex-M3/M4コアはさらに、コード相関性に測定値を提供します。
+    </p></li>
+<li><p><b>Texas Instruments XDS200のサポート</b><br>Texas Instruments XDS200デバッグプローブのサポートが追加されました。
+    </p></li>
+<li><p><b>外部アナライザ</b><br>プロジェクトファイルの外部アナライザを呼び出すためのフレキシブルなメカニズムです。これは通常、PC-lintのような静的な分析ツールへインタフェースをとるために使用されます。
+    </p></li>
+<li><p><b>実行専用コードメモリシステム用コード生成</b><br>コンパイラは、コードメモリへのデータアクセスを生成しないように構成できるようになりました。これは、セキュリティ上の理由でコードメモリ内のデータアクセスを禁止するシステムに有用です。
+    </p></li>
+</ul>
+
+
+<h4>V6.50 2012-11-10</h4>
+<b>プログラム修正</b>
+ 
+<ul>
+
+  <li><p> 
+IAR Embedded Workbenchの6.21またはそれ以前のバージョンから6.30以降のバージョンにアップデートする際に発生していたライセンスに関連する問題が、ARM用IAR Embedded Workbenchでライセンス管理システム(LMS2)を導入してから問題ではなくなりました。<br>[EW22831]
+  </p></li>
+
+<li>
+  <p>
+Freescale TWR-LCD-RGBボードのサンプルは、ボードのレビジョンによるピクセルクロックの違いを考慮していませんでした。<br>[EW23546]
+  </p>
+</li>
+
+<li>
+  <p>
+ICU DLLが、ARM用IAR Embedded Workbenchのインストールに含まれるようになりました。<br>[EW23563]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.2:<br>旧バージョンのIAR Embedded Workbenchでは、IDEがフォアグラウンドプロセスでない場合、ソースブラウザとビルドステータスが更新されませんでした。この動作は<b>[ツール]&gt;[オプション...]&gt;[プロジェクト]</b>ダイアログボックスのオプションによって制御されるようになりました。<br>[EW23609]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.2:<br><code>--preinclude</code>ディレクティブが使用されたとき、ソースブラウザは不完全な情報を生成しました。これは修正されました。<br>[EW23611]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.2/6.50.3:<br>ST STM32L152xC用デバイス記述ファイルはFSMCコントローラを誤って設定しました。<br>[EW23640,EW23699]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.3:<br> エディタの<b>オープンインクルードファイル</b>コマンドは、ビルドから除外されたインクルードファイルに対して正しく機能しませんでした。これは修正されました。<br>[EW23233]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.3:<br>Freescale K70の例で、VFPが正しく有効化されませんでした。<br>[EW23561]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.3:<br>TMS570LSデバイスファミリに対してBE32エンディアンモードのみ選択できるようになりました。<br>[EW23589]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.3:<br><b>ファイルから検索</b>ウィンドウ内の正規表現の検索によって改行を含む結果が得られた場合、最初の行のみ表示されました。<br>[EW23647]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.3:<br><b>定義に移動</b>および<b>宣言に移動</b>コマンドは、コマンドまたは非アクティブなソースコード内に存在する名前を発見しませんでした。これは修正されました。<br>[EW23668, EW23719]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.3:<br>EnergyMicroデバイス記述ファイルに0x0FE08000のメモリ領域がありませんでした。<br>[EW23686]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.3:<br>未定義の環境変数がインクルードパスの一部になっている場合でも、ソースブラウザはワーニングを繰り返し発生しなくなりました。<br>[EW23687]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.3:<br>Freescale Kinetis CDCデバイスサンプルがUSBマウスサンプルとして誤って参照されました。<br>[EW23691]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.3:<br><b>[プロジェクト]&gt;[プロジェクト接続]</b>コマンドにより、インクルードパスが<b>[プロジェクト]&gt;[オプション]&gt;[C/C++ コンパイラ]&gt;[プルプロセッサ]</b>オプションページ上の<b>[追加インクルードディレクトリ]</b>フィールドに追加されて、そのパスに<code>$PROJ_DIR$</code>のような環境変数が含まれていた場合、それらは拡張されて、パスはその方法で保存されました。パスは変換されない状態で保存されるようになりました。<br>[EW23698]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.3:<br> 多くのインクルードファイルおよび多くの<code>#define</code>ステートメントもしくはそのいずれかを持つプロジェクトは、ソースブラウザを遅く作成することがありました。これは修正されました。<br>[EW23710]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.3:<br>STM32F205用デバイスファイルはOTG_FSレジスタを含んでいませんでした。<br>[EW23724]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.3:<br>CLKSEL_TIMER2_CLK および CLKSEL_TIMER3_CLKのアドレス値はTI AM335xのデバイスファイルで修正されました。<br>[EW23729]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.3:<br>STM32F4xxのプロジェクトサンプルは、プロジェクトオプションにおいてCPUクロック周波数を168 MHzではなく150 MHzに誤って指定しました。これによりSWOトレース問題が発生しました。<br>[EW23735]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.3:<br>プリプロセッサダイレクティブの直後、自動インデントは行のインデントに失敗することがありました。<br>[EW23740]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.3:<br>ソースブロックに適用された[自動インデント]コマンドを元に戻すには、ブロックの各行でアンドゥが必要でした。1個の[アンドゥ]コマンドでブロック全体を元に戻すことができるようになりました。<br>[EW23742]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.3:<br>1つの機能が<code>static</code>キーワードを用いて定義され、それなしで宣言されている場合、あるいはその逆の場合、この機能に対する<b>定義に移動</b>コマンドは失敗しました。<br>[EW23756]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.3:<br><code>..\\..</code>パターンを含むプロセスパスによる問題のため、一部のインクルードファイルは[ワークスペース]ウィンドウに2回表示されることがあります。<br>[EW23775]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.3:<br>Freescale MAC7100デバイスに対するフラッシュローダ設定は間違っていました。<br>[EW23779]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.3:<br>Toshiba TMPM380FDFG よび TMPM384FDFGに対して間違ったフラッシュローダが選択されました。<br>[EW23781]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.4:<br>一部の状況では、ソースファイルを変更せずに行で数回<b>[プロジェクト]&gt;[メイク]</b>をリトライした場合、IAR Embedded Workbenchは不正に停止して、ビルドエラーを報告する場合があります。これはもちろん正しくありません。報告されなくてもエラーはそこにまだ存在し、そのように報告されているにもかかわらず、ビルドは成功しません。<br>[EW23826]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.5:<br> XMC45xx <code>P14_PDISC/P15_PDISC</code>レジスタは、デバッガ記述ファイルで読み取り専用として間違って宣言されました。これは修正されました。<br>[EW23803]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.5:<br>MQX向けのRTOS認識プラグインは修正されたため、複数のフラッシュローダと組み合わせて機能するようになりました。<br>[EW23808]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.5:<br>Freescale Kinetis Lフラッシュローダはフラッシュオプションバイトの部分をプログラムするのに失敗しました。これは修正されました。<br>[EW23814]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.5:<br>デフォルトのリンカコントロールファイルがEnergy Microデバイスに対して選択されるようになりました。<br>[EW23839]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.5:<br>[逆アセンブリ]ウィンドウ内のブレークポイントで停止するとき、現在の位置（緑）矢印が目視できるようになりました。<br>[EW23852]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.5:<br>[ターミナルI/O]ウィンドウへの16,000文字以上プリントすると、誤った出力が生成されました。これは修正されました。<br>[EW23874]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.6:<br><b>定義に移動</b>は、extern 'C' リンケージによって定義された場合、<code>.cpp</code>ファイルで定義された機能の検索に失敗しました。これは修正されました。<br>[EW23809]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.6:<br>IAR License Managerは日本語のフォルダ名でパスを正しく処理できるようになりました。<br>[EW23854]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.50.6:<br>リンカコントロールファイルエディタはCortex-MデバイスとしてToshiba TMPM061を認識しませんでした。<br>[EW23936]
+  </p>
+</li>
+
+  <li><p>
+<a href="../../../common/doc/CorrectedProblems.html">IAR Embedded Workbench IDE - 修正された問題</a>
+  </p></li>
+</ul>
+ 
+<b>新機能</b>
+ 
+<h4>バージョン6.50.6</h4>
+<ul>
+<li><p><b>IAR I-scope電力測定プローブに対するサポート</b><br> I-scopeは、電流および電圧測定機能をI-jetに付加する小型プローブです。
+    </p></li>
+    
+</ul>
+
+<h4>バージョン6.50.5</h4>
+<ul>
+<li><p><b>CMSIS 3.20</b><br>ランタイムシステムおよびDSPソフトウェアライブラリ
+    </p></li>
+    
+</ul>
+
+<h4>バージョン6.50.3</h4>
+<ul>
+<li><p><b>ARM CMSIS-DAPに対するサポート</b><br>デバッガは、USB経由でARM CMSIS-DAPインタフェースを使用できる開発ボードをサポートするようになりました。
+    </p></li>
+</ul>
+<h4>バージョン6.50.2</h4>
+<ul>
+<li><p><b>MTB(Micro Trace Buffer)用サポート</b><br>MTBトレースメカニズムによって、Cortex-M0+ coreに基づいたデバイスでの命令トレースへアクセスできます。
+    </p></li>
+<li><p><b>uC/Probe統合の改善</b><br />新しいデバッガプラグインにより、TCP/IP経由でuC/ProbeをC-SPYへ接続して、IAR Embedded Workbenchでデバッグしながら、MicriumのグラフィカルツールuC/Probeを使用することが可能になります。
+    </p></li>
+</ul>
+<h4>バージョン6.50.1</h4>
+<ul>
+<li><p><b>速度の最適化</b><br>業界をリードするARM用IAR Embedded Workbench 6.40と比較して、Coremarkパフォーマンスが最大13%向上しました。
+  </p></li>
+<li><p><b>JTAGjet-Traceサポート</b><br>ETBおよびETMを含む、IARシステムズのJTAGjet-Traceデバッグプローブに関するフルサポート。
+  </p></li>
+<li><p><b>プロジェクト接続</b><br> 外部のコード生成ツールにより生成されたファイルやファイルパッケージがインポート可能で、IAR Embedded Workbenchは生成されたファイルセットの変更を自動的に検出します。これによって、Freescale Processor Expertや他のデバイス設定ツールとの統合が自動化されます。
+  </p></li>
+<li><p><b>ソースブラウザがグラフ表示をコール</b><br>機能階層を簡単に移動できるよう、ソースブラウザが呼出しグラフを表示できるようになりました。
+  </p></li>
+<li><p><b>マルチコアSWDサポート</b><br>IAR Embedded Workbenchの2つのインスタンスがそれぞれ、SWDとJTAG経由で複数コアデバイスの コアに1つずつアクセス可能になりました。
+  </p></li>
+<li><p><b>新しいライセンスマネジメントシステム(LMS2)</b><br>このリリースで使用されている新しいLMSでは、コミュータライセンスやライセンスの自動有効化、仮想サーバのサポートといった新機能を導入しました。管理が容易で、1つのインストーラというコンセプトにより、ライセンスのアップグレードを通して、特定の製品についてIAR Embedded Workbenchのあらゆる派生品同士での移行が簡単に可能です。
+  </p></li>
+<li><p>エディタでコードブロックの展開/折りたたみが切替え可能になりました。
+  </p></li>
+<li><p>ソースブラウザのパフォーマンスを向上。
+  </p></li>
+  </ul>
+ 
+<h4>V6.40 2012-06-05</h4>
+<b>プログラム修正</b>
+
+<ul>
+<li>
+  <p>
+エディタで5桁を超える行番号の一部が、行番号の列の外側に表示されていました。これは修正されました。<br>[EW21642]
+  </p>
+</li>
+
+<li>
+  <p>
+エディタウィンドウで、行の最初で始まらなかったり、末尾で終わらない複数ページからなる選択内容を印刷すると、選択した内容すべての印刷に失敗することがありました。これは修正されました。<br>[EW21961]
+  </p>
+</li>
+
+<li>
+  <p>
+コンパイラのライセンスが確認できない場合、ソースブラウザによってIDEが応答しなくなることがありました。これはもう発生しなくなりました。<br>[EW22350、EW22499]
+  </p>
+</li>
+
+<li>
+  <p>
+コンテキストメニューのコマンド、<b>[定義に移動]</b>が、ヘッダファイルに関数が定義されている場合に機能しないことがありました。これは修正されました。<br>[EW22518、EW22612]
+  </p>
+</li>
+
+<li>
+  <p>
+次のようにマクロ定義内に左シフト演算子がある場合:<br><code> #define RUN_LED  1&lt;&lt;10</code><br>こうした定義の後に続く多くの関数が、エディタの[関数に移動]ウィンドウから省略されることがありました。これは修正されました。<br>[EW22809]
+  </p>
+</li>
+
+<li>
+  <p>
+次の構造の場合:
+<pre>
+#define INCLUDE<stdio.h>
+#include INCLUDE
+int main(void)
+{ ?  ......
+</pre>
+ソースブラウザが<code>main</code>の定義を見逃すことがありました。これはもう発生しなくなりました。<br>[EW22948]
+  </p>
+</li>
+
+<li>
+  <p>
+失敗したビルド後のステップが、ステータスバーに表示されるエラー数に含まれていませんでした。これは修正されました。<br>[EW23110]
+  </p>
+</li>
+
+<li>
+  <p>
+エディタのフォントを&quot;Terminal&quot;に設定すると、代わりに&quot;Courier&quot;が使用されていました。これは修正されました。<br>[EW23156]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.2:<br>リロードされたエディタファイルが間違って先頭までスクロールされていました。現在は希望の位置で開くようになりました。<br>[EW23252, EW23280]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.2:<br> エディタが<code>//!</code>や<code>///</code> (Doxygenやjavadocコメントなど)のような特殊なコメントを識別しなくなりました。<code>//</code>に続くすべてのものが、現在は通常のC++ コメントとして処理されます。<br>[EW23264, EW23275]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.2:<br> 検索/置換の操作で、置換のたびに音が鳴っていました。ドキュメントが読取り専用の場合のみ、置換の際にビープ音が鳴るようにしました。[EW23265]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.2:<br>背景が暗い色のときは入力位置のポインタが白になり、それ以外は黒になるようにしました。<br>[EW23277, EW23291]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.2:<br> [コードカバレッジ]ウィンドウでリーフをダブルクリックすると、エディタウィンドウにパスがないために、IDEがクラッシュすることがありました。これは修正されました。[EW23283]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.2:<br>低速のネットワークドライブにあるファイルを操作するときに、エディタが遅くなることがありました。ファイルモニタの動作を変更(外部で行われたファイル変更の検出など)することで速度を改善しました。<br>[EW23284]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.2:<br> ラテン系言語以外のキーボード(キリル文字など)からの入力が機能していませんでした。これは修正されました。<br>[EW23323]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.2:<br>Freescale MK61FN1M0xxx12のフラッシュローダが機能しませんでした。<br>[EW23326, EW23203]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.3:<br><b>[プロジェクト]&gt;[オプション...]&gt;[一般オプション]&gt;[出力]&gt;[実行可能ファイル/ライブラリ]</b>で最後に空白があると、IAR Embedded Workbenchが異常終了していました。これはもう発生しなくなりました。<br>[EW23084]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.3:<br> エディタの横方向のスクロールバーで、非常に長い行の一部が表示されませんでした。これは修正されました。<br>[EW23333]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.3:<br>同じ識別子を使用して<code>typedef</code>と<code>struct</code>を定義すると、ソースブラウザが動かなくなっていました。これは修正されました。<br>[EW23367]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.3:<br>Freescaleのヘッダファイル iomcimx535.hに間違ったIPUの定義がありました。<br>[EW23384]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.3:<br>デバッガのレジスタビューで、ST STM32F407のTIM3とTIM4にレジスタCCR3とCCR4がありませんでした。<br>[EW23402]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.3:<br>テキストエディタで、読取り専用として開いたファイルが正しく再ロードされるようになりました。<br>[EW23408]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.3:<br>TI AM335xのヘッダファイルおよびデバッガのデバイス設定ファイルで、レジスタ<code>CPSW_P2_MAX_BLKS</code>の定義が修正されました。<br>[EW23456]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.4:<br>Lpc11xx.hのサンプルプロジェクトの<code>LPC11xx</code>にすべての<code>*_LOC</code>レジスタがそろいました。<br>[EW23395]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.4:<br> 日本語版のIAR Embedded Workbenchの<b>[プロジェクト]&gt;[ファイルリストのインポート...]</b> ダイアログボックスで、デフォルトで<code>*.ewp</code>ファイルが表示されませんでした。これは修正されました。<br>[EW23453]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.4:<br> ST STM32Lxxxのデバイスファイルに、ビットフィールド定義のRCC_CSR.LSECSSONとRCC_CSR.LSECSSDがありませんでした。<br>[EW23469]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.4:<br>アセンブラファイルで、文字列やC/C++形式のコントに色がついていませんでした。これは修正されました。<br>[EW23508]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.5:<br>Freescale i.MX25のメモリマップに領域0x60000000-0x6FFFFFFFがありませんでした。<br>[EW23498]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.5:<br>次のブックマーク/前のブックマークのコマンドが、ドキュメントの先頭と最後でラップするようになりました。<br>[EW23499, EW23510]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.5:<br>ST STM32ヘッダファイルにACRレジスタの定義がありませんでした。<br>[EW23507]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.40.5:<br>Toshiba TMPM061FWFGのデフォルトのリンカ設定ファイルに間違ったメタ情報がありました。<br>[EW23527]
+  </p>
+</li>
+
+  <li><p>
+<a href="../../../common/doc/CorrectedProblems.html">IAR Embedded Workbench IDE - 修正された問題</a>
+  </p></li>
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+  <li>
+なし
+  </li>
+</ul>
+ 
+ 
+<h4>V6.30 2011-10-22</h4>
+<b>プログラム修正</b>
+ 
+<ul>
+<li>
+  <p>
+ソースブラウザがメモリを返さずに消費することがなくなりました。<br>[EW22527]
+  </p>
+</li>
+
+<li>
+  <p>
+<code>--c++</code>を使用しないときに、C++オプションが使用されなくなりました。<br>[EW22532]
+  </p>
+</li>
+
+<li>
+  <p>
+エディタペインのファイルが正しく復元されるようになりました。<br>[EW22602]
+  </p>
+</li>
+
+<li>
+  <p>
+Freescale Kinetisのリンカ設定ファイルのいくつかが、0x20000000にあるRAMバンク間の境界を誤って処理しなくなりました。<br>[EW22635]
+  </p>
+</li>
+
+<li>
+  <p>
+Fujitsu MB9EF126の設定で、間違ったARMコアが指定されなくなりました。<br>[EW22661]
+  </p>
+</li>
+
+<li>
+  <p>
+Phytec LPC3180のイントロダクションの例が、より新しいバージョンのNANDメモリで機能するようになりました。<br>[EW22666]
+  </p>
+</li>
+
+<li>
+  <p>
+CCR3/CCR4の定義が、<code>iostm32l151xx.ddf</code>ファイルに存在するようになりました。<br>[EW22680]
+  </p>
+</li>
+
+<li>
+  <p>
+<code>RCC_APB2LPENR</code>と<code>RCC_APB1LPENR</code>が、STM32L15xのヘッダファイルで正しい名称になりました。<br>[EW22683]
+  </p>
+</li>
+<li>
+  <p>
+アドレスゼロにあるブートローダのTI Stellarisの例が、デバッグ中にも機能するようになりました。<br>[EW22753]
+  </p>
+</li>
+
+<li>
+  <p> 
+EWARM 6.30.3:<br><b>[ツール]&gt;[オプション]&gt;[メッセージ]</b>オプションページの<b>[古いファイルに上書き]</b>オプションが、ログファイルのテキストボックスに<code>$PROJ_DIR$</code>などの引数値が含まれる場合でも機能するようになりました。<br>[EW22709]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.3:<br>ゼロのパラメータを持つ関数のようなマクロによって、ソースブラウザがマクロの後に定義を失っていました。たとえば、次の定義の後:
+<pre>    #define MACRO() macro_body</pre>
+以下の行に<code>x</code>があると、ソースブラウザで認識されませんでした:
+<pre>    MACRO()
+int x;</pre>
+これは修正されました。<br>[EW22794]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.3:<br>Freescale Kinetis K20用のデバッガデバイス記述ファイルが付属になりました。<br>[EW22811]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.3:<br>インフォメーションセンタのマイページのリンクから、外部のWebブラウザでマイページが開くようになりました。<br>[EW22813]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.3:<br>ヘッダファイル<code>iomcimx535.h</code>の<code>TZIC_PRIOMASK</code>レジスタのアドレスが正しくなりました。<br>[EW22821]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.3:<br>ヘッダファイル<code>iostm32L151xx.h</code>の<code>PWR_CR/LPSDSR</code>ビットが正しい名前になりました。<br>[EW22835]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.3:<br>浮動小数点ユニットを持つFreescale Kinetisデバイスでは、VFPオプションが灰色で表示されていました。<br>[EW22860]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.3:<br>Analogデバイスのヘッダファイルioaduc7023.h、ioaduc7060.h、ioaduc7122.hから多くのレジスタ定義が抜けていました。<br>[EW22863]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.4:<br>LPC2468の簡単な例で、VICを有効にする前にIRQが誤って有効になっていました。<br>[EW22870]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.4:<br> 一部のSTM32f4xxの例で、SWOクロックが誤って120 MHzに設定されていましたが、現在は正しい値の150 MHzに設定されています。<br>[EW22904]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.6:<br>IAR Embedded Workbenchとサブバージョンが統合された結果、サブバージョンのバージョン1.7.xのメッセージがいくつか誤って解釈され、エラーメッセージ:<br><code>SVN: Internal Error: SVN_Status - did not find file.</code>が出力されていました。<br>[EW22892]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.6:<br>ソースブラウザで、絶対パスにより指定されたインクルードファイルを参照できませんでした。<br>[EW22919]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.6:<br>STM32L15xフラッシュローダが選択したアドレス範囲内でギャップを処理できず、値のフィルを実行できませんでした。<br>[EW22924、EW22926]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.6:<br> NXP LPC177xおよびLPC178xについてのヘッダおよびデバッガのデバイス記述ファイルの修正。<br>[EW22934]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.6:<br>Freescale Kinetisデバッガのデバイス記述ファイル、iok10xxxx.ddfとiok20xxxx.ddfがインストールにありませんでした。<br>[EW22945]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.6:<br>Fujitsu MB9EF126のヘッダおよびデバッガのデバイス記述ファイルの修正。<br>[EW22961]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.6:<br>MISRA-C:2004の規則1.1の説明が訂正されました。<br>1.1: [必須] すべてのコードはISO 9899:1990 'プログラミング言語 - C'に準拠するものとする。ISO/IEC 9899/COR1:1995、ISO/IEC 9899/AMD1:1995、ISO/IEC 9899/COR2:1996により改訂および修正。<br>[EW22970]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.6:<br>Freescale Kinetis MK10FN1M0xxx12に対して間違ったフラッシュローダが選択されています。<br>[EW22986]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.6:<br>ST STM32F2xxのヘッダおよびデバッガのデバイス記述ファイルにSYSCFG_CMPCRの定義がありません。<br>[EW22992]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.6:<br>[デバッグログ]ウィンドウで大量のエラーが記録された後に、IAR Embedded Workbenchのプロジェクトマネージャが正しく動作するようになりました。<br>[EW23059]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.7:<br>以前はIAR Embedded Workbenchが、セッション終了後に一部のソース管理システム(ClearCaseなど)への接続を記憶しませんでした。これは修正されました。<br>[EW22968]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.7:<br> ios3fn21x.hで、FSPULLUPのアドレスが間違って定義されていました。<br>[EW23056]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.7:<br> ダウンロード中にFreescale K70フラッシュローダがエラーになることがありました。<br>[EW23090]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.8:<br> ST STM32L151xx、STM32L152xx、STM32L162xxのヘッダおよびデバッガのデバイス記述ファイルで、ADC_CSRとADC_CCRのアドレスが間違っています。<br>[EW23119]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.8:<br>ST STM32F4xxのデバッガのデバイス記述ファイルにRTCレジスタの定義がありません。<br>[EW23125]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.8:<br>Toshiba Cortex-M3デバイスで、リンカ設定エディタが間違って設定されています。<br>[EW23142]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.8:<br> Fujitsu MB9AF131K/132Kの内部RAMに間違ったアドレスが設定されています。<br>[EW23154]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.8:<br> ST STM32F2xxのタイマレジスタのデバッガ表示の改善。<br>[EW23155]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.8:<br> system_LPC11xx.cでのサンプルクロックの設定コードの修正。<br>[EW23166]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.8:<br> ST STM32F2xxのヘッダおよびデバッガのデバイス記述ファイルに、レジスタRCC_AHB1ENRのビット定義がありません。<br>[EW23167]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.8:<br> 予期しない例外の原因となっていたFreescale Kinetis USB CDCのサンプルのバグを修正しました。<br>[EW23190]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.8:<br> IAR-LPC-1768-SKボードのサンプルで、使用可能な数を上回るRAMが指定されていました。<br>[EW23201]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.30.8:<br> ST STM32F4xxのデバッガのデバイス記述ファイルにEXITの定義がありません。<br>[EW23202]
+  </p>
+</li>
+
+  <li><p>
+<a href="../../../common/doc/CorrectedProblems.html">IAR Embedded Workbench IDE - 修正された問題</a>
+  </p></li>
+
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+<li><p><b>拡張されたXDS100v2のサポート</b> (6.30.4から)<br /> XDS100v2デバッガのドライバが、すべてのTI Stellaris Cortex-M3デバイスとTI TMS470Mファミリをサポートするようになりました。</p></li>
+<li><p><b>スタックの使用量解析</b><br> スタックの使用量解析を有効にすると、各呼出しグラフのルートのスタック深さの最大値一覧とともにスタック使用の選択がリンカマップファイルに追加されます。関数ポインタや再帰を介した呼出しなどのコンストラクトを考慮するために、分析プロセスはカスタマイズできます。出力は、後処理に最適なXMLフォーマットで生成することができます。
+  </p></li>
+<li><p><b>インラインアセンブラの機能拡張</b><br> インラインアセンブラの機能が拡張されて、引数が入力可能になり、戻り値があるほか、Cシンボルのリードやライトができるようになりました。構文はGNU GCCで使用されるものと似ています。
+  </p></li>
+<li><p><b>Cortex-M3/M4の速度の最適化</b><br> コンパイラのオプティマイザで、CoremarkとDSPライブラリコードベースに焦点を置いた高速なコードが生成できるようになりました。
+  </p></li>
+<li><p><b>JTAGjet-Traceの統合</b><br> ハイエンドのアプリケーション向けの高度なデバッグプローブ、Signum JTAGjet-Traceのトレースモジュールがデバッガに統合されました。複雑なシステムをデバッグする際にCortex-AやCortex-Rデバイスのトレース機能がフルに活用できるようになります。
+  </p></li>
+<li><p><b>[タイムライン]ウィンドウのITMイベントプロット機能</b><br> [タイムライン]ウィンドウの機能が拡張され、Cortex-M3/M4ユーザ向けにグラフィカルイベントログが追加されました。コードの動作を解析する上で役立つように、定義済のマクロ関数をコード内の関心のある場所に配置します。実行中にこれらの地点に達すると、イベントメッセージが送信されて[タイムライン]ウィンドウに表示されます。プロットされたイベントはソースコードに関連付けることができ、詳細なコンテキストのタイミングも提供されます。
+  </p></li>
+<li><p><b>プロファイラの関数除外メカニズム</b><br> [関数プロファイリング]ウィンドウに、関数を除外するメカニズムが追加されました。関心のない関数を間引くことができます。これは、RTOSを扱うときに便利です。RTOSカーネル関数を除外すれば、実際のアプリケーションコードのどこで実行時間が経過するのかを、より明確に把握できます。
+  </p></li>
+<li><p><b>Texas Instruments Stellaris ICDIのサポート</b> (6.21.3で新規追加)<br> Texas Instruments Stellaris ICDIデバッグインタフェースのサポートが追加されました。同じC-SPYデバッガドライバが、FTDIおよびICDIインタフェースの両方で使用されます。このデバッガドライバは<b>TI Stellaris</b>という名前になりました。
+  </p></li>
+<li><p><b>AVIX-RTのRTOS認識サポート</b> (6.21.2で新規追加)<br> AVIX-RT向けのRTOS認識プラグインが含まれています。
+  </p></li>
+</ul>
+ 
+ 
+<h4>V6.21 2011-07-05</h4>
+<b>プログラム修正</b>
+ 
+<ul>
+
+<li>
+  <p>
+<code>$VARIABLES$</code>が実際にビルドする構成を基準にして展開されなかった場合のビルドの問題が修正されました。<br>[EW22400]
+  </p>
+</li>
+
+<li>
+  <p>
+SCCのバージョン管理システムのサブメニューにある<b>チェックアウトを元に戻す</b>コマンドが、正しく機能するようになりました。<br>[EW22462]
+  </p>
+</li>
+
+<li>
+  <p>
+間違ったRCC_AHBRSTR定義が、iostm32L151xx.hとiostm32L152xx.hにあります。<br>[EW22514]
+  </p>
+</li>
+
+<li><p>
+EWARM 6.21.2:<br> iostm32f207xx.hのいくつかのレジスタ定義を修正しました。<br>[EW22577]
+</p></li>
+
+<li><p>
+EWARM 6.21.2:<br> iostm32L151xx.hとiostm32L152xx.hにGPIOH定義がありません。<br>[EW22580]
+</p></li>
+
+<li><p>
+EWARM 6.21.2:<br> STM32F205Vxのデバイス構成ファイルがありませんでした。<br>[EW22587]
+</p></li>
+
+<li><p>
+EWARM 6.21.2:<br> ios3fn41f.hのいくつかのレジスタ定義を修正しました。<br>[EW22588]
+</p></li>
+
+<li><p>
+EWARM 6.21.2:<br> ARM926を誤ってコアとして使用するHilscher Net.x50を選択しても、正しいコアのARM966が使用されるようになりました。<br>[EW22600]
+</p></li>
+
+<li><p>
+EWARM 6.21.3:<br> Freescale Kinetis K70フラッシュローダが正しく機能しませんでした。
+</p></li>
+
+</ul> 
+ 
+<b>新機能</b>
+ 
+<ul>
+新機能の一覧は、<a href="readme.JPN.html">トップレベルのリリースノートドキュメント</a>を参照してください。
+</ul> 
+ 
+<h4>V6.20 2011-04-29</h4>
+<b>プログラム修正</b>
+<ul>
+<li><p>USB VirtualComドライバがWindows 7で動作するようになりました。<br/>[EW22181]
+  </p></li>
+  <li><p> 
+レジスタHcBCR0が、Toshiba TMPA900CMのデバイス固有ファイルに追加されました。<br/>[EW22264]
+  </p></li>
+  <li><p>
+<code>IarBuild.exe</code>が、<b>[プロジェクトオプション]&gt;[ビルドアクション]</b>でIAR Embedded Workbench IDEと同じコマンドラインを実行可能になりました。<br/>[EW22293]
+  </p></li>
+  <li><p> 
+EXTIレジスタが、ST STM32F2xxのデバイス固有ファイルに追加されました。<br/>[EW22288]
+  </p></li>
+  <li><p>
+<b>[ファイルで検索]</b>のディレクトリを選択するダイアログボックスに、正しいダイアログボックスのタイトルとボタン名が表示されるようになりました。<br/>[EW22304]
+  </p></li>
+  <li><p>
+2つ以上のIAR Embedded Workbenchツールチェーン(異なるマイクロコントローラのアーキテクチャ用)が同じディレクトリにインストールされていて、一部のツールチェーンが英語版しかない場合、英語以外のIAR Embedded Workbenchを起動すると、英語のみのツールチェーンでインフォメーションセンタが使用できませんでした。これは修正されました。<br/>[EW22341]
+  </p></li>
+  <li><p> 
+NXP LPC1778/LPC1788のデバイス固有ファイルで、EECLKDIVの定義が修正されました。<br/>[EW22358]
+  </p></li>
+  <li><p> 
+ST STM32F105xBフラッシュローダのブロックレイアウトが修正されました。<br/>[EW22366]
+  </p></li>
+  <li><p> 
+Freescale K60のデバイス固有ファイルのTSI定義が修正されました。<br/>[EW22388]
+  </p></li>
+  <li><p> 
+Freescale K60のデバイス固有ファイルに定義されている、存在しないSPIレジスタが削除されました。<br/>[EW22395]
+  </p></li>
+  <li><p>
+EWARM 6.20.2:<br/>Freescale Kinetisのイントロダクションの例にあるRAM構成が修正されました。<br/>[EW22428]
+  </p></li>
+  <li><p>
+EWARM 6.20.2:<br/>Freescale K60のイントロダクションの例で、正しいリンカ設定ファイルが指定されました。<br/>[EW22429]
+  </p></li>
+  <li><p>
+EWARM 6.20.2:<br/>OMAP-L138のjlinkスクリプトの構文エラーが修正されました。<br/>[EW22431]
+  </p></li>
+  <li><p>
+EWARM 6.20.4:<br/>Samsung S3FN60Dデバイスのレジスタ定義が間違っています。<br/>[EW22466]
+  </p></li>
+  <li><p>
+EWARM 6.20.4:<br/>Samsung S3FN21F、S3FN41F、S3FN60Dの各デバイス用リンカファイルのメモリマップ仕様が間違っています。<br/>[EW22467]
+  </p></li>
+  </ul>
+<b>新機能</b>
+  <ul>
+<li><p><b>Cortex-M3/M4用のDSPライブラリ</b><br/> ARM CMSIS DSPライブラリが製品でサポートされ、同梱されるようになりました。このライブラリには、FIR/IIRフィルタ、FFT、DCT、ClarkeおよびPark変換、PIDコントローラなど、強力なDSP機能のコレクションが付属します。詳しくは、<a href="../../CMSIS/Documentation/DSP/html/index.html" target="_blank">CMSIS DSPソフトウェアライブラリのドキュメント</a>を参照してください。<br/> CMSISサポートは、<b>[プロジェクト]&gt;[オプション]...&gt;[一般オプション]&gt;[ライブラリ構成]</b>から有効にします。有効にすると、CMSISのインクルードパスおよびDSPライブラリは自動的にインクルードされます。
+  </p></li>
+<li><p><b>Cortex-A8</b><br/> ARM Cortex-A8コアのコード生成およびデバッグのサポート。
+  </p></li>
+<li><p><b>Cortex-A9</b><br/> ARM Cortex-A9コアのコード生成およびデバッグのサポート。
+  </p></li>
+<li><p><b>サブバージョン</b><br/> バージョン管理の統合が、サブバージョン(SVN)のサポートによって拡張されました。
+  </p></li>
+<li><p><b>Powerデバッグの機能拡張</b><br/>
+     <ul>
+<li>J-Link Ultraが最大10 kHzのサンプリングレートをサポートするようになりました。</li>
+<li>しきい値に基づいて電力データをフィルタすることができます。</li>
+<li>しきい値(電力のブレークポイント)に基づいて、実行を停止できます。</li>
+<li>電力サンプルは、その時点までに収集されたデータあるいはライブの取得値としてファイルに記録することが可能です。</li>
+    </ul>
+  </p></li>
+<li><p><b>printf/scanfフォーマッタの自動選択</b><br/> コンパイラ/リンカはprintf/scanfフォーマッタ指定子を解析して、ライブラリから最も小さいフォーマッタを選択します。
+  </p></li>
+<li><p><b>仮想関数除去(VFE)</b><br/> コンパイラ/リンカはC++ アプリケーションを最適化し、未使用の仮想関数を削除します。
+  </p></li>
+<li><p><b>RTOSコンテキスト依存ヘルプ</b><br/> 一部のRTOSで文脈に沿ったヘルプが利用可能となり、API関数の説明が簡単に入手できるようになりました。
+  </p></li>
+
+</ul>
+<h4>V6.10 2010-11-04</h4>
+<b>プログラム修正</b>
+<ul>
+<li><p> 
+Atmelヘッダファイル<code>ioat9sam7se512.h</code>の<code>AT91C_ISRAM_SIZE</code>定義が間違っていました。正しくは<code>0x00008000</code>です。<br/>[EW21581]
+</p></li>
+
+<li>
+  <p>
+Windowsの上限<code>_MAX_PATH</code>を超えるファイルパスによって、IAR Embedded Workbenchがフリーズまたは異常終了することがありました。このような状況は検出され、エラーとしてフラグが付けられます。<br/>[EW21645]
+  </p>
+</li>
+
+<li>
+  <p>
+<b>..</b>を含むパスを使用して出力ディレクトリを定義すると、デバッガを起動できなくなることがありました。これは修正されました。<br/>[EW21839]
+  </p>
+</li>
+
+<li>
+  <p>
+DLIBテンプレートプロジェクトを修正せずにビルドできるようになりました。<br/>[EW21902]
+  </p>
+</li>
+
+<li><p> 
+レジスタビット定義<code>ADEN</code>が<code>iotmpm370FxFG.h</code>に追加されました。<br/>[EW21994]
+</p></li>
+
+<li>
+  <p>
+<b>[プロジェクト]&gt;[オプション...]&gt;[リンカ]&gt;[出力]&gt;[出力ファイル]</b>テキストボックスが、ファイル名ではなくファイルパスを受け入れていたため、プロジェクトのビルドで問題が発生することがありました。これは修正されて、オプションの名称が変更になりました。<br/>[EW22004]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.10.2:<br/><code>examples\NXP\LPC13xx\LPC1300CMSIS\Drivers\source\lpc13xx_gpio.c</code>の<code>GPIO_SetInterrupt()</code>の関数記述が間違っています。<br/>[EW22086]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.10.2:<br/><code>iolpc3250.h</code>のレジスタの幅定義が間違っています。<br/>[EW22114、EW22154]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.10.2:<br/>エディタのフォントタイプとサイズを変更するときにIDEが異常終了しなくなりました。<br/>[EW22115]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.10.2:<br/><code>examples\ST\STM32F10x\IAR-STM32F107VC-SK\Accelerometer_Demo\modules\i2c1_drv.c</code>でvolatile宣言がない場合、最適化レベルが「高」のときにアプリケーションエラーが発生していました。<br/>[EW22139]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.10.5:<br/>プロセッサのサポートファイルにAtmel AT91SAM9260 TWI_SRレジスタビット、EOSACC、SCLWS、ARBLSTがありませんでした。<br/>[EW20728]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.10.5:<br/>Atmel AT91SAM9260 TWI_SRレジスタビット、TXBUFF、RXBUFF、ENDTX, ENDRXがプロセッサのサポートファイルに定義されていますが、これらは実際のハードウェアに存在する必要があります。<br/>[EW20729]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.10.5:<br/>IDEコマンド<b>Stop Build</b>が、新しいコマンドシェルで開始されてビルド前またはビルド後のアクションに適用されたときに正しく機能するようになりました。<br/>[EW22075]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.10.5:<br/>大規模で複雑なプロジェクトで、IAR Embedded Workbenchのソースブラウザがフリーズしなくなりました。<br/>[EW22126]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.10.5:<br/>フラッシュローダがAT91SAM7S256の改訂Cで機能しませんでした。<br/>[EW22165]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.10.5:<br/>プリプロセッサマクロの再帰的な定義によって、IAR Embedded Workbenchが異常終了しなくなりました。<br/>[EW22177]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.10.5:<br/>ビルドの最後に報告されるエラーおよびワーニングの数が正確になりました。<br/>[EW22202]
+  </p>
+</li>
+
+<li>
+  <p>
+EWARM 6.10.5:<br/>ヘッダファイルiolpc3250.hで、MISRA-Cチェックが失敗していました。<br/>[EW22268]
+  </p>
+</li>
+  </ul>
+<b>新機能</b>
+<ul>
+<li><p><b>Powerデバッグ</b><br/> Powerデバッグは、組込みシステムでのソフトウェア実装がシステムレベルの電力消費にどう影響するかについての情報をソフトウェア開発者に提供する手法です。ソースコードと電力消費を組み合わせることで、電力の最適化のテストと調整が可能になります。デバッグプローブは、システムが使用する瞬間の電流をサンプリングして、それをデバッガにフィードし、測定された電流がタイムスタンプの付けられたプログラムカウンタの値と同期されます。これによって、デバッガが消費電力を直接ソースコードに相互に関連付けて提示できます。デバッガは以下のソースからの電力データをサポートしています。
+<ul>
+<li>J-Link Ultra<br/>電力データは、ボードレベルで高精度測定されます。MCUレベルでの電力測定を行うアダプタは、2011年第2四半期に利用できるようになる予定です。調整がサポートされています。</li>
+<li>J-Link<br/>電力データは、ボードレベルで低精度測定されます。調整はサポートされていません。</li>
+<li>Energy Micro EFM32 Gecko開発およびスターターキット<br/>J-Link互換のデバッグプローブがボード上に統合されています。電力データはMCUレベルで高精度測定されます。調整は不要です。</li>
+</ul>
+<p></p>
+電力データはPowerログ、タイムスケースのグラフ、またはエネルギー消費としての関数プロファイラとして視覚化できます。<br/>詳しくは、<a href="../EWARM_DebuggingGuide.JPN.pdf">IAR Embedded Workbench&#xAE; C-SPYデバッガガイド</a>を参照してください。
+</p></li>
+<li><p><b>C-SPYデバッグガイドの追加</b><br/> 『C-SPYデバッグガイド』という新しいユーザガイドが追加されました。このガイドの目的は、アプリケーションのデバッグでユーザにIAR C-SPYデバッガの機能を十分に活用してもらうことです。
+</p></li>
+<li><p><b>C99</b><br/> 本製品は1999年に定義された最新のC規格(C99)をデフォルトのC言語として使用しています。
+</p></li>
+<li><p><b>C++</b><br/> C++言語のサポートが追加されました。デフォルトでは、ISO/IEC 14882:2003 C++規格を完全にサポートしています。EC++およびEEC++の派生規格も引き続き利用できます。
+</p></li>
+<li><p><b>Cortex-A5</b><br/> ARM Cortex-A5コアのコード生成およびデバッグのサポート。
+</p></li>
+<li><p><b>RTOSの統合</b><br/> 評価を容易にするために、サードパーティ製RTOSおよびミドルウェアソリューションの製品情報、評価バージョン、サンプルプロジェクトがIAR Embedded Workbenchに統合されました。RTOSおよびミドルウェア情報、サンプルプロジェクトには、IARインフォメーションセンタからアクセスできます。
+</p></li>
+<li><p><b>Cライブラリ</b><br/> DLIBライブラリのスレッド環境のサポートが向上されました。
+</p></li>
+<li><p><b>浮動小数点の最適化</b>コンパイラで、<br/> オプション<code>--relaxed_fp</code>を使用した場合よりも、浮動小数点式をより良く最適化できるようになりました。有効にした場合、コンパイラは浮動小数点式でより小さい浮動小数点型を使おうと試みます。
+</p></li>
+<li><p><b>CMSIS SVD</b><br/> デバッガは、周辺レジスタ内容を表示するために、CMSISシステムビュー記述ファイルをサポートしています。
+</p></li>
+<li><p><b>P&amp;E Micro JTAGプローブ</b><br/> P&amp;E Micro Multilink、Cyclone、OSJTAGがサポートされています。P&amp;E MicroプローブでC-SPYを使用する場合の設定については、<a href="../PEMicroSettings.pdf">P&amp;E MicrocomputerシステムインタフェースでIAR Workbenchデバッガを使用するための設定</a>を参照してください。
+</p></li>
+<li><p><b>Freescale MQXプラグイン</b><br/> Freescale MQX kernel awarenessプラグインが製品に同梱されています。
+</p></li>
+<li><p><b>FreeRTOS/OPENRTOSプラグイン</b><br/> FreeRTOS/OPENRTOS kernel awarenessプラグインが製品に同梱されています。
+</p></li>
+</ul>
+
+<h4>V5.50 2010-04-21 </h4>
+<b>プログラム修正</b>
+<ul>
+  <li><p> 
+Atmel ARM7の例で使用されている割込みハンドラが、8バイトの境界上のスタックをARM EABIで要求されるとおりにアラインメントしませんでした。<br/>[EW21302]
+  </p></li>
+
+  <li><p> 
+Atmelのヘッダファイル<code>ioat91sam3s1.h</code>、<code>ioat91sam3s2.h</code>、<code>ioat91sam3s4.h</code>の内容に誤りがありました。<br/>[EW21511]
+  </p></li>
+
+  <li><p> 
+STヘッダファイル<code>iostm32f10xx4.h</code>、<code>iostm32f105xx.h</code>、<code>iostm32f10xxB.h</code>、<code>iostm32f10xxE.h</code>、<code>iostm32f107xx.h</code>の<code>ADC2_SMPR2</code>および<code>ADC3_SMPR2</code>が正しくありませんでした。<br/> [EW21667]
+  </p></li>
+
+  <li><p> 
+Atmelヘッダファイル<code>ioat91sam9260.h</code>の<code>_AT91S_SYS</code>の定義が正しくありませんでした。<br/>[EW21719]
+  </p></li>
+
+  <li><p> 
+TI TMS470R1B1Mのフラッシュローダが、アドレス範囲<code>0x70000-0x7ffff</code>での書き込みに失敗していました。<br/>[EW21722]
+  </p></li>
+
+  <li><p>
+EWARM 5.50.5:<br/>デバイスヘッダファイルで定義されたレジスタで、[定義に移動]が機能するようになりました(<code>__IO_REG*</code>マクロを使用)。<br/>[EW21755]
+  </p></li>
+
+  <li><p>
+EWARM 5.50.5:<br/><b>[プロジェクト]&gt;[オプション...]&gt;[一般オプション]&gt;[ターゲット]&gt;[コア]</b>の<code>Cortex-M4F</code>オプションが、アセンブラで機能するようになりました。<br/>[EW21772]
+  </p></li>
+
+  <li><p>
+EWARM 5.50.5:<br/>LPC2923フラッシュローダが正しく機能しませんでした。<br/>[EW21787]
+  </p></li>
+
+  <li><p>
+EWARM 5.50.5:<br/>iolpc2923.hでUSBレジスタ基準アドレスが間違っていました。<br/>[EW21788]
+  </p></li>
+
+  <li><p>
+EWARM 5.50.5:<br/>Toshiba TMPM380-SKのサンプルで、RAMサイズが16 KBではなく、32 KBと誤って指定されていました。<br/>[EW21867]
+  </p></li>
+
+  <li><p>
+EWARM 5.50.6:<br/>破損した設定ファイル(<code>.wsdt</code>)によって、IAR Embedded Workbenchが異常終了しなくなりました。<br/>[EW21750]
+  </p></li>
+
+  <li>
+    <p>
+EWARM 5.50.6:<br/>Toshiba TMPA900ボード上でのNUMONYX M29W640GTフラッシュの問題を修正しました。<br/>[EWARM-1015]
+    </p>
+  </li>
+  </ul>
+<b>新機能</b>
+<ul>
+<li><p><b>Cortex-M4</b><br/> ARM Cortex-M4コアのコード生成およびデバッグのサポート。
+</p></li>
+<li><p><b>トレースの機能拡張</b><br/> 新しい[タイムライン]ウィンドウを使用すると、コールスタックや割込みログ、データログ値を時系列に関連付けて視覚的に表すことができます。
+</p></li>
+<li><p><b>位置に依存しないコードおよびデータ</b><br/> 位置に依存しないコード/データをコンパイラで任意に生成できるようになりました。
+</p></li>
+<li><p><b>Cライブラリ浮動小数点の最適化</b><br/> 数多くのCライブラリ浮動小数点関数のスピードとサイズが最適化されました。
+</p></li>
+<li><p><b>CP15レジスタの表示</b><br/> J-Link/J-traceデバッグプローブの使用時に、デバッガがCP15コプロセッサレジスタを表示できるようになりました。
+</p></li>
+<li><p><b>SC000</b><br/> ARM SC000セキュアコアのコード生成およびデバッグのサポート。
+</p></li>
+</ul>
+
+<h4>V5.41 2009-12-14 </h4>
+<b>プログラム修正</b>
+<ul>
+    <li>
+      <p>
+複数ファイルのコンパイルモードから単一ファイルのコンパイルに切り替えたときに、&quot;Build error: Multiple tools write to the same file&quot;（ビルドエラー：複数のツールが同じファイルに書き込んでいます）というエラーが発生しなくなりました。.<br/>[EW20855]
+      </p>
+    </li>
+
+    <li>
+      <p>
+チュートリアルが、Cortex-M3用にビルドされるように構成されました。<br/>[EW21356]
+      </p>
+    </li>
+
+    <li>
+      <p>
+誤って定義されていた<code>iomcimx27.h</code>の<code>INT_SSI</code>が修正されました。<br/>[EW21410]
+      </p>
+    </li>
+
+    <li>
+      <p>
+エディタウィンドウでコンテキストメニューを開いたときに、[デバッグログ]ウィンドウに意味不明なエラーのエントリが生成されなくなりました。<br/>[EW21412]
+      </p>
+    </li>
+
+    <li>
+      <p>
+<code>ioat91cap7.ddf</code>のレジスタ定義のいくつかが修正されました。<br/>[EW21415]
+      </p>
+    </li>
+
+    <li>
+      <p>
+サンプル<code>arm\examples\TexasInstruments\Stellaris\boards\rdk-bdc\qs-bdc</code>で、間違ったデバイスが選択されなくなりました。<br/>[EW21432]
+      </p>
+    </li>
+
+    <li>
+      <p>
+割込み駆動型として設定した場合に、サンプル<code>arm\examples\NXP\LPC17xx\IAR-LPC-1768-SK\simple\ADC</code>のビルドが失敗しないようになりました。<br/>[EW21465]
+      </p>
+    </li>
+
+    <li>
+      <p>
+LPC1764のデフォルトのフラッシュローダが正しくなりました。<br/>[EW21486]
+      </p>
+    </li>
+
+    <li>
+      <p>
+EWARM 5.41.2:<br/>ファイルをプロジェクトに追加した場合に、別のケースで既知であっても、現在のファイル名のケースが使用されるようになりました。<br/>[EW21490]
+      </p>
+    </li>
+
+    <li>
+      <p>
+EWARM 5.41.2:<br/>TI Stellaris LM3S5B91のヘッダおよびddfファイルに、一部のレジスタ定義がありませんでした。<br/>[EW21497]
+      </p>
+    </li>
+
+    <li>
+      <p>
+EWARM 5.41.2:<br/>ST STM3210xのヘッダおよびddfファイルに、一部のタイマレジスタ定義がありませんでした。<br/>[EW21548]
+      </p>
+    </li>
+
+    <li>
+      <p>
+EWARM 5.41.2:<br/>AHBモードGPIOJとGPIOA-GPIOJのレジスタ定義が、TI Stellaris LM3Sxxxxのヘッダおよびddfファイルにありませんでした。<br/>[EW21562]
+      </p>
+    </li>
+
+    <li>
+      <p>
+EWARM 5.41.2:<br/>NXP LPC2xxxの例のPINSEL初期化コードによって、トレースポートが無効になっていました。<br/>[EW21610]
+      </p>
+    </li>
+  </ul>
+<b>新機能</b>
+<ul>
+<li><p><b>Cortex-R4F</b><br/> VFPユニットユニットを持ったARM Cortex-R4Fコアのコード生成およびデバッグのサポート。
+</p></li>
+<li><p><b>Cortex-M0速度の最適化</b><br/> Cortex-M0のコード生成が調整されて、コード生成の実行速度がより速くなりました。
+</p></li>
+<li><p><b>トレースの開始および停止トリガ</b><br/>命令トレースは、コードの位置やデータアクセスといった条件に基づいて、開始および停止することができます。この機能が、Cortex-M3用J-Traceのトレースプローブのほか、ARM用J-Traceのトレースプローブでも使用できるようになりました。
+</p></li>
+<li><p><b>Cortex-M3用J-TraceでのSWOサポート</b><br/> Cortex-M3用J-TraceのトレースプローブでSWOトレースがサポートされるようになりました。ファームウェアはデバッガによって自動的にアップグレードされます。
+</p></li>
+<li><p><b>ファイルで検索の機能拡張</b><br/> [ファイルで検索]検索フィールドで、正規表現が使用可能になりました。
+</p></li>
+<li><p><b>ワークスペース相対パス</b><br/> ワークスペース相対パスは、開いているエディタウィンドウに使用され、ワークスペースを別の場所に簡単に移動できるようにします。
+</p></li>
+</ul>
+
+<h4>V5.40 2009-07-10 </h4>
+<b>プログラム修正</b><br/>
+<ul>
+  <li><p>
+'#undef'プリプロセッサディレクティブの後にプリプロセッサシンボルがない場合でも、IAR Embedded Workbench IDEが突然終了しなくなりました。<br/>[EW20779]
+  </p></li>
+  <li><p>
+問題(20812)の重複がEWARM 5.30.2で修正されました：前にCleanコマンドがない場合に、ライブラリプロジェクトがビルドされませんでした。<br/>[EW20814]
+  </p></li>
+  <li><p>
+フラッシュローダ固有の引数が正しく文書化されていませんでした。本リリースからは、マニュアルはフラッシュローダの編集機能の一部として提供されます。<br/>[EW20848]
+  </p></li>
+  <li><p>
+LPC2468 uip_webserverの例は、スタンドアロン（デバッガのコントロールなし）として機能しませんでした。<br/>[EW20851]
+  </p></li>
+  <li><p>
+iolpc2470.hが何らかのビット定義により完了しました。<br/>[EW20905]
+  </p></li>
+  <li><p>
+内部フラッシュのAtmel AT91SAM9XE512フラッシュローダが修正されました。<br/>[EW20908、20990]
+  </p></li>
+  <li><p>
+LPC2378の例に、誤ったクロック計算のある関数が含まれていました。<br/>[EW20930]
+  </p></li>
+  <li><p>
+EWARM 5.30.1から5.30.2へのアップグレードが失敗する要因となる問題が修正されました。<br/>[EW20951]
+  </p></li>
+  <li><p>
+AT91sam7xc512のフラッシュローダがハングすることがありました。<br/>[EW20955]
+  </p></li>
+  <li><p>
+干渉を防いでフラッシュロードが失敗しないようにするには、STM32ウォッチドッグを無効にする必要があります。ウォッチドッグを無効にするには、ユーティリティ.../arm/bin/jlinkstm32.exeを使用してください。<br/>[EW20995]
+  </p></li>
+  <li><p>
+起動画面でTexasInstruments TMS470R1B1Mのサンプルアプリケーションがコピーされるとき、間違ったフォルダがコピーされました。<br/>[EW20997]
+  </p></li>
+  <li><p>
+Luminary LM3S2616にLM3Sx6xxを選択すると、このチップが16KBのRAMしか持たないため失敗していました。LM3S2616を選択可能なデバイスとして追加することで、これは修正されました。<br/>[EW21012]
+  </p></li>
+  <li><p>
+Atmel AT91SAM9263-EKのプロジェクト、basic-sd-spi-projectで、起動画面から起動した場合にexternal_libsが正しくコピーされませんでした。<br/>[EW21013]
+  </p></li>
+  <li><p>
+内部フラッシュのAtmel AT91SAM9XE256フラッシュローダが修正されました。<br/>[EW21072]
+  </p></li>
+  <li><p>
+STM32デバイス上にCRC計算ユニットレジスタがありませんでした。<br/>[EW21078]
+  </p></li>
+  <li><p>
+すべてのデバイスヘッダファイルで、C形式のコメントを使用するようになりました。<br/>[EW21081]
+  </p></li>
+  <li><p>
+EWARM 5.40.4:<br/>Toshiba TMPM330フラッシュローダーが原因でエラー:<br/><code>Unknown or ambiguous symbolが発生しました。__argc</code><br/>が表示。このエラーは、フラッシュダウンロードの精度には影響していませんでした。<br/>[EW21172]
+  </p></li>
+  <li><p>
+EWARM 5.40.4:<br/>ST STM32のサンプルの一部がビルドできませんでした。<br/>[EW21179、EW21184]
+  </p></li>
+  <li><p>
+EWARM 5.40.4:<br/>Analog Devicesのサンプルの一部で、フラッシュローダが有効になっていませんでした。<br/>[EW21208]
+  </p></li>
+  <li><p>
+EWARM 5.40.4:<br/>LPC2468フラッシュローダがデバッグモードで間違ってビルドされ、デバッグメッセージがシリアルポート経由で送信されていました。<br/>[EW21216]
+  </p></li>
+  <li><p>
+EWARM 5.40.4:<br/>ライブラリファイルで出力コンバータを使用できません。このオプションは、ライブラリプロジェクトのEWARMカテゴリリストから排除されました。<br/>[EW21291]
+  </p></li>
+  </li>
+</ul>
+
+<b>新機能</b><br/>
+<ul>
+<li><p><b>新しいCortex-M3デバッグ機能</b><br/> Cortex-M3 SWV/SWOデータの表示および解析用に、新しいプレゼンテーションの方法がいくつか加わりました。
+  </p></li>
+<li><p><b>インフォメーションセンタ</b><br/> チュートリアルや製品マニュアル、サンプルプロジェクトに簡単にアクセスできる統合型のナビゲーションシステムです。インフォメーションセンタを表示するには、<b>ヘルプ</b>&gt;<b>インフォメーションセンタ</b>を選択します。
+  </p></li>
+<li><p><b>Cortex-R4</b><br/> ARM Cortex-R4コアのコード生成およびデバッグのサポート。
+  </p></li>
+<li><p><b>Cortex-M0</b><br/> ARM Cortex-M0コアのコード生成およびデバッグのサポート。Cortex-M0ハードウェア上のデバッグは、J-Linkプローブを使用してサポートされます。
+  </p></li>
+<li><p><b>Cortex-M3用J-Trace</b><br/>Cortex-M3用J-Traceデバッグを使用して、一部のCortex-M3デバイスで使用可能なETMトレースポートをデバッガで活用できるようになりました。命令トレースは、コードの位置やデータアクセスといった条件に基づいて、開始および停止することができます。この機能には、Cortex-M3用J-Traceのトレースプローブが必要です。
+  </p></li>
+<li><p><b>トレースの開始および停止トリガ</b><br/>命令トレースは、コードの位置やデータアクセスといった条件に基づいて、開始および停止することができます。この機能には、Cortex-M3用J-Traceのトレースプローブが必要です。
+  </p></li>
+<li><p><b>ダイレクトなフラッシュ消去およびダウンロード</b><br/> フラッシュ消去とダウンロードが、デバッガを起動せずに実行できます。
+  </p></li>
+<li><p><b>複数イメージのデバッグ</b><br/> C-SPYは、1つのデバッグセッション中に、個別にビルドされた複数のイメージをデバッグできるようになりました。<b>[プロジェクトオプション]-&gt;[デバッガ]-&gt;[イメージ]</b>で、現在のアプリケーションに追加してダウンロードするイメージの場所を指定します。また、<b>[イメージ]</b>という新しいデバッガウィンドウもあり、ここでデバッグ情報を表示する対象のアプリケーションを選択します。 
+  </p></li>
+<li><p><b>Cortex-M3データブレークポイントの機能拡張</b><br/> Cortex-M3のデータブレークポイントは、アクセスされた変数のアドレスに加えて、特定の値でブレークすることが可能になりました。
+  </p></li>
+<li><p><b>[デバッガメモリ]ウィンドウの自動更新</b><br/> プログラムの実行中に[デバッガメモリ]ウィンドウを手動または定期的に更新できます。
+  </p></li>   
+</ul>
+
+<h4>V5.30 2009-01-23 </h4>
+<b>プログラム修正</b><br/>
+<ul>
+  <li>
+    <p>
+EWARM 5.30.2:<br/> 外部エディタが設定済みで使用されるべき場合にも、すべてのファイルがIAR Embedded Workbenchエディタで開かれていました。<br/>[EW20794]
+    </p>
+  </li>
+  <li>
+    <p>
+EWARM 5.30.2:<br/> Cleanコマンドが前になければ、ライブラリプロジェクトがビルドできませんでした。<br/>[EW20812]
+    </p>
+  </li>
+  <li>
+    <p>
+EWARM 5.30.2:<br/> '#'文字を含むC/C++マクロ定義によって、Embedded Workbench IDEが突然終了することがなくなりました。<br/>[EW20823]
+    </p>
+  </li>
+  <li>
+    <p>
+EWARM 5.30.2:<br/> AT91SAM7S64へのダウンロードが失敗していました。<br/>[EW20858]
+    </p>
+  </li>
+  <li>
+    <p>
+EWARM 5.30.2:<br/> ELF/DWARF入力ファイルをダウンロードした直後にスタックプラグインを初期化するときに、 Embedded Workbench IDEが突然終了する場合がありました。<br/>[EW20903]
+    </p>
+  </li>
+  <li>
+    <p>
+以前は<b>[プロジェクト]&gt;[オプション]&gt;[リンカ]&gt;[チェックサム]</b>で、チェックサムアルゴリズムのsum32を選択する方法がありませんでした。<br/>[EW20236]
+    </p>
+  </li>
+  <li>
+    <p>
+Atmel AT91SAM9260EKのフラッシュローダがありませんでした。<br/>[EW20301]
+    </p>
+  </li>
+  <li>
+    <p>
+以前は、例<code>arm\examples\ST\STR91x\STR912-SK-IAR\MassStorage </code>のSDカードサイズの表示が間違っていました。<br/>[EW20333]
+    </p>
+  </li>
+  <li>
+    <p>
+Toshiba TMPA910CRのヘッダファイル、<code>iotmpa910cr.h</code>で、以前は一部の周辺レジスタが誤って定義されていました。<br/>[EW20364]
+    </p>
+  </li>
+  <li>
+    <p>
+Atmelの例の割込みハンドラが、<code>AIC</code>割込みベクタ関数を呼び出す前に8バイト境界上のスタックをアラインメントできませんでした。<br/>[EW20412]
+    </p>
+  </li>
+  <li>
+    <p>
+<b>リンカ設定ファイルエディタ</b>ダイアログボックスの入力式にスペースやタブ文字が含まれる場合、式が正しく0に評価できませんでした。<br/>[EW20424]
+    </p>
+  </li>
+  <li>
+    <p>
+Atmel AT91SAM7A1およびAT91SAM7A2のデバッガ記述ファイル(<code>.ddf</code>)が、以前はありませんでしたが、現在は提供されています。<br/>[EW20418]
+    </p>
+  </li>
+  <li>
+    <p>
+NXP LPC2364へのフラッシュダウンロードが動作しませんでした。<br/>[EW20456, 20566]
+    </p>
+  </li>
+  <li>
+    <p>
+ILINKチェックサムフィールド、<b>アラインメント</b>と<b>初期値</b>が正常に有効化または無効化できるようになりました。<br/>[EW20487]
+    </p>
+  </li>
+  <li>
+    <p>
+<code>__noreturn</code>キーワードによって宣言された関数で、「定義に移動」が機能しませんでした。<br/>[EW20605]
+    </p>
+  </li>
+  <li>
+    <p>
+システム起動ファイル、<code>cstartup_M.s</code>と<code>cstartup_M.c</code>が評価用バージョンに追加されました。<br/>[EW20670]
+    </p>
+  </li>
+  <li>
+    <p>
+外部でビルドされたプロジェクトのデバッグ中に、ilinkarmオプションを更新する必要がなくなりました。<br/>[EW20707]
+    </p>
+  </li>
+  <li>
+    <p>
+テキストエディタで大量の選択項目を右クリックすると、Embedded Workbenchがクラッシュすることがありました。<br/>[EW20751]
+    </p>
+  </li>
+</ul>
+
+<b>新機能</b><br/>
+<ul>
+<li><b>新しいCortex-M3デバッグ機能</b><br/> Cortex-M3 SWV/SWOデータの表示および解析用に、新しいプレゼンテーションの方法がいくつか加わりました。
+     <ul>
+<li>関数プロファイラ。</li>
+       <p>
+<li>命令トレースカウントを持つ[逆アセンブリ]ウィンドウ。</li>
+       <p>
+<li>時間の情報など、最大4つの異なるメモリ位置または領域へのアクセスを記録する[データログ]ウィンドウ。各メモリ位置の要約された概要も利用できます。</li>
+       <p>
+<li>時間の情報など、割込みへの入口と出口を記録する[割込みログ]ウィンドウ。それぞれの割込みソースの要約された概要も利用できます。</li>
+       <p>
+<li>それぞれの割込みソースについて、タイムスケールの割込みアクティビティを表示する[割込みグラフ]ウィンドウ。</li>
+       <p>
+<li>機能拡張された[SWOトレース]ウィンドウ。</li>
+       <p>
+<li>SWDインタフェースを使用したJ-Linkダウンロードの速度が40%改善されました。</li>
+     </ul>
+     <p>
+詳しくは、<A href="../EWARM_DebuggingGuide.JPN.pdf">デバッグガイド</A>を参照してください。
+  </li>
+  <p>
+<li><b>コンパイラサイズの最適化</b><br/> コンパイラオプティマイザが、Cortex-M3のコードについて業界で一般的なコードサイズを生成するように調整されました。
+  </li>
+  <p>
+<li><b>イニシャライザの圧縮</b><br/> リンカは初期化したデータを圧縮して、フラッシュの使用を最小に抑えることができます。圧縮されたデータは、フラッシュからRAMに移動すると起動コードによって自動的に解凍されます。詳しくは、<A href="../EWARM_DevelopmentGuide.JPN.pdf">開発ガイド</A>を参照してください。
+  </li>
+  <p>
+<li><b>MISRA-C:2004サポート</b><br/>IAR Embedded Workbenchには、ソースコードがMISRA-C:2004標準に適合しているか確認する機能が追加されました。
+  </li>
+  </p>
+<li><b>ST ST-LINKデバッグプローブ</b><br/> ST ST-LINK JTAGデバッグプローブのサポート。
+  </li>
+  </p>
+<li><b>ARM7EJ-S</b><br/> ARM7EJ-Sコアのサポート。
+  </li>
+  </p>
+  <li>
+<b>リンカ設定ファイルエディタ</b>のフィールドと内容が、コア、従来のARMまたはCortexのタイプに合わせて動的に調整されます。
+  </li>
+</ul>
+
+<h4>V5.20 2008-06-24</h4>
+<b>プログラム修正</b><br/>
+<ul>
+  <li><p>
+定義<code>SPI_CSR0-SPI_CSR3</code>が、ファイル<code>ioat91sam7s64.ddf</code>に戻されました。<br/>[EW16853]
+  </p></li>
+  <li><p>
+USBインタフェースの<code>UDP_CSR0-3</code>および<code>UDP_FDR0-3</code>定義が、Atmel AT91SAM7S64、128、256のCヘッダおよびDDFファイルに復元されました。<br/>[EW17163]
+  </p></li>
+  <li><p>
+リンカまたは出力コンバータからの出力ファイルの拡張子がアセンブラやコンパイラの有効な拡張子である場合に、IDEがフリーズまたはクラッシュしなくなりました。<br/>[EW17515]
+  </p></li>
+  <li><p>
+IDE変数<code>TARGET_DIR</code>を使用して、<code>$TARGET_DIR$\..\..</code>などの親ディレクトリにアクセスしたときに、IDEがクラッシュしていました。<br/>[EW17756]
+  </p></li>
+  <li><p>
+<code>AIC_SMR0-AIC_SMR31</code>および<code>AIC_SVR0-AIC_SVR31</code>の定義が、ファイル<code>ioat91sam7s64.ddf</code>と<code>ioat91sam7xc256.ddf</code>に戻されました。<br/>[EW17830、19000]
+  </p></li>
+  <li><p>
+Atmelのサンプルプロジェクトが、起動画面から開けるようになりました。<br/>[EW17869]
+  </p></li>
+  <li><p>
+ドル記号'$'を含むパスが正しく処理されるようになりました。<br/>[EW18252]
+  </p></li>
+  <li><p>
+[IDEオプション]ダイアログボックスで[ブラウズ情報を生成]オプションを選択すると、再帰的マクロがプリプロセッサの式で使用可能になりました。<br/>[EW18721]
+  </p></li>
+  <li><p>
+再帰的な#includeプリプロセッサディレクティブが使用できるようになりました。<br/>[EW19037]
+  </p></li>
+  <li><p>
+フルのバイトで構成されている限り、どんな長さのフィルパターンも使用できるようになりました。ただし、0xで始まる16進数の表記で指定する必要があります。<br/>[EW19697]
+  </p></li>
+  <li><p>
+Texas Instrumentsのサンプルプロジェクトが、起動画面から開けるようになりました。<br/>[EW19795]
+  </p></li>
+  <li><p>
+デバッガマクロstr91x-isc.macが、STR91xのレビジョンGおよびHに対して正しく機能しませんでした。<br/>[EW19931]
+  </p></li>
+  <li><p>
+一部のSTM32アプリケーションレイアウトが、コードをフラッシュにダウンロードするときにエラーを引き起こす可能性がありました。<br/>[EW20027]
+  </p></li>
+  <li><p>
+存在しなかったSPIおよびAICレジスタが、<code> ioat91sam7s256.ddf</code>に追加されました。<br/>[EW20028]
+  </p></li>
+  <li><p>
+<code> iostr912f.h</code>で、<code> UART_RSECR </code>レジスタの誤った名前<code> UART0_RSR</code>が訂正されました。<br/>[EW20074]
+  </p></li>
+  <li><p>
+<br/><code>#define X(y) #x</code><br/>という誤った形式のプリプロセッサディレクティブによって、Embedded Workbench IDEが異常終了することがありました。これは修正されました。<br/>[EW20096]
+  </p></li>
+   <li><p>
+オプションダイアログでBE32が選択されている場合、コマンドラインオプション<code> --BE32 </code>がリンカに送られるようになりました。<br/>[EW20118]
+  </p></li>
+   <li><p>
+<code> HECC_CR、HECC_MR、HECC_SR、HECC_PR、HECC_NPR、HECC_VR </code>の複数の定義が、ファイル<code> ioat91sam9260.ddf</code>から削除されました。<br/>[EW20121]
+  </p></li>
+</ul>
+<b>新機能</b>
+<ul>
+<li><b>複数ファイルのコンパイル</b><br/> IDEを使用して、1つのユニットにコンパイルされる複数ファイルを持つコンパイルユニットを定義できるようになりました。これにより、コンパイラがコードの最適化でさらに広いスコープに対応可能となります。
+  </li>
+  <p>
+<li><b>Cortex-M3 SWV/SWO</b><br/> Cortex-M3 SWOチャンネル経由で送信されるCortex-M3 SWV (Single Wire Viewer)トレースパケットを、デバッガで表示できます。トレースパケットのタイプの選択については、ユーザにすべての権限があります。通信レートは、J-Link v7またはそれ以降を使用する場合6MHzです(J-Linkの旧バージョンの場合は500 kHz)。
+  </li>
+  <p>
+<li><b>SWOを介したPrintfがボタンをクリックするだけで可能に</b><br/> Cortex-M3の場合、printf出力はSWOチャンネル(SWDインタフェースの一部)経由で送信し、デバッガのターミナルI/Oウィンドウに表示することができます。この利点は、CPUを停止する必要がないため、デバッグログメッセージのパフォーマンスがリアルタイムである点です。<br/>有効にするには: <b>プロジェクトオプション&gt;一般オプション&gt;ライブラリ設定&gt;SWO経由</b>。
+   </li>
+  <p>
+<li><b>DCCを介したPrintf</b><br/> ARM7とARM9の場合、printf出力はDCCチャンネル経由で送信し、デバッガのターミナルI/Oウィンドウに表示できます。この利点は、CPUを停止する必要がないため、デバッグログメッセージのパフォーマンスがリアルタイムである点です。<br/>詳しくは<a href="csarmjlink.JPN.html">こちら</a>を参照してください。
+  </li>
+  <p>
+<li><b>フラッシュブレークポイント</b><br/> フラッシュブレークポイントでは、フラッシュ内のコードを検索している場合にも、無制限にブレークポイントをアクティブにすることができます。フラッシュブレークポイントは、J-Linkプローブで提供されているほか、個別の製品としても入手できます。
+  </li>
+  <p>
+<li><b>コンパイラ速度の最適化</b><br/> コンパイラオプティマイザが、Cortex-M3のコードについて業界トップクラスの実行速度を実現するよう調整されました。
+  </li>
+  <p>
+<li><b>VFP</b><br/> 浮動小数点コプロセッサのVFPv1およびVFPv2のサポート。
+  </li>
+  <p>
+<li><b>他のリンクイメージへの参照によるリンク</b><br/> あるリンクイメージからのシンボルを、別のイメージをリンクする際の入力として使用できます。これは、アプリケーションが常駐(ROM)イメージ内のコードに依存する場合に便利です。詳しくは、ISymExportツールの説明を参照してください。
+  </li>
+  <p>
+<li><b>J-Linkコントロールパネル</b><br/> デバッグセッションがアクティブな場合、Windowsの通知領域にあるJ-Linkボタンを使用してJ-Linkコントロールパネルを有効にできます。コントロールパネルによって、J-Linkの設定パラメータにアクセスでき、J-Linkのステータス情報が表示されます。
+  </li>
+  <p>
+<li><b>$CONFIG_NAME$</b><br/> 新しい引数変数の$CONFIG_NAME$が追加されました。この引数変数は、現在のビルド構成の名前(Debug、Releaseなど)に展開します。 
+  </li>
+  <p>
+<li><b>IAR独自の派生セミホスティング</b><br/> SVC命令を使用しないため、SVCベクタ上にブレークポイントを設定する必要がないIAR独自の派生セミホスティングを選択できます。RTOSなど、自身のためにSVCベクタを必要とするアプリケーションをデバッグするときに便利です。
+  </li>
+</ul>
+
+
+<h4>V5.11 28.11.07</h4>
+<b>プログラム修正</b>
+<ul>
+  <li><p>
+デフォルトのオブジェクトファイル出力ディレクトリを変更しても、IDEが出力ファイルの2つのコピーをリンクしなくなりました。<br/>[EW17458]
+  </p></li>
+  <li><p>
+Texas Instruments HETアセンブラ、<code>het470.exe</code>がC出力ファイルを生成できない場合がありました。<br/>HETアセンブラ<code>het470.exe</code>にクリーンな環境を作成する目的で、HETアセンブララッパの<code>het470wrap.exe</code>が用意されました。.<br/>さらに、サンプルのカスタムビルド規則がダミーの引数<code>-iii</code>によって変更され、一部の環境で問題の改善が見られています。<br/>この問題は、アップデートされたhet470.exeによって完全に解決されました。<br/>[EW18098]
+  </p></li>
+  <li><p>
+デフォルトのフラッシュローダのコマンドライン引数が、デバイス設定(<code>i79</code>)ファイルから読込み可能です。<br/>[EW18713]
+  </p></li>
+  <li><p>
+AT91SAM7S512フラッシュローダが、デュアルのEmbedded Flash Controllerを処理できるようになりました。<br/>[EW19036]
+  </p></li>
+  <li><p>
+エディタウィンドウの関数ブラウザが、'名前空間'ブロック内の関数を認識するようになりました。<br/>[EW19230]
+  </p></li>
+  <li><p>
+存在しなかったレジスタが、STR912FAデバイスサポートファイルに追加されました。<br/>[EW19349]
+  </p></li>
+  <li><p>
+STR912-SKボードのすべてのサンプルプロジェクトが、ボードの電源サイクルの後も実行されるようになりました。<br/>[EW19353]
+  </p></li>
+  <li><p>
+ILINK設定ファイルエディタが、編集のたびにファイル末尾のデータを失わなくなりました。<br/>[EW19447、19401]
+  </p></li>
+  <li><p>
+追加ライブラリの追加（<b>[リンカ]-&gt;[ライブラリ]</b>オプションダイアログを使用）が機能するようになりました。<br/>[EW19477]
+  </p></li>
+  <li><p>
+TMS470R1M1Bは、チップ保護機構のためにリセットベクタに<code>LDR</code>命令を持つことができません。<code>B</code>命令である必要があります。ある固有の<code>cstartup.s</code>ファイルが、適切なサンプルに追加されました。<br/>[EW19479]
+  </p></li>
+  <li><p>
+プロジェクトの設定をコピーする際、プロジェクト内のファイルステータス、'ビルドから除外'がコピーされるようになりました。<br/>[EW19482]
+  </p></li>
+  <li><p>
+NXP LPCデバイスのすべてのヘッダファイルが、<code> IO0PIN </code>と<code> IO1PIN </code>をリードオンリーとして正しく定義するようになりました。<br/>[EW19489]
+  </p></li>
+  <li><p>
+フラッシュローダ、LPC2378とLPC2468が、フラッシュの最後の4KBを使用するようになりました。<br/>[EW19524]
+  </p></li>
+  <li><p>
+プリプロセッサディレクティブ内での0による除算によって、IAR Embedded Workbenchが異常終了しなくなりました。<br/>[EW19549]
+  </p></li>
+  <li><p>
+出力先ディレクトリを変更しても、ビルドで問題が発生しなくなりました。<br/>[EW19551]
+  </p></li>
+  <li><p>
+STM32のサンプルで、<code>0x20000004</code>からの4バイトに対して検証エラーが発生しなくなりました。<br/>[EW19680]
+  </p></li>
+  <li><p>
+<code>0x00-0x0F</code>の範囲で、チェックサムのフィルパターンが機能するようになりました。ただし、<code>0xFF</code>より大きく、最も重要な部分に0を持つパターンは、これまでと同じく動作しません。<br/>[EW19697]
+  </p></li>
+  <li><p>
+<b>[リンカ]&gt;[診断]</b>ページの<b>[すべてのワーニングをエラーとして処理]</b>オプションが、リンカの失敗を引き起こさなくなりました。<br/>[EW19699]
+  </p></li>
+  <li><p>
+i.MX21のフラッシュローダが、RoHSに準拠するi.MX21 ADSEで使用されるSpansion S29WS128N0PBFW01をサポートするようになりました。<br/>[EW19706]
+  </p></li>
+  <li><p>
+<code> iomcimx27.h </code>の誤ったビット構造体定義が修正されました。<br/>[EW19728]
+  </p></li>
+  <li><p>
+<code>arm\examples\ST\STR91x\STR91xlibrary\examples\UART</code>の<code>readme.txt</code>で、PC RS232ケーブルのオスとメスが正しく指定されています。.<br/>[EW19732]
+  </p></li>
+</ul>
+
+<b>新機能</b>
+  <ul>
+<li><b>Cortex-M1</b><br/> ARM Cortex-M1コアのコード生成およびデバッグのサポート。Cortex-M1ハードウェア上のデバッグは、J-Linkプローブを使用してサポートされます。
+  </li>
+  <p>
+<li><b>J-LinkによるARM11デバッグ</b><br/> J-LinkドライバがARM11をサポートするようになりました。
+  </li>
+  <p>
+  <li>
+<b>システム環境変数の拡張</b><br/> システム環境変数が、内蔵の引数変数と同じように、IDE内から拡張可能になりました。<br/>構文: <code>&lt;$_<i>environment variable name</i>_$</code><br/>例えば、システム環境変数<code>HOMEPATH</code>をIDEのパスで使用するには、<br/><code>$_HOMEPATH_$\CONFIG\linkerconf.icf</code>と記述します。 
+  </li>
+  <p>
+  <li>
+<b>エディタの背景色</b><br/> テキストエディタの背景色を選択できるようになりました。<br/>
+  </li>
+  <p>
+  <li>
+<b>J-Link STR9 Commander (コマンドラインツール)</b><br/> J-Link Commander (<code>arm\bin\JLinkSTR91x.exe</code>) は、ST STR91xコアの設定に使用するツールです。フラッシュ設定レジスタの設定やフラッシュの消去など、一部のSTR9固有のコマンドを許可します。このツールを使用して、プログラムがフラッシュにある場合（ARMコアが停止します）でも、コントローラのフラッシュを消去することができます。このツールについては、<a href="../JLinkARM.pdf">J-Link/J-Traceユーザガイド</a>で説明しています。<br/>
+  </li>
+</ul>
+
+
+<h4>V5.10 2007-05-25</h4>
+<b>プログラム修正</b><p>
+<ul>
+  <li><p>
+IDEの個々のC/C++ソースコードに対して、Arm/Thumbモードを選択可能になりました。<br/>[EW14209]
+  </p></li>
+
+  <li><p>
+デバッグドライバGUI DLL (WTD)がない場合に、プロジェクトを開くたびにワーニングのダイアログボックスが表示される可能性があります。<br>[EW18350]
+  </p></li>
+
+  <li><p>
+カスタムビルド規則で、ビルド操作中に規則を適用するかどうかを決定する際、<b>追加入力ファイル</b>にリストされたファイルが正しく選択されない場合がありました。<br/>[EW18659]
+  </p></li>
+
+  <li><p>
+NXP LPC2xxxデバイスのDDFファイルが、高速IOレジスタの冗長なインスタンスを含んでいました。<br/>[EW18720]
+  </p></li>
+
+  <li><p>
+AT91SAM7S-割込みの例で、FLASH_Debug設定におけるフラッシュダウンロードが有効化されませんでした。<br/>[EW18733]
+  </p></li>
+
+  <li><p>
+Atmel FlashAT91SAM7Sxフラッシュローダの起動エラーが修正されました。<br/>[EW18734]
+  </p></li>
+
+  <li><p>
+<code>iomc9328mx1.h</code>ファイルがUART3を定義するようになりました。<br/>[EW18748]
+  </p></li>
+
+  <li><p>
+<code>iomc9328mx1.h</code>ファイルが、<code>SSI2_CLK_EN</code>ビットおよび<code>UART3_CLK_EN</code>ビットを定義するようになりました。<br/>[EW18766]
+  </p></li>
+
+  <li><p>
+LPC2148 Audiodeviceの例が、キャプチャモードに関して<code>PINSEL1_bit.P0_17</code>および<code>PINSEL1_bit.P0_18</code>の間違った設定を使用していました。<br/>[EW18817]
+  </p></li>
+
+  <li><p>
+<code>iotms470r1a288.h</code>ファイルが<code>C2SIB</code>レジスタを定義するようになりました。<br/>[EW18834]
+  </p></li>
+
+  <li><p>
+STR750およびSTR912のマスストレージの例に関する問題を修正しました。<br/>[EW18897、EW18941、EW18942]
+  </p></li>
+
+  <li><p>
+MAC7121のIC2の定義を修正しました。<br/>[EW18905]
+  </p></li>
+
+  <li><p>
+<code>iolpc2210.h</code>ファイルが、<code>U0TER</code>、<code>U1TER</code>、<code>T0CTCR</code>、<code>T1CTCR</code>、<code>SCS</code>のレジスタを定義するようになりました。<br/>[EW18928]
+  </p></li>
+
+  <li><p>
+<code>default.i79</code>ファイルが破損していました。<br/>[EW18952]
+  </p></li>
+
+  <li><p>
+Nohau NXP LPC288xの例で、フラッシュメモリへのロードが失敗しました。<br/>[EW18953]
+  </p></li>
+
+  <li><p>
+LPC214x USB uart virtual comの例を修正しました。<br/>[EW18965]
+  </p></li>
+
+  <li><p>
+Freescale i.MX21フラッシュローダを修正しました。<br/>[EW18985]
+  </p></li>
+
+  <li><p>
+<code>iolpc2138.h</code>ファイルが、<code>__pinsel1_bits</code>構造体でP0_26-P0_31を定義するようになりました。<br/>[EW19002]
+  </p></li>
+
+  <li><p>
+ヘッダファイル<code>iolpc2138.h</code>中のAD0とAD1のアドレスを修正しました。<br/>[EW19075]
+  </p></li>
+
+  <li><p>
+[IDEオプション]ダイアログボックスの<b>追加インクルードディレクトリ</b>リスト、（<b>[プロジェクト]&gt;[オプション]&gt;[C/C++ コンパイラ]&gt;[プリプロセッサ]</b>）が、リストがブランクの行で始まる場合に、セッション間で保存されませんでした。<br/>[EW19084]
+  </p></li>
+
+  <li><p>
+<code>iotms470r1b1m.h</code>ファイルが、<code>DWCTRL</code>、<code>DWKEY</code>、<code>DWPRLD</code>を定義するようになりました。<br/>[EW19131]
+  </p></li> 
+  </ul>
+
+<b>新機能</b>
+  <ul>
+<li><b>ARM EABI準拠</b><br/> IAR C/C++コンパイラ、アセンブラ、リンカおよびデバッガは、ELF/DWARF 3.0に基づいて、ARM EABI 2.0（Embedded Application Binary Interface for ARM）に準拠しています。AEABIに準拠すると、他のベンダにより提供されるツールでも、モジュールを他の任意のAEABI準拠モジュールとリンクできるというメリットがあります。たとえば、GNU、ARM RealViewおよびARM用IAR Embedded Workbenchをまとめてリンクすることができます。詳しくは、<a href="http://www.arm.com/products/DevTools/ABI.html">http://www.arm.com/products/DevTools/ABI.html</a>をご覧ください。
+     <p>
+  </li>
+
+<li><b>ETB</b><br/> デバッガは、一部のARMデバイスで使用可能なETB (Embedded Trace Buffer) からのトレースデータを表示できるようになりました。これは、J-Linkプローブの使用時にサポートされています。
+     <p>
+  </li>
+
+<li><b>データブレークポイント</b><br/> 実際のハードウェア上でデータブレークポイントがサポートされるようになりました。データブレークポイント機能は、J-Link、RDI、Macraigor、Luminary FTDIのデバッガドライバによりサポートされています。
+     <p>
+  </li>
+
+<li><b>GDBサーバ接続</b><br/> GDBサーバへの接続用デバッガドライバが用意されています。これは、ST STR9-comStick開発キットとともに使用するよう意図されています。その他の用法はすべて、実験的なものと考えられています。 
+     <p>
+  </li>
+
+<li><b>I/Oレジスタ定義ファイル</b><br/>
+
+レジスタへのシンボルアクセス用I/Oレジスタ定義ファイルは、プログラミング中(Cおよびアセンブラ)とデバッグ中の両方で使用されます。本リリースのその他のファイルは、以下の製品向けに提供されています。
+
+    <ul>
+<li>Freescale MCIMX27、MCIMX31</li>
+<li>Luminary LM3S317、LM3S617、LM3S618、LM3S817、LM3S818、LM3S2110、LM3S2139、LM3S2410、LM3S2412、LM3S2432、LM3S2533、LM3S2620、LM3S2637、LM3S2651、LM3S2730、LM3S2739、LM3S2939、LM3S2948、LM3S2950、LM3S2965、LM3S6100、LM3S6110、LM3S6420、LM3S6422、LM3S6432、LM3S6610、LM3S6633、LM3S6637、LM3S6730、LM3S6938、LM3S6952、LM3S6965</li>
+<li>NXP LPC2109</li>
+<li>NXP SJA2020</li>
+<li>ST STM32F101、STM32F103、STR751、STR752、STR755、STR910FA、STR911FA、STR912FA</li>
+<li>Winbond W90P710</li>
+    </ul><p>
+  </li>
+</ul>
+    </div>
+  </body>
+</html>

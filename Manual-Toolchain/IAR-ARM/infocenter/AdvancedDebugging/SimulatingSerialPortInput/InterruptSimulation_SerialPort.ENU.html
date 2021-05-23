@@ -1,0 +1,1033 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Simulating serial port input</title>
+    <link rel="StyleSheet" href="css/InterruptSimulation_SerialPort.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+  </head>
+  <body style="background-color: White; background-image: url(&quot;images/BlackGrayStrip.png&quot;); background-position: center top; background-repeat: repeat-x">
+    <table align="left">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/IARSystems.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading1"><a name="15978503">Simulating serial port input</a></div>
+      <div class="WebWorks_MiniTOC">
+        <div class="WebWorks_MiniTOC_Level1">
+          <a class="WebWorks_MiniTOC_Link" href="#15971998">Tutorial overview</a>
+        </div>
+        <div class="WebWorks_MiniTOC_Level2">
+          <a class="WebWorks_MiniTOC_Link" href="#16018738">Tutorial description</a>
+        </div>
+        <div class="WebWorks_MiniTOC_Level2">
+          <a class="WebWorks_MiniTOC_Link" href="#16019185">Files used in this tutorial</a>
+        </div>
+        <div class="WebWorks_MiniTOC_Level2">
+          <a class="WebWorks_MiniTOC_Link" href="#16019883">Opening the tutorial workspace</a>
+        </div>
+        <div class="WebWorks_MiniTOC_Level1">
+          <a class="WebWorks_MiniTOC_Link" href="#15975967">Setting up and performing the simulation</a>
+        </div>
+        <div class="WebWorks_MiniTOC_Level2">
+          <a class="WebWorks_MiniTOC_Link" href="#16012863">Writing an interrupt service routine</a>
+        </div>
+        <div class="WebWorks_MiniTOC_Level2">
+          <a class="WebWorks_MiniTOC_Link" href="#16033035">Setting up the project</a>
+        </div>
+        <div class="WebWorks_MiniTOC_Level2">
+          <a class="WebWorks_MiniTOC_Link" href="#16033260">Setting up the simulation using C-SPY macros</a>
+        </div>
+        <div class="WebWorks_MiniTOC_Level2">
+          <a class="WebWorks_MiniTOC_Link" href="#16026524">Building the project</a>
+        </div>
+        <div class="WebWorks_MiniTOC_Level2">
+          <a class="WebWorks_MiniTOC_Link" href="#16029589">Setting a breakpoint on the receive register</a>
+        </div>
+        <div class="WebWorks_MiniTOC_Level2">
+          <a class="WebWorks_MiniTOC_Link" href="#16009803">Executing the application—performing the simulation</a>
+        </div>
+      </div>
+      <div class="Ingress"><a name="16643769">This tutorial shows how you can simulate input to a serial port data buffer (typically, some sort of a UART) and how to print the characters to </a><span class="Computer">stdout</span>, all without using any actual hardware. Instead, the tutorial uses various mechanisms in the IAR C-SPY® Simulator, such as interrupt simulation, conditional breakpoints, C-SPY macros, and the Terminal I/O window. Note that this tutorial does not describe an exact simulation of true hardware execution; the purpose is to illustrate how these mechanisms can be useful to simulate hardware.</div>
+      <div class="Ingress"><a name="15972462">Note that the screenshots in this tutorial do not always correspond exactly to the counterparts in your product.</a></div>
+      <div class="Ingress"><a name="16002465">This tutorial assumes that you are familiar with basic use of IAR Embedded Workbench, see the tutorials </a><span class="Reference">Getting Started using IAR Embedded Workbench</span>.</div>
+      <div class="Heading2"><a name="15971998">Tutorial overview</a></div>
+      <div class="Heading3"><a name="16018738">Tutorial description</a></div>
+      <div class="Body"><a name="16019510">Many microcontrollers have some sort of an integrated UART. Typically, when the UART receives a character, an interrupt is generated, and an interrupt service routine is called which reads the UART’s receive buffer and then, for example, prints the character to </a><span class="Computer">stdout</span>.</div>
+      <div class="Body"><a name="16643794">Use the C-SPY debugger to </a><span class="Emphasis">simulate</span> this behavior without using any real hardware:</div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a name="16019541">The main application loops until an interrupt is generated.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a name="16019546">When an interrupt is received by the application, an interrupt service routine reads the serial port’s receive data register (in this tutorial, symbolized by </a><span class="Computer">RBUF</span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a name="16019556">When this read access is performed, a breakpoint is triggered, which invokes a C-SPY macro.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a name="16019578">The C-SPY macro reads a value from a text file and feeds that value to </a><span class="Computer">RBUF</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a name="16019583">When the macro is finished, the ISR resumes execution and prints the value to the </a><span class="Menu_Command">Terminal I/O</span> window.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a name="16019596">Execution then returns to the main application.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="16019606"><img class="Default" src="images/InterruptSimulation_SerialPort.1.1.01.png" width="414" height="275" style="display: block; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="Body"><a name="16019612">The tutorial also guides you through the steps involved to achieve the required behavior:</a></div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a name="16019617">Write an interrupt service routine completely in C which reads the serial port’s receive data register and prints the character to a display, which in this tutorial is simulated by the </a><span class="Menu_Command">Terminal I/O</span> window.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a name="16019628">Set up the characteristics of a simulated interrupt.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body_in_list"><a name="16019631">The tutorial shows how you can do this by using a specific C-SPY system macro function.</a></div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a name="16019641">Set up a breakpoint so that it is triggered for read accesses on </a><span class="Computer">RBUF</span> and invokes a C-SPY macro (<span class="Computer">Access</span>).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body_in_list"><a name="16019648">The tutorial shows both how you can set up the breakpoint interactively—by using a dialog box—and how you can automate it by using a specific C-SPY system macro function.</a></div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a name="16019661">Define the </a><span class="Computer">Access</span> macro so that it reads a value from the <span class="Computer">InputData.txt</span> file and feeds that value to <span class="Computer">RBUF</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body_in_list"><span class="Computer"><a name="16019671">InputData.txt</a></span> contains the Fibonacci sequence, which is used for simulating the input to the serial port.</div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a name="16019680">Set up the project and build it with the required options.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a name="16019686">Simulate the whole scenario.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Heading3"><a name="16019185">Files used in this tutorial</a></div>
+      <div class="Body"><a name="16018742">The project used in this tutorial contains these files:</a></div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><span class="Computer"><a name="16018753">SerialPortInterrupt.c</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body_in_list"><a name="16018774">Contains the main application and an interrupt service routine which reads values from a simulated serial port. When a value is received, it will be printed. While waiting for an interrupt, the main application prints periods (.).</a></div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><span class="Computer"><a name="16018812">Utilities.c</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body_in_list"><a name="16018818">Contains utility routines required by </a><span class="Computer">SerialPortInterrupt.c</span> for the Fibonacci calculations.</div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><span class="Computer"><a name="16018829">Utilities.h</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body_in_list"><a name="16018834">Contains required definitions and declarations.</a></div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><span class="Computer" style="color: #000000"><a name="16625697">cstartupCM3.s</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body_in_list"><a name="16625702">Contains the definition of the interrupt vector that is used in this tutorial.</a></div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><span class="Computer"><a name="16625705">InputData.txt</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body_in_list"><a name="16018848">Contains the Fibonacci sequence.</a></div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><span class="Computer"><a name="16018857">SetupSimulation.mac</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body_in_list"><a name="16018863">A C-SPY macro file which reads a value from </a><span class="Computer">InputData.txt</span> and feeds that value to <span class="Computer">RBUF</span>, sets up the simulation of interrupts, and sets up the breakpoint conditions.</div>
+      <div class="Heading3"><a name="16019883">Opening the tutorial workspace</a></div>
+      <div class="List_step_first_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_first_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_first_inner"><a name="16020088">In the IDE and if Information Center is not open, choose </a><span class="Menu_Command">Help&gt;Information Center</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16020097">Click the </a><span class="Menu_Command">Product explorer</span> symbol.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="16020122"><img class="Default" src="images/TutorialsInInfoCenter_02.png" width="300" height="400" style="display: block; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16020132">Under the </a><span class="Menu_Command">Advanced Debugging</span> heading, click <span class="Menu_Command">Open tutorial workspace</span>. Choose a destination for your project in the browse dialog box that appears. We recommend that you create a specific directory (with a subdirectory) where you store all your tutorial files, if not already done. In this tutorial we call the directory <span class="Computer">MyTutorials</span> and the subdirectory <span class="Computer">AdvancedDebugging</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="16036824">After you have chosen a destination directory, the </a><span class="Computer">AdvancedDebugging</span> workspace is opened in the IDE.</div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16020146">In the </a><span class="Menu_Command">Workspace</span> window, select the <span class="Computer">SimulatingSerialPortInput</span> project, right-click and choose <span class="Menu_Command">Set as Active</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="16020165"><img class="Default" src="images/SimulatingSerialPortProject_Mym80_02.png" width="346" height="289" style="display: block; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="Heading2"><a name="15975967">Setting up and performing the simulation</a></div>
+      <div class="Body"><a name="15976638">In this example procedure, you will work through these steps:</a></div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a href="#16012863" title="Simulating serial port input" name="15976651">Writing an interrupt service routine</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a href="#16033035" title="Simulating serial port input" name="16033412">Setting up the project</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a href="#16033260" title="Simulating serial port input" name="16033415">Setting up the simulation using C-SPY macros</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a href="#16026524" title="Simulating serial port input" name="16024262">Building the project</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a href="#16029589" title="Simulating serial port input" name="16001842">Setting a breakpoint on the receive register</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a href="#16009803" title="Simulating serial port input" name="16010053">Executing the application—performing the simulation</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Heading3"><a name="16012863">Writing an interrupt service routine</a></div>
+      <div class="Body"><a name="16012880">This procedure demonstrates how you can use features in the compiler to write an interrupt service routine in C.</a></div>
+      <div class="List_step_first_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_first_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_first_inner"><a name="16012888">These lines define the interrupt service routine used in this tutorial:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Prog"><a name="15976493">#pragma language=extended</a></div>
+      <div class="Prog"><a name="15976497">&nbsp;</a></div>
+      <div class="Prog"><a name="15976501">/* Defines an interrupt service routine. */</a></div>
+      <div class="Prog"><a name="16643815">void UartReceiveHandler(void)</a></div>
+      <div class="Body"><a name="16643872">The </a><span class="Computer">_ _enable_interrupt</span> keyword enables interrupts, and the interrupt vector is defined in <span class="Computer">cstartupCM3.s</span> which is included in the project.</div>
+      <div class="Body"><a name="16625793">For more information about the extended keywords and pragma directives used in this tutorial, see the </a><span style="color: #000000; font-style: italic">IAR C/C++ Compiler User Guide</span> (or, for some products, <span class="Reference">IAR C/C++ Development Guide</span>).</div>
+      <div class="Heading3"><a name="16033035">Setting up the project</a></div>
+      <div class="Body"><a name="16033041">The </a><span class="Computer">SimulatingSerialPortInput</span> project is preconfigured with appropriate option settings for this tutorial. Still, this procedure guides you through the option settings required for this tutorial.</div>
+      <div class="List_step_first_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_first_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_first_inner"><a name="16033056">In the </a><span class="Menu_Command">Workspace</span> window, select the <span class="Computer">SimulatingSerialPortInput</span> project, right-click, and choose <span class="Menu_Command">Options</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16033072">Select the </a><span class="Menu_Command">General Options</span> category and on the <span class="Menu_Command">Target</span> page, select a device. For this tutorial, make sure to use the device specified in the header of the <span class="Computer">SerialPortInterrupt.c</span> file.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="16033082">A suitable </a><span class="Emphasis">device description file</span> will automatically be used later on when you start the C-SPY debugger. This file contains device-specific information required by the C-SPY debugger to simulate, for example the interrupt used in this tutorial.</div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16033097">For the </a><span class="Menu_Command">C/C++ Compiler</span> and <span class="Menu_Command">Linker</span> categories, the default settings can be used.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16033109">To set debugger options, select the </a><span class="Menu_Command">Debugger</span> category, and click the <span class="Menu_Command">Setup</span> tab.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="16033113">Verify these settings:</a></div>
+      <div class="TableAnchor"><a name="16033245">&nbsp;</a></div>
+      <table class="Standard" style="text-align: left; width: 470.5484598425201pt" cellspacing="0" summary="">
+        <caption></caption>
+        <tr>
+          <td style="border-bottom-color: #7f7f7f; border-bottom-style: solid; border-bottom-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: middle; width: 91.4584535433071pt">
+            <div class="CellHeading"><a name="16033121">Option</a></div>
+          </td>
+          <td style="border-bottom-color: #7f7f7f; border-bottom-style: solid; border-bottom-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: middle; width: 146.712387401575pt">
+            <div class="CellHeading"><a name="16033126">Setting</a></div>
+          </td>
+          <td style="border-bottom-color: #7f7f7f; border-bottom-style: solid; border-bottom-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: middle; width: 232.377618897638pt">
+            <div class="CellHeading"><a name="16033131">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-top-color: #7f7f7f; border-top-style: solid; border-top-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Menu_Command"><a name="16033139">Driver</a></span></div>
+          </td>
+          <td style="border-top-color: #7f7f7f; border-top-style: solid; border-top-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><a name="16033141">Simulator</a></div>
+          </td>
+          <td style="border-top-color: #7f7f7f; border-top-style: solid; border-top-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><a name="16033146">Specifies which C-SPY driver to be used.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Menu_Command"><a name="16033154">Run to</a></span></div>
+          </td>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><a name="16033162">Enabled and set to </a><span class="Computer">main</span></div>
+          </td>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><a name="16033166">Ensures that the debug session starts from the </a><span class="Computer">main</span> function.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Menu_Command"><a name="16033178">Use macro file</a></span></div>
+          </td>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Computer"><a name="16033186">SetupSimulation.mac</a></span></div>
+          </td>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><a name="16033191">Specifies which C-SPY macro file to be used.</a></div>
+            <div class="CellBody"><a name="16033194">Note that you can use an argument variable to specify the path, for example:</a></div>
+            <div class="CellBody"><span class="Computer"><a name="16033202">$PROJ_DIR$\SetupSimulation.mac</a></span></div>
+            <div class="CellBody"><a name="16033205">For more information about argument variables, see the </a><span style="color: #000000; font-style: italic">IDE Project Management and Building Guide</span>.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #7f7f7f; border-bottom-style: solid; border-bottom-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Menu_Command"><a name="16033221">Device description file</a></span></div>
+          </td>
+          <td style="border-bottom-color: #7f7f7f; border-bottom-style: solid; border-bottom-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><a name="16033228">As is in the tutorial project</a></div>
+          </td>
+          <td style="border-bottom-color: #7f7f7f; border-bottom-style: solid; border-bottom-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><a name="16033232">Specifies a device description file, which provides interrupt definitions that are needed by the interrupt simulation system.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16033257">Click </a><span class="Menu_Command">OK</span> when finished making your settings.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Heading3"><a name="16033260">Setting up the simulation using C-SPY macros</a></div>
+      <div class="Body"><a name="15984405">C-SPY macros are useful for many things, for example if you want to set up various kinds of intentional side effects during debugging.</a></div>
+      <div class="Body"><a name="16015239">This example procedure shows how you can:</a></div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a name="16015691">Define a macro to open a file and read characters from that file, which in this tutorial is used for simulating the input to the serial port.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a name="16027406">Use a system macro for setting up the interrupt simulation.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a name="16027503">Use a system macro for setting up breakpoint conditions (however, this macro is not used initially).</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a name="16027623">Use various components of the C-SPY macro language.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="16027349">The macro file </a><span class="Computer">SetupSimulation.mac</span> is used in this procedure.</div>
+      <div class="List_step_first_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_first_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_first_inner"><a name="15984380">C-SPY provides a number of </a><span class="Emphasis">setup macro functions</span>, which can be used for controlling <span class="Emphasis">when</span> a macro should be executed. In this tutorial, the setup macro function <span class="Computer">execUserSetup</span> is defined, which is automatically executed during C-SPY setup. Thus, it can be used to set up the simulation environment automatically, for example like this:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Prog"><a name="16005530">execUserSetup()</a></div>
+      <div class="Prog"><a name="15984975">{</a></div>
+      <div class="Prog"><a name="15984986">  _ _message "execUserSetup() called\n";</a></div>
+      <div class="Prog"><a name="16003689">&nbsp;</a></div>
+      <div class="Prog"><a name="16003718">  _fileHandle = _ _openFile(</a></div>
+      <div class="Prog"><a name="16003991">               "$PROJ_DIR$\\InputData.txt", "r" );</a></div>
+      <div class="Prog"><a name="16003756">  if( !_fileHandle )</a></div>
+      <div class="Prog"><a name="16003782">  {</a></div>
+      <div class="Prog"><a name="16003864">    _ _message "could not open file" ;</a></div>
+      <div class="Prog"><a name="16003903">  }</a></div>
+      <div class="Prog"><a name="16003946">}</a></div>
+      <div class="Body"><a name="15985065">In this example: </a></div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a name="16004051">A message is printed in the </a><span class="Menu_Command">Debug Log</span> window to confirm that this macro has been executed.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 0.5999999999999984cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a name="16004125">The file </a><span class="Computer">InputData.txt</span> is opened.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="15985045">After that, the macro function </a><span class="Computer">Access</span> is defined. It will read a Fibonacci value from the file <span class="Computer">InputData.txt</span>, and assign the value to the receive data register <span class="Computer">RBUF</span>:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Prog"><a name="15985363">Access()</a></div>
+      <div class="Prog"><a name="15985385">{</a></div>
+      <div class="Prog"><a name="15985396">  _ _message "Access() called\n";</a></div>
+      <div class="Prog"><a name="15985436">  _ _var _fibValue;</a></div>
+      <div class="Prog"><a name="15985463">  if( 0 == __readFile( _fileHandle, &amp;_fibValue ) )</a></div>
+      <div class="Prog"><a name="15985490">  {</a></div>
+      <div class="Prog"><a name="15985529">    </a><span class="Computer">RBUF</span> = _fibValue;</div>
+      <div class="Prog"><a name="15985593">  }</a></div>
+      <div class="Prog"><a name="15985622">}</a></div>
+      <div class="Note_Generic">Note:&nbsp;<a name="16036578">&nbsp;</a></div>
+      <div class="Body"><a name="16036586">In this tutorial, the receive data register </a><span class="Computer">RBUF</span> is a symbolic name. In practice, you must instead use a name that is suitable for your device. For information about which register to use, see the header in <span class="Computer">SerialPortInterrupt.c</span>.</div>
+      <div class="Body"><a name="16036595">At a later stage in this tutorial you will connect this macro function to a breakpoint.</a></div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="15985668">The C-SPY system macro </a><span class="Computer">_ _orderInterrupt</span> is used for controlling the interrupt simulation:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Prog"><a name="16028025">  _interruptID = __orderInterrupt( "UART_VECTOR", 4000,</a></div>
+      <div class="Prog"><a name="16028029">                                    2000, 0, 1, 0, 100 );</a></div>
+      <div class="Prog"><a name="16028037">  if( -1 == _interruptID )</a></div>
+      <div class="Prog"><a name="16028041">  {</a></div>
+      <div class="Prog"><a name="16028045">    _ _message "ERROR: failed to set up the interrupt";</a></div>
+      <div class="Prog"><a name="16028388">  }</a></div>
+      <div class="Body"><a name="16028232">Later on during execution, after each completed simulation of a single assembler instruction, the C-SPY debugger will check whether the activation time has been reached. If so, the interrupt will be triggered and set to </a><span class="Emphasis">pending</span> provided that <span class="Emphasis">probability</span> is set to 100% (as in this example). Because the interrupt has an infinite <span class="Emphasis">hold time</span>, the interrupt stays pending until it is acknowledged. The interrupt service routine is then serviced.</div>
+      <div class="Body"><a name="16643911">Notice how this system macro takes the same parameters as can be specified using the </a><span class="Menu_Command">Interrupt Configuration</span> window.</div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16027720">The macro file </a><span class="Computer">SetupSimulation.mac</span> also sets up the breakpoint conditions using the C-SPY system macro <span class="Computer">__setSimBreak</span>. However, as you can see in the file, this function is initially not used because of the comment characters. Instead, you will set up the breakpoint later on in this tutorial using a dedicated dialog box.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16028736">Finally, the </a><span class="Computer">SetupSimulation.mac</span> file contains two macro functions for managing correct file handling at reset and exit.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="15985713">For more information about C-SPY macros, see the </a><span style="color: #000000; font-style: italic">C-SPY® Debugging Guide</span>.</div>
+      <div class="Heading3"><a name="16026524">Building the project</a></div>
+      <div class="List_step_first_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_first_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_first_inner"><a name="16247351">Click the </a><span class="Menu_Command">Download and Debug</span> button (<img class="Default" src="images/DownloadAndDebugButton_Mym80_01.png" width="25" height="25" style="display: inline; left: 0.0; top: 0.0" alt="" />). This command compiles and links those files that have been modified (if there are any such files), starts C-SPY, and executes the <span class="Computer">SimulatingSerialPort</span> project.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="15988032">The editor window for </a><span class="Computer">SerialPortInterrupt.c</span> is displayed (among other windows). Click in the window to make it active.</div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="15988042">Examine the </a><span class="Menu_Command">Debug Log</span> window. Notice that the macro file has been loaded and that the <span class="Computer">execUserSetup</span> function has been called and that your defined interrupt has been registered.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Heading3"><a name="16029589">Setting a breakpoint on the receive register</a></div>
+      <div class="Body"><a name="16029609">By connecting a C-SPY macro that performs a certain task to an </a><span class="Emphasis">immediate</span> breakpoint, you can simulate the behavior of a hardware device, for example a serial port, as in this tutorial. The immediate breakpoint is a specific breakpoint type which will not halt the execution, only temporarily suspend it to check the condition and execute any connected C-SPY macro.</div>
+      <div class="Body"><a name="16029681">In this procedure, the input to the serial port is simulated by setting an immediate read breakpoint on </a><span class="Computer">RBUF</span> and connecting the C-SPY macro <span class="Computer">Access</span> to the breakpoint which reads a character in a file and feeds that character to the serial port.</div>
+      <div class="Body"><a name="16029756">This procedure shows how you can do this using a dedicated dialog box, as well as how to use the corresponding C-SPY system macro </a><span class="Computer">_ _setSimBreak</span>. The advantages of using C-SPY macros instead of the dialog boxes are, for example, if you want to automate your test procedure using C-SPY in batch mode (<span class="Computer">cpybat.exe</span>) or if you want to share the settings with your colleagues.</div>
+      <div class="List_step_first_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_first_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_first_inner"><a name="16029632">Choose </a><span class="Menu_Command">View&gt;Breakpoints</span> to open the <span class="Menu_Command">Breakpoints</span> window and right-click in the window to open the context menu. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="16625859">Choose </a><span class="Menu_Command">New Breakpoint&gt;Immediate</span> to open the breakpoints dialog box:<img class="Default" src="images/SettingBrpOnSerialPort.png" width="476" height="310" style="display: block; left: 0.0; top: 0.0" alt="" /></div>
+      <div class="Body"><a name="16017514">Add these parameters for your breakpoint:</a></div>
+      <div class="TableAnchor"><a name="16017633">&nbsp;</a></div>
+      <table class="Standard" style="text-align: left; width: 471.9657543307087pt" cellspacing="0" summary="">
+        <caption></caption>
+        <tr>
+          <td style="border-bottom-color: #7f7f7f; border-bottom-style: solid; border-bottom-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: middle; width: 59.1717543307087pt">
+            <div class="CellHeading"><a name="16017549">Option</a></div>
+          </td>
+          <td style="border-bottom-color: #7f7f7f; border-bottom-style: solid; border-bottom-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: middle; width: 112.139121259843pt">
+            <div class="CellHeading"><a name="16017554">Setting</a></div>
+          </td>
+          <td style="border-bottom-color: #7f7f7f; border-bottom-style: solid; border-bottom-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: middle; width: 300.654878740157pt">
+            <div class="CellHeading"><a name="16017559">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-top-color: #7f7f7f; border-top-style: solid; border-top-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Menu_Command"><a name="16017567">Trigger at</a></span></div>
+          </td>
+          <td style="border-top-color: #7f7f7f; border-top-style: solid; border-top-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><a name="16017573">Check </a><span class="Computer">SerialPortInterrupt.c</span> for information about which receive data register to use.</div>
+          </td>
+          <td style="border-top-color: #7f7f7f; border-top-style: solid; border-top-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><a name="16017580">Receive data register.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Menu_Command"><a name="16017588">Access Type</a></span></div>
+          </td>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Computer"><a name="16017596">Read</a></span></div>
+          </td>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><a name="16017600">The breakpoint will be triggered on read accesses.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #7f7f7f; border-bottom-style: solid; border-bottom-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Menu_Command"><a name="16017609">Action</a></span></div>
+          </td>
+          <td style="border-bottom-color: #7f7f7f; border-bottom-style: solid; border-bottom-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Computer"><a name="16017617">Access()</a></span></div>
+          </td>
+          <td style="border-bottom-color: #7f7f7f; border-bottom-style: solid; border-bottom-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><a name="16017621">The C-SPY macro to be connected to the breakpoint.</a></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><a name="16017664">During execution, when C-SPY detects a read access from the </a><span class="Computer">RBUF</span> register, C-SPY will temporarily suspend the application and execute the <span class="Computer">Access</span> macro. The macro will read a value from the file <span class="Computer">InputData.txt</span> and write it to <span class="Computer">RBUF</span>. C-SPY will then resume the application execution, which will read the value in <span class="Computer">RBUF</span>. </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16420508">Click </a><span class="Menu_Command">OK</span> to close the breakpoint dialog box.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16420511">Alternatively, if you instead want to set up the breakpoint using the C-SPY system macro  </a><span class="Computer">_ _setSimBreak</span> in the same way, remove the comment characters for:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Prog"><a name="16030377">  _breakID = _ _setSimBreak( "RBUF", "R", "Access()" );</a></div>
+      <div class="Body"><a name="16419656">In this case, to make the change take affect and to execute the C-SPY macro, choose </a><span class="Menu_Command">View&gt;Macro&gt;Macro Quicklaunch</span>. In the <span class="Menu_Command">&lt;click to add&gt;</span> cell, type <span class="Computer">SimulationSetup()</span> and click the <span class="Menu_Command">Recalculate</span> button (<img class="Default" src="images/RecalculateButton.png" width="20" height="17" style="display: inline; left: 0.0; top: 0.0" alt="" />).</div>
+      <div class="Body"><a name="16420247"><img class="Default" src="images/ExecutingMacroUsingMacroQuicklaunchWin_1.png" width="423" height="109" style="display: block; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="Body"><a name="16419958">The macro has been executed and the breakpoint has been set. Click the </a><span class="Menu_Command">Reset</span> button (<img class="Default" src="images/InterruptSimulation_SerialPort.1.1.08.png" width="22" height="18" style="display: inline; left: 0.0; top: 0.0" alt="" />) to reset the application.</div>
+      <div class="Heading3"><a name="16009803">Executing the application—performing the simulation</a></div>
+      <div class="List_step_first_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_first_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_first_inner"><a name="16009813">In the editor window for </a><span class="Computer">SerialPortInterrupt.c</span>, step through the application and stop when it reaches the <span class="Computer">while</span> loop, where the application waits for an input.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16009831">In the </a><span class="Computer">SerialPortInterrupt.c</span> file, locate the function <span class="Computer">UartReceiveHandler</span>. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16009839">Click in the margin of the statement </a><span class="Computer">++callCount;</span> to set a breakpoint.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="16009856"><img class="Default" src="images/SettingBrpOnCallCount.png" width="551" height="80" style="display: block; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="Body"><a name="16009864">If you want to inspect the details of the breakpoint, choose </a><span class="Menu_Command">View&gt;Breakpoints</span>.</div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16247375">Open the </a><span class="Menu_Command">Terminal I/O</span> window and execute your application by clicking the <span class="Menu_Command">Go</span> button (<img class="Default" src="images/GoButton_Mym80_02.png" width="25" height="25" style="display: inline; left: 0.0; top: 0.0" alt="" />). </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="16009884">The application should stop in the interrupt service routine. </a></div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16009895">To inspect the contents of the receive data register </a><span class="Computer">RBUF</span>, choose <span class="Menu_Command">View&gt;Registers</span> to open a <span class="Menu_Command">Registers</span> window.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="16009915">Click </a><span class="Menu_Command">&lt;find registers&gt;</span>, specify the receive register you are using, and press Enter:<img class="Default" src="images/FindingRBUF_Mym80_02.png" width="414" height="232" style="display: block; left: 0.0; top: 0.0" alt="" /></div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16247390">Click the </a><span class="Menu_Command">Go</span> button (<img class="Default" src="images/GoButton_Mym80_02.png" width="25" height="25" style="display: inline; left: 0.0; top: 0.0" alt="" />) to execute your application. The application should stop in the interrupt function. Notice how the contents of the receive register has been updated as expected.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">7	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16018116">Click </a><span class="Menu_Command">Go</span> again to see the next number being printed in the <span class="Menu_Command">Terminal I/O</span> window.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="16009961">The </a><span class="Menu_Command">Terminal I/O</span> window displays the Fibonacci sequence.<img class="Default" src="images/fibInterrupt_tio_01.png" width="369" height="317" style="display: block; left: 0.0; top: 0.0" alt="" /></div>
+    </blockquote>
+  </body>
+</html>

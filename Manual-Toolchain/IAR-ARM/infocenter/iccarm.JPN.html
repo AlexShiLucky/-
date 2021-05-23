@@ -1,0 +1,462 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemalocation="http://www.w3.org/MarkUp/SCHEMA/xhtml11.xsd"
+      xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" 
+	  content="application/xhtml+xml; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+
+    <title>Arm用IAR C/C++ コンパイラのリリースノート</title>
+    <link type="text/css" rel="stylesheet" media="all"
+	  href="style/ewic.css" />
+  </head>
+  <body>
+    <div id="titlebanner">
+      <div>
+	<h1>Armバージョン8.40.2用IAR 
+	  C/C++ コンパイラのリリースノート</h1>
+      </div>
+    </div>
+    <div class="breadcrumb">
+      <a href="index.JPN.html">Arm用IARインフォメーションセンタ</a> | 
+      <a href="release_notes.JPN.html">リリースノート</a> | 
+      <a href="components.JPN.html">コンポーネント</a> | 
+      Arm用 IAR C/C++ コンパイラのリリースノート
+    </div>
+    <div class="mainblock">
+      <ul>
+	<li><a href="#important">重要な情報</a> </li>
+	<li><a href="#features">新機能</a> </li>
+	<li><a href="#problems">既知の問題</a> </li>
+	<li><a href="#pcorr">プログラム修正</a> </li>
+	<li><a href="#manuals">ユーザガイドの訂正</a> </li>
+	<li><a href="#misc">その他</a> </li>
+	<li><a href="#history">リリース履歴</a> </li>
+      </ul>
+      <!--======================================================================-->
+      <!-- IMPORTANT INFORMATION                                                -->
+      <!--======================================================================-->
+      <h3>
+	<a name="important" id="important"></a>重要な情報
+      </h3>
+﻿  <ul>
+<li><b>バージョン8.20でのCMSIS組み込みの実装における変更</b>
+     
+<p>CMSIS組み込みインターフェイスの実装は、IARのintrinsics.hをもとにしなくなりました。結果としてCMSISヘッダが含まれていたときに、組み込みの一部は以前宣言されていましたが、宣言されなくなりました。</p>
+      
+<p>これらの組み込みには__LDREX(), __STREX()や__enable_interrupt()が含まれます。</p>
+    </li>
+ 
+<li><b>バージョン 8.10および8.11でwchar_tのサイズを変更</b>
+    
+<p>次のARM ABIのオブジェクトファイルには、<code>wchar_t</code>のサイズを示すランタイム属性があります。</p>
+
+<p>EWARM バージョン7.80およびそれ以前では、<code>wchar_t</code>のサイズは2バイト幅でランタイム属性はそれに従って設定されていました。</p>
+
+<p>EWARMバージョン8.10には、<code>wchar_t</code>のサイズは4バイト幅ですが、ランタイム属性は更新されませんでした。8.10のコードは、４バイト幅の<code>wchar_t</code>で生成されますが、オブジェクトファイルでは<code>wchar_t</code>が2バイト幅であるようにマークされます。</p>
+
+<p>EWARMバージョン8.11では、<code>wchar_t</code>のサイズは4バイト幅でランタイム属性はそれに従って設定されていました。</p>
+
+<code>wchar_t</code>だけを見てみると、これには次の影響があります。
+      <ul>
+        <li>
+<p>7.80と8.10で構築されたオブジェクトファイルの組み合わせは、リンカ警告をトリガしませんが、アプリケーションが<code>wchar_t</code>を使用する場合、動作が予期できません。</p>
+        </li>
+        <li>
+<p>8.10と8.11で構築されたオブジェクトファイルの組み合わせは、リンカ警告をトリガしますが、<code>wchar_t</code>を使用していても、アプリケーションは作動します。</p>
+        </li>
+        <li>
+<p>7.80と8.11で構築されたオブジェクトファイルの組み合わせは、リンカ警告をトリガし、アプリケーションが<code>wchar_t</code>を使用する場合、動作が予期できません。</p>
+        </li>
+      </ul>
+    </li>
+
+<li><b>バージョン 7.60 で C-STAT の動作を変更</b><br />
+       <ul>
+<li><p>既存のおよび追加されたコーディングルールの両方の分析の制度を増やすために、解析エンジンが向上しています。これにより有効なチェックが全く同じ場合でも、ファイルやプロジェクトに発行されたメッセージ数は、C-STAT の以前のバージョンと比べて異なります。</p>
+         </li>
+<li><p>以前の IAR Embedded Workbench IDE または Eclipse プロジェクトの C-STAT 設定が更新されます。いくつかのチェックは名前が変更されます(有効または無効な設定は維持されます)、いくつかのチェックは削除され、ほとんどの新しいチェックが追加されます(上記参照)。</p>
+         </li>
+<li><p>設定ファイルを以前のバージョンの C-STAT で作成された場合は、ファイルから C-STAT チェックの設定のインポートには、プロジェクトの設定を更新するときに使用したものと同じロジックを使用します。</p>
+         </li>
+       </ul>
+      </li>
+      <li>
+        <p>
+<code>time()</code>関数を実装したユーザは、名称を<code>__time32()</code>に変更してください。詳しくは、<A href="../EWARM_DevelopmentGuide.JPN.pdf">開発ガイド</A>を参照してください。
+        </p>
+      </li>
+
+      <li>
+        <p>
+<code>--guard_calls</code>コマンドラインオプションが導入されました。注意: <code>--guard_calls</code>は、常にEC++/C++で記述された、スレッドセーフのライブラリ関数呼出しを必要とするアプリケーションで使用する必要があります。詳しくは、<A href="../EWARM_DevelopmentGuide.JPN.pdf">開発ガイド</A>を参照してください。
+        </p>
+        <p>
+<code>--no_guard_calls</code>コマンドラインオプションが削除されました。
+        </p>
+        <p>
+<code>--aeabi</code>コマンドラインオプションは、動作が変更されています。保護呼出しがデフォルトで使用されなくなりました。<br>ARM 5.xおよび6.10.1用IAR C/C++ CompilerからARM 6.10.2用IAR C/C++ Compilerへの移行:<br><code>--aeabi</code> (<code>--no_guard_calls</code>なし)は<code>--aeabi --guard_calls</code>に置換<br><code>--aeabi --no_guard_calls</code>は<code>--aeabi</code>に置換<br>    
+        </p>
+      </li>
+
+      <li>
+<b>CMSIS統合に関する特記事項:</b><br>
+        <p>
+アプリケーションのソースコードにCMSISヘッダファイルが明示的にインクルードされている場合、[CMSISを使用]チェックボックス<b>[プロジェクト]&gt;[オプション]...&gt;[一般オプション]&gt;[ライブラリ構成]&gt;[CMSISを使用]</b>を選択しないでください。Cortex-Mアプリケーションの例のいくつかにはCMSISソースファイルが明示的に含まれます。これらのプロジェクトには、<b>Use CMSIS</b>オプションを選択しないでください。<br><br>ただし、ARM用IAR C/C++ Compilerの進化によって、旧バージョンのCMSISと最新バージョンのコンパイラは互換性がありません。この問題を解決する方法の一例:<br> a) F4を押して間違ったソース(ヘッダ)ファイルをエディタで開きます。通常は<code>core_cm3.h</code>というファイル名です。<br> b) エディタウィンドウの[ウィンドウ]タブを右クリックして、<b>ファイルプロパティ...</b>を選択します。<br> c) ファイルの名前を付けなおして、コンパイラが見つけられないようにします。<br>d) プロジェクトオプションを変更します。<b>[プロジェクト]&gt;[オプション...]&gt;[一般オプション]&gt;[ライブラリの設定]&gt;[CMSISの使用]</b>を選択します。<br>手順 a) から c) は、複数のファイルに対して行わなければならないことがあります。通常はこれらのファイル名は、<code>core_cm0.h</code>、<code>core_cm3.h</code>、<code>core_cm4.h</code>、<code>core_cmFunc.h</code>、および<code>core_cmInstr.h</code>です。<br><br> ARM用IAR Embedded WorkbenchでのCMSISの統合について詳しくは、<A href="../EWARM_DevelopmentGuide.JPN.pdf">開発ガイド</A>を参照してください。
+        </p>
+      </li>
+
+      <li>
+<b>ARMアーキテクチャv4用のコンパイルが廃止されている場合に相互作用機能を使用しない</b><br>
+        <p>
+現状では、このモードは製品の以前のバージョンでサポートされていますが、C-RUNなどの新しい機能はこのモードに対応しなくなる予定です。
+        </p>
+      </li>
+
+      <!-- DEPRECATED FEATURES -->
+
+<li><h4><a name="deprecated" id="deprecated"></a>廃止された機能</h4>
+      <p><ul>
+
+        <li>
+<b><code>--use_old_syntax</code></b>
+          <p>
+コンパイラオプション<code>--use_old_syntax</code>は、ARM用IAR C/C++コンパイラの将来のバージョンから削除される予定です。
+          </p>
+        </li>
+
+        <li>
+<b><code>--interwork</code></b>
+          <p>
+ARM用IAR C/C++コンパイラの将来のバージョンでは、ARMv4Tアーキテクチャに対してコードを生成する際、<code>--interwork</code>が使用されます。ARMv4Tに対して非相互作用コードを生成するオプションはなくなります。
+          </p>
+        </li>
+
+      </ul></p></li>
+
+    </ul>
+      <!--======================================================================-->
+      <!-- NEW FEATURES                                                         -->
+      <!--======================================================================-->
+      <h3>
+	<a name="features" id="features"></a>新機能
+      </h3>
+﻿<ul>
+  <li>
+なし
+  </li>
+</ul>
+      <!--======================================================================-->
+      <!-- Known Problems-->
+      <!--======================================================================-->
+      <h3>
+	<a name="problems" id="problems"></a>既知の問題
+      </h3>
+﻿<ul>
+     <li>
+        <p>
+<b>[<a name='EWARM-6819'>EWARM-6819</a>, <a name='TPB-3154'>TPB-3154</a>]</b>
+<p><tt>i</tt>が自動ストレージ期間のスカラ変数である場合、コンパイラは<tt>*(&amp;i + f()) = 1;</tt>タイプの式に間違ったコードを生成します。インライン化が有効な場合、例えば最適化レベル「高」では、これは次の例にも</font>適用されます。</p>
+        <div><div>
+        <pre>
+<span>static</span> void change(<span>int</span> *x, <span>int</span> val)
+{
+x += f(); 
+*x = val;
+}
+void params(<span>int</span> i, <span>int</span> j)
+{
+change(&amp;i, 1); 
+change(&amp;j, 2); 
+printf(<span>&quot;i=%d,j=%d\n&quot;</span>, i, j);
+}
+        </pre>
+        </div></div>
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6808'>EWARM-6808</a>]</b> &quot;ARMv8-M セキュリティ拡張: 開発ツールの必要要件&quot; (ARM-ECM-0359818)で指定されているように、ヘッダファイル<tt>arm_acle.h</tt>の関数<tt>cmse_check_address_range</tt>のシグネチャ</font>が、ポインタタイプに<tt>void const*</tt>ではなく<tt>void*</tt>を使用するように更新されています.
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5239'>EWARM-5239</a>, <a name='EW25660'>EW25660</a>]</b><tt>va_list</tt>型のパラメータをC++関数に渡し、呼出し元があるオブジェクトファイルに定義され、呼出し先が別のオブジェクトファイルに定義されている場合、2つのオブジェクトのいずれかがEWARM 7.20 (またはそれ以降)でビルドされ、もう一方がEWARM 7.10 (またはそれ以前)でビルドされている場合、リンカエラーとなります。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-4921'>EWARM-4921</a>、<a name='EW24930'>EW24930</a>]</b>オーバロードの解決アルゴリズムで、最適の組込み演算子がどれかを探す際に、引数を差し引くためのテンプレートのユーザー変換が考慮されません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-4824'>EWARM-4824</a>、<a name='EW24720'>EW24720</a>]</b> MISRA-C:2004規則9.1で、使用済みの初期化されていないローカル変数のすべてが見つかりません。
+        </p>
+     </li>
+</ul>
+      <!--======================================================================-->
+      <!-- Program Corrections                                                  -->
+      <!--======================================================================-->
+      <h3>
+	<a name="pcorr" id="pcorr"></a>プログラム修正
+      </h3>
+﻿<ul>
+     <li>
+        <p>
+<b>[<a name='EWARM-6825'>EWARM-6825</a>]</b>ポインタパラメータが<tt>modulo 4</tt>とアライメントされてない、言い換えると、ポインタの最後の2つのビットに異なる値があるとき、Cortex-M0、M0+、およびM23の<tt>memcmp</tt>速度が最適化された実装は、ターゲットシステムでHardFaultをトリガします。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6768'>EWARM-6768</a>, <a name='TPB-3127'>TPB-3127</a>]</b>C99形式の名前付き</font>指定子のある初期化式を含むC++コードをコンパイルするとき、コンパイラはインターナルエラーで終了することがあります。</font>名前付き</font>指定子は、C++ 14標準では使用できないので気を付けてください。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6753'>EWARM-6753</a>]</b>
+<p>以下の組み込み関数の1つへのコールが含まれているif文があるコードをコンパイルするとき、コンパイラはインターナルエラーで終了します。<tt>__iar_builtin_VRINTA_F64, __iar_builtin_VRINTM_F64, __iar_builtin_VRINTN_F64, __iar_builtin_VRINTP_F64, __iar_builtin_VRINTA_F32, __iar_builtin_VRINTM_F32, __iar_builtin_VRINTN_F32, </tt>または<tt>__iar_builtin_VRINTP_F32.</tt></p>
+        <div><div>
+        <pre>
+<span>float</span> fx(<span>float</span> a, <span>int</span> rm)
+{
+<span>if</span> (rm == 1)
+{
+a = __VRINTM_F32(a);
+}
+<span>return</span> a;
+}
+        </pre>
+        </div></div>
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6750'>EWARM-6750</a>]</b> C++テンプレートクラスに1つのfloatが含まれている場合、呼出し側と呼出し先が、リターン型が同種の</font>集合体であるかどうかに同意してないことがあります。ベクタ</font>浮動小数点(VFP)のサポートでコンパイルするとき、呼び出し先は1つのレジスタ(S0)の値を返すことができ、呼び出し側は別のレジスタ(R0)の値を使用します。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6737'>EWARM-6737</a>, <a name='TPB-3112'>TPB-3112</a>]</b>
+<p>最適化レベル「中」以上では、<tt>#pragma inline=forced</tt>関数と<tt>#pragma optimize=none</tt>関数の両方が含まれているコードを処理するとき、コンパイラはインターナルエラーで終了します。例を次に示します。</font></p>
+        <div><div>
+        <pre>
+void f1(void); 
+#pragma inline=forced
+void f2(<span>int</span> a)
+{
+f1();
+}
+#pragma inline=forced
+void f3(<span>int</span> a)
+{
+f2(a);
+}
+#pragma optimize=none
+<span>int</span> main(void)
+{
+<span>int</span> a = 0; 
+f3(a);
+}
+        </pre>
+        </div></div>
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6726'>EWARM-6726</a>, <a name='TPB-3111'>TPB-3111</a>]</b>複数ファイルのコンパイル(--mfc)と共に</font>変数テンプレートを使用すると、インターナルエラーで終了します(&quot;Internal Error: [Front end]: assertion failed: may_have_correspondence:<br> bad symbol kind ...&quot;)。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6719'>EWARM-6719</a>]</b> 循環シフトした</font>イミディエイト値のビット反転</font>として表記された定数をロードすると</font>、コンパイラおよびアセンブラは無効なARM-モード命令を生成します。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6716'>EWARM-6716</a>]</b> コンパイラは<tt>LDREX</tt>命令の副作用を考慮しないため</font>、ロードしたデータが使用されない場合、命令が削除されます。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6701'>EWARM-6701</a>, <a name='TPB-3100'>TPB-3100</a>]</b> セクション開始/終了演算子が含まれている式をオフセット付きでコンパイルすると</font>、コンパイラはインターナルエラー(&quot;assertion failed at: ...\interpret.c, line 4425&quot;)で終了します。以下に例を示します。
+<p><tt> (char*) __section_begin(&quot;MyOverlay&quot;) + 1</tt></p>
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6700'>EWARM-6700</a>, <a name='TPB-3102'>TPB-3102</a>]</b>
+<p>最適化レベル「中」以上</font>では、次の例のようにstructとintegerを含むunionを使用した、integerの一部を展開するコードが原因で、コンパイラはインターナルエラーで終了します。</p>
+        <div><div>
+        <pre>
+        struct A
+        {
+          <span>char</span> a;
+          <span>char</span> b;
+        };
+        union B
+        {
+          struct A c;
+          <span>int</span> d;
+        };
+        <span>int</span> f(<span>int</span> g)
+        {
+          <span>int</span> h;
+          union B k;
+          <span>for</span> (<span>int</span> i = 0; i &lt;= g; i++)
+          {
+            <span>if</span> (k.c.b)
+            {
+              h = k.d;
+            }
+          }
+          <span>return</span> h;
+        }
+        </pre>
+        </div></div>
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6685'>EWARM-6685</a>, <a name='TPB-3093'>TPB-3093</a>]</b>
+<p>コンパイラがC++コードをコンパイルするとき、次の例のような定数の型のパンニングが発生した場合インターナルエラーで終了します。</p>
+       <div><div>
+        <pre>
+        <span>const</span> <span>int</span> a = 0x7FA00000;
+        struct b
+        {
+          <span>float</span> c;
+          b() : c(*(<span>float</span> *)&amp;a)
+          {
+          }
+        };
+        void d()
+        {
+          b e;
+        }
+        </pre>
+        </div></div>
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6536'>EWARM-6536</a>, <a name='TPB-3110'>TPB-3110</a>]</b> 破棄する必要のある一時オブジェクトを返す<tt>#pragma _<em>printf_args</em></tt>または<tt>_scanf_args</tt>がC++関数で使用されるとき、コンパイラはインターナルエラーで終了します。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6531'>EWARM-6531</a>, <a name='TPB-3057'>TPB-3057</a>]</b> コンパイラは、比較式に<tt>bool</tt>と非boolean型が混合していることについて誤ったワーニング(Pa118)を出力します。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6335'>EWARM-6335</a>, <a name='TPB-2997'>TPB-2997</a>]</b> 整数メンバの集合の初期化、および1つ以上下のレベルの非定数がかかわっている場合は、コンパイラはC++モードでインターナルエラーで終了します。
+        </p>
+     </li>
+</ul>
+      <!--======================================================================-->
+      <!-- USER GUIDE CORRECTIONS                                               -->
+      <!--======================================================================-->
+      <h3>
+	<a name="manuals" id="manuals"></a>ユーザガイドの訂正
+      </h3>
+﻿<ul>
+  <li>
+なし
+  </li>
+</ul>
+      <!--======================================================================-->
+      <!-- MISCELLANEOUS                                                        -->
+      <!--======================================================================-->
+      <h3>
+	<a name="misc" id="misc"></a>その他
+      </h3>
+﻿    <ul>
+      <li>
+<b>デバイスのエラッタで使用可能な対策:</b>
+        <ul>
+          <li>
+            <p>
+<code>SLEEPONEXIT</code>単一命令<code>ISR</code>でARM Cortex-M3エラッタ463764<br>コアがフリーズすることがあります。詳細は<a href="http://infocenter.arm.com" target="_blank">infocenter.arm.com</a>にあります。<br>属性<code>__irq </code>の関数について<code> iccarm --enable_hardware_workaround=arm463764</code>で対策が講じられました。EWARMサポート対象(5.41から)。
+            </p>
+          </li>
+
+          <li>
+            <p>
+ベースがリストにあるARM Cortex-M3エラッタ602117<br><code>LDRD</code>により、割込みや失敗があると間違ったベースレジスタとなることがあります。EWARM 5.20.3からは、コンパイラ/ライブラリはリストにベースレジスタを持つ<code>LDRD</code>命令を回避するようになりました。
+            </p>
+          </li>
+
+          <li>
+            <p>
+ARM Cortex-M3エラッタ752419<br>ARM Cortex-M4エラッタ752770<br><code>SP</code>への割込みされたロードにより、動作が間違うことがあります。EWARM 6.21からは、コンパイラ/ライブラリは<code>Rn</code>へのライトバックを持つ<code>LDR SP</code>命令を生成しなくなりました。それ以外の場合、スタックは複数のリードが可能なRAM内に常駐しているため、追加のリードも認められます。
+            </p>
+          </li>
+
+          <li>
+            <p>
+ARM Cortex-M4 errata 776924<br> 非常に短いISRが使用された場合は、VDIV または VSQRT 命令が正しく完了してない場合があります。IARは、Armにより提供されている2番目の回避策: &quot;すべての割り込みサービスルーチンに、2つ以上の命令が含まれていて、リターン命令が除外されていることを確認します。&quot;を推奨しています。その理由は、Cortex-Mアーキテクチャが通常の関数と割込み関数を区別しないために、コンパイラが割り込みを認識しないからです。
+            </p>
+          </li>
+
+          <li>
+            <p>
+ARM Cortex-M7エラッタ833872<br>ITブロック内にフラグ設定命令があると、後続の命令が間違って実行されることがあります。EWARM 7.40からは、コンパイラはこの特定のコードパターンにおいてIT変換を省略します。
+            </p>
+          </li>
+
+          <li>
+            <p>
+ARM Cortex-M3エラッタ838469<br>ARM Cortex-M4エラッタ838869<br> ストアイミディエイトの重複例外リターン処理が間違った割込みのベクタとなることがあります。ユーザはエラッタのガイドラインに従い、適切な場合には<code>__DSB(void)</code>を使用することでARMの推奨する対策を実行してください。
+            </p>
+          </li>
+
+          <li>
+            <p>
+NXPデバイスLPC2478の機能問題Core1: ThumbステートでのAbort Linkレジスタの間違ったアップデート。<br><code>iccarm --enable_hardware_workaround=NXP_Core.1</code>を用いて作成された対策
+            </p>
+          </li>
+
+          <li>
+            <p>
+Stellarisデバイスの機能的な問題: SRAMへのワードにアラインメントされないライトによって、 間違った値がロードされる可能性があります。詳細は、StellarisのWebサイト(<a href="http://www.ti.com/stellaris" target="_blank">www.ti.com/stellaris</a>)にあります。<br><code>iccarm --enable_hardware_workaround=LM3S_NWA_SRAM_Write</code>で対策が講じられました。
+            </p>
+          </li>
+
+          <li>
+            <p>
+Freescale Semiconductors MC9328MX1 (i.MX1)、masks 0L44N、1L44N、および2L44Nにおける機能の問題:<br> <code>LDM</code>命令が、2番目のレジスタを正しくロードしないことがあります。<code> iccarm --enable_hardware_workaround=920t-ldm2</code>で生成された回避策<br> <b>注意</b>：現在のEWARMバージョンのライブラリは、この回避策でビルドされていません。EWARM 6.50.6とリンカオプション<code>--enable_hardware_workaround=920t-ldm2 </code>を用いて、このハードウェア回避策によってビルドされたライブラリを使用できます。
+            </p>
+          </li>
+
+        </ul>
+      </li>
+
+      <li>
+<b>RTOSスレッドおよびTLS</b>
+<p>
+inc\c\DLib_Threads.hヘッダーファイルは、ロックとスレッドローカルストレージ (TLS) 変数のサポートが含まれます。これはスレッドのサポートの実行に役立ちます。詳細については、ヘッダーファイルを参照してください。
+      </li>
+
+      <li>
+<b>va_args</b>
+        <p>
+<code>va_args</code>関数の実装は、ARM 7.20.1用IAR Embedded Workbenchで変更されました。旧バージョンのコンパイラからプリプロセッサの出力をコンパイルすることはできなくなりました。元のソースコードは、ARM 7.20.1用IAR Embedded Workbenchを使用して再度処理する必要があります。
+      </li>
+    </ul>
+      <!--======================================================================-->
+      <!-- RELEASE HISTORY                                                      -->
+      <!--======================================================================-->
+      <h3>
+	<a name="history" id="history"></a>リリース履歴
+      </h3>
+﻿<ul>
+<a href="iccarm_history.JPN.html">リリース履歴</a>を参照してください。
+    </ul>
+    </div>
+  </body>
+</html>

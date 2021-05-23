@@ -1,0 +1,16 @@
+/* Desktop
+------------------------- */
+/* CUSTOM NAV BAR - OVERRIDE THE ORIGINAL */
+@media (max-width: 980px) {
+    .nav-collapse .nav-custom > li > a,
+    .nav-collapse .dropdown-menu-custom a {
+        color: #dddddd;
+    }
+    .nav-collapse .nav-custom > li > a:hover,
+    .nav-collapse .nav-custom > li > a:focus,
+    .nav-collapse .dropdown-menu-custom a:hover,
+    .nav-collapse .dropdown-menu-custom a:focus {
+        color: #ffffff;
+        background-color: #0088cc;
+    }
+}

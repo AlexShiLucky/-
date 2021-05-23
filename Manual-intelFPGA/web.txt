@@ -1,0 +1,4 @@
+https://www.altera.com.cn/documentation/lit-index.html
+https://www.altera.com.cn/products/processors/support.html
+https://www.altera.com.cn/support/literature/dc/lit-design-contest.html
+https://www.altera.com.cn/support/support-resources/design-examples.html#embedded_processors

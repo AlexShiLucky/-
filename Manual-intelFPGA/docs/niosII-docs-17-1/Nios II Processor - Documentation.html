@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://www.altera.com/products/processors/support.html -->
+<html class="en_us js canvas canvastext webgl fontface video svg inlinesvg"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+<title>Nios II Processor - Documentation</title>
+  
+  <meta name="keywords" content="nios ii embedded processor">
+  <meta name="description" content="">
+  <meta name="date" content="2016-12-21">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./Nios II Processor - Documentation_files/jquery-ui.min.css" type="text/css">
+<link rel="stylesheet" href="./Nios II Processor - Documentation_files/custom-bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="./Nios II Processor - Documentation_files/global.min.css" type="text/css">
+<link rel="stylesheet" href="./Nios II Processor - Documentation_files/default.min.css" type="text/css">
+<script src="./Nios II Processor - Documentation_files/utag.js.download" type="text/javascript" async=""></script><script type="text/javascript" async="" src="./Nios II Processor - Documentation_files/elqCfg.min.js.download"></script><script type="text/javascript" async="" src="./Nios II Processor - Documentation_files/ga.js.download"></script><script type="text/javascript" async="" src="./Nios II Processor - Documentation_files/wap-altera.js.download"></script><script type="text/javascript" src="./Nios II Processor - Documentation_files/jquery.min.js.download"></script>
+<script type="text/javascript" src="./Nios II Processor - Documentation_files/utils.min.js.download"></script>
+<script type="text/javascript" src="./Nios II Processor - Documentation_files/granite.min.js.download"></script>
+<script type="text/javascript" src="./Nios II Processor - Documentation_files/jquery.min.js(1).download"></script>
+<script type="text/javascript" src="./Nios II Processor - Documentation_files/jquery-ui.min.js.download"></script>
+<script type="text/javascript" src="./Nios II Processor - Documentation_files/jquery-ui.min.js(1).download"></script>
+<script type="text/javascript" src="./Nios II Processor - Documentation_files/custom-bootstrap.min.js.download"></script>
+<script type="text/javascript" src="./Nios II Processor - Documentation_files/global.min.js.download"></script>
+<link rel="stylesheet" href="./Nios II Processor - Documentation_files/components.min.css" type="text/css">
+<link rel="stylesheet" href="./Nios II Processor - Documentation_files/comps.min.css" type="text/css">
+<script src="./Nios II Processor - Documentation_files/satelliteLib-4b81e935fd65e189e425dbb8e4bab0f2c9aea3f1.js.download"></script><script src="./Nios II Processor - Documentation_files/mbox-contents-24390c9e78a77302ee5274a62da4cff34962c93e.js.download"></script><style>.mboxDefault { visibility:hidden; }</style><script src="./Nios II Processor - Documentation_files/target.js.download"></script><script src="./Nios II Processor - Documentation_files/ajax"></script>
+
+<!--[if lt IE 9]>
+   <![endif]-->
+<link rel="icon" type="image/vnd.microsoft.icon" href="https://www.altera.com/content/dam/altera-www/global/en_US/logos/altera_favicon.ico">
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://www.altera.com/content/dam/altera-www/global/en_US/logos/altera_favicon.ico">
+  <title>Documentation</title>
+<script type="text/javascript" async="" charset="utf-8" id="tiqapp" src="./Nios II Processor - Documentation_files/utag.v.js.download"></script></head>
+
+<body><div class="mboxDefault" id="mbox-target-global-mbox-1482889203224-383248" style="visibility: visible; display: block;"></div>
+  <div class="main-wrapper">
+    <!--googleoff:all-->
+<header id="navbar" class="main-navbar">
+  <div class="header-container container">
+<div class="logo"><a href="https://www.altera.com/"><img src="./Nios II Processor - Documentation_files/logo.svg" alt="Intel PSG"></a></div>
+<nav class="main-nav-group">
+  <ul class="main-nav hidden-sm hidden-xs no-bullets">
+    
+      <li class="main-nav-item">
+        <a class="menu nav-link selected" href="https://www.altera.com/products/processors/support.html#products">Products</a>
+      </li>
+    
+  
+    
+  
+    
+      <li class="main-nav-item">
+        <a class="menu nav-link " href="https://www.altera.com/products/processors/support.html#solutions">Solutions</a>
+      </li>
+    
+  
+    
+  
+    
+      <li class="main-nav-item">
+        <a class="menu nav-link " href="https://www.altera.com/products/processors/support.html#support">Support</a>
+      </li>
+    
+  
+    
+  
+    
+      <li class="main-nav-item">
+        <a class="menu nav-link " href="https://www.altera.com/products/processors/support.html#about">About</a>
+      </li>
+    
+  
+    
+  
+    
+      <li class="main-nav-item">
+        <a class="menu nav-link " href="https://www.altera.com/products/processors/support.html#buy">Buy</a>
+      </li>
+    
+  
+    
+  </ul>
+</nav>
+
+<div class="header-menu-group">
+    <button id="login_overlay">
+        <div id="login_default">
+            <span class="btn-label hidden-xs"> Log In </span>
+            <svg id="login_icon" class="login-icon svg-sprite pull-right"><use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#login-icon"></use></svg>
+        </div>
+
+        <div id="login_welcome" class="hide">
+            <span id="logged_in_label" class="btn-label hidden-md hidden-xs">Welcome</span>
+            <svg class="logged-in-icon svg-sprite pull-right"><use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#logged-in-icon"></use></svg>
+        </div>
+    </button>
+
+    <button class="menu visible-xs visible-sm">
+        <span class="btn-label hidden-xs menu">Menu</span>
+        <svg class="menu-icon svg-sprite pull-right menu"><use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#menu-icon"></use></svg>
+    </button>
+
+    <!-- Begin Search menu -->
+    <div id="search" class="search-wrapper">
+        <div class="morph-search overlay">
+          <div class="search-form container">
+              <button class="search-submit">
+                <svg class="search-icon svg-sprite pull-right search-icon-btn"><use class="search-icon" xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#search-icon"></use></svg>
+            </button>
+            <form class="" id="suggestion_formH" name="theSearchForm" method="get" action="https://www.altera.com/bin/search" onsubmit="return isSearchFormCompleted(this);">
+                <input class="search-box" type="text" placeholder="Search" name="q" id="searchQuery" autocomplete="off" onkeyup="ss_handleKeyH(event)">
+
+                <table cellpadding="0" cellspacing="0" class="ss-gac-m" style="visibility: collapse;" id="search_suggestH"></table>
+		        <input xmlns="" type="hidden" name="client" value="www">
+		        <input xmlns="" type="hidden" name="output" value="xml_no_dtd">
+		        <input xmlns="" type="hidden" name="proxystylesheet" value="www">
+		        <input xmlns="" type="hidden" name="ie" value="UTF-8">
+		        <input xmlns="" type="hidden" name="sort" value="date:D:L:d1">
+		        <input xmlns="" type="hidden" name="entqr" value="3">
+		        <input xmlns="" type="hidden" name="entsp" value="a">
+		        <input xmlns="" type="hidden" name="oe" value="UTF-8">
+		        <input xmlns="" type="hidden" name="ud" value="1">
+		        <input xmlns="" type="hidden" name="getfields" value="*">
+		        <input xmlns="" type="hidden" name="entqrm" value="0">
+		        <input xmlns="" type="hidden" name="site" id="gsaSite" value="www">
+		        <input xmlns="" type="hidden" name="mainsite" id="gsaMainsite" value="">
+            </form>
+          </div>
+
+            <button class="overlay-close"></button>
+
+            <div class="popularLinks container nopadding">
+                <h1 class="title">Popular Links:</h1>
+                
+                <div class="rows">
+	                
+	                  <div class="popular-col col-sm-4 col-1">
+	                    
+	                    
+	                      
+	                        <a href="https://www.altera.com/downloads/download-center.html?utm_source=Intel&amp;utm_medium=link&amp;utm_campaign=Search&amp;utm_content=Download+Center" target="_self" class="links">Download Center</a>
+	                      
+	                    
+	                      
+	                    
+	                      
+	                        <a href="https://www.altera.com/support/support-resources.html?utm_source=Intel&amp;utm_medium=link&amp;utm_campaign=Search&amp;utm_content=Support+Resources" target="_self" class="links">Support Resources</a>
+	                      
+	                    
+	                      
+	                    
+	                      
+	                        <a href="https://www.altera.com/support/literature/lit-index.html?utm_source=Intel&amp;utm_medium=link&amp;utm_campaign=Search&amp;utm_content=Documentation" target="_self" class="links">Documentation</a>
+	                      
+	                    
+	                      
+	                    
+	                      
+	                        <a href="https://www.altera.com/products/design-software/overview.html?utm_source=Intel&amp;utm_medium=link&amp;utm_campaign=Search&amp;utm_content=Design+Software" target="_self" class="links">Design Software</a>
+	                      
+	                    
+	                      
+	                    
+	                      
+	                        <a href="https://www.altera.com/support/training/overview.html?utm_source=Intel&amp;utm_medium=link&amp;utm_campaign=Search&amp;utm_content=Training+Program" target="_self" class="links">Training Program</a>
+	                      
+	                    
+	                      
+	                    
+	                  </div>
+	                
+	              
+	                
+	              
+	                
+	                  <div class="popular-col col-sm-4 col-2">
+	                    
+	                    
+	                      
+	                        <a href="https://www.altera.com/support/support-resources/designs.html?utm_source=Intel&amp;utm_medium=link&amp;utm_campaign=Search&amp;utm_content=Design+Examples" target="_self" class="links">Design Examples</a>
+	                      
+	                    
+	                      
+	                    
+	                      
+	                        <a href="https://www.altera.com/support/support-resources/designs.html?utm_source=Intel&amp;utm_medium=link&amp;utm_campaign=Search&amp;utm_content=Reference+Design" target="_self" class="links">Reference Design</a>
+	                      
+	                    
+	                      
+	                    
+	                      
+	                        <a href="https://www.altera.com/products/intellectual-property/overview.html?utm_source=Intel&amp;utm_medium=link&amp;utm_campaign=Search&amp;utm_content=Intellectual+Property" target="_self" class="links">Intellectual Property</a>
+	                      
+	                    
+	                      
+	                    
+	                      
+	                        <a href="https://www.altera.com/bin/search?q=&amp;client=www&amp;output=xml_no_dtd&amp;proxystylesheet=www&amp;sort=date%3AD%3AL%3Ad1&amp;oe=UTF-8&amp;ie=UTF-8&amp;ud=1&amp;access=p&amp;entqr=3&amp;entsp=a&amp;entqrm=0&amp;site=www_spt_kdb&amp;filter=0&amp;partialfields=(type%3Ahow-to%7Ctype%3Aerrata%7Ctype%3Aanswers)&amp;tlen=200&amp;rc=1" target="_self" class="links">Knowledge Base</a>
+	                      
+	                    
+	                      
+	                    
+	                      
+	                        <a href="https://www.altera.com/support/videos/how-to-videos.html?utm_source=Intel&amp;utm_medium=link&amp;utm_campaign=Search&amp;utm_content=How+To+Videos" target="_self" class="links">How-to Videos</a>
+	                      
+	                    
+	                      
+	                    
+	                  </div>
+	                
+	              
+	                
+	              
+	                
+	                  <div class="popular-col col-sm-4 col-3">
+	                    
+	                    
+	                      
+	                        <a href="https://www.altera.com/support/support-resources/download/os-support.html?utm_source=Intel&amp;utm_medium=link&amp;utm_campaign=Search&amp;utm_content=Operating+System+Support" target="_self" class="links">Operating System Support</a>
+	                      
+	                    
+	                      
+	                    
+	                      
+	                        <a href="https://www.altera.com/mal-all/sslc.html?utm_source=Intel&amp;utm_medium=link&amp;utm_campaign=Search&amp;utm_content=Software+Licensing+Support" target="_self" class="links">Software Licensing Support</a>
+	                      
+	                    
+	                      
+	                    
+	                      
+	                        <a href="https://www.buyaltera.com/" target="_self" class="links">Buy Products Online</a>
+	                      
+	                    
+	                      
+	                    
+	                      
+	                        <a href="https://www.altera.com/support/support-resources/support-centers/board-design-guidelines.html?utm_source=Intel&amp;utm_medium=link&amp;utm_campaign=Search&amp;utm_content=Board+Design+Guideline" target="_self" class="links">Board Design Guideline</a>
+	                      
+	                    
+	                      
+	                    
+	                      
+	                        <a href="https://www.altera.com/about/contact/contact.html?utm_source=Intel&amp;utm_medium=link&amp;utm_campaign=Search&amp;utm_content=Contact+Us" target="_self" class="links">Contact Us</a>
+	                      
+	                    
+	                      
+	                    
+	                  </div>
+	                
+	              
+	                
+	              </div>
+            </div>
+        </div>
+    </div> <!-- End Search Menu -->
+    <script>
+    var pathname = window.location.pathname;
+    if (pathname.indexOf("documentation") == 1) {
+    	document.getElementById('gsaSite').value = "www_documentation";
+    	document.getElementById('gsaMainsite').value = "www_documentation";
+    }
+    </script>
+</div>
+</div>
+</header>
+
+<div id="login" class="login overlay">
+    <div class="container content">
+        <div id="login_section">
+            <form id="log_in_form_header" class="login mega-form" method="POST" action="https://www.altera.com/mal-all/mal-signin/j_security_check" enctype="multipart/form-data" autocomplete="off">
+                <header>
+                    <h1 class="headline-title"> Log In </h1>
+                </header>
+
+                <input type="hidden" name="resource" value="/bin/myAlteraAuth">
+                <input type="hidden" name="_charset_" value="UTF-8">
+                <input type="text" id="j_username_header" name="j_username" placeholder="User Name" autofocus="true">
+                <input type="password" id="j_password_header" name="j_password" placeholder="Password">
+
+                <div id="login_error" style="display:none;visibility:hidden">Please enter your user name and password to log in!</div>
+                <div class="submit-strip">
+                    <div class="row">
+                        <label class="checkbox cb-xlg col-md-6">
+                            <input type="checkbox" name="remember" value="me" class="cb" checked="">
+                            <svg class="checkbox-icon svg-sprite"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#checkbox-icon"></use></svg>
+                            <span class="lbl">Remember me</span>
+                        </label>
+                        <p class="terms text-right col-md-6">By Logging in, you agree to our <a href="https://www.altera.com/about/privacy.html"> Terms of Service</a></p>
+                    </div>
+                    <div class="login-button-row">
+                        <button class="btn btn-primary btn-lg" type="submit"> Log In </button>
+                    </div>
+                </div>
+
+                <div>
+                    <p><a href="https://www.altera.com/mal-all/mal-retrieve-account.html">Forgot Username or Password?</a></p>
+                    <p><a href="https://www.altera.com/mal-all/mal-signin.html">Don't have an account? </a></p>
+                </div>
+            </form>
+        </div>
+
+        <div id="logout_section" class="hide">
+            <header>
+                <h1 class="headline-title">myAltera</h1>
+            </header>
+
+            <div class="submit-strip">
+                <a href="https://www.altera.com/myaltera/mal-home.html" class="btn btn-primary">My Altera Home</a>
+                <a id="after_login_logout" class="btn btn-primary" href="https://www.altera.com/bin/myAlteraAuth?logout=true"><span class="btn-label">Logout</span></a>
+            </div>
+        </div>
+    </div>
+    <button class="button overlay-close">
+</button></div>
+
+<div id="mega_menu" class="menu overlay">
+  <div class="mega_menu_content">
+<div class="container content">
+  <nav>
+    <ul id="mega_menu_nav" class="mega-menu-nav">
+      
+        <li class="nav-items ">                
+          
+            <a class="nav-link products " href="https://www.altera.com/products/processors/support.html#products">Products </a>
+          
+        </li>
+      
+    
+      
+    
+      
+        <li class="nav-items ">                
+          
+            <a class="nav-link solutions " href="https://www.altera.com/products/processors/support.html#solutions">Solutions </a>
+          
+        </li>
+      
+    
+      
+    
+      
+        <li class="nav-items ">                
+          
+            <a class="nav-link support " href="https://www.altera.com/products/processors/support.html#support">Support </a>
+          
+        </li>
+      
+    
+      
+    
+      
+        <li class="nav-items ">                
+          
+            <a class="nav-link about " href="https://www.altera.com/products/processors/support.html#about">About </a>
+          
+        </li>
+      
+    
+      
+    
+      
+        <li class="nav-items ">                
+          
+            <a class="nav-link buy " href="https://www.altera.com/products/processors/support.html#buy">Buy </a>
+          
+        </li>
+      
+    
+      
+    </ul>
+  </nav>
+  
+  <div id="mega_menu_items_wrapper" class="menu-items-wrapper">
+    
+      <div id="products" class="menu-item-wrapper">
+         
+        
+          <div class="menu-items">
+                        <div class="menu-row">
+                            <nav class="menu-nav">
+                                <a href="https://www.altera.com/products/fpga/overview.html" class="item-link">
+                                    <div class="icon">
+                                        <svg class="fpga svg-sprite">
+                                            <use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#fpga"></use>
+                                        </svg>
+                                    </div>
+                                    FPGAs</a>
+                                <ul class="sub-menu">
+                                    <li><a href="https://www.altera.com/products/fpga/stratix-series/stratix-10/overview.html" class="sub-link">Stratix 10</a></li>
+                                    <li><a href="https://www.altera.com/products/fpga/stratix-series/stratix-v/overview.html" class="sub-link">Stratix V</a></li>
+                                    <li><a href="https://www.altera.com/products/fpga/arria-series/arria-10/overview.html" class="sub-link">Arria 10</a></li>
+                                    <li><a href="https://www.altera.com/products/fpga/arria-series/arria-v/overview.html" class="sub-link">Arria V</a></li>
+                                    <li><a href="https://www.altera.com/products/fpga/cyclone-series/cyclone-v/overview.html" class="sub-link">Cyclone V</a></li>
+                                    <li><a href="https://www.altera.com/products/fpga/max-series/max-10/overview.html" class="sub-link">MAX 10</a></li>
+                                    <li><a href="https://www.altera.com/products/fpga/overview.html" class="sub-link">All FPGAs</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="menu-row">
+                            <nav class="menu-nav">
+                                <a href="https://www.altera.com/products/soc/overview.html" class="item-link">
+                                    <div class="icon">
+                                        <svg class="socs svg-sprite">
+                                            <use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#socs"></use>
+                                        </svg>
+                                    </div>
+                                    SoCs</a>
+                                <ul class="sub-menu">
+                                  <li><a href="https://www.altera.com/products/soc/portfolio/stratix-10-soc/overview.html" class="sub-link">Stratix 10</a></li>
+                                    <li><a href="https://www.altera.com/products/soc/portfolio/arria-10-soc/overview.html" class="sub-link">Arria 10</a></li>
+                                    <li><a href="https://www.altera.com/products/soc/portfolio/arria-v-soc/overview.html" class="sub-link">Arria V</a></li>
+                                    <li><a href="https://www.altera.com/products/soc/portfolio/cyclone-v-soc/overview.html" class="sub-link">Cyclone V</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="menu-row">
+                            <nav class="menu-nav">
+                                <a href="https://www.altera.com/products/sip/overview.html" class="item-link">
+                                    <div class="icon">
+                                        <svg class="sip svg-sprite">
+                                            <use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#sip"></use>
+                                        </svg>
+                                    </div>
+                                    SiP</a>
+                                <ul class="sub-menu">
+                                  <li><a href="https://www.altera.com/products/sip/memory/stratix-10-mx/overview.html" class="sub-link">Stratix 10 MX</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="menu-row">
+                            <nav class="menu-nav">
+                                <a href="https://www.altera.com/products/cpld/max-series.html" class="item-link">
+                                    <div class="icon">
+                                        <svg class="cplds svg-sprite">
+                                            <use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#cplds"></use>
+                                        </svg>
+                                    </div>
+                                    CPLDs</a>
+                                <ul class="sub-menu">
+                                  <li><a href="https://www.altera.com/products/fpga/max-series/max-10/overview.html" class="sub-link">MAX 10</a></li>
+                                    <li><a href="https://www.altera.com/products/cpld/max-series/max-v/overview.html" class="sub-link">MAX V</a></li>
+                                    <li><a href="https://www.altera.com/products/cpld/max-series.html" class="sub-link">All CLPDs</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="menu-row">
+                            <nav class="menu-nav">
+                                <a href="https://www.altera.com/products/configuration-devices/overview.html" class="item-link">
+                                    <div class="icon">
+                                        <svg class="configuration svg-sprite">
+                                            <use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#configuration"></use>
+                                        </svg>
+                                    </div>
+                                    Configuration</a>
+                                <ul class="sub-menu">
+                                  <li><a href="https://www.altera.com/products/configuration-devices/overview.html" class="sub-link">Program Storage</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="menu-row">
+                            <nav class="menu-nav">
+                                <a href="https://www.altera.com/products/power/overview.html" class="item-link">
+                                    <div class="icon">
+                                        <svg class="power svg-sprite">
+                                            <use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#power"></use>
+                                        </svg>
+                                    </div>
+                                    Power</a>
+                                <ul class="sub-menu">
+                                  <li><a href="https://www.altera.com/products/power/devices/powersoc-dc-dc-step-down-converters.html" class="sub-link">PowerSoC Converters</a></li>
+                                    <li><a href="https://www.altera.com/products/power/devices/ddr-memory-termination-_vvt_.html" class="sub-link">DDR Memory Termination</a></li>
+                                    <li><a href="https://www.altera.com/products/power/devices.html" class="sub-link">All Devices</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="menu-row">
+                            <nav class="menu-nav">
+                                <a href="https://www.altera.com/products/intellectual-property/overview.html" class="item-link">
+                                    <div class="icon">
+                                        <svg class="intellectual_property svg-sprite">
+                                            <use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#intellectual_property"></use>
+                                        </svg>
+                                    </div>
+                                    Intellectual Property</a>
+                                <ul class="sub-menu">
+                                  <li><a href="https://www.altera.com/products/intellectual-property/what_s-new.html" class="sub-link">What's New in IP</a></li>
+                                    <li><a href="https://www.altera.com/products/intellectual-property/best-in-class-ip.html" class="sub-link">Best in Class IP</a></li>
+                                    <li><a href="https://www.altera.com/products/processors/overview.html" class="sub-link">Nios II Processor</a></li>
+                                    <li><a href="https://www.altera.com/products/intellectual-property/ip.html" class="sub-link">Find IP</a></li>
+                                    <li><a href="https://www.altera.com/products/reference-designs/all-reference-designs.html" class="sub-link">Reference Designs</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="menu-row">
+                            <nav class="menu-nav">
+                                <a href="https://www.altera.com/products/development-kits/kit-index.html" class="item-link">
+                                    <div class="icon">
+                                        <svg class="boards_and_kits svg-sprite">
+                                            <use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#boards_and_kits"></use>
+                                        </svg>
+                                    </div>
+                                    Boards &amp; Kits</a>
+                                <ul class="sub-menu">
+                                    <li><a href="https://www.altera.com/products/boards_and_kits/all-development-kits.html" class="sub-link">Development Kits</a></li>
+                                    <li><a href="https://www.altera.com/products/boards_and_kits/daughter-cards.html" class="sub-link">Daughter Cards</a></li>
+                                    <li><a href="https://www.altera.com/products/boards_and_kits/download-cables.html" class="sub-link">Cables &amp; Adapters</a></li>
+                                    <li><a href="https://www.altera.com/products/soc/ecosystem/system-on-modules.html" class="sub-link">SoC System-on-Modules</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                       
+                        <div class="menu-row">
+                            <nav class="menu-nav">
+                                <a href="https://www.altera.com/products/design-software/overview.html?utm_source=Altera&amp;utm_medium=link&amp;utm_campaign=Quartus_16_1&amp;utm_content=NA_qpmenuhardware" class="item-link">
+                                    <div class="icon">
+                                        <svg class="soc_dev_tools svg-sprite">
+                                            <use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#soc_dev_tools"></use>
+                                        </svg>
+                                    </div>
+                                    Hardware Developer</a>
+                                <ul class="sub-menu">
+                                     <li><a href="https://www.altera.com/products/design-software/fpga-design/quartus-prime/overview.html" class="sub-link">Quartus Prime</a></li>
+                                    <li><a href="https://www.altera.com/products/design-software/model---simulation/dsp-builder/overview.html" class="sub-link">DSP Builder for Intel FPGAs</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                         <div class="menu-row">
+                            <nav class="menu-nav">
+                                <a href="https://www.altera.com/products/design-software/overview.html?utm_source=Altera&amp;utm_medium=link&amp;utm_campaign=Quartus_16_1&amp;utm_content=NA_qpmenusoftware" class="item-link">
+                                    <div class="icon">
+                                        <svg class="design_software svg-sprite">
+                                            <use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#design_software"></use>
+                                        </svg>
+                                    </div>
+                                   Software Developer</a>
+                                <ul class="sub-menu">
+                                   <li><a href="https://www.altera.com/products/design-software/embedded-software-developers/opencl/overview.html" class="sub-link">Intel FPGA SDK for OpenCL</a></li>
+                                     <li><a href="https://www.altera.com/products/design-software/embedded-software-developers/soc-eds/overview.html" class="sub-link">SoC Embedded Software</a></li>
+                                    <li><a href="https://www.altera.com/products/processors/design-tools.html" class="sub-link">Nios Embedded Software</a></li>
+                                
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <a href="https://www.altera.com/products.html" class="btn btn-primary btn-lg">All Products</a>
+        
+        
+      </div>
+                      
+  
+                      
+  
+    
+      <div id="solutions" class="menu-item-wrapper">
+         
+        
+          <div class="menu-items">
+                        <div class="menu-row">
+                            <nav class="menu-nav">
+                                <a href="https://www.altera.com/solutions/industry.html" class="item-link">
+                                    <div class="icon">
+                                        <svg class="industry_solutions svg-sprite">
+                                            <use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#industry_solutions"></use>
+                                        </svg>
+                                    </div>
+                                    Industry Solutions</a>
+                                <ul class="sub-menu">
+                                    <li><a href="https://www.altera.com/solutions/industry/automotive/overview.html" class="sub-link">Automotive</a></li>
+                                    <li><a href="https://www.altera.com/solutions/industry/broadcast/overview.html" class="sub-link">Broadcast</a></li>
+                                    <li><a href="https://www.altera.com/solutions/industry/computer-and-storage/overview.html" class="sub-link">Computer &amp; Storage</a></li>
+                                    <li><a href="https://www.altera.com/solutions/industry/consumer/overview.html" class="sub-link">Consumer</a></li>
+                                    <li><a href="https://www.altera.com/solutions/industry/industrial/overview.html" class="sub-link">Industrial</a></li>
+                                    <li><a href="https://www.altera.com/solutions/industry/medical/overview.html" class="sub-link">Medical</a></li>
+                                    <li><a href="https://www.altera.com/solutions/industry/military/overview.html" class="sub-link">Military, Aerospace &amp; Gov</a></li>
+                                    <li><a href="https://www.altera.com/solutions/industry/test-and-measurements/overview.html" class="sub-link">Test &amp; Measurement</a></li>
+                                    <li><a href="https://www.altera.com/solutions/industry/wireless/overview.html" class="sub-link">Wireless</a></li>
+                                    <li><a href="https://www.altera.com/solutions/industry/wireline/overview.html" class="sub-link">Wireline</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="menu-row">
+                            <nav class="menu-nav">
+                                <a href="https://www.altera.com/solutions/technology.html" class="item-link">
+                                    <div class="icon">
+                                        <svg class="technology svg-sprite">
+                                            <use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#technology"></use>
+                                        </svg>
+                                    </div>
+                                    Technology</a>
+                                <ul class="sub-menu">
+                                    <li><a href="https://www.altera.com/solutions/technology/heterogeneous-integration/3d-sip-vision.html" class="sub-link">Heterogeneous Integration</a></li>
+                                    <li><a href="https://www.altera.com/solutions/technology/machine-learning/overview.html" class="sub-link">Machine Learning</a></li>
+                                    <li><a href="https://www.altera.com/solutions/technology/dsp/overview.html" class="sub-link">Digital Signal Processing</a></li>
+                                    <li><a href="https://www.altera.com/products/intellectual-property/best-in-class-ip/external-memory.html" class="sub-link">External Memory</a></li>
+                                    <li><a href="https://www.altera.com/solutions/technology/security/overview.html" class="sub-link">Security</a></li>
+                                    <li><a href="https://www.altera.com/solutions/technology/transceiver/overview.html" class="sub-link">Transceivers</a></li>
+                                    <li><a href="https://www.altera.com/solutions/technology/intelligent-vision-and-video/overview.html" class="sub-link">Intelligent Vision &amp; Video</a></li>
+                                    <li><a href="https://www.altera.com/solutions/technology/iot/overview.html" class="sub-link">Internet of Things</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="menu-row">
+                            <nav class="menu-nav">
+                                <a href="https://www.altera.com/solutions/partners.html" class="item-link">
+                                    <div class="icon">
+                                        <svg class="partners svg-sprite">
+                                            <use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#partners"></use>
+                                        </svg>
+                                    </div>
+                                    Partners</a>
+                                <ul class="sub-menu">
+                                    <li><a href="https://www.altera.com/solutions/partners/design-solutions-network/find-member.html" class="sub-link">Design Solutions Network</a></li>
+                                    <li><a href="https://www.altera.com/solutions/industry/military/applications/cots-board-partners/mil-cots.html" class="sub-link">COTS Board Partners</a></li>
+                                    <li><a href="https://www.altera.com/solutions/partners/eda-partners.html" class="sub-link">EDA Partners</a></li>
+                                    <li><a href="https://www.altera.com/solutions/partners/industrial-partners.html" class="sub-link">End Market Partners</a></li>
+                                    <li><a href="https://www.altera.com/solutions/partners/mathworks.html" class="sub-link">Mathworks Partnership</a></li>
+                                    <li><a href="https://www.altera.com/products/design-software/embedded-software-developers/opencl/developer-zone.html#fpgaplatforms" class="sub-link">OpenCL Partners</a></li>
+                                    <li><a href="https://www.altera.com/products/soc/ecosystem.html" class="sub-link">SoC Partners</a></li>
+                                    <li><a href="https://www.altera.com/support/training/partners.html" class="sub-link">Training Partners</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="menu-row">
+                            <nav class="menu-nav">
+                                <a href="http://systemdesign.altera.com/" class="item-link">
+                                    <div class="icon">
+                                        <svg class="system_design_journal svg-sprite">
+                                            <use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#system_design_journal"></use>
+                                        </svg>
+                                    </div>
+                                    System Design Journal</a>
+                                <ul class="sub-menu">
+                                    <li>Help and solutions for tomorrow's design. by Ron Wilson, Editor-in-Chief</li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="menu-row">
+                            <nav class="menu-nav">
+                                <a href="https://www.altera.com/solutions/technology/system-design/solutions.html" class="item-link">
+                                    <div class="icon">
+                                        <svg class="design_solutions svg-sprite">
+                                            <use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#design_solutions"></use>
+                                        </svg>
+                                    </div>
+                                    Design Solutions</a>
+                                <ul class="sub-menu">
+                                    <li><a href="https://www.altera.com/products/fpga/new-to-fpgas/resource-center/overview.html" class="sub-link">New to FPGAs</a></li>
+                                    <li><a href="https://www.altera.com/products/product-selector-guide.html" class="sub-link">Product Selector</a></li>
+                                    <li><a href="https://cloud.altera.com/devstore/platform/?family=max-10" class="sub-link">Design Store</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <a href="https://www.altera.com/solutions.html" class="btn btn-primary btn-lg">All Solutions</a>
+        
+        
+      </div>
+                      
+  
+                      
+  
+    
+      <div id="support" class="menu-item-wrapper">
+         
+        
+          <div class="menu-items">
+                        <div class="menu-row">
+                            <nav class="menu-nav">
+                                <a href="https://www.altera.com/support/support-resources.html" class="item-link">
+                                    <div class="icon">
+                                        <svg class="support_resources svg-sprite">
+                                            <use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#support_resources"></use>
+                                        </svg>
+                                    </div>
+                                    Support Resources</a>
+                                <ul class="sub-menu">
+                                    <li><a href="https://www.altera.com/support/literature/lit-index.html" class="sub-link">Documentation</a></li>
+                                    <li><a href="https://www.altera.com/bin/search?q=&amp;client=www&amp;output=xml_no_dtd&amp;proxystylesheet=www&amp;sort=date:D:L:d1&amp;oe=UTF-8&amp;ie=UTF-8&amp;ud=1&amp;access=p&amp;entqr=3&amp;entsp=a&amp;entqrm=0&amp;site=www_spt_kdb&amp;filter=0&amp;partialfields=(type:how-to%7Ctype:errata%7Ctype:answers)&amp;tlen=200&amp;rc=1" class="sub-link">Knowledge Base</a></li>
+                                    <li><a href="https://www.altera.com/support/support-resources/communities.html" class="sub-link">Communities</a></li>
+                                    <li><a href="https://www.altera.com/support/support-resources/designs.html" class="sub-link">Design Examples</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="menu-row">
+                            <nav class="menu-nav">
+                                <a href="https://www.altera.com/downloads/download-center.html" class="item-link">
+                                    <div class="icon">
+                                        <svg class="downloads svg-sprite">
+                                            <use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#downloads"></use>
+                                        </svg>
+                                    </div>
+                                    Downloads</a>
+                                <ul class="sub-menu">
+                                    <li><a href="https://www.altera.com/support/support-resources/download/licensing.html" class="sub-link">Licensing</a></li>
+                                    <li><a href="https://www.altera.com/support/support-resources/download/drivers/dri-index.html" class="sub-link">Drivers</a></li>
+                                    <li><a href="https://www.altera.com/support/support-resources/download/archives.html" class="sub-link">Design Software Archives</a></li>
+                                    <li><a href="https://www.altera.com/support/support-resources/download/board-layout-test.html" class="sub-link">Board layout and Test</a></li>
+                                    <li><a href="https://www.altera.com/support/support-resources/download/legacy.html" class="sub-link">Legacy Software</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="menu-row">
+                            <nav class="menu-nav">
+                                <a href="https://www.altera.com/support/literature/lit-index.html" class="item-link">
+                                    <div class="icon">
+                                        <svg class="documentation svg-sprite">
+                                            <use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#documentation"></use>
+                                        </svg>
+                                    </div>
+                                    Documentation</a>
+                                <ul class="sub-menu">
+                                    <li><a href="https://www.altera.com/search-archives" class="sub-link">Documentation Archive</a></li>
+                                    <li><a href="https://documentation.altera.com/" class="sub-link">Search Documentation</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="menu-row">
+                            <nav class="menu-nav">
+                                <a href="https://www.altera.com/support/training/overview.html" class="item-link">
+                                    <div class="icon">
+                                        <svg class="training svg-sprite">
+                                            <use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#training"></use>
+                                        </svg>
+                                    </div>
+                                    Training</a>
+                                <ul class="sub-menu">
+                                  <li><a href="https://www.altera.com/support/training/catalog.html" class="sub-link">Training Courses</a></li>
+                                    <li><a href="https://www.altera.com/support/training/webcasts/wc-index.html" class="sub-link">Videos and Webcasts</a></li>
+                                    <li><a href="https://www.altera.com/events.html" class="sub-link">Event Calendar</a></li>
+                                    <li><a href="https://www.altera.com/support/training/university/overview.html" class="sub-link">University Program</a></li>
+                                    <li><a href="https://www.altera.com/support/training/demonstrations/dem-index.html" class="sub-link">Online Demonstrations</a></li>
+                                    
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="menu-row">
+                            <nav class="menu-nav">
+                                <a href="https://www.altera.com/support/quality-and-reliability.html" class="item-link">
+                                    <div class="icon">
+                                        <svg class="quality_and_reliability svg-sprite">
+                                            <use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#quality_and_reliability"></use>
+                                        </svg>
+                                    </div>
+                                    Quality and Reliability</a>
+                                <ul class="sub-menu">
+                                  <li><a href="https://www.altera.com/support/quality-and-reliability/quality.html" class="sub-link">Quality Policy</a></li>
+                                    <li><a href="https://www.altera.com/support/quality-and-reliability/msl.html" class="sub-link">Moisture Sensitivity Level Calculator</a></li>
+                                    <li><a href="https://www.altera.com/support/quality-and-reliability/certifications.html" class="sub-link">Certifications</a></li>
+                                    <li><a href="https://www.altera.com/support/quality-and-reliability/pcns-and-advisories.html" class="sub-link">PCNs and Advisories</a></li>
+                                    <li><a href="https://www.altera.com/support/quality-and-reliability/reports-tools/rel-reports-tools.html" class="sub-link">Reports and Tools</a></li>
+                                    <li><a href="https://www.altera.com/support/quality-and-reliability/seu.html" class="sub-link">Single Event Upsets</a></li>
+                                    <li><a href="https://www.altera.com/support/quality-and-reliability/bcp-index.html" class="sub-link">Business Continuity Program</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="menu-row">
+                            <nav class="menu-nav">
+                                <a href="https://www.altera.com/myaltera/mal-home.html" class="item-link">
+                                    <div class="icon">
+                                        <svg class="myaltera_support svg-sprite">
+                                            <use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#myaltera_support"></use>
+                                        </svg>
+                                    </div>
+                                    myAltera Support</a>
+                                <ul class="sub-menu">
+                                  <li><a href="https://www.altera.com/myaltera/mal-profile.html" class="sub-link">Manage Profile</a></li>
+                                    <li><a href="https://www.altera.com/myaltera/mal-downloads.html" class="sub-link">View Downloads</a></li>
+                                    <li><a href="https://www.altera.com/mal-all/sslc.html" class="sub-link">Self Service Licensing Center</a></li>
+                                    <li><a href="https://www.altera.com/mal-all/mysupport.html" class="sub-link">mySupport Service Request</a></li>
+                                    <li><a href="https://www.altera.com/myaltera/mal-emailsub/technical-updates.html" class="sub-link">Document Collections</a></li>
+                                    <li><a href="https://www.altera.com/mal-all/training.html" class="sub-link">Training Account</a></li>
+                                    <li><a href="https://www.altera.com/mal-all/email-subscription.html" class="sub-link">Email Subscriptions</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <a href="https://www.altera.com/support.html" class="btn btn-primary btn-lg">All Support</a>
+        
+        
+      </div>
+                      
+  
+                      
+  
+    
+      <div id="about" class="menu-item-wrapper">
+         
+        
+          <div class="menu-items">
+                        <div class="menu-row">
+                            <nav class="menu-nav">
+                                <a href="https://www.altera.com/about/company/overview.html" class="item-link">
+                                    <div class="icon">
+                                        <svg class="company svg-sprite">
+                                            <use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#company"></use>
+                                        </svg>
+                                    </div>
+                              Programmable Solutions Group</a>
+                                <ul class="sub-menu">
+                                   
+                                    <li><a href="https://www.altera.com/about/company/history.html" class="sub-link">Technology Milestones</a></li>
+                                    <li><a href="https://www.altera.com/about/life-at-altera/altera-social-network.html" class="sub-link">Social Communities</a></li>
+                                    <li><a href="https://www.altera.com/about/contact/contact.html" class="sub-link">Contact Us</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="menu-row">
+                            <nav class="menu-nav">
+                                <a href="https://www.altera.com/about/corporate-social-responsibility/commitment.html" class="item-link">
+                                    <div class="icon">
+                                        <svg class="corporate_social_responsibility svg-sprite">
+                                            <use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#corporate_social_responsibility"></use>
+                                        </svg>
+                                    </div>
+                                    Corporate Social Responsibility</a>
+                                <ul class="sub-menu">
+                                    <li><a href="https://www.altera.com/about/corporate-social-responsibility/commitment.html" class="sub-link">Our Commitment</a></li>
+                                    <li><a href="https://www.altera.com/about/corporate-social-responsibility/our-people/csr-employee.html" class="sub-link">Our People</a></li>
+                                    <li><a href="https://www.altera.com/about/corporate-social-responsibility/environment/environmental-stewardship.html" class="sub-link">Environment</a></li>
+                                    <li><a href="https://www.altera.com/about/corporate-social-responsibility/conflict-minerals.html" class="sub-link">Conflict Minerals</a></li>
+                                    <li><a href="https://www.altera.com/about/corporate-social-responsibility/supply-chain-management.html" class="sub-link">Supply Chain</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="menu-row">
+                            <nav class="menu-nav">
+                                <a href="https://www.altera.com/about/life-at-altera/working-at-altera.html" class="item-link">
+                                    <div class="icon">
+                                        <svg class="working_at_altera svg-sprite">
+                                            <use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#working_at_altera"></use>
+                                        </svg>
+                                    </div>
+                                    Working @ Intel PSG</a>
+                                <ul class="sub-menu">
+                                    <li><a href="https://www.altera.com/about/life-at-altera/working-at-altera.html" class="sub-link">Careers @ Intel PSG</a></li>
+                                    <li><a href="https://www.altera.com/about/life-at-altera/life-at-altera.html" class="sub-link">Life @ Intel PSG</a></li>
+                                    <li><a href="https://www.altera.com/about/life-at-altera/benefits-at-altera.html" class="sub-link">Benefits @ Intel PSG</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+</div>
+                    <a href="https://www.altera.com/about.html" class="btn btn-primary btn-lg">All About</a>
+        
+        
+      </div>
+                      
+  
+                      
+  
+    
+      <div id="buy" class="menu-item-wrapper">
+         
+        
+          <div class="menu-items">
+                        <div class="menu-row">
+                            <nav class="menu-nav">
+                                <a href="https://www.altera.com/buy/devices.html" class="item-link">
+                                    <div class="icon">
+                                        <svg class="fpga svg-sprite">
+                                            <use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#fpga"></use>
+                                        </svg>
+                                    </div>
+                                    FPGA Devices</a>
+                                <ul class="sub-menu">
+                                    <li><a href="https://www.buyaltera.com/Search?pv-5=29314&amp;pv-5=37273&amp;pv-5=37274&amp;pv-5=37084" class="sub-link">Stratix® V</a></li>
+                                    <li><a href="https://www.buyaltera.com/Search?Cat=2556262&amp;PV-5=30516" class="sub-link">Arria® V</a></li>
+                                    <li><a href="https://www.buyaltera.com/Search?Cat=2556262&amp;PV-5=32692&amp;PV-5=32693&amp;PV-5=37865&amp;PV-5=37866&amp;PV-5=37867&amp;PV-5=37270" class="sub-link">Cyclone® V </a></li>
+                                    <li><a href="https://www.buyaltera.com/Search?Cat=2556262&amp;PV-5=45313" class="sub-link">Max 10</a></li>
+                                    <li><a href="https://www.buyaltera.com/Search?Cat=2556262&amp;PV-5=22897&amp;PV-5=22898&amp;PV-5=21079" class="sub-link">Stratix IV</a></li>
+                                    <li><a href="https://www.buyaltera.com/Search?Cat=2556262&amp;PV-5=24296&amp;PV-5=242977" class="sub-link">Cyclone IV</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="menu-row">
+                            <nav class="menu-nav">
+                                <a href="https://www.altera.com/buy/design-software.html" class="item-link">
+                                    <div class="icon">
+                                        <svg class="design_software svg-sprite">
+                                            <use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#design_software"></use>
+                                        </svg>
+                                    </div>
+                                    Design Software</a>
+                                <ul class="sub-menu">
+                                    <li><a href="https://www.buyaltera.com/PartDetail?partId=711456" class="sub-link">Fixed subscription</a></li>
+                                    <li><a href="https://www.buyaltera.com/PartDetail?partId=2342467" class="sub-link">Floating subscription</a></li>
+                                    <li><a href="https://www.altera.com/buy/design-software.html" class="sub-link">Additional floating seat</a></li>
+                                    <li><a href="https://www.buyaltera.com/PartDetail?partId=2342466" class="sub-link">Fixed-subscription renewal</a></li>
+                                    <li><a href="https://www.buyaltera.com/PartDetail?partId=2021454" class="sub-link">ModelSim*-Intel® FPGA Edition software</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="menu-row">
+                            <nav class="menu-nav">
+                                <a href="https://www.altera.com/buy/development-kits---education-kits.html" class="item-link">
+                                    <div class="icon">
+                                        <svg class="boards_and_kits svg-sprite">
+                                            <use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#boards_and_kits"></use>
+                                        </svg>
+                                    </div>
+                                    Development Kits &amp; Cards</a>
+                                <ul class="sub-menu">
+                                    <li><a href="https://www.buyaltera.com/Search?part=544-2724-ND&amp;part=544-2725-ND&amp;part=544-2744-ND" class="sub-link">Stratix V Kits</a></li>
+                                    <li><a href="https://www.altera.com/products/boards_and_kits/dev-kits/altera/kit-cyclone-v-soc.html" class="sub-link">Cyclone V SoC Kits</a></li>
+                                    <li><a href="https://www.buyaltera.com/Search?part=544-2745-ND&amp;part=544-2748-ND&amp;part=544-2781-ND" class="sub-link">Cyclone V Kits</a></li>
+                                    <li><a href="https://www.altera.com/products/boards_and_kits/dev-kits/altera/kit-arria-v-soc.html" class="sub-link">Arria V SoC Kits</a></li>
+                                     <li><a href="https://www.buyaltera.com/Search?part=544-2742-ND&amp;part=544-2743-ND" class="sub-link">Arria V Kits</a></li>
+                                    <li><a href="https://www.buyaltera.com/Search?keywords=max+10+kit" class="sub-link">MAX 10  Kits</a></li>
+                                    <li><a href="https://www.buyaltera.com/Search?part=544-1697-ND&amp;part=544-1698-ND&amp;part=544-2411-ND&amp;part=P0800-ND&amp;part=544-1736-ND&amp;part=544-2380-ND" class="sub-link">Nios II®  Kits</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="menu-row">
+                            <nav class="menu-nav">
+                                <a href="https://www.altera.com/buy/cables---programming-hardware.html" class="item-link">
+                                    <div class="icon">
+                                        <svg class="hardware_programming svg-sprite">
+                                            <use xlink:href="/etc/clientlibs/altera-www/global/img/icons/icon-sprites.svg#hardware_programming"></use>
+                                        </svg>
+                                    </div>
+                                    Programming Hardware</a>
+                                <ul class="sub-menu">
+                                    <li><a href="https://www.buyaltera.com/PartDetail?partId=724262" class="sub-link">Intel FPGA Parallel Port Cable</a></li>
+                                    <li><a href="https://www.buyaltera.com/PartDetail?partId=5638362" class="sub-link">Intel FPGA Download Cable II</a></li>
+                                    <li><a href="https://www.buyaltera.com/PartDetail?partId=2268877" class="sub-link">Ethernet Blaster Download Cable</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <a href="https://www.altera.com/buy.html" class="btn btn-primary btn-lg">All Buy</a>
+        
+        
+      </div>
+                      
+  
+                      
+  </div>
+</div>
+<button class="button overlay-close"></button></div>
+</div>
+<!--googleon:all--><nav class="breadcrumbs-container">
+  <div class="breadcrumbs container breadcrumb"><a class="breadcrumb-links" href="https://www.altera.com/" onclick="CQ_Analytics.record({event:&#39;followBreadcrumb&#39;,values: { breadcrumbPath: &#39;/&#39; },collect: false,options: { obj: this },componentPath: &#39;altera-www/components/included/breadcrumb&#39;})">
+Intel FPGA and SoC</a>
+
+<span class="breadcrumb-arrow">&gt;</span><a class="breadcrumb-links" href="https://www.altera.com/products.html" onclick="CQ_Analytics.record({event:&#39;followBreadcrumb&#39;,values: { breadcrumbPath: &#39;/content/altera-www/global/en_us/index/products.html&#39; },collect: false,options: { obj: this },componentPath: &#39;altera-www/components/included/breadcrumb&#39;})">
+Products</a>
+
+<span class="breadcrumb-arrow">&gt;</span><span class="title">Processor</span>
+
+</div>
+</nav>
+
+<div class="featurePanel-2-col"> 
+<div class="top-ipar iparsys parsys"><div class="section"><div class="new"></div>
+</div><div class="iparys_inherited"><div class="top-ipar iparsys parsys"><div class="columns parbase section">
+    
+<div> 
+    <div class="container">
+        <div class="row">
+            
+  <div class="col-xs-12 ">
+    
+
+    
+    
+    
+    <div class="title">
+
+
+
+
+
+
+<header>
+    <h1 class="page-title ">Nios II Processor</h1>
+</header>
+</div>
+
+
+
+  </div>
+
+            
+            
+            
+            
+            
+        </div>
+    </div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="link-bar"><ul class="no-bullets link-bar-nav">
+	<li class="link-bar-item"><a class="link-bar-url" target="_self" href="https://www.altera.com/products/processors/overview.html" null="">Overview</a>
+      </li><li class="link-bar-item"><a class="link-bar-url" target="_self" href="https://www.altera.com/products/processors/features.html" null="">Features</a>
+      </li><li class="link-bar-item"><a class="link-bar-url" target="_self" href="https://www.altera.com/products/processors/design-tools.html" null="">Design Tools</a>
+      </li><li class="link-bar-item"><a class="link-bar-url" target="_self" href="https://www.altera.com/products/processors/additional-processors.html" null="">Portfolio</a>
+      </li><li class="link-bar-item"><a class="link-bar-url" target="_self" href="https://www.altera.com/products/processors/ecosystem.html" null="">Ecosystem</a>
+      </li><li class="link-bar-item active"><a class="link-bar-url">Documentation</a>
+      </li><li class="link-bar-item"><a class="link-bar-url" target="_self" href="https://www.altera.com/products/processors/what_s-new.html" null="">What's New</a>
+      </li><li class="link-bar-item"><a class="link-bar-url" target="_self" href="https://www.altera.com/products/processors/embedded-ip-suite.html" null="">Embedded Ip Suite</a>
+      </li></ul>
+</div>
+</div>
+
+<div class="content-full-body-par parsys">
+
+
+
+</div>
+<div class="main-content container"><!--  start of main-content -->
+  <div class="content-body-par parsys">
+
+
+<div class="text-media parbase">
+
+
+
+
+<div class="txt-media-wrapper  white-bg black-font row section-content multimedia-on-left">
+	
+
+
+
+
+
+    <section class="text-media-item txt-media-content-wrapper-left text-media-content article-section col-md-12  ">
+        
+
+
+	<header class="txt-multimedia-hd" title="Documentation: Nios II Processor">
+		<h2 class="content-title">Documentation: Nios II Processor</h2>
+	</header>
+
+        <div class="txt-multimedia-content">
+        <p style="font-family: tahoma , arial , helvetica , sans-serif;font-size: 12.0px;">These handbooks serve as the primary documentation for the Nios<sup>®</sup> II processor:<a href="https://www.altera.com/content/dam/altera-www/global/en_US/pdfs/literature/an/an736.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/an/an736.pdf"></a><a href="https://www.altera.com/content/dam/altera-www/global/en_US/pdfs/literature/tt/tt_nios2_c2h_accelerating_tutorial.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/tt/tt_nios2_c2h_accelerating_tutorial.pdf"></a><a href="https://www.altera.com/content/dam/altera-www/global/en_US/pdfs/literature/ug/ug_nios2_flash_programmer.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/ug/ug_nios2_flash_programmer.pdf"></a><a href="https://www.altera.com/content/dam/altera-www/global/en_US/others/support/ip/nios2/niosii_docs_12_1.zip" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/support/ip/nios2/niosii_docs_12_1.zip"></a><a href="https://www.altera.com/content/dam/altera-www/global/en_US/others/support/ip/nios2/niosii_docs_12_0.zip" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/support/ip/nios2/niosii_docs_12_0.zip"></a></p>
+<ul>
+<li>The <a href="documents/n2cpu-nii5v1gen2.pdf" target="_blank" adhocenable="false"><i>Nios II (Gen2) Processor Reference Handbook&nbsp;</i></a><i>(ver 2016.10.28)&nbsp; </i>answers the question "What is the Nios II processor?" and is the primary reference for the Nios II processor architecture.</li>
+<li>The <i><a href="documents/n2sw_nii5v2Gen2.pdf" target="_blank" adhocenable="false">Nios II (Gen2) Software Developers Handbook&nbsp;</a>(ver 2017.05.08)&nbsp; </i>answers the question &nbsp;"How do I write programs for the Nios II processor?" and is the primary reference for programming the Nios II processor.</li>
+<li>The <a href="documents/edh_ed_handbook.pdf" target="_blank" adhocenable="false"><i>Embedded Design Handbook&nbsp;</i></a><i>(ver 2017.11.06)</i> describes how to most effectively use the Nios II EDS tools and helps to increase the efficiency of developing, debugging and optimizing Nios II based embedded systems.&nbsp;</li>
+<li>The <a href="documents/ug_embedded_ip.pdf" target="_blank" adhocenable="false"><i>Embedded Peripherals IP User Guide</i>&nbsp;</a><i>(ver 2017.11.06)&nbsp; </i>describes our peripherals that work seamlessly with the Nios II processor and are included with Quartus<sup>®</sup>&nbsp;Prime software.&nbsp;</li>
+<li>The <a href="documents/ug_fph2.pdf" target="_blank" adhocenable="false"><i>Nios II Floating Point Hardware 2 Component User Guide</i></a> <i>(ver 2016.05.03)&nbsp; </i>describes how to use the floating point hardware 2 (FPH2)&nbsp;component with the Nios II processor. The FPH2 component is provided by Intel (formerly Altera) and&nbsp;included with Quartus<sup>®</sup>&nbsp;Prime software.</li>
+</ul>
+<p style="font-family: tahoma , arial , helvetica , sans-serif;font-size: 12.0px;"><br>
+Other related documents, such as tutorials and application notes, cover specific topics that are not included in the handbooks.</p>
+<!--<h3>Embedded Documentation One-Click Download</h3>
+<ul style="font-family: tahoma , arial , helvetica , sans-serif;font-size: 12.0px;">
+<li><a href="https://www.altera.com/content/dam/altera-www/global/en_US/others/support/ip/nios2/niosII-docs-16-0.zip" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/support/ip/nios2/niosII-docs-16-0.zip">Version 16.0 (.zip)</a></li>
+<li><a href="https://www.altera.com/content/dam/altera-www/global/en_US/others/support/ip/nios2/niosII-docs-15-1.zip" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/support/ip/nios2/niosII-docs-15-1.zip">Version 15.1 (.zip)</a></li>
+<li><a href="https://www.altera.com/content/dam/altera-www/global/en_US/others/support/ip/nios2/niosII-docs-15-0.zip" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/support/ip/nios2/niosII-docs-15-0.zip">Version 15.0 (.zip)</a></li>
+<li><a href="https://www.altera.com/content/dam/altera-www/global/en_US/others/support/ip/nios2/niosII_docs_14_1.zip" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/support/ip/nios2/niosII_docs_14_1.zip">Version 14.1 (.zip)</a></li>
+<li><a href="https://www.altera.com/content/dam/altera-www/global/en_US/others/support/ip/nios2/niosii_docs_14_0.zip" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/support/ip/nios2/niosii_docs_14_0.zip">Version 14.0 (.zip)</a></li>
+<li><a href="https://www.altera.com/content/dam/altera-www/global/en_US/others/support/ip/nios2/niosii_docs_13_1.zip" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/support/ip/nios2/niosii_docs_13_1.zip">Version 13.1 (.zip)</a></li>
+<li><a href="https://www.altera.com/content/dam/altera-www/global/en_US/others/support/ip/nios2/niosii_docs_13_0.zip" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/support/ip/nios2/niosii_docs_13_0.zip">Version 13.0 (.zip)</a></li>
+<li><a href="https://www.altera.com/content/dam/altera-www/global/en_US/others/support/ip/nios2/niosii_docs_12_1.zip" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/support/ip/nios2/niosii_docs_12_1.zip">Version 12.1 (.zip)</a></li>
+<li><a href="https://www.altera.com/content/dam/altera-www/global/en_US/others/support/ip/nios2/niosii_docs_12_0.zip" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/support/ip/nios2/niosii_docs_12_0.zip">Version 12.0 (.zip)</a></li>
+</ul>
+<p style="font-family: tahoma , arial , helvetica , sans-serif;font-size: 12.0px;">These files provide a snapshot of the Nios II processor, Nios II-dependent GNU toolchain, Qsys, and embedded peripherals documentation. After extracting the files, refer to the&nbsp;<b>documentation.htm</b> file for a list of included documents.</p>-->
+<h3>Additional Documentation</h3>
+<ul style="font-family: tahoma , arial , helvetica , sans-serif;font-size: 12.0px;">
+<li><a href="documents/ds_nios2_perf.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/ds/ds_nios2_perf.pdf">Nios II Performance Benchmarks</a></li>
+<li><a href="html/Design Contest Paper.html" target="_blank" adhocenable="false">Nios II Design Contest Papers</a></li>
+<li><a href="https://www.altera.com/products/processors/support.html/#hardware_development" adhocenable="false">Nios II Hardware Development</a></li>
+<li><a href="https://www.altera.com/products/processors/support.html/#software_development" adhocenable="false">Software Development</a></li>
+<li><a href="https://www.altera.com/products/processors/support.html/#qsys" adhocenable="false">Platform Designer (formerly Qsys) System Development</a></li>
+<li><a href="https://www.altera.com/products/processors/support.html/#legacy" adhocenable="false">Legacy Documentation</a></li>
+<li><a href="https://www.altera.com/products/processors/support.html/#other_related_documentation" adhocenable="false">Other Related Documentation</a></li>
+<li><a href="html/Documentation_ Developement Kits.html" target="_blank" adhocenable="false">Development Kits/Boards Documentation</a><br>
+&nbsp;</li>
+</ul>
+<h3>Related Documentation</h3>
+<h4 style="font-family: tahoma , arial , helvetica , sans-serif;font-size: 12.0px;"><a name="release_notes"></a>Release Notes</h4>
+<ul style="font-family: tahoma , arial , helvetica , sans-serif;font-size: 12.0px;">
+<li><a href="documents/rn_nios2.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/rn/rn_nios2.pdf">Nios II Release Notes (PDF)</a></li>
+<li><a href="documents/rn_ip.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/rn/rn_ip.pdf">Intel FPGA IP Release Notes (PDF)</a><br>
+(All intellectual property (IP) and Nios II release notes are combined into one document)</li>
+<li><a href="https://www.altera.com/support/support-resources/intellectual-property/embedded/nios-ii/release-notes/ips-niosii-rn.html" target="_blank" adhocenable="false">Nios II EDS Release Notes Archive</a></li>
+</ul>
+<div>&nbsp;</div>
+<h4 style="font-family: tahoma , arial , helvetica , sans-serif;font-size: 12.0px;">Nios II Hardware Development</h4>
+<ul style="font-family: tahoma , arial , helvetica , sans-serif;font-size: 12.0px;">
+<li><a href="documents/an740.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/an/an740.pdf">AN740: Nios II Flash Accelerator Using MAX® 10</a><i> (ver 2015.06.30)&nbsp;</i></li>
+<li><a href="documents/an391.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/an/an391.pdf">AN391: Profiling Nios II Systems (PDF)</a>&nbsp;<i>(ver 3.0, Jul 2011, 325 KB)</i></li>
+<li><a href="documents/an351.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/an/an351.pdf">AN351: Simulating Nios II Embedded Processor Designs<i> </i>(PDF)</a>&nbsp;<i>(ver 1.4, Nov 2013, 375 KB)<br>
+ </i><a href="documents/an351_software_file.zip" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/literature/an/an351_software_file.zip">AN351 Software Files</a> (6 KB)</li>
+<li><a href="documents/an527.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/an/an527.pdf">AN527: Implementing an LCD Controller</a> <i>(ver 1.0, May 2008, 344 KB)</i></li>
+<li><a href="documents/an548.pdf" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/tt/tt_nios2_tightly_coupled_memory_tutorial.pdf"></a><a href="https://www.altera.com/content/dam/altera-www/global/en_US/pdfs/literature/an/an548.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/an/an548.pdf">AN548: Nios II Compact Configuration System for Cyclone<sup>®</sup> III (PDF)</a>&nbsp;<i>(ver 1.0, Nov 2008, 320 KB)</i><br>
+<a href="documents/compact_config.zip" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/support/examples/download/compact_config.zip">AN548 Example Design&nbsp;Files</a> (597 KB)</li>
+<li><a href="documents/tt_nios2_tightly_coupled_memory_tutorial.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/tt/tt_nios2_tightly_coupled_memory_tutorial.pdf">Using Tightly Coupled Memory with the Nios II Processor Tutorial</a> <i>(ver 2.0, Jul 2011, 1 MB)<br>
+ </i><a href="documents/tcm.zip" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/literature/tt/tcm.zip">Using Tightly Coupled Memory Tutorial&nbsp;Design Files</a> (15 KB)</li>
+<li><a href="documents/tt_nios2_multiprocessor_tutorial.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/tt/tt_nios2_multiprocessor_tutorial.pdf">Creating Multiprocessor Nios II Systems Tutorial</a> <i>(ver 2.0, Jun 2011, 1 MB)</i></li>
+<li><a href="documents/tt_nios2_hardware_tutorial.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/tt/tt_nios2_hardware_tutorial.pdf">Nios II Hardware Development Tutorial</a> <i>(ver 4.0, May 2011, 1 MB)</i></li>
+<li><a href="documents/an717.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/an/an717.pdf">Nios II Gen2 Hardware Development Tutorial&nbsp;</a><i> (ver 2014.09.22)&nbsp;<br>
+ </i><a href="documents/nios2_hw_dev_tutorial.zip" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/literature/tt/niosii_hw_dev_tutorial.zip">Nios II and Nios II Gen2 Hardware Development Tutorial&nbsp;Design Files</a> (14 KB)</li>
+<li><a href="documents/ug_nios2_custom_instruction.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/ug/ug_nios2_custom_instruction.pdf">Nios II Custom Instruction User Guide</a> <i>(ver 2015.11.02)&nbsp;<br>
+ </i><a href="documents/ug_custom_instruction_files.zip" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/support/examples/download/ug_custom_instruction_files.zip">Nios II Custom Instruction Example Design Files</a>&nbsp; (1261 KB)</li>
+<li><a href="documents/tt_floating_point_custom_instructions.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/tt/tt_floating_point_custom_instructions.pdf">Using Nios II Floating-Point Custom Instructions Tutorial</a> <i>(ver 2.0, Feb 2010, 235 KB)<br>
+ </i><a href="documents/floating_point_tutorial.zip" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/literature/tt/floating_point_tutorial.zip">Using NiosII Floating-Point Custom Instructions Tutorial Design Files</a> (4 KB)</li>
+<li><a href="documents/ds_nios2_3c25_lcd.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/ds/ds_nios2_3c25_lcd.pdf">Nios II 3C25 Microprocessor with LCD Controller Data Sheet</a> <i>(ver 1.1, Mar 2009, 580 KB)</i></li>
+<li><a href="documents/ds_nios2_3c120_lcd.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/ds/ds_nios2_3c120_lcd.pdf">Nios II 3C120 Microprocessor with LCD Controller Data Sheet</a> <i>(ver 1.1, Mar 2009, 634 KB)<br>
+ &nbsp;</i></li>
+</ul>
+<h4 style="font-family: tahoma , arial , helvetica , sans-serif;font-size: 12.0px;"><a name="software_development"></a></h4>
+<h4 style="font-family: tahoma , arial , helvetica , sans-serif;font-size: 12.0px;">Software Development</h4>
+<ul style="font-family: tahoma , arial , helvetica , sans-serif;font-size: 12.0px;">
+<li><a href="documents/niosii_generic_booting_methods.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/ug/niosii_generic_booting_methods.pdf">Generic Nios II Booting Methods User Guide</a> (ver 2016.05.24)&nbsp;</li>
+<li><a href="documents/an741.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/an/an741.pdf">AN741: Remote System Upgrade for MAX 10 FPGA Devices over UART with the Nios II Processor</a>&nbsp; <i>(ver 2015.06.15, June 2015, 836KB)&nbsp;&nbsp;<br>
+ </i><a href="documents/max10_RSU.par/" target="_blank" adhocenable="false">AN741 Example Design Files</a></li>
+<li><a href="documents/an736.pdf" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/an/an736.pdf">AN736: Nios II Processor Booting From Altera Serial Flash (EPCQ)</a> <i>(ver 2016.05.20)</i>&nbsp;</li>
+<li><a href="documents/an730.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/an/an730.pdf">AN730:&nbsp;Nios II Processor Booting Methods In MAX 10 Devices</a> <i>(ver 2016.05.24)&nbsp;</i></li>
+<li><a href="documents/an429.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/an/an429.pdf">AN429: Remote Configuration Over Ethernet with the Nios II Processor</a><i> (ver 3.0, Apr 2010, 172 KB)<br>
+ </i><a href="documents/an429_remote_configuration.zip" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/literature/an/an429_remote_configuration.zip">AN429&nbsp;Example Design Files</a> (3 MB)</li>
+<li><a href="documents/an458.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/an/an458.pdf">AN458: Alternative Nios II Boot Methods</a> <i><br>
+</i><a href="documents/an458_design_example_files.zip" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/literature/an/an458_design_example_files.zip">AN458&nbsp;Example Design&nbsp;Files</a> (36 KB)</li>
+<li><a href="documents/an459.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/an/an459.pdf">AN459: Guidelines for Developing a Nios II HAL Device Driver</a><i> (2015.06.12)&nbsp;<br>
+ </i><a href="documents/an459-design-files.zip" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/support/examples/download/an459-design-files.zip">AN459 Example Design Files</a>&nbsp;(134 KB)</li>
+<li><a href="documents/an540.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/an/an540.pdf">AN540: Nios II MPU Usage</a> <i>(ver 1.0, Mar 2010, 385 KB)<br>
+ </i><a href="documents/an540_91.zip" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/literature/an/an540_91.zip">AN540&nbsp;Example Design&nbsp;Files</a> (221 KB)</li>
+<li><a href="documents/an543.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/an/an543.pdf">AN543: Debugging Nios II Software Using the Lauterbach Debugger</a> <i>(ver 1.0, Apr 2009, 278 KB)<br>
+ </i><a href="documents/lauterbach.zip" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/literature/an/lauterbach.zip">AN543 Example Design Files</a> (6 MB)</li>
+<li><a href="documents/nichestacktechman.zip" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/literature/ug/nichestacktechman.zip">NicheStack Technical Manuals (PDFs)</a> <i>(ver&nbsp;Apr 2007, 1 MB)</i></li>
+<li><a href="documents/an440.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/an/an440.pdf">Accelerating Nios II Networking Applications</a> <i>(ver 2.1, Jan 2013, 265 KB)</i></li>
+<li><a href="documents/tt_my_first_nios_sw.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/tt/tt_my_first_nios_sw.pdf">My First Nios II Software Tutorial</a> <i>(ver 2.1, Dec 2012, 986 KB)</i></li>
+<li><a href="documents/tt_nios2_tightly_coupled_memory_tutorial.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/tt/tt_nios2_tightly_coupled_memory_tutorial.pdf">Using Tightly Coupled Memory with the Nios II Processor Tutorial</a> <i>(ver 2.0, Jul 2011, 1 MB)<br>
+ </i><a href="documents/tcm.zip" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/literature/tt/tcm.zip">Using&nbsp;Tightly Coupled Memory Tutorial Design Files</a> (15 KB)</li>
+<li><a href="documents/tt_nios2_tcpip.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/tt/tt_nios2_tcpip.pdf">Using the NicheStack TCP/IP Stack - Nios II Edition Tutorial</a> <i>(ver 3.0, Jun 2011, 1 MB)<br>
+ </i><a href="documents/nichestack_tutorial.zip" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/literature/tt/nichestack_tutorial.zip">Using the NicheStack TCP/IP Stack Tutorial Software Files</a> (29 KB)</li>
+<li><a href="documents/tt_nios2_microc_osii_tutorial.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/tt/tt_nios2_microc_osii_tutorial.pdf">Using MicroC/OS-II RTOS with the Nios II Processor Tutorial</a> <i>(ver 3.0, May 2011, 695 KB)<br>
+ </i><a href="documents/ucos_ii_tutorial.zip" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/literature/tt/ucos_ii_tutorial.zip">Using MicroC/OS-II RTOS Tutorial Software Files</a> (7 KB)</li>
+<li><a href="documents/nichestackref.zip" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/literature/ug/nichestackref.zip">NicheStack Technical Reference Manual (HTML)</a> <i>(ver Apr 2007, 193 KB)</i></li>
+</ul>
+<p>&nbsp;</p>
+<h4 style="font-family: tahoma , arial , helvetica , sans-serif;font-size: 12.0px;"><a name="design_guidelines_and_applications"></a></h4>
+<h4 style="font-family: tahoma , arial , helvetica , sans-serif;font-size: 12.0px;">Design Guidelines and Applications</h4>
+<ul style="font-family: tahoma , arial , helvetica , sans-serif;font-size: 12.0px;">
+<li><a href="documents/wp-01255-top-7-reasons-to-replace-your-microcontroller-with-a-max-10-fpga.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/wp/wp-01255-top-7-reasons-to-replace-your-microcontroller-with-a-max-10-fpga.pdf">WP01255: Top 7 Reasons to Replace Your MCU with a MAX 10 FPGA</a> <i>(June 2015)&nbsp;</i></li>
+<li><a href="documents/wp-01162-motor-control-toolflow.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/wp/wp-01162-motor-control-toolflow.pdf">Optimize Motor Control Designs with an Integrated FPGA Design Flow</a> <i>(ver 1.2, May 2012, 811 KB)</i></li>
+<li><a href="documents/an531.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/an/an531.pdf">AN531: Reducing Power with Hardware Accelerators</a>&nbsp;<i>(ver 1.0, May 2008, 151 KB)<br>
+ </i><a href="documents/power.zip" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/literature/an/power.zip">AN531 Example Design Files</a>&nbsp;(1 MB)</li>
+<li><a href="documents/vic_collateral_CV.zip" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/literature/ug/vic_collateral_CV.zip">Vectored Interrupt Controller Design Files</a> (ver 2.0, May 2016, 4550 KB)</li>
+<li><a href="documents/an440.pdf" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/an/an440.pdf">AN 440: Accelerating Nios II Networking Applications&nbsp;(PDF)</a>&nbsp;<i>(ver 2.1, Jan 2013, 266 KB)</i></li>
+<li><a href="documents/an440_eth_acl.zip" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/literature/an/an440_eth_acl.zip">AN 440 Design Files (ZIP)</a>&nbsp;<i>(3.3 MB)</i></li>
+<li><a href="documents/an371.pdf" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/an/an371.pdf">AN 371: Automotive Graphics System Reference Design (PDF)</a>&nbsp;<i>(ver 1.0, Dec 2004, 195 KB)</i><a name="qsys" id="qsys"></a></li>
+</ul>
+<p>&nbsp;</p>
+<h4 style="font-family: tahoma , arial , helvetica , sans-serif;font-size: 12.0px;"><a name="qsys"></a></h4>
+<h4 style="font-family: tahoma , arial , helvetica , sans-serif;font-size: 12.0px;">Platform Designer (formerly Qsys) Development</h4>
+<ul style="font-family: tahoma , arial , helvetica , sans-serif;font-size: 12.0px;">
+<li><a href="documents/tt_qsys_intro.pdf" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/tt/tt_qsys_intro.pdf">Qsys System Design Tutorial</a> <i>(ver 2015.05.04, May 2015, 764 KB)<br>
+ </i><a href="documents/tt_qsys_design.zip" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/support/examples/download/tt_qsys_design.zip">Qsys System Design Tutorial Design Example</a> (220 KB)</li>
+<li><a href="documents/tt_nios2_tightly_coupled_memory_tutorial.pdf" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/tt/tt_nios2_tightly_coupled_memory_tutorial.pdf">Using Tightly Coupled Memory with the Nios II Processor Tutorial</a><i> (ver 2.0, Jul 2011, 1 MB)<br>
+ </i><a href="documents/tcm.zip" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/literature/tt/tcm.zip">Using Tightly Coupled Memory Tutorial Design Files</a> (15 KB)</li>
+<li><a href="documents/qsys_intro.pdf" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/hb/qts/qsys_intro.pdf">Creating a System with Qsys</a>&nbsp;<i>(ver 2013.11.4, Nov 2013, 1949 KB)</i></li>
+<li><a href="documents/qsys_components.pdf" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/hb/qts/qsys_components.pdf">Creating Qsys Components</a>&nbsp;<i>(ver 2013.11.4, Nov 2013, 825 KB)</i></li>
+<li><a href="documents/qsys_interconnect.pdf" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/hb/qts/qsys_interconnect.pdf">Qsys Interconnect</a>&nbsp;<i>(ver 2013.11.4, Nov 2013, 1075 KB)</i></li>
+<li><a href="documents/qsys_optimize.pdf" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/hb/qts/qsys_optimize.pdf">Optimizing Qsys System Performance</a>&nbsp;<i>(ver QII51024-13.0.0, May 2013, 1561 KB)</i></li>
+<li><a href="documents/qsys_tcl.pdf" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/hb/qts/qsys_tcl.pdf">Component Interface Tcl Reference</a>&nbsp;<i>(ver QII51023-13.1.0, Nov 2013, 687 KB)</i></li>
+<li><a href="documents/qsys_system_components.pdf" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/hb/qts/qsys_system_components.pdf">Qsys System Design Components</a><i>&nbsp;(ver 2013.11.4, Nov 2013, 936 KB)</i></li>
+</ul>
+<p>&nbsp;</p>
+<h4 style="font-family: tahoma , arial , helvetica , sans-serif;font-size: 12.0px;"><a name="legacy"></a></h4>
+<h4 style="font-family: tahoma , arial , helvetica , sans-serif;font-size: 12.0px;">Legacy Documentation</h4>
+<ul style="font-family: tahoma , arial , helvetica , sans-serif;font-size: 12.0px;">
+<li>The <i><a href="documents/n2cpu_nii5v1.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/hb/nios2/n2cpu_nii5v1.pdf">Nios II&nbsp;Classic Processor Reference Handbook </a></i><a href="https://www.altera.com/content/dam/altera-www/global/en_US/pdfs/literature/hb/nios2/n2cpu_nii5v1.pdf" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/hb/nios2/n2cpu_nii5v1.pdf">(PDF)</a> <i>(ver 2016.06.17, June 2016)&nbsp; </i>answers the question "What is the Nios II Classic processor?" and is the primary reference for the Nios II processor architecture.</li>
+<li>The <i><a href="documents/n2sw_nii5v2.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/hb/nios2/n2sw_nii5v2.pdf">Nios II&nbsp;Classic Software Developer's Handbook</a></i><a href="https://www.altera.com/content/dam/altera-www/global/en_US/pdfs/literature/hb/nios2/n2sw_nii5v2.pdf" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/hb/nios2/n2sw_nii5v2.pdf"> (PDF)</a> <i>(ver 2015.05.14, May 2015) </i>answers the question "How do I write programs for the Nios II Classic processor?" and is the primary reference for programming the Nios II processor.</li>
+<li><a href="documents/wp-aghrdwr.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/wp/wp-aghrdwr.pdf">Automated Generation of Hardware Accelerators With Direct Memory Access From ANSI/ISO Standard C Functions</a> <i>(ver 1.0, May 2006, 296 KB)</i></li>
+<li><a href="documents/an323.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/an/an323.pdf">AN323: Using SignalTapII Embedded Logic Analyzers in SOPC Builder Systems</a>&nbsp;<i>(ver 1.1, Nov 2007, 386 KB)</i></li>
+<li><a href="documents/an346.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/an/an346.pdf">AN346: Using the Nios II Configuration Controller Reference Designs</a>&nbsp;<i>(ver 1.2, Mar 2009, 793 KB)</i></li>
+<li><a href="documents/an350.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/an/an350.pdf">AN350: Upgrading Nios Processor Systems to the Nios II Processor</a><i>&nbsp;(ver 1.1, Jul 2006, 617 KB)</i></li>
+<li><a href="documents/an417.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/an/an417.pdf">AN417: Accelerating Functions with the C2H Compiler: Scatter-Gather DMA with Checksum</a> <i>(ver 1.1, Jul 2006, 424 KB)<br>
+ </i><a href="documents/an417_checksum_design_files.zip" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/literature/an/an417_checksum_design_files.zip">AN417 Accelerating Functions Scatter-Gather DMA Example Design Files</a> (6 KB)</li>
+<li><a href="documents/an446.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/an/an446.pdf">AN446: Debugging Nios II Systems with the SignalTap™ II Embedded Logic Analyzer</a>&nbsp;<i>(ver 2.0, June 2011, 398 KB)<br>
+ </i><a href="documents/an446_signal_tap_test.zip" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/literature/an/an446_signal_tap_test.zip">AN446 Example Design Files</a>&nbsp;(10 KB)</li>
+<li><a href="documents/an624.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/an/an624.pdf">AN624: Debugging with System Console Over TCP/IP</a>&nbsp;<i>(ver 1.0, Aug 2010, 424 KB)</i></li>
+<li><a href="documents/ug_nios2_ide_help.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/ug/ug_nios2_ide_help.pdf">Nios II IDE Help System</a> <i>(ver 1.7, Mar 2009, 1 MB)</i></li>
+<li><a href="documents/tt_nios2_system_architect.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/tt/tt_nios2_system_architect.pdf">Nios II System Architect Design Tutorial</a>&nbsp;<i>(ver 11.0, June 2011, 2470 KB)<br>
+ </i><a href="documents/sys_arc_tutorial.zip" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/literature/tt/sys_arc_tutorial.zip">Nios II&nbsp;System Architect Design Tutorial Design Files</a>&nbsp;(5528 KB)</li>
+<li><a href="documents/ug_sopc_builder.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/ug/ug_sopc_builder.pdf">SOPC Builder User Guide</a>&nbsp;<i>(ver 1.0, Dec 2010, 2503 KB)</i></li>
+<li><a href="documents/ug_nios2_c2h_compiler.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/ug/ug_nios2_c2h_compiler.pdf">Nios II C2H Compiler User Guide</a> <i>(ver 1.6, Dec 2009, 911 KB)<br>
+ </i><a href="documents/dma_c2h_tutorial.c">dma_c2h_tutorial.c</a>&nbsp;&nbsp; Tutorial design file for Nios II C2H Compiler User Guide (2 KB)</li>
+<li><a href="documents/wp-01112-hw-reduce-power.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/wp/wp-01112-hw-reduce-power.pdf">Adding Hardware Accelerators to Reduce Power in Embedded Systems</a>&nbsp;<i>(ver 1.0, Sep 2009, 722 KB)</i></li>
+<li><a href="documents/tt_nios2_c2h_accelerating_tutorial.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/tt/tt_nios2_c2h_accelerating_tutorial.pdf">Accelerating Nios II Systems with the C2H Compiler Tutorial</a> <i>(ver 1.3, Aug 2008, 803 KB)<br>
+ </i><a href="documents/c2h_tutorial.zip" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/literature/tt/c2h_tutorial.zip">Design files for Stratix® II and Cyclone® II boards</a> (387 KB)</li>
+<li><a href="documents/an595.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/an/an595.pdf">AN595: Vectored Interrupt Controller Usage and Applications</a> <i>(ver 1.0, Nov 2009, 246 KB)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="documents/an595_vic_collateral.zip" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/literature/an/an595_vic_collateral.zip">AN595 Example Design Files</a> (503 KB)</i></li>
+</ul>
+<p>&nbsp;</p>
+<h4 style="font-family: tahoma , arial , helvetica , sans-serif;font-size: 12.0px;"><a name="other_related_documentation"></a></h4>
+<h4 style="font-family: tahoma , arial , helvetica , sans-serif;font-size: 12.0px;">Other Related Documentation</h4>
+<ul style="font-family: tahoma , arial , helvetica , sans-serif;font-size: 12.0px;">
+<li><a href="documents/ds_nios2_perf.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/ds/ds_nios2_perf.pdf">Nios II Performance Benchmarks</a> <i>(ver 2017.12.18)</i></li>
+<li><a href="documents/ug_nios2_flash_programmer.pdf" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/ug/ug_nios2_flash_programmer.pdf">Nios II Flash Programmer User Guide (PDF)</a>&nbsp; <i>(ver 2017.11.06, 968KB)</i></li>
+<li><a href="documents/ug_usb_blstr_ii_cable.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/ug/ug_usb_blstr_ii_cable.pdf">Intel FPGA Download Cable II User Guide</a> <i>(ver 2016.10.28, 854KB)</i></li>
+<li><a href="documents/ug_avalon_verification_ip.pdf" target="_blank" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/pdfs/literature/ug/ug_avalon_verification_ip.pdf">Avalon® Verification IP Suite User Guide</a> <i>(ver 2015.06.04, Jun 2015, 2 MB) </i><br>
+(Includes Platform Designer (formerly Qsys) tutorials for Verilog HDL and VHDL)<br>
+<a href="documents/ug_avalon_verification.zip" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/literature/ug/ug_avalon_verification.zip">Avalon Verification IP Suite Design Files</a> (46 KB)</li>
+<li><a href="documents/nichestacktechman.zip" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/literature/ug/nichestacktechman.zip">NicheStack Technical Manuals (PDFs)</a> <i>(ver Apr 2007, 1 MB)</i></li>
+<li><a href="documents/nichestackref.zip" adhocenable="false" category="assets" action="download" label="/content/dam/altera-www/global/en_US/others/literature/ug/nichestackref.zip">NicheStack Technical Reference Manual (HTML)</a> <i>(ver Apr 2007, 193 KB)</i></li>
+</ul>
+<p>&nbsp;</p>
+
+    </div>
+        
+
+
+    </section>
+
+</div></div>
+<div class="stay-informed parbase"><div class="stayInformedRightRail">
+    <div class="header">Stay Informed</div>
+    <ul>   
+    	<li><a href="https://www.altera.com/common/email-subscription.html"><span class="icon email"></span><p>Get Email Updates</p></a></li>   
+        <li><a href="http://www.alterawiki.com/wiki/Main_Page"><span class="icon wiki"></span><p>Wiki</p></a></li>
+        <li><a href="http://www.alteraforum.com/"><span class="icon forum"></span><p>Forum</p></a></li>
+    </ul>
+</div></div>
+<div class="generic-right-rail parbase"><div class="header"></div>
+<ul class="links-with-icons">
+    <li>
+        <a class="linkpointer" href="https://www.altera.com/support/training/demonstrations/online/embedded-processor.html" target="_blank">
+            <span class="icon linkpointer"></span>
+            <div class="title">View Nios II Online Demos Now</div>
+        </a>
+    </li>
+    <li>
+        <a class="linkpointer" href="https://www.altera.com/products/fpga/max-series/max-10/features/max-10-nios-ii.html" target="_blank">
+            <span class="icon linkpointer"></span>
+            <div class="title">MAX 10 FPGAs and Nios II processors working together</div>
+        </a>
+    </li>
+    <li>
+        <a class="linkpointer" href="https://www.altera.com/products/boards_and_kits/dev-kits/partners/max-10-neek.html" target="_blank">
+            <span class="icon linkpointer"></span>
+            <div class="title">Get started with the MAX 10 NEEK</div>
+        </a>
+    </li>
+    <li>
+        <a class="linkpointer" href="https://www.altera.com/products/fpga/max-series/max-10/features/max-10-nios-ii.html/.html#refdesigns" target="_blank">
+            <span class="icon linkpointer"></span>
+            <div class="title">Nios II and MAX 10 Example Designs</div>
+        </a>
+    </li>
+    <li>
+        <a class="linkpointer" href="https://cloud.altera.com/devstore/" target="_blank">
+            <span class="icon linkpointer"></span>
+            <div class="title">Example Nios II Designs in Design Store</div>
+        </a>
+    </li>
+    <li>
+        <a class="linkpointer" href="https://www.altera.com/support/training/catalog.html?courseType=Online&amp;keywords=nios" target="_blank">
+            <span class="icon linkpointer"></span>
+            <div class="title">Nios II Training</div>
+        </a>
+    </li>
+    </ul>
+
+</div>
+
+</div>
+</div><!--  end of main-content --><!--googleoff:all-->
+
+<footer class="main-footer">
+    <div class="footer-content container">
+        <div class="row">
+            <div class="footer-col col-md-4 col-sm-6 col-xs-12 section-content"><p class="footer-title">Site Links:</p>
+<nav class="footer-nav">
+  <div>
+   <div>
+ 
+ <ul class="site-links">
+   
+     <li>
+        
+        
+        
+          <a target="_self" href="https://www.altera.com/about/contact.html">About Intel PSG</a>
+        
+     </li>
+   
+ 
+   
+ 
+   
+     <li>
+        
+        
+        
+          <a target="_self" href="https://www.altera.com/about/privacy.html">Privacy</a>
+        
+     </li>
+   
+ 
+   
+ 
+   
+     <li>
+        
+        
+        
+          <a target="_self" href="https://www.altera.com/about/legal.html">*Legal</a>
+        
+     </li>
+   
+ 
+   
+ 
+   
+     <li>
+        
+        
+        
+          <a target="_self" href="https://www.altera.com/about/contact/contact.html">Contact</a>
+        
+     </li>
+   
+ 
+   
+ 
+   
+     <li>
+        
+        
+        
+          <a target="_self" href="https://www.altera.com/about/life-at-altera/working-at-altera.html">Careers</a>
+        
+     </li>
+   
+ 
+   
+ 
+   
+     <li>
+        
+        
+        
+          <a target="_self" href="http://newsroom.altera.com/">Press</a>
+        
+     </li>
+   
+ 
+   
+ 
+   
+     <li>
+        
+        
+        
+          <a target="_self" href="https://www.altera.com/about/corporate-social-responsibility/supply-chain-management.html">CA Supply Chain Act</a>
+        
+     </li>
+   
+ 
+   
+ </ul> 
+</div>
+  </div>
+</nav></div>
+            <div class="footer-col col-md-4 col-s-6 col-xs-12 section-content">
+<p class="footer-title">Region:</p>
+<nav class="footer-nav">
+  <ul id="language-toogle-id" class="site-links language">
+    
+      <li>
+          
+              <span class="selected language-link" data-lang="en_us">USA</span>
+          
+          
+          
+      </li>
+    
+  
+    
+  
+    
+      <li>
+          
+          
+          
+              <a class="language-link" href="https://www.altera.co.jp/products/processors/support.html" data-lang="ja_jp">日本</a>
+          
+      </li>
+    
+  
+    
+  
+    
+      <li>
+          
+          
+          
+              <a class="language-link" href="https://www.altera.com.cn/products/processors/support.html" data-lang="zh_cn">中国</a>
+          
+      </li>
+    
+  
+    
+  </ul>
+</nav>
+<script>
+  document.cookie = 'languageT=;path=/;domain=altera.com;HttpOnly;';
+</script></div>
+            <div class="footer-col col-md-4 col-sm-6 col-xs-12 section-content">
+                <div class="questions">
+                    <p class="footer-title">How are we doing?</p>
+                    <button id="feedback_btn" class="btn btn-primary footer-btn feedback-btn">Send Feedback</button>
+                    <div id="feedback" class="feedback overlay"><!--Feedback Form HTML START -->
+<script type="text/javascript" src="./Nios II Processor - Documentation_files/shared.js.download"></script>
+<div id="feedback" class="container content feedback">            
+		<header>
+		    <h2 class="headline-title">How are we doing?</h2>
+		</header>
+		<div id="feedback_success" class="feedback-thank-you">
+			Thank you.  We have received your feedback.
+		</div>
+		<div id="feedback_error" class="feedback-error">
+			We are sorry.  We are unable to accept your feedback at this time.
+		</div>
+		<div id="feedback_validation" class="feedback-error">
+		</div>
+		<form id="feedback_form" class="contact-form mega-form" onsubmit="return false;">
+            <div class="section-content">
+                <label for="feedback_name">Your Name</label> <input type="text" name="feedback_name" class="required" id="feedback_name" value="" required="">
+            </div>
+
+            <div class="section-content">
+                <label for="feedback_email">Email address</label> <input type="text" name="feedback_email" class="required" id="feedback_email" value="" required="">
+            </div>
+            <div class="section-content">
+                <label for="feedback_message">Message</label>
+                <textarea class="required feedback-message" id="feedback_message" name="feedback_message" rows="8" cols="30" required=""></textarea>
+            </div>
+			<input type="hidden" value="en" id="feedback_language" name="feedback_language">
+            <input type="hidden" value="192.198.147.166, 58.27.118.45, 23.15.10.110" id="feedback_ip" name="feedback_ip">
+			<input type="hidden" id="feedback_current_url" name="feedback_current_url">
+            <input type="hidden" id="feedback_previous_url" name="feedback_previous_url">
+			<div>
+			    <button id="feedback_submit" class="btn btn-primary">Send</button>
+			</div>
+		</form>
+	<div id="feedback_img-control" class="en open"></div>
+
+	<button class="button overlay-close"></button>
+</div>
+<!-- Feedback Form HTML END -->
+</div>
+                </div>
+                <div class="social-media-bar">
+                    <div class="follow"><p class="footer-title">Follow us on:</p>
+<div>
+ <div>
+ 
+ <ul class="site-links social-media">
+   
+     <li>
+        
+        
+          <a target="_self" href="https://plus.google.com/+altera"><img src="./Nios II Processor - Documentation_files/google.png" alt="google plus" width="100%"></a>
+        
+        
+     </li>
+   
+ 
+   
+ 
+   
+     <li>
+        
+        
+          <a target="_self" href="https://www.facebook.com/intelfpga"><img src="./Nios II Processor - Documentation_files/facebook.png" alt="facebook" width="100%"></a>
+        
+        
+     </li>
+   
+ 
+   
+ 
+   
+     <li>
+        
+        
+          <a target="_self" href="http://www.linkedin.com/company/intelfpga"><img src="./Nios II Processor - Documentation_files/linkedin.png" alt="linkedin" width="100%"></a>
+        
+        
+     </li>
+   
+ 
+   
+ 
+   
+     <li>
+        
+        
+          <a target="_self" href="https://twitter.com/intelfpga"><img src="./Nios II Processor - Documentation_files/twitter.png" alt="twitter" width="100%"></a>
+        
+        
+     </li>
+   
+ 
+   
+ 
+   
+     <li>
+        
+        
+          <a target="_self" href="https://www.youtube.com/intelfpga"><img src="./Nios II Processor - Documentation_files/youtube.png" alt="youtube" width="100%"></a>
+        
+        
+     </li>
+   
+ 
+   
+ </ul> 
+</div>
+</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+      <small id="copyright" class="copyright"><p>© Intel Corporation</p></small>
+    </div>
+</footer>
+<script>
+/* set redirect for buyaltera.com */
+$('a[href*="www.buyaltera.com"]').on('click', function(e) { 
+  e.preventDefault();
+  var href = $(this).attr("href");
+  var query = href.slice(href.indexOf('www.buyaltera.com')+17);
+  location.href = "http://www.altera.com/buy/privacy.html" + query;
+});
+
+$('a[href*="www.buyaltera.com"]').bind('contextmenu', function(e) {
+  return false;
+});
+</script>
+<!--googleon:all--><div class="cloudservices servicecomponents">
+</div>
+</div> <!--mainWrapper-->
+
+<script type="text/javascript" src="./Nios II Processor - Documentation_files/comps.min.js.download"></script>
+<script type="text/javascript" src="./Nios II Processor - Documentation_files/components.min.js.download"></script>
+<!-- Tealium Tagging -->
+		<script type="text/javascript">
+		  //configure tms
+		  var wapLocalCode = 'us-en'; //see mapping table for values
+		  //load tms
+		  (function() {
+		    var host = (window.document.location.protocol == 'http:') ? "http://www.intel.com" : "https://www-ssl.intel.com";
+		    var url = host+"/content/dam/www/global/wap/wap-altera.js"; //wap file url
+		    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;  po.src = url;
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		  })();
+		</script>
+<script type="text/javascript" src="./Nios II Processor - Documentation_files/google_analytics.js.download"></script>
+	<script type="text/javascript" src="./Nios II Processor - Documentation_files/eloqua.js.download"></script>
+	<script type="text/javascript" src="./Nios II Processor - Documentation_files/auto-tracker.js.download"></script>
+	<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+<iframe name="__bkframe" id="__bkframe" title="bk" src="./Nios II Processor - Documentation_files/saved_resource.html" style="border: 0px; width: 0px; height: 0px; display: none; position: absolute; clip: rect(0px 0px 0px 0px);"></iframe></body></html>

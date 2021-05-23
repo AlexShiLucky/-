@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!--  $Id: jet-fw.JPN.html 3449 2017-06-01 07:01:45Z robertma $-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemalocation="http://www.w3.org/MarkUp/SCHEMA/xhtml11.xsd" xml:lang="en">
+<head>
+<!-- Inserted by TRADOS: --><META HTTP-EQUIV="content-type" CONTENT="text/html; charset=Shift_JIS">
+
+<title>I-jet、JTAGjet-Trace、および、JTAGjet ファームウェア バージョン</title>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+    <link type="text/css" rel="stylesheet" media="all" href="./style/ewic.css" />
+</head>
+<body>
+  <div id="topbanner">
+  </div>
+  <div id="titlebanner_small">
+    <h2>
+      I-jet、JTAGjet-Trace、および、JTAGjet ファームウェア バージョン
+    </h2>
+  </div>
+  <div class="breadcrumb">
+    <a href="./index.ENU.html">ARM の IAR 情報センター</a> 
+    | <a href="./release_notes.ENU.html">リリース ノート</a> 
+    | <a href="./components.ENU.html">コンポーネント</a> 
+    | <a href="./csjtagjet.ENU.html">IAR C-SPY I-jet および JTAGjet ドライバのリリース ノート</a> 
+    | I-jet, JTAGjet-Trace および JTAGjet ファームウェア バージョン
+  </div>
+  <div class="mainblock">
+    <ul>
+      <li><a href="#notes">注</a> </li>
+      <li><a href="#ijettracearmversions">I-jet Trace ARM ファームウェア バージョン</a> </li>
+      <li><a href="#ijettracecmversions">I-jet Trace CM ファームウェア バージョン</a> </li>
+      <li><a href="#ijetversions">I-jet ファームウェア バージョン</a> </li>
+      <li><a href="#jtagjettraceversions">JTAGjet-Trace ファームウェア バージョン</a> </li>
+      <li><a href="#jtagjetversions">JTAGjet ファームウェア バージョン</a> </li>
+      <li><a href="#howtoidentifyversion">ファームウェア バージョンの識別方法</a> </li>
+    </ul>
+
+<h3><a name="notes" id="notes"></a>注</h3>
+
+<ul>
+<code>EmuDiag.exe</code> (I-jet/JTAGjet メニューから使用可能)は、ファームウェアの更新に使用します。<br> 特定のプローブの新しいファームウェア バージョンは上にあります。<br> ファームウェアの更新は、特定の CPU またはサポートしているボードに関連しません。<br> リリースの日付は、ファームウェア リリースのビルドの日付で、利用可能になった日付ではありません。<br>
+</ul>
+
+<h3><a name="ijettracearmversions" id="A2"></a>I-jet Trace ARM ファームウェア バージョン</h3>
+
+ディレクトリ：<code>arm\bin\jet\firmware\i-jet-trace-arm\v2.5</code>
+日付：2016/08/25 USB：2016/01/25
+  ごくまれにMictorコネクタを使用した際に、正しくない1/2/4ビットキャプチャが生じる可能性があった問題を修正。
+
+<ul><pre>
+ディレクトリ：<code>arm\bin\jet\firmware\i-jet-trace-arm\v1.5</code>
+日付：2016/06/06 USB:2016/01/25
+最初の公式な I-jet Trace ARM ファームウェア。
+</pre></ul>
+
+<h3><a name="ijettracecmversions" id="A1"></a>I-jet Trace CM ファームウェア バージョン</h3>
+
+<ul><pre>
+ディレクトリ：<code>arm\bin\jet\firmware\i-jet-trace-cm\v7.5</code>
+日付：2016/06/10 USB：2015/09/02
+  cJTAG (IAR Embedded Workbench for ARM 7.40.3 またはそれ以降が必要)のサポートが追加されました。
+  すべての I-jet Trace CM バージョンと互換性があります。
+  
+ディレクトリ：<code>arm\bin\jet\firmware\i-jet-trace-cm\v6.5</code>
+日付：2015/09/02
+USB 接続/特にマルチプローブと USB 2.0 の環境での列挙の信頼性の向上。
+いくつかの内部強化(今後リリースされるIAR Embedded Workbench for ARM に完全適合するため)。
+すべての I-jet Trace CM バージョンと互換性があります。
+  
+ディレクトリ：<code>arm\bin\jet\firmware\i-jet-trace-cm\v5.4</code>
+日付：2015/05/28 USB:2015/05/07
+1-ビットおよび 2-ビット ETM (IAR Embedded Workbench for ARM 7.40.3 またはそれ以降で必須)のサポートが追加されました。
+すべての I-jet Trace CM バージョンと互換性があります。
+  
+ディレクトリ：<code>arm\bin\jet\firmware\i-jet-trace-cm\v4.4</code>
+日付：2015/02/10 USB:2015/05/07
+I-jet Trace Ver C で古いファームウェアのプログラミングを保護します。
+すべての I-jet Trace CM バージョンと互換性があります。
+  
+ディレクトリ：<code>arm\bin\jet\firmware\i-jet-trace-cm\v4.3</code>
+日付：2015/02/10 USB:2015/02/27
+I-jet Trace Ver C を完全サポート。
+すべての I-jet Trace CM バージョンと互換性がありますが、古いです。
+  
+ディレクトリ：<code>arm\bin\jet\firmware\i-jet-trace-cm\v3.3</code>
+日付：2014/12/12 USB:2015/02/27
+I-jet Trace Ver C を初期サポートします。
+すべての I-jet Trace CM バージョンと互換性がありますが、古いです。
+  
+ディレクトリ：<code>arm\bin\jet\firmware\i-jet-trace-cm\v3.2</code>
+日付：2014/12/12 USB:2014/10/23
+速くなった JTAG 操作 (IAR Embedded Workbench for ARM 7.30.4 またはそれ以降で必須)。
+向上した ETM タイムスタンプおよび同期。
+I-jet Trace CM バージョン C と互換性が<b>ありません</b>。バージョン 4.4 またはそれ以降を使用します。
+  
+ディレクトリ：<code>arm\bin\jet\firmware\i-jet-trace-cm\v2.2</code>
+日付：2014/10/16 USB:2014/10/23
+最初の公式の I-jet Trace ファームウェア。
+I-jet Trace CM バージョン C と互換性が<b>ありません</b>。バージョン 4.4 またはそれ以降を使用します。
+  
+ディレクトリ：<code>arm\bin\jet\firmware\i-jet-trace-cm\v1</code>
+日付：2014/06/19
+初期 I-jet Trace ファームウェア(プレリリース)。
+I-jet Trace CM バージョン C と互換性が<b>ありません</b>。バージョン 4.4 またはそれ以降を使用します。
+</pre></ul>
+
+<h3><a name="ijetversions" id="ijetversions"></a>I-jet ファームウェア バージョン</h3>
+
+<ul><pre>
+ディレクトリ：<code>arm\bin\jet\firmware\i-jet\v7.2</code>
+日付：2017/04/05  
+1.I-jet vBプローブの追加の26KBバッファ(より安定したハイスピードSWO用)をサポートします。
+2.追加のSWOバッファはIAR Embedded Workbench for ARMのいずれのバージョンでも有効になります。
+3.このファームウェアはI-jet vAと完全互換ですが、性能向上はありません。
+
+ディレクトリ：<code>arm\bin\jet\firmware\i-jet\v6.2</code>
+日付：2016/04/29  
+1.追加された cJTAG (IAR Embedded Workbench for ARM 7.60.1 またはそれ以降で必須)をサポートします。
+2.拡大された SWO バッファは、遅い USB ポートまたは USB の電源節約モードの SWO を向上します。
+3.リセットしたままで容量を追加しました(今後の使用のため)。
+  
+ディレクトリ：<code>arm\bin\jet\firmware\i-jet\v5.2</code>
+日付：2016/03/24
+-- このファームウェアのサポートは終了し、v6.2 で置き換えられました --
+  
+ディレクトリ：<code>arm\bin\jet\firmware\i-jet\v4.2</code>
+日付：2013/07/23?  1.0 の長さの USB パケットで、大きすぎる CPU ロードを修正しました。
+  
+ディレクトリ：<code>arm\bin\jet\firmware\i-jet\v4</code>
+日付：2013/05/31?  1.I-scope プローブにマルチ チャンネル測定を追加しました。
+<b>注:IAR Embedded Workbench for ARM の 6.60 以前のバージョンでは、マルチ チャンネル測定が有効ではありません。</b>
+
+ディレクトリ：<code>arm\bin\jet\firmware\i-jet\v3</code>
+日付：2013/02/28?  1.Manchester モードがより高速になり SWO が向上。
+2.SWO データ エラーおよび USB オーバフローの検出が向上。
+3.A2D および SWO データ ストリームの時間相関性が向上。
+4.I-scope のプローブのサポートを追加。
+<b>注:IAR Embedded Workbench for ARM 6.50.3 またはそれ以降だけが、チェンジ 3. および 4 を使用します。
+IAR Embedded Workbench for ARM の古いバージョンは、チェンジ 1. および 2 で優位です。</b>
+
+ディレクトリ：<code>arm\bin\jet\firmware\i-jet\v2</code>
+日付：2012/10/04?  1.Manchester モードの特定の SWO 除算の取り扱いを修正。
+2.マルチ トリガ構成での nTRST ラインの取り扱いを修正。
+
+ディレクトリ：<code>arm\bin\jet\firmware\i-jet\v1</code>
+日付：2012/05/09
+初期 I-jet ファームウェア。
+</pre></ul>
+
+<h3><a name="jtagjettraceversions" id="jtagjettraceversions"></a>JTAGjet-Trace ファームウェア バージョン</h3>
+
+<ul><pre>
+ディレクトリ：<code>arm\bin\jet\firmware\jtagjet-trace\v1.10</code>
+日付：2015/1/30?  1.ETM v3 のサポートが向上。
+2.ETM 校正範囲が向上。
+
+ディレクトリ：<code>arm\bin\jet\firmware\jtagjet-trace\v1.09</code>
+日付：2011/10/27?  1.Cortex-M4 ETM (半同期 ETM フレームをスキップ) のサポートを追加。
+
+ディレクトリ：<code>arm\bin\jet\firmware\jtagjet-trace\v1.08</code>
+日付：2009/12/21?  1.SWD モードのサポートを追加。
+
+ディレクトリ：<code>arm\bin\jet\firmware\jtagjet-trace\v1.06</code>
+日付：2009/01/22
+完全に機能する、旧型の JTAGjet-Trace ファームウェア。
+  
+注:
+バージョン 1.06 より以前のどの JTAGjet-Trace ファームウェアも現在のソフトウェアでは拒絶されます。
+JTAGjet-Trace ファームウェアの更新には、主な JTAGjet ファームウェアの更新が含まれています。
+</pre></ul>
+
+<h3><a name="jtagjetversions" id="jtagjetversions"></a>JTAGjet ファームウェア バージョン</h3>
+
+<ul><pre>
+ディレクトリ：<code>arm\bin\jet\firmware\jtagjet\v16</code>
+日付：2009/08/06?  1.SWD モード (ADA-SWD アダプターを介する)のサポートを追加。
+
+ディレクトリ：<code>arm\bin\jet\firmware\jtagjet\v12</code>
+日付：2006/06/08?  1.より高速な適応クロック (RTCK) を取扱い。
+2.ハードウェアに組み込まれるライセンスを許可します。
+
+ディレクトリ：<code>arm\bin\jet\firmware\jtagjet\v9</code>
+日付：2005/03/24
+完全に機能する、旧型の JTAGjet-Trace ファームウェア
+
+注:
+バージョン 9 より古い JTAGjet ファームウェアは、現在のソフトウェアでは拒絶されます。
+JTAGjet ファームウェア V12 または V16 は、 V9 にグレードダウンできません。
+JTAGjet ファームウェア V9 を V12または V16 にアップグレードするには、特別な手順が必要です。
+JTAGjet-C2000 モデルには、ファームウェア V10 (V9 と互換性あり) があります。
+</pre></ul>
+
+<h3><a name="howtoidentifyversion" id="howtoidentifyversion"></a>ファームウェア バージョンの識別方法</h3>
+
+<ul><pre>
+最新の <code>EmuDiag.exe</code> (<code>arm\bin\jet</code>にあります)が適切なすべてのリリースを表示します。
+最近のファームウェアのリリースに関するバージョンの詳細です。
+
+<code>I-jet-Trace-ARM:
+プローブ:I-jet-Trace-ARM を検出。
+プローブ:I-jet-Trace、FW ver 1.5 (2016/06/06, USB 2016/01/25)、HW Ver:B
+
+I-jet-Trace-CM:
+プローブ:I-jet-Trace、FW ver 6.5 (2015/09/02)、HW Ver:C
+
+I-jet:
+現在の FLASH:    
+モデル:I-jet (04/29/2016 11:52)
+バージョン:6
+現在の EEPROM:
+モデル:I-jet
+バージョン:2 (07/23/2013 17:29)
+   
+JTAGjet-Trace:
+現在の FLASH:
+モデル:JTAGjet-USB (08/06/2009 10:39)
+バージョン:16
+ETM:
+JTAGjet-Trace、Ver:1.10、容量:18.0MB (4M サンプル)
+
+JTAGjet:
+現在の FLASH:
+モデル:JTAGjet-USB (08/06/2009 10:39)
+バージョン:16
+</code>
+</pre></ul>
+
+
+    </div>
+</body>
+</html>

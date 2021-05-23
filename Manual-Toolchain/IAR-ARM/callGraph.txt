@@ -1,0 +1,130 @@
+For a detailed specification of the structure of call graph files, see
+callGraph.xsd, the XML schema they conform to. This document describes
+call graph files version 2.
+
+The general structure of a call graph file is something like this:
+
+  callGraph
+    version
+    modules
+      module
+      ...
+    functions
+      function
+      ...
+    maxCallChains
+      maxCallChain
+      ...
+
+The version property of the call graph is the version of the format
+used. This document describes version 2.
+
+Modules can have the following properties:
+
+  id       The module's index. References to modules are by their ids.
+
+  name     For modules from an object file, the name of the file
+           containing the module, usually in the form of an absolute
+           path.
+           For library modules, the name of the archive member.
+
+  library  Present only for library modules. The name of the library.
+
+
+Functions can have the following properties:
+
+  id       The function's index. References to functions are by their
+           ids.
+
+  name     The function's name.
+
+  localIn  Present only for functions that are local to a module, in
+           which case it is the id of the relevant module.
+
+  primary  When there are several functions with the same address, all
+           but one have a "primary" property with the id of the
+           primary function at that address, and no further properties
+           beyond this point.
+
+  root     Present if a function is a call graph root. Its content is
+           the call graph root category, if it has one.
+
+  address  The function's address.
+
+  nest     For a recursive function, the index of the recursion nest it
+           is a member of.
+
+  stack    If present, indicates the maximum size of a function's stack
+           frame at some point other than at a function call. The name
+           attribute specifies the stack if there is more than one.
+
+  indirect Present only if a function performs any indirect
+           calls. Each occurrence represents one indirect call, and
+           can, in turn, have the following sub-properties:
+
+           stack    If present, it is the size of the calling
+                    function's frame at the point of the call. 
+                    The name attribute specifies the stack if 
+                    there are is than one.
+
+           viaParam If present, its value is the index of a function
+                    pointer parameter, and the indirect call is via
+                    that function pointer.
+
+           arg      Each occurrence represents one function pointer
+                    argument passed in to the call. Can have the
+                    following sub-properties:
+
+                    index      The index of the argument being
+                               described.
+
+                    function   The address of the function with this id
+                               is passed in.
+
+                    paramIndex The parameter with this index from the
+                               calling function is passed in.
+
+  call     Each occurrence represents a direct call, and can, in turn,
+           have the following sub-properties:
+
+           callee   The id of the called function.
+
+           stack    See "indirect".
+
+           arg      See "indirect".
+
+  callee   Its value is the id of the called function. It is a short
+           form of the "call" property, with no "stack" or "arg"
+           sub-properties.
+
+The "viaParam" and "argInfo" properties are used in the system library
+in order to allow stack usage analysis to produce accurate results
+even in the face of some limited forms of indirect calls.
+
+Each maxCallChain item represents a call chain with maximum stack
+depth from a call graph root. They can have the following properties:
+
+  top      The id of the function at the top of the call chain.
+
+  stack    The total stack size of the call chain. The name 
+           attribute specifies the stack if there is more 
+           than one.
+
+  entry    One for each entry in the call chain. Each such entry can
+           have the following properties:
+
+           function      The id of a function.
+
+           stack         The size of the frame in that function. Not
+                         present when this information is not
+                         available.
+
+  cycles   Each appearance of this property represents a number of
+           cycles in a recursion nest. Each entry can have the
+           following properties:
+
+           nest          The index of the recursion nest.
+
+           count         The number of cycles.
+
+           stack         The total max stack usage in all the cycles.

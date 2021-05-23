@@ -1,0 +1,1279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemalocation="http://www.w3.org/MarkUp/SCHEMA/xhtml11.xsd"
+      xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type"
+	  content="application/xhtml+xml; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <link type="text/css" rel="stylesheet" media="all" href="style/ewic.css" />
+
+    <title>IAR Information Center for Arm</title>
+  </head>
+  <body>
+    <div id="titlebanner">
+      <div>
+	<h1>IAR Information Center for Arm</h1>
+	<p class="subtitle">
+	  Release notes for the IAR C-SPY I-jet driver version 8.40.2</p>
+      </div>
+    </div>
+    <div class="breadcrumb">
+      <a href="index.ENU.html">IAR Information Center for Arm</a> | 
+      <a href="release_notes.ENU.html">Release notes</a> | 
+      <a href="components.ENU.html">Components</a> |
+      Release notes for the IAR C-SPY I-jet driver
+    </div>
+    <div class="mainblock">
+      <ul>
+        <li><a href="#important">Important information</a> </li>
+        <li><a href="#features">New features</a> </li>
+        <li><a href="#problems">Known problems</a> </li>
+        <li><a href="#pcorr">Program corrections</a> </li>
+        <li><a href="#manuals">User guide corrections</a> </li>
+        <li><a href="#misc">Miscellaneous</a> </li>
+        <li><a href="#history">Release history</a> </li>
+      </ul>
+      <!--======================================================================-->
+      <!-- IMPORTANT INFORMATION                                                -->
+      <!--======================================================================-->
+      <h3>
+        <a name="important" id="important"></a>Important information
+      </h3>
+<ul>
+  <li><p>
+    The JTAGjet-Trace support is deprecated starting with EWARM 8.40 and will be removed in a future release.<br>
+  </p></li>
+  <li>
+    <p>
+      To enable PTM Trace select <b>On-Chip (ETB/MTB)</b> 
+      in <b>Project&gt;Options&gt;Debugger&gt;I-jet/JTAGjet&gt;Trace</b><br>
+      <br>
+      
+      If PTM could not be automatically detected, add the option 
+      <code>--jet_sigprobe_opt=trace(ETB,baseptm=&lt;base PTM address + access port number&gt;,
+      baseetb=&lt;base ETB address + access port number&gt;)</code> 
+      in <b>Project&gt;Options&gt;Debugger&gt;Extra Options</b><br><br>
+      
+      Example where port number is <code>1</code>, Base PTM address is <code>0x8009D000</code> 
+      and base ETB address is <code>0x80001000</code><br> 
+      <code>--jet_sigprobe_opt=trace(ETB,baseptm=0x8009D001,baseetb=0x80001001)</code>
+    </p>
+  </li>
+  <li>
+    <p>
+      <a href="./jet-fw.ENU.html">Information about I-jet, JTAGjet-Trace, and JTAGjet firmware versions</a>.
+    </p>
+  </li>
+
+<li>
+  <p>
+    Unlock utilities for EFM32, Kinetis, and LM3S devices are inluded in <code>$EW_DIR$\arm\bin\jet\bin</code>
+    as Windows batch files. They are run without parameters. Please make certain that the correct utility is
+    used, according to the available debugger interface (JTAG or SWD).
+  </p>
+</li>
+
+<li>
+  <p>
+    Unlock utilities for STM32 devices are provided as C-SPY macros found in the Macro Quicklaunch window.
+  </p>
+</li>
+
+<li>
+  <p>
+    To debug a multi-core system using multiple instances of the C-SPY debugger that accesses the same
+    I-jet debug probe, add the option<br>
+    <code>--jet_sigprobe_opt=shared</code> in <b>Project&gt;Options&gt;Debugger&gt;Extra Options</b>.
+    Note, this must be done in all Embedded Workbench projects.
+  </p>
+</li>
+
+<li>
+  <p>
+      To trace a core with ETM Trace other than core 0 in a multicore SMP system, add the option <br>
+      <code>--trace_from_core=&lt;core number&gt;</code> in <b>Project&gt;Options&gt;Debugger&gt;Extra Options</b>.<br>
+      <br>
+      For Xilinx Zynq 7000 devices also add the option <code>--macro_param trace_core=&lt;core number&gt;</code> in <b>Project&gt;Options&gt;Debugger&gt;Extra Options</b>.
+  </p>
+</li>
+</ul>
+      <!--======================================================================-->
+      <!-- NEW FEATURES                                                         -->
+      <!--======================================================================-->
+      <h3>
+        <a name="features" id="features"></a>New features
+      </h3>
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+      <!--======================================================================-->
+      <!-- Known Problems-->
+      <!--======================================================================-->
+      <h3>
+        <a name="problems" id="problems"></a>Known Problems
+      </h3>
+<ul>
+
+<li>
+  <p>
+    If two images are loaded, and both contains the <code>__vector_table</code> symbol, then
+    a confusing debug log is generated.<br>
+    [EW23506]
+  </p>
+</li>
+
+<li>
+  <p>
+    Some devices suffer from I-jet and/or JTAGJet-Trace interoperability problems.<br>
+    [EW23746,EW23785,EW23882]
+  </p>
+</li>
+
+<li>
+  <p>
+    The Timeline and Event Log windows sometimes show incorrect time.<br>
+    [EW23673]
+  </p>
+</li>
+
+<li>
+  <p>
+    When debugging with I-jet and selecting "PC Samples" only, "Power (I)" packets will be displayed in the
+    SWO Trace Window as well.<br>
+    [EW23684]
+  </p>
+</li>
+
+<li>
+  <p>
+    I-jet has problems to debug applications that spend long periods in sleep mode on some devices,
+    for instance on Fujitsu MB9BF506R and Toshiba TMPM369.<br>
+    [EW24061]
+  </p>
+</li>
+
+<li>
+  <p>
+    ETM data from JTAGjet-Trace might in some cases have missing branch instructions when used with
+    an ARM Cortex device. Near breakpoints, duplicated instructions may also appear in the trace data.<br>
+    [EW24112]
+  </p>
+</li>
+
+<li>
+  <p>
+    Trace clock calibration might fail (due to silicon errata in some EFM32 devices) when using I-jet Trace,
+    resulting in incorrect trace data.<br>
+    [EW25172]
+  </p>
+</li>
+
+<li>
+  <p>
+    Setting breakpoints might fail when debugging some multicore systems with one or more disabled cores.<br>
+    [EW25468]
+  </p>
+</li>
+
+<li>
+  <p>
+    In some cases, for instance when <b>Force PC sampling</b> is checked, power logging might stop working.<br>
+    [EW25521, EW25652, EW25694]
+  </p>
+</li>
+
+  <li>
+    <p>
+      JTAGjet and JTAGjet-Trace does not support SWO. This is a hardware limitation and can not be fixed.<br>
+	  The I-jet and I-jet Trace debug probes support SWO.
+    </p>
+  </li>
+
+  <li>
+    Current limitations in the MTB (Micro Trace Buffer) implementation</b><br>
+    <ul>
+      <li><p>
+        The Trace Start/Stop/Filter breakpoints are not supported in MTB.
+      </p></li>
+
+      <li><p>
+        The timestamps for MTB trace records come from a simple counter and have 
+        no relation to CPU/clock cycles. Any conversion between cycles and time 
+        for MTB trace data will be misleading. The Call Stack graph in the 
+        <b>Timeline</b> window, for example, should not be used to measure time intervals.
+      </p></li>
+
+      <li><p>
+        The MTB trace data sequence might not present discontinuities correctly. 
+        Lines in the <b>ETM Trace</b> window (also used for MTB trace) might be marked  
+        as discontinuous, i.e. red, even though the trace sequence is contiguous. 
+        Conversely, trace data from a buffer that has overflowed will not always 
+        be marked as discontinuous. This is mostly a cosmetic problem, except for 
+        the Call Stack graph in the <b>Timeline</b> window, which only displays the 
+        latest continuous sequence of trace data.
+      </p></li>
+
+      <li><p>
+        The <b>ETM Trace</b> window (and related windows) are used for all variants of 
+        full instruction trace, ETM, ETB, and MTB.
+      </p></li>
+    </ul>
+  </li>
+
+  <li>
+    <p>
+      Updates of the <b>Function Trace</b> window can be slow when the application is executing loops without any function calls.
+      Applications that spend most time in a tight loop waiting for events fall into that category.
+    </p>
+  </li>
+
+  <li><p>
+    Known limitations in multi core debugging:<br>
+	When using "Run/Step/Stop affect all cores" in AMP debugging, using anything else than 
+    vanilla SW/HW breakpoints (such as conditions, skip count, terminal IO) is not guaranteed 
+    to work and can make the debugger miss breakpoints.
+  </p></li>
+
+  <li><p>
+    Known issues in multi core debugging:<br>
+    Using "Run/Step/Stop affect all cores" in SMP debugging with one or more cores are 
+    disabled will cause the debugger to hang. 
+  </p></li>
+
+</ul>
+      <!--======================================================================-->
+      <!-- Program Corrections                                                  -->
+      <!--======================================================================-->
+      <h3>
+        <a name="pcorr" id="pcorr"></a>Program Corrections
+      </h3>
+<ul>
+  <li><p>
+    SigFlashCmd.exe is missing.<br>
+    [EW26507]
+  </p></li>
+
+  <li><p>
+    In EWARM 8.11.3:<br>
+    I-Jet is not able to reset RM4X devices.<br>
+    [EW26650]
+  </p></li>
+</ul>
+      <!--======================================================================-->
+      <!-- USER GUIDE CORRECTIONS                                               -->
+      <!--======================================================================-->
+      <h3>
+        <a name="manuals" id="manuals"></a>User guide corrections
+      </h3>
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+      <!--======================================================================-->
+      <!-- MISCELLANEOUS                                                        -->
+      <!--======================================================================-->
+      <h3>
+        <a name="misc" id="misc"></a>Miscellaneous
+      </h3>
+<ul>
+  <li>None.</li>
+</ul>
+      <!--======================================================================-->
+      <!-- RELEASE HISTORY                                                      -->
+      <!--======================================================================-->
+      <h3>
+        <a name="history" id="history"></a>Release history
+      </h3>
+  <h4>V8.22 2018-01-22</h4>
+  <b>Program corrections</b>
+ 
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V8.20 2017-10-16</h4>
+  <b>Program corrections</b>
+ 
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V8.11 2017-04-11</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+  <li><p>
+    SigFlashCmd.exe is missing.<br>
+    [EW26507]
+  </p></li>
+
+  <li><p>
+    In EWARM 8.11.3:<br>
+    I-Jet is not able to reset RM4X devices.<br>
+    [EW26650]
+  </p></li>
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V8.10 2017-03-10</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V7.80 2016-10-17</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+  <li>
+    In EWARM 7.80.3:<br>
+    I-Jet could not connect to Infineon TLE9867.<br>
+    [EW26321]
+  </li>
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V7.70 2016-06-17</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+  <li>
+    <p>
+      I-jet and I-jet Trace now have trace support for single core tracing of Vybrid devices.<br>
+      [EW24813]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+      SWO/ITM is now supported on Toshiba TMPR454 with I-jet and I-jet Trace.<br>
+      [EW24828]
+    </p>
+  </li>
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V7.60 2015-03-31</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+  <li>
+    <p>
+      With I-jet Trace, Flat time is sometimes longer than Accumulated time.<br>
+      [EW26010]
+    </p>
+  </li>
+</ul>
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li><p><b>Flash breakpoints</b><br />
+      Flash breakpoints adds unlimited number of breakpoints for selected Cortex-M devices when using 
+      the I-jet debug probe. A flash breakpoint must be set explicitly from the context menu. To find 
+      out if flash breakpoints are supported for your device, see the semiconductor vendor specific 
+      device lists below.
+  </p></li>
+  <li><p><b>cJTAG support</b><br />
+      The IAR C-SPY Debugger now supports the cJTAG interface on the TI connectivity devices 
+      CC13xx/2538/26xx when using the I-jet debug probe.
+  </p></li>
+</ul>
+ 
+ 
+  <h4>V7.50 2015-11-10</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+  <li>
+    Corrected problem where I-jet would sometimes fail to connect to STM32 cores 
+    that were in sleep mode and never woke up.<br>
+    [EW25783]
+  </li>
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V7.40 2015-02-19</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+
+<li>
+  <p>
+    Function trace is now processed correctly when using I-jet Trace.
+    Note, this requires update of I-jet Trace firmware to at least version 3.2.
+    Read more in <a href="./jet-fw.ENU.html">Information about I-jet, JTAGjet-Trace, and JTAGjet firmware versions</a>.<br>
+    [EW25140, EW25141]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.40.2:<br>
+    ETM/ETB trace support for I-jet/JTAGJet-trace added for Toshiba TMPR454.<br>
+    [EW24829]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.40.2:<br>
+    When debugging devices with a faulty ROM table, a connection error was reported
+    instead of trying to connect.<br>
+    [EW25261]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.40.3:<br>
+    The private peripheral bus memory range and its registers are shown with incorrect byte order
+    for Cortex-M devices with BE32 byte order when using I-jet (for example TMS470M06607).<br>
+    [EW24604]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.40.3:<br>
+    I-jet Trace revisions A and B do not have external pull-up on the <code>nRESET</code> line.
+    When connecting to a device where the <code>nRESET</code> line is not connected, a 100K
+    pull-up resistor should be used on the probe pin, connected to Vref.
+    This external pull-up is present in I-jet Trace revision C.<br>
+    [EW25203, EW25420]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.40.3:<br>
+    Connecting to a Kinetis L may sometimes fail when using I-jet.<br>
+    [EW25293]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.40.3:<br>
+    The I-scope detection and initialization mechanism is now working correctly.<br>
+    [EW25376]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.40.3:<br>
+    MPU_CTRL is now handled correctly.<br>
+    [EW25436]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.40.3:<br>
+    DAP read commands did not return a value, leading to type mismatch if used.<br>
+    [EW25469]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.40.5:<br>
+    ETM trace now works with JTAGjet-Trace.<br>
+    [EW24267]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.40.5:<br>
+    I-jet could fail to set up stimulus port permissions properly on some Cortex-M7
+    devices causing ITM to fail. This affected <code>stdio/stderr</code> over SWO.<br>
+    [EW25364]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.40.5:<br>
+    An encoding error caused <code>MVFR0</code> and <code>MVFR1</code> to be swapped during a register access.<br>
+    [EW25522]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.40.5:<br>
+    The C-Spy I-jet/JTAGjet driver can now find the address of the <code>__vector_table</code> symbol when
+    it is a <code>struct</code>.<br>
+    [EW25561]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.40.5:<br>
+    Entering wait mode and backup mode on a SAM4S device (and models with the same sleep modes)
+    will no longer yield fatal errors, and I-scope measurements will not stop while in these
+    deep sleep modes.<br>
+    [EW25581]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.40.5:<br>
+    Software breakpoints are verified and a message is now given when memory contents are damaged while
+    trying to set a software breakpoint. To avoid this you should use hardware breakpoints instead.<br>
+    [EW25586]
+  </p>
+</li>
+
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V7.30 2014-09-24</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+
+<li>
+  <p>
+    Unlocking of Kinetis L and E devices has been added, as a C-SPY macro.<br>
+    [EW24397]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.30.3:<br>
+    Power samples are no longer dropped on devices without SWO/TPIU when
+    debugging with I-jet/I-scope.<br>
+    [EW24959]
+  </p>
+</li>
+
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V7.20 2014-05-19</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+
+<li>
+  <p>
+    Power logging now survives a reset.<br>
+    [EW24554]
+  </p>
+</li>
+
+<li>
+  <p>
+    SWD mode could not be selected for Cortex A/R.<br>
+    [EW24630]
+  </p>
+</li>
+
+<li>
+  <p>
+    Multicore slave probe configuration is not inherited from the master configuration.<br>
+    [EW24684]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.20.2:<br>
+    A problem that made it impossible to debug an AMP multicore application has been corrected.<br>
+    [EW24743]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.20.2:<br>
+    The debugger no longer terminates unexpectedly when trying to initialize ETM
+    trace with a 1 bit port width. (The only port width supported in JTAGjet Trace is 4 bits.)<br>
+    [EW24779]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.20.5:<br>
+    The number of HW breakpoints is no longer limited to six for Cortex-R4.<br>
+    [EW24638]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.20.5:<br>
+    An intermittent problem when debugging with JTAGjet, related to a newer version of Windows USB drivers, has been fixed.<br>
+    [EW24750]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.20.5:<br>
+    The SWO interrupt log is now correctly handled on devices with slow SWO clock.<br>
+    [EW24840]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.20.5:<br>
+    Debugger reads of memory on Cortex-A when cache is enabled now shows the correct values.<br>
+    [EW24857, EW24780, EW24796]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.20.5:<br>
+    Software breakpoints are restored at <code>main()</code> in CM408F example project Button_LED_GPIO.<br>
+    [EW24866]
+  </p>
+</li>
+
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V7.10 2014-02-21</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+
+<li>
+  <p>
+    A data breakpoint with <b>Match Data</b> on Cortex-M0 might cause the debugger to terminate unexpectedly, and might also make the
+    EWARM project file corrupt.<br>
+    [EW24307]
+  </p>
+</li>
+
+<li>
+  <p>
+    When debugging an ARMv7-R/A core, and stepping on a branch to self instruction, the C-SPY driver reports
+    <code>Unknown stop condition or CPU is running</code>.<br>
+    [EW24419]
+  </p>
+</li>
+
+<li>
+  <p>
+    C-SPY is now able to read the <code>FPSCR</code> register on Cortex-M with FPU extension.<br>
+    [EW24496]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.10.3:<br>
+    The option <b>Restore software breakpoints at</b> did not work as expected after reset. It has now been corrected.<br>
+    [EW24498]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.10.3:<br>
+    I-jet correctly disables cache on Vybrid on a software reset.<br>
+    [EW24562]
+  </p>
+</li>
+
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V6.70 2013-10-29</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+
+<li>
+  <p>
+    The I-jet in-circuit debugging probe now operates more smoothly when the host system is a one-core Windows XP computer.<br>
+    Note, make sure to update I-jet firmware to 4.2 or later. Read more in
+    <a href="./jet-fw.ENU.html">Information about I-jet, JTAGjet-Trace, and JTAGjet firmware versions</a><br>
+    [EW23848, EW24016]
+  </p>
+</li>
+
+<li>
+  <p>
+    The C-SPY driver now reports the correct CPUID in the Debug Log window.<br>
+    [EW24199]
+  </p>
+</li>
+
+<li>
+  <p>
+    The C-SPY driver now access CP15 registers correctly when debugging a Faraday FA606TE.<br>
+    [EW24213]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.70.2:<br>
+    Setting a breakpoint directly on a vector in the interrupt vector table no longer disables the interrupt.<br>
+    [EW24230]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.70.2:<br>
+    Custom reset strategies are now available for NXP LCP23xx and LPC24xx devices.<br>
+    [EW24253]
+  </p>
+</li>
+
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V6.60 2013-06-27</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+
+<li>
+  <p>
+    ETM trace is now working when debugging a TMDXRM48HDK with JTAGjet-Trace.<br>
+    [EW23843]
+  </p>
+</li>
+
+<li>
+  <p>
+    Terminating a debug session while the Terminal I/O window still prints, no longer causes the debugger to crash.<br>
+    [EW23893]
+  </p>
+</li>
+
+<li>
+  <p>
+    I-Jet can now download to flash on an ADuC7026. If this problem persists,
+    open the <b>I-jet/JTAGjet>Memory Configuration</b> dialog box, in the <b>Used Ranges</b>
+    pane, define the <b>Cache Type</b> of memory in range 0-0xF7FF as <b>ROM/Flash</b>.<br>
+    [EW23932]
+  </p>
+</li>
+
+<li>
+  <p>
+    MTB trace now works also when power logging is active.<br>
+    [EW23951]
+  </p>
+</li>
+
+<li>
+  <p>
+    The unlock scripts now run without doing a license check.<br>
+    [EW23955]
+  </p>
+</li>
+
+<li>
+  <p>
+    Debug mechanisms are now kept enabled in sleep mode on STM32 devices.
+    This is done through STM32-specific C-SPY macros.<br>
+    [EW23998, EW24011, EW24021]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.60.2:<br>
+    I-jet now supports ETB trace when debugging on Cortex-M4.<br>
+    [EW23748]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.60.2:<br>
+    Improved wording and nature of a warning message.<br>
+    [EW24063]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.60.2:<br>
+    Stability when receiving ETM trace data from a Kinetis K60 is improved.<br>
+    [EW24073]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.60.2:<br>
+    EmuDiag can now update the firmware in JTAGjet-Trace.<br>
+    [EW24082]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.60.2:<br>
+    Using BE8 big-endian mode and I-jet no longer gets the application to malfunction when
+    hitting a software breakpoint.<br>
+    [EW24092]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.60.2:<br>
+    The unlock scripts, <code>Kinetis_unlock_jtag.bat</code> and <code>Kinetis_unlock_swd.bat</code> now work on
+    Freescale Kinetis devices.<br>
+    [EW24125]
+  </p>
+</li>
+
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V6.50 2012-11-10</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+
+<li>
+  <p>
+    The C-SPY driver for I-jet is now enhanced to serve JTAGjet as well.<br>
+    [EW23152]
+  </p>
+</li>
+
+<li>
+  <p>
+    Debugging on Freescale i.MX25 is now possible without workaround.<br>
+    [EW23364]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.50.3:<br>
+    It is now possible to use CSpyBat with the I-jet/JTAGjet debugger driver.<br>
+    [EW23504]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.50.3:<br>
+    The intrinsic function <code>__WFI</code> is now handled correctly in I-jet.<br>
+    [EW23533]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.50.3:<br>
+    If you set up I-jet not to supply the target board with power, power delivery to the target
+    board will now stop when the debug session starts.<br>
+    [EW23633]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.50.3:<br>
+    When SWO interrupt information packets have to be dropped because of excessive amounts of data,
+    this is now handled gracefully.<br>
+    [EW23675]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.50.3:<br>
+    Pressing Reset just when the CPU has started autonomously no longer causes a deadlock.<br>
+    [EW23693]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.50.3:<br>
+    Interrupts are now logged and presented correctly in C-SPY windows.
+    (However, the interrupt specifications in the Freescale SVD files are not correct, so the naming of such
+    interrupts might be misleading. See EW23788 for more information.)<br>
+    [EW23694]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.50.3:<br>
+    Running EmuDiag.exe no longer requires administrator privileges.<br>
+    [EW23695]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.50.5:<br>
+    It is now possible to download and verify with I-jet on LPC2103.
+    Note however that it might be necessary to add an execUserPreload
+    macro to set MEMMAP to the proper value, 1 for a flash configuration
+    and 2 for a RAM configuration.<br>
+    [EW23652]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.50.5:<br>
+    It is now possible to set a breakpoint when running on a Freescale Kinetis K60.<br>
+    [EW23692]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.50.5:<br>
+    The example projects for Spear3xx are now adapted to I-jet/JTAGjet.<br>
+    [EW23794]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.50.5:<br>
+    It is now possible to debug AM335x with I-jet and JTAGjet.<br>
+    [EW23806]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.50.5:<br>
+    JTAGjet-trace now handles trace data (ETM) correctly when debugging on STM32F407ZG-SK.<br>
+    [EW23899]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.50.6:<br>
+    <b>Match data</b> for data breakpoints is no longer ignored by I-jet.<br>
+    [EW23505]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.50.6:<br>
+    The C-SPY driver for I-jet now handles SWO on MB9AFB44N correctly.<br>
+    [EW23595]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.50.6:<br>
+    Data log is now working when debugging on MB9BF506R.<br>
+    [EW23708]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.50.6:<br>
+    The C-SPY driver for I-jet now handles FPU registers correctly.<br>
+    [EW23778]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.50.6:<br>
+    C-SPY now behaves robustly when the ETM signal from the device is unstable.<br>
+    [EW23786]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.50.6:<br>
+    The last ITM event log before execution is stopped at a breakpoint, is no longer missing.<br>
+    [EW23832]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.50.6:<br>
+    Power sampling now works for devices without SWO.<br>
+    [EW23876]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.50.6:<br>
+    ITM logging is now intact, also when Power sampling is not active.<br>
+    [EW23879]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.50.6:<br>
+    C-SPY can now download an image to a K60 device.<br>
+    [EW23931]
+  </p>
+</li>
+
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+
+<li>
+  <p>
+    In EWARM 6.50.5:<br>
+    Unlock utilities for EFM32, Kinetis and LM3S devices are inluded in <code>$EW_DIR$\arm\bin\jet\bin</code>
+    as Windows batch files. They are run without parameters. Please make certain that the correct utility is
+    used, according to the available debugger interface (JTAG or SWD).
+  </p>
+</li>
+
+  <li>
+    <b>Support for MTB (Micro Trace Buffer)</b><br>
+    The MTB trace mechanism gives access to instruction trace on devices based on the Cortex-M0+ core.
+  </li>
+
+</ul>
+ 
+ 
+  <h4>V6.40 2012-06-05</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+
+  <li><p>
+    THUMB breakpoints that end up in the same 32-bit word are now handled correctly by C-SPY.<br>
+    [EW23243]
+  </p></li>
+
+  <li><p>
+    When debugging on an AM1808 device with I-jet you no longer get warnings about misplaced SFRs.<br>
+    [EW23289]
+  </p></li>
+
+<li>
+  <p>
+    In EWARM 6.40.5:<br>
+    I-jet now works with TMS470R1B1M.<br>
+    [EW23310]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.40.5:<br>
+    C-SPY no longer terminates unexpectedly when closing a debug session.<br>
+    [EW23370, EW23531]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.40.5:<br>
+    I-jet now works with LPC2138. Note, reset strategy must be set to "Hardware" or "Software".<br>
+    [EW23427, EW23442, EW23443]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.40.5:<br>
+    Turning on "Power Sampling" in the Function Profiler window could sometimes cause a crash, e.g. if Profiling was turned on already when launching a debug session, but Power Sampling was turned on later. This has been fixed.<br>
+    [EW23509]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.40.5:<br>
+    Creating or editing configurations in the Memory Configuration dialog box when running a session in Japanese could cause IAR Embedded Workbench to exit unexpectedly. This has been corrected.<br>
+    [EW23513]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.40.5:<br>
+    I-jet now works with LPC2378. Note, reset strategy must be set to "Hardware" or "Software" and JTAG/SWD speed must be set to "Adaptive".<br>
+    [EW23515]
+  </p>
+</li>
+
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V6.30 2011-10-22</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+    <li>None.</li>
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+    <li>None.</li>
+</ul>
+ 
+ 
+<ul>
+    <li>None.</li>
+</ul>
+    </div>
+  </body>
+</html>

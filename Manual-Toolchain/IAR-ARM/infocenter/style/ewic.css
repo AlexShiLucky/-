@@ -1,0 +1,354 @@
+/* fcb913 Title banner
+   e5a303 Dark
+   ffcb53 Light
+*/
+
+* {
+    font-family: Arial, Helvetica, Univers, sans-serif
+}
+
+html {
+    position:relative;
+}
+
+a {
+    color: #221F1F;
+}
+
+a:hover { 
+    color: #2ECF6B;
+} 
+
+b,strong {
+    color: #515151;
+}
+
+
+tt {
+    font-family: monospace;
+}
+
+body {
+    min-height: 1200px;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 0.9em;
+}
+
+
+div#titlebanner {
+    height: 200px;
+    min-width: 860px;
+    background: #332F2C;
+    background: linear-gradient(to right,#332F2C,#000000);
+    margin: 0;
+}
+
+    
+div#titlebanner div {
+    padding-left: 40px;
+    padding-top: 40px;
+    color: #332F2C;
+    float:left; position:relative; margin-right:-598px;
+}
+
+div#titlebanner h1 {
+    margin: 0;
+    color: #FFE000;
+    font-size: 44pt;
+}
+
+div#titlebanner p {
+    margin-top: 5px;
+    width: 800px;
+    font-size: 14pt;
+    color: white;
+    
+}
+
+div.breadcrumb {
+    background: #F5F5F5;
+    color: #444;
+    padding: 8px;
+    padding-left: 40px;
+    font-size: 10pt;
+    border-style: none;
+    border-bottom-style: solid;
+    
+    border-width: 1px;
+    border-color: #E6E6E6;
+}
+
+div.breadcrumb a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+table#buttonarray {
+    float: left;
+    background-color: #FCF8F2;
+    border-collapse: collapse;
+}
+
+table#buttonarray tr {
+}
+
+table#buttonarray td {
+/*    width: 130px;
+    min-width: 130px;
+    height: 150px;*/
+    vertical-align: top;
+}
+
+table#buttonarray td.buttoncell:hover {
+    background-color: #FFF;
+}
+
+table#buttonarray td.buttoncell {
+    border-width: 1px;
+    border-color: #E6E6E6;
+    border-style: solid;
+}
+
+table#buttonarray td img.button {
+    margin: auto;
+    display: block;
+    width: 200px;
+}
+
+table#buttonarray td div.buttoncontainer {
+    align: center;
+/*    width: 68px;
+    height: 69px;
+    margin: 0;
+    margin-left: 30px;
+    margin-top: -2px;
+*/}
+
+table#buttonarray td div.textcontainer {
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 1.2em;
+    color: #211F1F;
+  }
+
+h3 {
+    font-weight: bold;
+    font-size: 14pt;
+    color: #211F1F;
+    margin: 10px;
+    margin-left:0;
+    margin-top: 20px;
+}
+.mainblock h3 {
+    font-size: 1.00em;
+}
+
+h4 {
+    font-weight: 700;
+    font-size: 1.0em;
+    color: #515151;
+    padding-bottom: 1px;
+    margin-bottom: 1px;
+}
+
+p {
+    padding-top: 2px;
+    margin-top: 2px;
+    color: #211F1F;
+    line-height:1.4;
+}
+
+p.lead {
+    font-weight: bold;
+    color: #313131;
+}
+
+div.distance {
+    height: 15px;
+}
+
+hr {
+  height: .1em;
+  color: #E6E6E6;
+  background-color: transparent;
+  border: 0;
+  border-top: 1px solid #E6E6E6;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left:-40px;
+  margin-right:-20px;
+}
+
+div#titlebanner_small {
+    height: 24px;
+    min-width: 600px;
+    background-color: #9B9B9B;
+    margin: 0;
+    padding: 8px;
+    color: white;
+}
+
+div#titlebanner_small h2 {
+    color: white;
+    margin-top: 0;
+    margin-left: 22px;
+}
+
+img.button {
+  border: 0;
+}
+
+div.rightcol {
+    float: right;
+    margin: 0;
+    margin-left: 32px;
+    margin-bottom: 32px;
+    padding: 0;
+    width: 300px;
+    min-height:800px;
+    position:absolute;
+    right: 0px;
+    height:100%; 
+    background-color:#FCF8F2;
+    border: 1px solid #E6E6E6;
+}
+
+
+div.rightcol a {
+    text-decoration: none;
+}
+
+div.rightcol a:hover {
+    color: #211F1F;
+}
+div.rightcol table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+div.rightcol table tr:hover {
+    background-color: white;
+    color: #211F1F;
+}
+    
+div.rightcol table tr {
+    vertical-align: middle;
+    
+    
+}
+div.rightcol table tr:hover {
+    background-color: #FFF;
+    
+    
+}
+
+div.rightcol table tr.selected {
+    background-color:#FFF;
+}
+
+
+div.rightcol table td {
+    border-width: 1px;
+    border-color: #E6E6E6;
+    border-style: solid;
+    border-left: none;
+    border-right: none;
+    
+}
+
+
+
+div.rightcol table tr td h3{
+    margin: 0;
+}
+
+div.ppcol { /* in top level example page */
+    float: right;
+    margin-left: 32px;
+    padding: 24px;
+    padding-left: 24px;
+    padding-right: 0;
+    margin-right: 0;
+    width: 300px;
+    border-left: 1px dashed #AAA;
+}
+
+div.ppcol table tr.link1 {
+    height: 82px;
+}
+
+div.mainblock {
+    margin-left: 40px;
+    margin-top: 40px;
+    margin-right: 320px;
+}
+
+a img {
+    display: inline;
+    border: 0;
+    padding: 0;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+li.nobullet {
+    list-style: none;
+    text-indent: -25px;
+    padding-left: 25px;
+    margin-left: -20px;
+}
+
+code {
+
+    font-family: Courier, "Courier New", monospace;
+}
+
+
+table.guides_ul tr {
+    padding-bottom: 10px; 
+}
+
+
+table.example_ul th {
+    vertical-align: top;
+    padding: 5px 10px 5px 10px;
+    text-align: left;
+    background-color: #e0e0e0;
+}
+
+table.example_ul td.image {
+    text-align: center; /* center the buttons in the table cell */
+}
+
+table.example_ul td {
+    padding: 10px;
+    background-color: #EFEFEF;
+}
+
+table.example_ul td.name, table.example_ul th.name {
+/*    padding-left: 20px;*/
+    width: 220px;
+}
+
+
+table.userguides td {
+/*    padding-top: 12px; */
+}
+
+
+table.userguides td.text {
+    padding-left: 8px;
+ }
+
+table.hardware  {
+    margin: 10px
+}

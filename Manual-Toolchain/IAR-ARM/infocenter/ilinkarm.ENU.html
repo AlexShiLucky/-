@@ -1,0 +1,2076 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemalocation="http://www.w3.org/MarkUp/SCHEMA/xhtml11.xsd"
+      xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" 
+	  content="application/xhtml+xml; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <link type="text/css" rel="stylesheet" media="all" href="style/ewic.css" />
+    
+    <title>IAR Information Center for Arm</title>
+  </head>
+  <body>
+    <div id="titlebanner">
+      <div>
+	<h1>IAR Information Center for Arm</h1>
+	
+        <p class="subtitle">Release notes for the IAR ILINK linker for 
+	  Arm version 8.40.2</p>
+      </div>
+    </div>
+    <div class="breadcrumb">
+      <a href="index.ENU.html">IAR Information Center for Arm</a> | 
+      <a href="release_notes.ENU.html">Release notes</a> | 
+      <a href="components.ENU.html">Components</a> | 
+      Release notes for the IAR ILINK linker for Arm
+    </div>
+    <div class="mainblock">
+      <ul>
+        <li><a href="#important">Important information</a> </li>
+        <li><a href="#features">New features</a> </li>
+        <li><a href="#problems">Known problems</a> </li>
+        <li><a href="#pcorr">Program corrections</a> </li>
+        <li><a href="#manuals">User guide corrections</a> </li>
+        <li><a href="#misc">Miscellaneous</a> </li>
+        <li><a href="#history">Release history</a> </li>
+      </ul>
+      <!--================================================================-->
+      <!-- IMPORTANT INFORMATION                                          -->
+      <!--================================================================-->
+      <h3>
+        <a name="important" id="important"></a>Important information
+      </h3>
+<ul>
+  <li>
+    <p>
+      New in 7.50.1: <br>
+
+      The <code>bwt</code> and <code>lzw</code> packing methods have been removed. Linker config files containing 
+      explicit references to these will result in a warning, and use of <code>lz77</code> instead.<br><br>
+
+      The linker has been changed so that it normally generates calls to smaller unpacking 
+      routines for compressed initializers, routines that can only handle a single source and 
+      destination range at a time. See the documentation for the <copy>initialize by copy</copy> 
+      linker configuration directive for more information. <br><br>
+
+      The linker now emits an error (Error[Lp049] / Error[Lp048]) when some initialization has been requested, but the 
+      program contains no reference to the initialization routine, or to the init table.<br>
+
+      You can control which sections are automatically initialized at program startup. 
+      Sections with no content (like <code>.bss</code>) are initialized to zero unless matching a 
+      section selection pattern in a <code>do not initialize</code> directive. Sections with content 
+      (like <code>.data</code>) are initialized only if matching a section selection pattern in an 
+      <code>initialize by copy</code> directive. 
+     </p>
+  </li>
+    <li>
+    <p>
+      New in 7.30.3: <br />
+      Support for the VFP unit on Cortex-M7, both the single-precision variant and the double-precision variant<br><br>
+
+      Prebuilt libraries for math functions, built for Cortex-M with a VFP unit, have new names:
+      <table>
+        <tr><td width="220" valign="top"><u>Compiler configuration</u></td>        <td width="110" valign="top"><u>7.30.2 and earlier</u></td> <td valign="top"><u>7.30.3 and later</u></td></tr>
+        <tr><td valign="top">Single-precision VFP, big-endian:</td>    <td valign="top"><code>m7M_tbv.a</code></td>    <td valign="top"><code>m7M_tbs.a</code> - note that the same library is used for Cortex-M4 and Cortex-M7</td></tr>
+        <tr><td valign="top">Single-precision VFP, little-endian:</td> <td valign="top"><code>m7M_tlv.a</code></td>    <td valign="top"><code>m7M_tls.a</code> - note that the same library is used for Cortex-M4 and Cortex-M7</td></tr>
+        <tr><td valign="top">Double-precision VFP, big-endian:</td>    <td valign="top">(Not available)</td>           <td valign="top"><code>m7M_tbv.a</code></td></tr>
+        <tr><td valign="top">Double-precision VFP, little-endian:</td> <td valign="top">(Not available)</td>           <td valign="top"><code>m7M_tlv.a</code></td></tr>
+      </table><br>
+      Note that the same library file names are reused in 7.30.3, but with other content.
+      This is an adaption to the naming conventions specified in the <b>Using prebuilt libraries</b> section of the
+      <a href="../EWARM_DevelopmentGuide.ENU.pdf">IAR C/C++ Development Guide for ARM</a>.
+    </p>
+  </li>
+  <li>
+    <p>The 5.20 toolset has new features to make it possible to copy all (or most) of
+       the code to RAM at program startup. One of these features is that the linker
+       protects sections that are referenced from the startup code from being
+       affected by an 'initialize by copy' directive, ensuring that only code
+       that is only run after copy initialization has been finished will be copied to
+       RAM.<br>
+       In some cases, this can mean that an old project no longer works
+       when linked with the new linker and libraries. One example is
+       if you are supplying your own replacement for the cstartup
+       module, based on the module in one of the 5.1X releases, and you are
+       specifying in your 'initialize by copy' directive that you want the
+       interrupt table to be copied to RAM at program startup.<br>
+       To correct this you must mark the interrupt table with a special
+       symbol, <code>__iar_init$$done</code>, to indicate that copy initialization is performed
+       before it is needed. Otherwise the linker will not arrange for the
+       interrupt table to be copied, even though it is mentioned in an
+       'initialize by copy' directive. For Cortex-M processors, you only have to do
+       this if you are also supplying your own cmain module.
+       <p>
+       Atmel examples are in many cases written in the way described above.
+       The fix is to place a label <code>__iar_init$$done</code> in front of the vector table.<br>
+       Example:
+<pre><code>        SECTION .intvec:CODE:NOROOT(2)
+        ARM
+__iar_init$$done:               ; The vector table is not needed
+                                ; until after copy initialization is done
+__vector:
+        LDR     PC,Reset_Addr   ; Reset
+        :
+        :
+</code></pre>
+       </p>
+  </li>
+
+      <li>
+        <p>
+          In the kickstart edition, the linker will choose the basic heap implementation, that is, the same as
+          when the linker command line option <code>--basic_heap</code> is used in the standard edition.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          If an application is written purely in assembler language, and the runtime library is not
+          used, the linker file must contain a <code>do not initialize</code> directive for
+          each section that contains <code>readwrite</code> data. For example, this assembler code
+<pre><code>        SECTION variables_section:DATA(2)
+        DATA
+var1:   DS32 1
+var2:   DS8  64
+</code></pre>
+          implies that the following directive must be present in the linker file:
+<pre><code>do not initialize  { readwrite section variables_section };
+</code></pre>
+          If the linker directive is omitted, the linker will assume that <code>variables_section</code>
+          contains data which shall be initialized with zero, and will issue
+          <code>Error[Lp001]: no definition for init routine "__iar_zero_init3"</code>
+          as the runtime library is not used.
+        </p>
+      </li>
+</ul>
+      <!--================================================================-->
+      <!-- NEW FEATURES                                                   -->
+      <!--================================================================-->
+      <h3>
+        <a name="features" id="features"></a>New features
+      </h3>
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+      <!--================================================================-->
+      <!-- Known Problems-->
+      <!--================================================================-->
+      <h3>
+        <a name="problems" id="problems"></a>Known Problems
+      </h3>
+<ul>
+     <li>
+        <p>
+        <b>[<a name='EWARM-6803'>EWARM-6803</a>, <a name='TPB-3146'>TPB-3146</a>]</b>
+        Ilink can terminate with an internal error ("Int divide by zero") when a configuration block is
+        assigned alignment 0.
+        </p>
+     </li>
+     <li>
+        <p>
+        <b>[<a name='EWARM-7035'>EWARM-7035</a>, <a name='TPB-3215'>TPB-3215</a>]</b>
+        When linking files using a configuration file, where the range of a <em>place in</em> directive is
+        split in two by a <em>place at</em> directive, the linker can, in some cases, fail to allocate
+        sufficient space to a placement request even though such space is available. This will generate
+        error Lp011, and the error text will show an estimated minimum size that is smaller than the
+        uncommitted space.
+        </p>
+     </li>
+</ul>
+      <!--================================================================-->
+      <!-- Program Corrections                                            -->
+      <!--================================================================-->
+      <h3>
+        <a name="pcorr" id="pcorr"></a>Program Corrections
+      </h3>
+<ul>
+     <li>
+        <p>
+        In EWARM 8.40.2:<br>
+        <b>[<a name='EWARM-6962'>EWARM-6962</a>, <a name='TPB-3194'>TPB-3194</a>]</b>
+        When generating output in the Motorola S-records output format and with the <tt>--offset</tt> option
+        active, the IAR ELF Tool, <tt>ielftool</tt>, fails to offset rows that are not complete. Other
+        output formats, such as Intel Hex and TI-Txt, do not have this problem. This problem was introduced
+        in the 10.1.5 version of <tt>ielftool</tt>.
+        </p>
+     </li>
+     <li>
+        <p>
+        In EWARM 8.40.2:<br>
+        <b>[<a name='EWARM-6898'>EWARM-6898</a>, <a name='TPB-3179'>TPB-3179</a>]</b>
+        When a weak symbol is suppressed, the section that contains the symbol is also suppressed. This has
+        no effect for other symbols in the section if they are referenced (by the application or by the
+        linker option <tt>--keep</tt>). However, if the other symbols in the section are
+        <b>not</b> referenced, the section will not be included in the output even if the other symbols are
+        meant to be included by use of the <tt>keep</tt> directive or the linker option <tt>-no_remove</tt>.
+        </p>
+     </li>
+     <li>
+        <p>
+        In EWARM 8.40.2:<br>
+        <b>[<a name='EWARM-6893'>EWARM-6893</a>, <a name='TPB-3177'>TPB-3177</a>]</b>
+        If you in section selection in the linker configuration file (<tt>.icf</tt>) use both the section
+        type <tt>init_array</tt> or <tt>preinit_array</tt> and the <tt>object</tt> selector, no pattern can
+        match the selector. The pattern will be listed in the map file under the heading <b>No sections
+        matched the following patterns</b>. This problem was introduced in version 8.10.
+        </p>
+     </li>
+</ul>
+      <!--================================================================-->
+      <!-- USER GUIDE CORRECTIONS                                         -->
+      <!--================================================================-->
+      <h3>
+        <a name="manuals" id="manuals"></a>User guide corrections
+      </h3>
+<p>The corrections below refer to the PDF version of the user guide
+  <i>IAR C/C++ Development Guide</i>, DARM-24</b>.</p>
+
+<h3>Linker options (page 305)</h3>
+
+<p>Add the following option:</p>
+<ul>
+  <li>
+  <code>
+--use_optimized_variants=no|auto|small|fast
+</code>
+ 
+
+<h4>Parameters</h4>
+<code>
+  no &nbsp;&nbsp;&nbsp;&nbsp;     Do not use redirects to use optimized variants<br />
+  auto &nbsp;&nbsp;  Use redirects based on attributes in object files (default)<br />
+  small &nbsp;  Always use a small variant if available<br />
+  fast &nbsp;&nbsp;  Always use a fast variant if available<br />
+</code>
+ 
+
+<h4>Description</h4>
+
+<p>Use this option to control if and when to use optimized variants of DLIB library functions.</p>
+
+<p>Some of the DLIB libraries delivered with the product contain optimized variants, such as a 
+   small integer division routine for Cortex-M0, or a fast strcpy implementation for cores that 
+   support the Thumb-2 ISA.</p>
+
+<p>With the auto setting (default) the variant is selected based on AEABI attributes indicating 
+the requested optimization goal:</p>
+<ul>
+    <li>If a module referencing a function is compiled with <code>-Ohs</code>, and the DLIB 
+        library contains a fast variant, that variant is used.
+    </li>
+    <li>If all modules referencing a function are compiled with <code>-Ohz</code>, and the 
+        DLIB library contains a small variant, that variant is used.
+    </li>
+</ul>
+<p>With the <code>small</code> setting a small variant is used if the DLIB library contains a small variant.</p>
+
+<p>With the <code>fast</code> setting a fast variant is used if the DLIB library contains a fast variant.</p>
+
+<p>With the <code>no</code> setting the default variant is always used.</p>
+
+<p>To set this option, use <b>Project>Options>Linker>Extra Options</b>.</p>
+    
+    
+    
+    
+  </li>
+</ul>
+      <!--================================================================-->
+      <!-- MISCELLANEOUS                                                  -->
+      <!--================================================================-->
+      <h3>
+        <a name="misc" id="misc"></a>Miscellaneous
+      </h3>
+<ul>
+  <li>None.</li>
+</ul>
+      <!--================================================================-->
+      <!-- RELEASE HISTORY                                                -->
+      <!--================================================================-->
+      <h3>
+        <a name="history" id="history"></a>Release history
+      </h3>
+  <h4>V8.32 2018-10-12</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+     <li>
+        <p>
+        In EWARM 8.32.3
+        <b>[<a name='EWARM-6623'>EWARM-6623</a>, <a name='TPB-3078'>TPB-3078</a>]</b>
+        Some complicated C++ names can cause the demangler to loop. The demangler is used when producing a
+        map file, but also in some other cases (diagnostics, --log call_graph, ...). In all these cases, the
+        linker will loop forever if it encounters one of the problematic names.
+        </p>
+     </li>
+     <li>
+        <p>
+        In EWARM 8.32.2<br>
+        <b>[<a name='EWARM-6567'>EWARM-6567</a>, <a name='TPB-3061'>TPB-3061</a>]</b>
+        Running on the Windows OS, IElfDumpArm issues an error if the parameter to the command line option
+        --range specifies an address larger than 0x7FFFFFFF.
+        </p>
+     </li>
+     <li>
+        <p>
+        In EWARM 8.32.2<br>
+        <b>[<a name='EWARM-6523'>EWARM-6523</a>, <a name='TPB-3055'>TPB-3055</a>]</b>
+        When generating the callgraph log file, ilink can fail to terminate if a function name begins with
+        BDCH.
+        </p>
+     </li>
+     <li>
+        <p>
+        <b>[<a name='EWARM-6430'>EWARM-6430</a>, <a name='TPB-3044'>TPB-3044</a>]</b>
+        The linker can terminate with an internal error in some situations involving two or more placements
+        into the same memory range, the first containing a block with partial byte content, and the second
+        containing a block with only space.
+        </p>
+     </li>
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V8.30 2018-06-15</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+     <li>
+        <p>
+        <b>[<a name='EWARM-6152'>EWARM-6152</a>, <a name='TPB-2935'>TPB-2935</a>]</b>
+        When generating the module summary part of the linker map file, space occupied by placeholder
+        symbols (symbols created through use of the linker option <tt>--place_holder</tt>) is not listed.
+        This can result in situations where columns in the module summary do not add up to the listed grand
+        total.
+        </p>
+     </li>
+     <li>
+        <p>
+        <b>[<a name='EWARM-6018'>EWARM-6018</a>, <a name='TPB-2876'>TPB-2876</a>]</b>
+        The linker can sometimes fail with error Lp011 ("unable to place sections/blocks...") when placing
+        into more than one address range even when there is plenty of space left. The use of blocks with
+        <tt>expanding size</tt> makes this problem significantly more likely to occur.
+        </p>
+     </li>
+     <li>
+        <p>
+        <b>[<a name='EWARM-5982'>EWARM-5982</a>, <a name='TPB-2861'>TPB-2861</a>]</b>
+        A subscript expression with a fixed index into a string literal is incorrectly not considered a
+        constant expression in C++ mode. Example: <tt>"foo"[0]</tt> should be a constant expression with the
+        value <tt>'f'</tt>.
+        </p>
+     </li>
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V8.22 2018-01-22</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+  <li><p>None</p></li>
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li><p>None</p></li>
+</ul>
+ 
+ 
+  <h4>V8.20 2017-10-16</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+     <li>
+        <p>
+        In EWARM 8.20.2<br>
+        <b>[<a name='EWARM-5961'>EWARM-5961</a>, <a name='TPB-2855'>TPB-2855</a>]</b>
+        In some cases involving several <tt>place in</tt> directives with partially overlapping ranges, the linker can terminate with an internal error ("Distributor::TraverseRanges - range overshoot").
+        </p>
+     </li>
+     <li>
+        <p>
+        In EWARM 8.20.2<br>
+        <b>[<a name='EWARM-5955'>EWARM-5955</a>, <a name='TPB-2853'>TPB-2853</a>]</b>
+        In some cirumstances involving compressed initializers and partially overlapping placement ranges, the linker can terminate with an internal error.
+        </p>
+     </li>
+     <li>
+        <p>
+        <b>[<a name='EWARM-5828'>EWARM-5828</a>, <a name='TPB-2807'>TPB-2807</a>]</b>
+        The linker can terminate with an internal error when a block without content is placed after compressed initializers.
+        </p>
+     </li>
+     <li>
+        <p>
+        <b>[<a name='EWARM-5811'>EWARM-5811</a>, <a name='EW26736'>EW26736</a>]</b>
+        Linking with modules that use C++ dynamic initialization built with gnu tools does not work.
+        </p>
+     </li>
+     <li>
+        <p>
+        <b>[<a name='EWARM-5737'>EWARM-5737</a>, <a name='EW26620'>EW26620</a>]</b>
+        In some cases with nested uninited content at the end of ELF segments, the linker is now better at avoiding output of zeros in the executable for the uninited content.
+        </p>
+     </li>
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li><p>None</p></li>
+</ul>
+ 
+ 
+  <h4>V8.11 2017-04-11</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+  <li><p>
+    In EWARM 8.11.2:<br>
+    The linker can terminate with an internal error in some cases following 
+    a failure to match some sections for section placement (error Lc036).<br>
+    [EW26530]
+  </p></li>
+  <li><p>
+    In EWARM 8.11.3:<br>
+    When Ielftool converts output to Motorola S-records or Intel-hex and a line that contains 
+    less than 16 payload bytes (a complete line) is followed by an empty (memory size 0) ELF 
+    load-segment, the incomplete line is not output and the payload bytes are lost. This problem 
+    was introduced in Ielftool 10.1.4.<br>
+    [TP-768]
+  </p></li>
+  
+</ul>
+
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V8.10 2017-03-10</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+  <li><p>
+    The linker can, in rare circumstances, fail to detect placement failure in 
+    situations involving compressed initializers being placed in a range that 
+    is also used in a <code>place at end</code> directive.<br>
+    [EW26353]
+  </p></li>
+
+  <li><p>
+    The linker can fail during section placement ("overcommitted content in ...") 
+    even when there is plenty of memory available, in situations involving ranges that 
+    are short compared to typical code sections.<br>
+    [EW26356]
+  </p></li>
+
+  <li><p>
+    Overlays with existing content in one alternative (<code>ROM</code> overlays) do not work. 
+    The existing content is not present in the output file.<br>
+    [EW26382]
+  </p></li>
+
+  <li><p>
+    The linker can terminate with an internal error when attempting to place zero-init 
+    or copy-init sections in very short ranges (typically 3 bytes or less).<br>
+    [EW26433]
+  </p></li>
+
+  <li><p>
+    In some cases involving multiple possible ranges (typically several <code>small</code> 
+    ranges and at least one <code>large</code>), where the total memory in the <code>small</code> 
+    ranges could be large enough, the linker can fail to place a block or section that 
+    is large compared with the <code>small</code> ranges.<br>
+    [EW26450]
+  </p></li>
+</ul>
+
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V7.80 2016-10-17</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+  <li><p>
+    When the reserved space of a checksum symbol in an executable file does not 
+    match the corresponding specified checksum size in the <code>--checksum</code> command, 
+    ielftool can silently overwrite existing content.<br>
+    [EW26126]
+  </p></li>
+
+  <li><p>
+    Stack usage analysis in the linker can end with an internal error after running out of 
+    stack when analyzing an application containing tail recursion in more than one step.<br>
+    [EW26230]
+  </p></li>
+  
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V7.70 2016-06-17</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V7.60 2015-03-31</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+  <li>
+    <p>
+       The linker command file <code>stm32f410x.icf</code> has an incorrect definition of the RAM memory area.<br>
+      [EW25969]
+    </p>
+  </li>
+
+  <li>
+    <p>
+      When generating output in the simple and binary output formats, after generating fill in a range containing empty code/const sections, ielftool can generate spurious overlap errors.<br>
+      [EW25977]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+      <code>__ALIGNOF__(variable)</code> returns the alignment of the variable's type, not the actual alignment of the variable.<br>
+      [EW25990]
+    </p>
+  </li>
+  
+  <li>
+    <p>The default linker configuration file for STM32L151VD-X, <code>stm32l15xVD-X.icf</code> is incorrect.<br />
+    [EW25973]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+      In EWARM 7.60.2:<br>
+      The linker can incorrectly generate (zero) content for <code>__no_init</code> read-only sections not mentioned in a 
+      <code>do not initialize</code> directive.<br>
+      [EW26034]
+    </p>
+  </li>
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V7.50 2015-11-10</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+  <li>
+    <p>
+      ielftool has been changed so that using <code>--srec-s3only</code> or <code>--srec-len</code> 
+      automatically assumes <code>--srec</code> if no output format has been specified. Also, 
+      a warning is emitted for use of <code>--srec-s3only/--srec-len</code> if some other output 
+      format has been specified.<br>
+      [EW25699]
+    </p>
+  </li>
+
+  <li>
+    <p>
+      Variables declared both <code>const</code> and <code>__no_init</code> are output as actual  
+      zeros by the linker. No content should be generated by the linker for these variables.<br>
+      [EW25771]
+    </p>
+  </li>
+
+  <li>
+    <p>
+      In EWARM 7.50.2<br>
+      The linker can place content in fixed order blocks in an incorrect order when some of the 
+      content is initializer data packed using the <code>packbits</code> or <code>lz77</code> packing methods. 
+      Note that the <code>first</code> and <code>last</code> placement modifiers result in an implicit use of a fixed order block.<br>
+      [EW25807]
+    </p>
+  </li>
+
+  <li>
+    <p>
+      In EWARM 7.50.3:<br>
+      Ilink can fail to place sections where older versions succeeded, in some rare cases involving 
+      sub-ranges smaller than the size of a compressed initializer batch.<br>
+      [EW25827]
+    </p>
+  </li>
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+ 
+  <h4>V7.40 2015-02-19</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+
+<li>
+  <p>
+    Compiler-generated annotations for stack usage analysis were lost during instruction scheduling for
+    instructions within IT blocks. This could result in faulty stack usage analysis.<br>
+    [EW25111]
+  </p>
+</li>
+
+<li>
+  <p>
+    The linker can terminate with an internal error after diagnosing that some absolute variables
+    cannot be runtime-initialized because they do not meet the alignment requirements.<br>
+    [EW25212]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.40.2:<br>
+    When performing stack usage analysis where the maximum call chain includes a recursive call nest
+    for which a max recursion depth has been specified, the stack usage numbers for the functions
+    in the nest can be listed on the wrong function.<br>
+    [EW25264]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.40.5:<br>
+    The diagnostic message produced when not finding a match for a module-local symbol pattern
+    in a stack usage control file does not make clear that the pattern can only match module-local symbols.<br>
+    [EW25457]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.40.5:<br>
+    In some cases where a function tail calls another, the compiler fails to generate stack
+    usage information about this call, leading to stack usage analysis errors in the linker.<br>
+    [EW25463]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.40.5:<br>
+    When using the debug heap, references to <code>__iar_dlmalloc_usable_size</code> are
+    incorrectly redirected to <code>__iar_debug_malloc_usable_size</code> instead of
+    <code>__iar_debug_dlmalloc_usable_size</code>. This typically results in an
+    <code>undefined external</code> error.<br>
+    [EW25552]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.40.5:<br>
+    An expression containing a bit-preserving cast of the result of the
+    <code>__section_begin/__section_end/__segment_begin/__segment_end</code>
+    operators is not considered a constant expression. In (E)C++ this can result
+    in a <code>const</code> variable initialized by such an expression being placed
+    in RAM instead of in ROM.<br>
+    [EW25605]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.40.5:<br>
+    Variables that are both <code>__no_init</code> and <code>const</code> are incorrectly generated
+    in writable (instead of non-writable) ELF sections and counted as <code>readwrite data</code> in linker summaries.<br>
+    [EW25627]
+  </p>
+</li>
+
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V7.30 2014-09-24</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+
+<li>
+  <p>
+    The <code>r</code> flag (reverse the byte order within each word) of the <code>--checksum</code> option did not  
+    work as intended. <code>r</code> should only affect the calculated checksum if more than 1 byte is processed 
+    in each iteration (that is, if the <code>W</code> or <code>L</code> flag is set). In all versions containing the 
+    <code>r</code>, <code>W</code> and <code>L</code> flags before the 7.30 release, the <code>r</code> flag 
+    erroneously reversed the order of the input bytes if the checksum unit size was 1 byte (it is 1 by default, 2 
+    if <code>W</code> is used and 4 if <code>L</code> is used). This resulted in an incorrect checksum (the correct 
+    bytes are processed, but in the wrong order). If your verification code calculates a checksum that matches the 
+    erroneous checksum calculated by the older versions, your verification code is likely to have the same problem that 
+    the old ielftool version had. Note: Using the <code>r</code> flag without the <code>W</code> or <code>L</code> 
+    flag is not really meaningful, there is no byte order to reverse when bytes are read one at the time.
+    <br>
+    [EW25274]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.30.3:<br>
+    The linker incorrectly warns about image input files not containing the information to support
+    Virtual Function Elimination.<br>
+    [EW24962]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.30.3:<br>
+    When performing stack usage analysis in the linker for a C++ program using virtual function calls,
+    if Virtual Function Elimination is disabled for any reason, the information about possible
+    virtual function calls is not collected, resulting in false warnings and unnecessarily
+    imprecise stack usage output.<br>
+    [EW24964]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.30.3:<br>
+    In some situations involving placing sections or blocks at the end of a memory range in which
+    other sections or blocks are also placed, the linker can fail to detect when space runs out
+    and silently place the sections or blocks in an overlapping fashion.<br>
+    [EW24977]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.30.3:<br>
+    Section placement in the linker can fail incorrectly in cases involving many fixed size
+    <code>place at</code> directives.<br>
+    [EW25053]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.30.4:<br>
+    The builtin operators <code>__section_begin</code>, <code>__section_end</code>, etc, always
+    return 0 for the linker-created section <code>.iar.init_table</code>.<br>
+    [EW25073]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.30.4:<br>
+    When linking a configuration for loading directly into RAM, the linker can mistakenly merge read/write
+    segments with content (initialized variables) with segments containing zero initialized or uninitialized sections,
+    resulting in unecessarily large binary files and long load times.<br>
+    [EW25091]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.30.4:<br>
+    The linker can terminate with an internal error after one or more normal errors in some cases involving
+    section placement failure and sections placed at addresses dependent on the size of compressed initializers.<br>
+    [EW25098]
+  </p>
+</li>
+
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V7.20 2014-05-19</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+
+<li>
+  <p>
+    Non-absolute root sections can be incorrectly excluded from a build when symbols defined in them are
+    suppressed as a result of duplicate symbol definition resolution.<br>
+    [EW24613]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.20.2:<br>
+    The </code>last</code> modifier has no effect when placing an overlay (as opposed to a block or section pattern)
+    in a linker placement directive in the linker configuration file.<br>
+    [EW24712]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.20.2:<br>
+    The linker reported a violation of MISRA C:2004 rule 5.1 within the C-RUN libraries,
+    although the rule does not apply to system libraries.<br>
+    [EW24714]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.20.2:<br>
+    The C-RUN debug heap function <code>__iar_leaks_ignore_all()</code> is not properly handled in the linker.
+    Use <code>__iar_debug_leaks_ignore_all()</code> as a workaround.<br>
+    [EW24728]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.20.2:<br>
+    Assembler root sections with one or more suppressed weak symbol definition can
+    sometimes erroneously be dropped when linking.<br>
+    [EW24757]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.20.2:<br>
+    The linker now handles big endian correctly when linking for Cortex-M4.<br>
+    [EW24799]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.20.5:<br>
+    Using an <code>except</code> clause when defining a fixed order block does not have the intended effect.<br>
+    [EW24785]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.20.5:<br>
+    The linker option <code>--no_remove</code>, to suppress unused section removal, interacts poorly with the
+    support for C-RUN, resulting in unwanted inclusion of the global C-RUN bounds table even when not needed.<br>
+    [EW24797]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.20.5:<br>
+    Due to a bug in the compiler, Virtual Function Elimination (<code>--vfe</code>) in the linker can incorrectly
+    discard virtual functions referenced only from pointer to member function constants in the initializers for aggregate objects.<br>
+    Example:<br>
+    <code>
+    int (B::*arr[])() = { &B::fun };<br>
+    </code>
+    [EW24822]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.20.5:<br>
+    When using multi-file compilation (<code>--mfc</code>) in (E)C++, the linker emits spurious warnings about
+    missing Virtual Function Elimination information in the extra (empty) object files generated by the compiler.<br>
+    [EW24844]
+  </p>
+</li>
+
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V7.10 2014-02-21</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+
+<li>
+  <p>
+    The linker now warns about section placement patterns which do not match any sections,
+    if there exist sections with similar names to the one used in the pattern and these
+    sections would otherwise have been a match.<br>
+    [EW24096]
+  </p>
+</li>
+
+<li>
+  <p>
+    In some cases involving the packing algorithm <code>lz77</code>, either by default or specifically,
+    where section placement fails, the linker can stop with an internal error after reporting the
+    section placement failure.<br>
+    [EW24179]
+  </p>
+</li>
+
+<li>
+  <p>
+    After emitting error <code>Lp011</code>, section placement failed, the linker can terminate with an internal error.<br>
+    [EW24446]
+  </p>
+</li>
+
+<li>
+  <p>
+    Sometimes, when a single section placement directive results in more than one content being placed into more
+    than one address range, the linker can create multiple sections in the output file with the same name.
+    If this output file is used with ISymExport <code>--reserve_ranges</code> to produce an input file for
+    another link job, this input file can contain multiple symbol definitions with the same name, causing the
+    later link job to fail.<br>
+    [EW24456]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.10.3:<br>
+    When using <code>--no_remove</code> to keep all sections, absolute symbols with a size (like those produced by
+    ISymExport in many cases) are not included in the output. Furthermore, using <code>--keep</code> has no effect
+    on these symbols in this case.<br>
+    [EW24528]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.10.3:<br>
+    When directed to perform Virtual Function Elimination, the linker should check that all modules contain the
+    necessary information, and disable the optimization with a warning if any file lacks this information. This
+    check is broken, and the linker never emits the warning and always performs the optimization when so directed,
+    potentially resulting in a non-functioning program.<br>
+    [EW24556]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 7.10.3:<br>
+    Placing an assembler label in Thumb code after the last content in a section can cause an internal error when linking.<br>
+    [EW24575]
+  </p>
+</li>
+
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V6.70 2013-10-29</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+
+
+<li>
+  <p>
+    ISymExport now always includes any range reservation symbols resulting from
+    <code>--reserve_ranges</code> and <code>--ram_reserve_ranges</code>, regardless
+    of what is in the steering file.<br>
+    [EW24132]
+  </p>
+</li>
+
+<li>
+  <p>
+    The linker assigns incorrect addresses to zero-initialized variables from modules
+    compiled with gcc. The addresses are off by the alignment of each variable, which can
+    lead to partial or complete overlap with whatever is placed after the variables.<br>
+    [EW24155]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.70.2:<br>
+    When there are zero-initialized sections both inside and outside a movable block, an incorrect estimation for
+    the size of the init table causes the linker to loop while creating an increasingly large output file.<br>
+    [EW24228]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.70.2:<br>
+    The library source <code>xwctomb.c</code> can not be compiled with UTF-8 encoding enabled.<br>
+    [EW24257]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.70.2:<br>
+    Linking a module containing multiple consecutive non-zero size relocations for the same location
+    caused the linker to abort with an internal error. IAR Systems tools cannot currently produce such modules.<br>
+    [EW24271]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.70.2:<br>
+    Multiple copies of <code>__root __no_init</code> absolute placed variables could be kept by the
+    linker, leading to spurious overlap errors. The problem is not present when compiling in AEABI mode.<br>
+    [EW24287]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.70.2:<br>
+    Sections or blocks placed with a <code>last</code> or <code>first</code> modifier immediately inside
+    a <code>place in</code> directive with multiple effective address ranges can be incorrectly placed.<br>
+    [EW24333, EW24391]
+  </p>
+</li>
+
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V6.60 2013-06-27</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+
+<li>
+  <p>
+    <code>ielftool</code> could fail with an incorrect "The checksum range contains uninitialized data" error
+    when directed to perform fill/checksum calculation on an executable file with a zero-sized ROM segment.<br>
+    [EW23895]
+  </p>
+</li>
+
+<li>
+  <p>
+    When generating a wide sum8 checksum with mirroring, <code>ielftool</code> only mirrored 8 bits,
+    not the entire checksum.<br>
+    [EW23921]
+  </p>
+</li>
+
+<li>
+  <p>
+    The linker can terminate with an internal error when linking a C++ program using exceptions
+    with <code>--no_remove</code>.<br>
+    [EW24673]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.60.2:<br>
+    <code>ielftool</code> does not check for overlapping sections in the input file when producing
+    output in raw binary, which results in a very large output file containing mostly garbage.<br>
+    [EW24084]
+  </p>
+</li>
+
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V6.50 2012-11-10</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+
+<li>
+  <p>
+    When performing Virtual Function Elimination, the linker could terminate with an internal
+    error if a reference was made to a non-existing virtual function (this can happen if
+    two modules have been compiled using conflicting definitions of a class).
+    This condition is now detected and an error is generated.<br>
+    [EW23038]
+  </p>
+</li>
+
+<li>
+  <p>
+    When linking code for ARM generation 4 processors, the possibility of fall-through
+    veneers was not always taken correctly into account when allocating space for code sections.
+    In particular, this could lead to an internal error if such a veneer was generated in code
+    that was initialized by copy (through the use of the <code>__ramfunc</code> attribute, or via
+    linker directives). This has been corrected.<br>
+    [EW23256]
+  </p>
+</li>
+
+<li>
+  <p>
+    When performing stack depth analysis, the linker no longer terminates with an internal error
+    when the program references an undefined virtual function.<br>
+    [EW23299]
+  </p>
+</li>
+
+<li>
+  <p>
+    In some cases involving compressed initializers, the linker could place sections
+    beyond the end of a placement range without issuing an error message. This has been corrected.<br>
+    [EW23396]
+  </p>
+</li>
+
+<li>
+  <p>
+    <code>iobjmanip</code> did not preserve the address property of sections.
+    If <code>iobjmanip</code> was used for removing debug information from an
+    object file with some absolute sections, these sections were all located
+    at address <code>0</code> in the output file. This has been corrected.<br>
+    [EW23490]
+  </p>
+</li>
+
+<li>
+  <p>
+    The linker sometimes incorrectly calculated the space needed for compressed initializers
+    for code in RAM that could contain veneers, especially fall-through veneers, leading to
+    spurious <code>Lp020</code> errors (compressed initializers too large to fit). This has
+    been corrected.<br>
+    [EW23551]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.50.3:<br>
+    The linker terminated with an internal error if any copy initialized absolute sections were needed,
+    unless there were other (not copy initialized) absolute sections adjacent. This has been corrected.<br>
+    [EW23662]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.50.3:<br>
+    In some cases involving recursion via a function pointer argument, the linker could crash during
+    stack usage analysis. One case where this could happen was if one of the functions called by the
+    <code>printf</code> implementation (like <code>putchar</code>) could in turn call <code>printf</code>.
+    This has been corrected.<br>
+    [EW23696]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.50.3:<br>
+    There was an error in the function that attempts to place initializer bytes toward the end of sections.
+    The result was that error <code>Lp017</code> and <code>Lp021</code> could be emitted in some
+    circumstances when sections should have been placed so as to avoid this. This has been corrected.<br>
+    [EW23700]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.50.3:<br>
+    Link jobs involving zero-sized blocks could incorrectly fail with error <code>Lp011</code> (section placement failed).
+    This has been corrected.<br>
+    [EW23721]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.50.4:<br>
+    The library routine for unpacking compressed initializers using the lz77 packing method did not work correctly
+    when there were multiple destination ranges. This has been corrected.<br>
+    [EW23790]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.50.4:<br>
+    The handling of timezones that are to the west of UTC (has a negative offset in the <code>__getzone</code> string)
+    did not work for the 64-bit versions of the time functions. This has been corrected.<br>
+    [EW23792]
+  </p>
+</li>
+
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V6.40 2012-06-05</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+
+<li>
+  <p>
+    The <code>==</code> and <code>!=</code> operators in linker configuration files produced incorrect results.<br>
+    [EW22755]
+  </p>
+</li>
+
+<li>
+  <p>
+    Using two or more <code>--image_input</code> command line options without a symbol argument resulted in a duplicated symbol
+    definition error for the internal linker-generated mode symbols as these were incorrectly made public in this case.<br>
+    [EW22781]
+  </p>
+</li>
+
+<li>
+  <p>
+    Inline functions could incorrectly be considered a violation of MISRA C:2004 rule 8.10 (use statics when possible).<br>
+    [EW22833]
+  </p>
+</li>
+
+<li>
+  <p>
+    Unclosed quoted strings in the linker configuration file caused the linker to freeze.<br>
+    [EW22908]
+  </p>
+</li>
+
+<li>
+  <p>
+    In rare circumstances for C++ code with exceptions, the linker could emit an internal error instead of a regular error when section placement failed.<br>
+    [EW23044]
+  </p>
+</li>
+
+<li>
+  <p>
+    Ending the line after an ISymExport steering file directive with a C-style comment caused a parse error.<br>
+    [EW23079]
+  </p>
+</li>
+
+<li>
+  <p>
+    Using the <code>possible calls</code> stack usage control directive for a function performing
+    only indirect calls via function pointers passed as arguments had no effect.<br>
+    [EW23107]
+  </p>
+</li>
+
+<li>
+  <p>
+    The linker could crash during stack usage analysis if the program contained a function call with a constant function pointer argument
+    for a function that could call the calling function.<br>
+    [EW23127]
+  </p>
+</li>
+
+<li>
+  <p>
+    The packbits unpacker did not work correctly when there were multiple source or destination ranges.<br>
+    [EW23134]
+  </p>
+</li>
+
+<li>
+  <p>
+    For some targets, the zero-init routine, and some copy-init routines, have alignment
+    requirements on the areas they can initialize. In these cases the linker often did not
+    correctly check that variables explicitly located at an absolute address could be
+    initialized by the relevant routines, leading to a variety of internal errors when
+    linking. There should now be an error for each case that is not supported.<br>
+    [EW23180]
+  </p>
+</li>
+
+<li>
+  <p>
+    The linker now warns if the content in a <code>place at</code> directive is not placed at the
+    designated address because of alignment issues.<br>
+    [EW23215]
+  </p>
+</li>
+
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V6.30 2011-10-22</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+<li>
+  <p>
+    Assembler files with incorrect mode annotations - <code>DATA</code>, <code>CODE16</code>, etc - 
+    no longer causes an internal error in the linker.<br>
+    [EW22464]
+  </p>
+</li>
+
+<li>
+  <p>
+    Using the <code>place at end</code> linker directive with a block that has an alignment larger than
+    its size no longer results in an internal error.<br>
+    [EW22620]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.30.3:<br>
+    The linker will no longer inline symbols used by the debugger: <code>__iar_semihosting</code>,
+    <code>__iar_return_from_swi</code>, <code>__iar_sh_stdout_swo</code>.<br>
+    [EW22789]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.30.3:<br>
+    Linking a project with overlapping absolute sections (for instance from different SFRs at the same address),
+    no longer results in one or more spurious error <code>Lp015</code> (committed sections too large to fit) messages.<br>
+    [EW22798]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.30.3:<br>
+    The heap in use is now the advanced version, <code>dlmalloc</code>, provided that the application refers to
+    the heap (not counting references from library functions) and that the option <code>--basic_heap</code> is not used.<br>
+    [EW22800]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.30.3:<br>
+    Absolute sections (and the symbols defined in them) could be assigned incorrect addresses by the linker.
+    In the typical case, this would not affect the code, as references from code typically use the address
+    directly, but it would affect the map file and the debugger. This problem has been corrected.<br>
+    [EW22836]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.30.3:<br>
+    Providing stack usage information in a stack usage control file for a function that is present when linking,
+    but not included in the final program, no longer causes a crash.<br>
+    [EW22846]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.30.5:<br>
+    Using the <code>override</code> keyword in a stack usage control file to override the stack usage information provided
+    in an object file no longer causes an internal error in the linker.<br>
+    [EW22874]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 6.30.5:<br>
+    Incorrect region calculations involving ranges wrapping around address zero could lead to spurious emission of error
+    <code>Lp022</code> (absolute placement overlaps with previous absolute placement) and other problems.
+    This has been corrected.<br>
+    [EW22941]
+  </p>
+</li>
+
+</ul>
+ 
+ 
+  <b>New features</b>
+ 
+<ul>
+  <li>
+    None.
+  </li>
+</ul>
+ 
+ 
+  <h4>V6.21 2011-07-05</h4>
+  <b>Program corrections</b>
+ 
+<ul>
+	<li>None.</li>
+</ul> 
+ 
+  <b>New features</b>
+ 
+<ul>
+    <li>None.</li>
+</ul> 
+ 
+  <h4>V6.20 2011-04-29</h4>
+  <b>Program corrections</b>
+  <ul>
+<li>
+  <p>
+    Using the <code>place at end of</code> directive with content that includes a high-alignment
+    section or block no longer causes an internal error.<br>
+    [EW22255]
+  </p>
+</li>
+
+<li>
+  <p>
+    Using <code>--strip</code> with <code>ielftool</code> did not remove all debug info related ELF sections,
+    such as string tables. Now these are also removed.<br>
+    [EW22372]
+  </p>
+</li>
+  </ul>
+
+  <b>New features</b>
+  <ul>
+  <li>
+    None.
+  </li>
+  </ul>
+
+
+  <h4>V6.10 2010-11-04</h4>
+  <b>Program corrections</b>
+  <ul>
+
+<li>
+  <p>
+    The linker could crash with an internal error after issuing error Lp017
+    (compressed initializers needed an address that could not be determined until
+    the size of compressed initializers is known).<br>
+    [EW21191]
+  </p>
+</li>
+
+<li>
+  <p>
+    In some circumstances a <code>place at</code> directive with no needed content and a
+    memory range partially overlapping other section placement directives could
+    cause an internal error.<br>
+    [EW21572]
+  </p>
+</li>
+
+<li>
+  <p>
+    If the sections/blocks in <code>place at</code> directives did not fit in the specified
+    ranges, the diagnostic message produced was nonsensical. Example:<br>
+    <code>
+    Error[Lp011]: section placement failed: unable to allocate space for sections/blocks with a total estimated minimum size of 0x0 bytes in <> (total uncommitted space 0xffffffffffff372c). Needed:
+    </code><br>
+    [EW21849]
+  </p>
+</li>
+
+<li>
+  <p>
+    C-SPY could emit a spurious "ROM size limit exceeded" error when loading
+    Release build output from a product with a ROM size limit where some ROM
+    usage is not counted against the limit.<br>
+    [EW21909]
+  </p>
+</li>
+
+<li>
+  <p>
+    <code>ielftool</code> now uses segment data instead of section data when executing the fill and checksum functions.<br>
+    [EW22329]
+  </p>
+</li>
+
+<li>
+  <p>
+    Iarchive now returns a proper exit status when using the silent option.<br>
+    [EW21944]
+  </p>
+</li>
+  </ul>
+
+  <b>New features</b>
+  <ul>
+    <li>
+      None.
+    </li>
+  </ul>
+
+
+  <h4>V5.50 2010-04-21 </h4>
+  <b>Program corrections</b>
+  <ul>
+    <li>
+      <p>
+        Needed module-local absolute symbols were not kept by the linker, and no space was reserved for them.<br>
+        Example:<br>
+        <code>
+        static __no_init int array[10] @ 0x100;
+        </code><br>
+        [EW21528]
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Section placement could fail when several <code>place at</code> commands were used in such a fashion that overlap could occur if veneers were needed.<br>
+        [EW21647]
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Expanding an ELF section that did not end on an even 4-byte boundary could lead to an error.<br>
+        [EW21654]
+      </p>
+    </li>
+
+    <li>
+      <p>
+        In EWARM 5.50.5:<br>
+        A sequence of <code>place at</code> section placement directives into the same
+        memory region, where one contained compressed initializers, and a later one
+        consisted only of blocks with no content, no longer results in an internal error in
+        the linker.<br>
+        [EW21746]
+      </p>
+    </li>
+
+    <li>
+      <p>
+        In EWARM 5.50.5:<br>
+        Starting with <code>ilinkarm</code> 5.50.0, the linker always generated an init
+        table section. In builds where an init table is not needed, this unnecessarily
+        required the configuration file to contain a section placement pattern that
+        matched the init table section. The init table section is no longer
+        generated when it is not needed.<br>
+        [EW21761]
+      </p>
+    </li>
+  </ul>
+
+  <b>New features</b>
+  <ul>
+    <li>
+      None.
+    </li>
+
+  </ul>
+
+  <h4>V5.41 2009-12-14 </h4>
+  <b>Program corrections</b>
+  <ul>
+    <li>
+      <p>
+        Linking no longer fails with error Lp020 (compressed initializers too large to fit) in cases
+        involving initialization by copy of a block of code needing veneers, where some of the
+        code sections had a smaller alignment than the veneers.<br>  
+        [EW21183]
+      </p>
+    </li>
+
+    <li>
+      <p>
+        In EWARM 5.41.2:<br>
+        A <code>place in</code> directive in a range straddling the start/end of the range of a
+        <code>place at</code> directive no longer causes the linker to terminate with an internal error.<br>
+        [EW21488]
+      </p>
+    </li>
+
+    <li>
+      <p>
+        In EWARM 5.41.2:<br>
+        In assembly code, <code>pc</code>-relative instructions (like branches) referring to an absolute address
+        no longer incorrectly results in undefined symbol errors when linking.<br>
+        [EW21525]
+      </p>
+    </li>
+  </ul>
+
+  <b>New features</b>
+  <ul>
+    <li>
+      None.
+    </li>
+  </ul>
+
+  <h4>V5.40 2009-07-10 </h4>
+  <b>Program corrections</b>
+  <ul>
+
+<li>
+  <p>
+    Section placement could fail with an internal error <code>[range allocation inconsistency]</code>
+    when the needed range for a <code>place at</code> command partially overlapped a <code>place in</code>
+    command with a larger start address.<br>
+    [EW20817]
+  </p>
+</li>
+
+<li>
+  <p>
+    When using compressed initializers with the compression algorithms packbits, lzw, or bwt, the
+    linker cannot handle placing the destination of the initializers at an address that is dependent
+    on the size of the initializers. Doing this resulted in an internal error but now instead
+    results in the new error <code>Lp021</code>.<br>
+    [EW20842]
+  </p>
+</li>
+
+<li>
+  <p>
+    Including the <code>locale.h</code> file would force linkage with the full DLIB (including locale support). This has been corrected to only occur if locale support is actually requested.<br>
+    [EW20850]
+  </p>
+</li>
+
+<li>
+  <p>
+    <code>ielftool</code> no longer crashes when using an ELF file without a symbol table as input.<br>
+    [EW20883]
+  </p>
+</li>
+
+<li>
+  <p>
+    In some circumstances <code>place at</code> directives could cause linking to fail with error <code>Lp011 (section placement failed)</code>.<br>
+    [EW20901]
+  </p>
+</li>
+
+<li>
+  <p>
+    When building initialization tables in link jobs with multiple zero or copy areas not inside blocks,
+    an internal calculation error in the linker could cause section placement to fail with error <code>Lp011</code>.<br>
+    [EW20968, 20986]
+  </p>
+</li>
+
+<li>
+  <p>
+    The compiler emits debug information for an enumeration type if any of its constants are used, even if the type itself is not used. For unnamed enumeration types these constants were not visible in the debugger. Now they are.<br>
+    [EW21053]
+  </p>
+</li>
+
+<li>
+  <p>
+    Placing the linker-generated init table using an 'at end' placement could result in an internal error in the linker.<br>
+    [EW21065]
+  </p>
+</li>
+
+<li>
+  <p>
+    In EWARM 5.40.4:<br>
+    The linker has been changed to assume that the automatically chosen libraries are consistent with the command line options.<br>
+    [EW21201]
+  </p>
+</li>
+<li>
+  <p>
+    In EWARM 5.40.4:<br>
+    <code>ielftool</code> now generates correct output when the input ELF file contains a segment with more than one section.<br>
+    [EW21194,EW21196,EW21286]
+  </p>
+</li>
+  </ul>
+
+  <b>New features</b>
+  <ul>
+    <li>
+      None.
+    </li>
+  </ul>
+
+  <h4>V5.30 2009-01-23</A></h4>
+  <b>Program corrections</b><p>
+  <ul>
+      <li>
+        <p>
+          In EWARM 5.30.2:<br>
+          Linking an application with compressed initializers inside a block whose end was referenced
+          (using __section_end or a $$Limit symbol) caused an array bounds violation in Ilink, which
+          could result in an internal error or worse.<br>
+          [EW20796]
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Linking an object file with a section consisting entirely of zero-size
+          fragments caused an internal error in the linker.<br>
+          [EW19873]
+        </p>
+      </li>
+
+      <li>
+        <p>
+          When linking files where a placement was empty but had an alignment
+          requirement, The linker could terminate with an internal error (<code>ApplyState - No
+          allocation change</code>).<br>
+          [EW20353]
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Section placement could earlier fail for very small sections in some cases. Typically,
+          this could happen
+          when functions and variables were placed in the same memory area, and there were
+          many calls that were close to the limit of their reach. This caused great uncertainty
+          about how many veneers that were needed.<br>
+          [EW20464]
+        </p>
+      </li>
+
+      <li>
+        <p>
+          After emitting the appropriate error message, the linker could terminate
+          with an internal error if some sections in the program did not match any
+          placement directive.<br>
+          [EW20481]
+        </p>
+      </li>
+
+      <li>
+        <p>
+          The linker could earlier terminate with an internal error if the configuration included
+          a <code>place in</code> directive and a <code>place at</code> directive with the same start
+          address, and the contents of the <code>place at</code> directive occupied zero bytes.<br>
+          [EW20656]
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Compatibility checking for functions in translation units compiled without --interwork
+          and containing a mixture of static and public functions was earlier broken in the linker,
+          which could result in spurious compatibility errors (Lt020) as well as a failure to
+          report such problems when they should be reported.<br>
+          [EW20745]
+        </p>
+      </li>
+  </ul>
+  <b>New features</b><p>
+  <ul>
+  <li>
+    <p><b>Compressed initializers</b><br>
+       The linker can compress initialized data to minimize flash use.
+       The compressed data will be atomatically uncompressed when moved from flash to RAM by the startup code.
+    </p>
+  </li>
+  </ul>
+
+  <h4>V5.20 2008-06-24</A></h4>
+  <b>Program corrections</b><p>
+  <ul>
+      <li>
+        <p>
+          Using the<code> export </code>directive to export an unknown symbol from a
+          linker configuration file no longer causes<code> ilinkarm </code>to terminate with an
+          internal error after reporting the problem.<br>
+          [EW19729]
+        </p>
+      </li>
+      <li>
+        <p>
+          <code>ielftool </code>can now calculate a sum32 checksum on ELF sections that
+          have a length that is not a multiple of 4.<br>
+          [EW19817]
+        </p>
+      </li>
+      <li>
+        <p>
+          <code>ielftool </code>can now perform a fill operation on ELF files that contain sections
+          with a length that is not a multiple of 4.<br>
+          [EW19835]
+        </p>
+      </li>
+      <li>
+        <p>
+          <code>ilinkarm </code>no longer fails to emit some zeroing init table entries, that caused
+          program startup to fail to fill with zeros one or more memory ranges that should be
+          filled with zeros.<br>
+          [EW19853]
+        </p>
+      </li>
+      <li>
+        <p>
+          When checking MISRA C rule 23,<code> ilinkarm </code>no longer erroneously
+          includes some tool internal symbols, which could result in unwanted rule
+          violation errors.<br>
+          <code>ilinkarm </code>also no longer crashes if error Li0005 (undefined symbol)
+          has occurred previously.<br>
+          [EW19897]
+        </p>
+      </li>
+      <li>
+        <p>
+          A<code> place at </code>directive that matches no sections and contains no blocks
+          and which overlaps the memory region of a<code> place in </code>directive, no longer
+          causes an internal error when linking.<br>
+          [EW19952]<br>
+          [EW20030]
+        </p>
+      </li>
+      <li>
+        <p>
+          When linking a project that contains overlapping ranges,<code> ilinkarm </code>
+          no longer terminates with an internal error if the size of the overlap is small
+          compared to the size of the ranges.<br>
+          [EW19985]
+        </p>
+      </li>
+      <li>
+        <p>
+          Intel hex output from<code> ielftool </code>no longer contains incorrect base address
+          records if the source ELF file contains no data before sections that start
+          on a new base address.<br>
+          [EW20031]
+        </p>
+      </li>
+      <li>
+        <p>
+          Copy initialization of code in a block is no longer generated incorrectly if the
+          first thing in the block is a veneer.<br>
+          [EW20040]
+        </p>
+      </li>
+      <li>
+        <p>
+          Chained<code> if </code>directives (<code>if...else if...else</code>) in linker
+          configuration files now work correctly.<br>
+          [EW20104]
+        </p>
+      </li>
+      <li>
+        <p>
+          The linker no longer gets an internal error (range allocation inconsistency)
+          when a<code> place at </code>and a<code> place in </code>section placement directive
+          use the same start address.<br>
+          [EW20183]
+        </p>
+      </li>
+  </ul>
+  <b>New features</b><p>
+  <ul>
+  <li>
+    <p><b>Copy code to RAM</b><br>
+       Improved features for copying all of the code to RAM at program startup.
+       See above.
+    </p>
+  </li>
+  <li>
+    <p><b>Position-independent veneers</b><br>
+       The linker can generate position-independent veeners using the <code>--pi_veneers</code> command line option.
+    </p>
+  </li>
+  </ul>
+
+  <h4>V5.11 2007-12-11</A></h4>
+  <ul>
+  <li><p>
+    <code>ilinkarm </code>could erroneously place fall-through veneers at the start of a<code> place at </code> 
+    linker directive, displacing the section that was intended to end up there.<br>
+    [EW19456]
+  </p></li>
+
+  <li><p>
+    <code>ielftool </code>(earlier<code> ichecksum</code>) now handles checksums for
+    big-endian files correctly.<br>
+    [EW19466]
+  </p></li>
+
+  <li><p>
+    <code>ielftool </code>(earlier<code> ichecksum</code>) did not recognize the arithmetic
+    sum algorithm.<br>
+    [EW19490]
+  </p></li>
+
+  <li><p>
+    In some cases,<code> ielftool </code>(earlier<code> ichecksum</code>) did not write the
+    checksum value to the output file.<br>
+    [EW19496]
+  </p></li>
+
+  <li><p>
+    The linker erroneously included multiple definitions for the same symbol
+    when input contained a mix of weak definitions for the same symbol, where some
+    of the definitions used an ELF section group, and some of the definitions
+    did not. <br>
+    [EW19502]
+  </p></li>
+
+  <li><p>
+    <code>ielftool </code>(earlier<code> ichecksum</code>) now prints an error message when the
+    checksum placeholder variable is not defined as<code> const</code>.<br>
+    [EW19538]
+  </p></li>
+
+  <li><p>
+    Using<code> place at </code>into the middle of a<code> place in </code>range could earlier trigger an internal error.<br>
+    [EW19578]
+  </p></li>
+
+  <li>
+    <p>
+    <code>ilinkarm </code>sometimes reserved an extra, unneeded, byte for 'place at' placements.<br>
+    [EW19604]
+    </p>
+  </li>
+
+  <li>
+    <p>
+    In some cases the linker could place a fall-through mode-changing veneer somewhere other than
+    immediately preceding the destination of the veneer, resulting in non-working code.<br>
+    [EW19726]
+    </p>
+  </li>
+  </ul>
+
+  <h4>V5.10 2007-05-25</A></h4>
+  <ul>
+    <li>
+      First release.
+    </li>
+  </ul>
+</ul>
+    </div>
+  </body>
+</html>

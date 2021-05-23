@@ -1,0 +1,921 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.w3.org/MarkUp/SCHEMA/xhtml11.xsd"
+     xml:lang="en">
+  <head>
+    <title>ARM用IARインフォメーションセンタ - リリースノート</title>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+    <link type="text/css" rel="stylesheet" media="all" href="../style/ewic.css" />
+  </head>
+  <body>
+  <div id="topbanner"></div>
+  <div id="titlebanner_small">
+    <h2>ARM用IARインフォメーションセンタ</h2>
+  </div>
+  <div class="breadcrumb">
+    <a href="..\index.JPN.html">ARM用IARインフォメーションセンタ</a> | 
+    <a href="..\release_notes.JPN.html">リリースノート</a> | 
+    デバイス
+  </div>
+  <div class="mainblock">
+   <h2>リリースノート</h2>
+   <h2>ARM用IAR Embedded Workbenchバージョン8.40.2</h2>
+<h1>Nuvoton</h1>
+<br>
+<table class ="example_ul">
+	<tr>
+		<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイスファミリ</th>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#AU9100">AU9100</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#ISD9100">ISD9100</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#ISD9300">ISD9300</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#M050">M050</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#M450">M450</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#M2350">M2350</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#MINI51">MINI51</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#N571">N571</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#N572">N572</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#NANO100">NANO100</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#NANO110">NANO110</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#NANO120">NANO120</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#NANO130">NANO130</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#NM1100">NM1100</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#NM1200">NM1200</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#NM1320">NM1320</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#NM1500">NM1500</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#NUC020">NUC020</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#NUC100">NUC100</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#NUC120">NUC120</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#NUC130">NUC130</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#NUC140">NUC140</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#NUC200">NUC200</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#NUC220">NUC220</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#NUC230">NUC230</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#NUC240">NUC240</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#NUC400">NUC400</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#NUC500">NUC500</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#NUC700">NUC700</a>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;padding: 5px 10px 5px 10px;">
+			<a href="#NUC900">NUC900</a>
+		</td>
+	</tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="AU9100"></a>AU9100</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">AU9110LF3AN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="ISD9100"></a>ISD9100</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">ISD9160LF3AN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="ISD9300"></a>ISD9300</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">ISD9361VRI</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="M050"></a>M050</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M0516LAN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M0516LDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M0516LDN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M0516ZAN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M0516ZDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M0516ZDN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M0518LC2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M0518LD2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M0518SC2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M0518SD2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M0519LD3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M0519LE3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M0519SD3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M0519SE3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M0519VE3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M052LAN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M052LDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M052LDN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M052ZAN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M052ZDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M052ZDN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M054LAN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M054LDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M054LDN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M054ZAN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M054ZDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M054ZDN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M058LAN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M058LDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M058LDN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M058SFAN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M058SLAN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M058SSAN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M058SZAN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M058ZAN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M058ZDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M058ZDN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="M450"></a>M450</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M451LC3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M451LD3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M451LE6AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M451LG6AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M451MLC3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M451MLD3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M451MLE6AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M451MLG6AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M451MSC3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M451MSD3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M451RC3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M451RD3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M451RE6AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M451RG6AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M451VE6AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M451VG6AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M452LC3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M452LD3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M452LE6AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M452LG6AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M452RD3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M452RE6AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M452RG6AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M453LC3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M453LD3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M453LE6AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M453LG6AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M453RD3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M453RE6AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M453RG6AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M453VD3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M453VE6AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M453VG6AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="M2350"></a>M2350</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">M2351</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.20.2</td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="MINI51"></a>MINI51</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">Mini51FDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">Mini51LDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">Mini51TAN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">Mini51TDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">Mini51ZDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">Mini52FDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">Mini52LDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">Mini52TAN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">Mini52TDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">Mini52ZDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">Mini54FDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">Mini54LDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">Mini54TAN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">Mini54TDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">Mini54ZDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">Mini55LDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.30.2</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">Mini55TDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.30.2</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">Mini57EDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">Mini57FDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">Mini57TDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">Mini58FDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">Mini58LDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">Mini58TDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">Mini58ZDE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="N571"></a>N571</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">N571P032</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="N572"></a>N572</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">N572F065</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">N572F072</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">N572P072</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="NANO100"></a>NANO100</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO100KD3BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO100KE3BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO100LC2BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO100LD2BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO100LD3BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO100LE3BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO100NC2BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO100ND2BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO100ND3BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO100NE3BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO100SC2BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO100SD2BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO100SD3BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO100SE3BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO102LB1AN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO102LC2AN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO102SC2AN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO102ZB1AN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO102ZC2AN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO103LD3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO103SD3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO103ZD3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="NANO110"></a>NANO110</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO110KC2BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO110KD2BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO110KD3BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO110KE3BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO110RC2BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO110RD2BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO110RD3BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO110RE3BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO110SC2BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO110SD2BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO110SD3BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO110SE3BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO112LB1AN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO112LC2AN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO112RB1AN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO112RC2AN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO112SB1AN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO112SC2AN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO112VC2AN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="NANO120"></a>NANO120</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO120KD3BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO120KE3BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO120LC2BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO120LD2BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO120LD3BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO120LE3BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO120SC2BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO120SD2BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO120SD3BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO120SE3BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="NANO130"></a>NANO130</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO130KC2BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO130KD2BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO130KD3BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO130KE3BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO130SC2BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO130SD2BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO130SD3BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NANO130SE3BN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="NM1100"></a>NM1100</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NM1100FBAE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NM1100XBAE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NM1120FC1</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="NM1200"></a>NM1200</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NM1200LBAE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NM1200TBAE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="NM1320"></a>NM1320</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NM1320AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="NM1500"></a>NM1500</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NM1500AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="NUC020"></a>NUC020</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC029FAE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC029LAN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC029TAN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="NUC100"></a>NUC100</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC100LC1DN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC100LD2DN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC100LE3DN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC100RC1DN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC100RD1DN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC100RD2DN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC100RE3DN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC100VE3DN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC101</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="NUC120"></a>NUC120</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC120LC1DN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC120LD2DN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC120LE3DN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC120RC1DN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC120RD2DN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC120RE3DN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC120VE3DN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC121LC2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC121SC2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC121ZC2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC122LC1DN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC122LD2DN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC122SC1DN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC122SD2DN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC122ZC1DN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC122ZD2DN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC123LC2AE1</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC123LC2AN1</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC123LD4AE0</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC123LD4AN0</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC123SC2AE1</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC123SC2AN1</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC123SD4AE0</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC123SD4AN0</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC123ZC2AE1</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC123ZC2AN1</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC123ZD4AE0</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC123ZD4AN0</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC125LC2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC125SC2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC125ZC2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="NUC130"></a>NUC130</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC130</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC131LC2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC131LD2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC131SC2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC131SD2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="NUC140"></a>NUC140</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC140</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="NUC200"></a>NUC200</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC200LC2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC200LC2AN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC200LD2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC200LD2AN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC200LE3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC200LE3AN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC200SC2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC200SC2AN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC200SD2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC200SD2AN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC200SE3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC200SE3AN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC200VE3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC200VE3AN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="NUC220"></a>NUC220</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC220LC2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC220LC2AN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC220LD2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC220LD2AN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC220LE3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC220LE3AN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC220SC2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC220SC2AN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC220SD2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC220SD2AN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC220SE3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC220SE3AN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC220VE3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC220VE3AN</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="NUC230"></a>NUC230</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC230LC2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC230LD2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC230LE3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC230SC2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC230SD2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC230SE3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC230VE3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="NUC240"></a>NUC240</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC240LC2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC240LD2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC240LE3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC240SC2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC240SD2AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC240SE3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC240VE3AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="NUC400"></a>NUC400</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC442JG8AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC442JI8AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC442KG8AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC442KI8AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC442RG8AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC442RI8AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC442VG8AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC442VI8AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC472HG8AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC472HI8AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC472JG8AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC472JI8AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC472KG8AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC472KI8AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC472VG8AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC472VI8AE</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="NUC500"></a>NUC500</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC501</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC505DL13Y</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC505DLA</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC505DS13Y</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC505DSA</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC505YLA</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC505YLA2Y</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">8.22.1</td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC505YO13Y</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="NUC700"></a>NUC700</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC710</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC740</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC745</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+</table>
+<br><br><br>
+<table class="example_ul">
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;font-size:1.0em;"><a name="NUC900"></a>NUC900</th>
+		</tr>
+	<tr>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">デバイス</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ヘッダ/DDF</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">ハードウェアデバッグサポート</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュローダ</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">サンプルプロジェクト</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">フラッシュブレークポイント</th>
+			<th style="background-color:#9B9B9B;color:#EEEEEE;text-align:center;">リリース</th>
+		</tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC910</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC920</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+	<tr><td style="text-align:center;padding: 5px 10px 5px 10px;">NUC950</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">Yes</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;">No</td><td style="text-align:center;padding: 5px 10px 5px 10px;"></td></tr>
+</table>
+</body></html>

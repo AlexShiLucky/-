@@ -1,0 +1,798 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemalocation="http://www.w3.org/MarkUp/SCHEMA/xhtml11.xsd" 
+      xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" 
+	  content="application/xhtml+xml; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <link type="text/css" rel="stylesheet" media="all" href="style/ewic.css" />
+
+    <title>IAR Information Center for Arm</title>
+  </head>
+  <body>
+    <div id="titlebanner">
+      <div>
+	<h1>IAR Information Center for Arm</h1>
+	<p class="subtitle">
+	  Release notes for the IAR C-STAT Static Analysis tool,
+	  product package version 8.40.2
+        </p>
+      </div>
+    </div>
+    <div class="breadcrumb"><a href="index.JPN.html">Arm用IARインフォメーションセンタ</a> | 
+      <a href="release_notes.JPN.html">リリースノート</a> | 
+      <a href="components.JPN.html">コンポーネント</a> | 
+      Release notes for the IAR C-STAT Static Analysis tool
+    </div>
+    <div class="mainblock">
+      <ul>
+	<li><a href="#important">重要な情報</a> </li>
+	<li><a href="#features">新機能</a> </li>
+	<li><a href="#problems">既知の問題</a> </li>
+	<li><a href="#pcorr">プログラム修正</a> </li>
+	<li><a href="#manuals">ユーザガイドの訂正</a> </li>
+	<li><a href="#misc">その他</a> </li>
+	<li><a href="#history">リリース履歴</a> </li>
+      </ul>
+<!--======================================================================-->
+<!-- IMPORTANT INFORMATION                                                -->
+<!--======================================================================-->
+      <h3>
+	<a name="important" id="important"></a>重要な情報
+      </h3>
+﻿<ul>
+  <li>
+なし
+  </li>
+</ul>
+<!--======================================================================-->
+<!-- NEW FEATURES                                                         -->
+<!--======================================================================-->
+      <h3>
+	<a name="features" id="features"></a>新機能
+      </h3>
+﻿<ul>
+  <li>
+なし
+  </li>
+</ul>
+<!--======================================================================-->
+<!-- Known Problems-->
+<!--======================================================================-->
+      <h3>
+	<a name="problems" id="problems"></a>既知の問題
+      </h3>
+﻿<ul>
+     <li>
+        <p>
+<b>[<a name='EWARM-5208'>EWARM-5208</a>、<a name='EW25597'>EW25597</a>]</b>符号なしの変数から小さい符号なし変数への暗黙的な変換によって、ATHオーバフローに関するC-STATメッセージが表示されます。符号なしの変数が減算(最大値への繰越し)が原因で以前にオーバフローとなったことがある場合、符号なしの変数の範囲が負であるというメッセージが表示されます。回避策: キャストを追加して明示的換算を作成すると、このメッセージが解決され、バグが発生しなくなります。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5201'>EWARM-5201</a>、<a name='EW25582'>EW25582</a>]</b>終了しないwhileループまたはforループによって、C-STATが境界外となった配列インデックスのチェックを正しく行わなくなります。
+        </p>
+     </li>
+</ul>
+<!--======================================================================-->
+<!-- Program Corrections                                                  -->
+<!--======================================================================-->
+      <h3>
+	<a name="pcorr" id="pcorr"></a>プログラム修正
+      </h3>
+﻿<ul>
+     <li>
+        <p>
+<b>[<a name='CSTAT-409'>CSTAT-409</a>, <a name='EWARM-6792'>EWARM-6792</a>]</b> C-STATは、<tt>.</tt>(dot) または<tt>-&gt;</tt> (矢印)演算子を介してアクセスされるオブジェクトの間違ったサイズをレポートすることがあります。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='CSTAT-408'>CSTAT-408</a>, <a name='EWARM-6781'>EWARM-6781</a>]</b> MISRAC2012-Rule-8.7の場合、関数定義が誤って関数のリファレンスとして扱われません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='CSTAT-407'>CSTAT-407</a>, <a name='EWARM-6780'>EWARM-6780</a>]</b> コントロール式のオブジェクトが<tt>float</tt>タイプの場合、MISRAC2012-Rule-14.1_aおよびMISRAC++2008-6-5-1_aは誤って警告します。これらのチェックは、ループカウンタが<tt>float</tt>型の場合にのみ警告されるべきです。</font>
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='CSTAT-406'>CSTAT-406</a>, <a name='EWARM-6772'>EWARM-6772</a>]</b> C-STATは誤って、行'0'を参照するメッセージを生成することがあります(MISRAC2004-1.1は例外)。</font>
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='CSTAT-404'>CSTAT-404</a>, <a name='EWARM-6762'>EWARM-6762</a>]</b> ヘッダーファイルが複数のソースファイルに含まれていると、ヘッダーファイルの<tt>typedef</tt>が一意ではないと間違って表示されます。これはMISRAC2012-Rule-5.6レポートが誤判定になる原因になります。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='CSTAT-403'>CSTAT-403</a>, <a name='EWARM-6761'>EWARM-6761</a>]</b> ヘッダファイルが複数のソースファイルに含まれていると、ヘッダファイルの宣言が複数の宣言として間違って表示されます。そしてMISRAC2012-Rule-8.5_bが誤判定を生成します。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='CSTAT-402'>CSTAT-402</a>, <a name='EWARM-6739'>EWARM-6739</a>]</b> <tt>if</tt>、<tt>for</tt>、および<tt>while</tt>文にある<tt>break</tt>および<tt>continue</tt>などの特定の宣言は、CERT-EXP19-C規則で誤判定を生成します。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='CSTAT-400'>CSTAT-400</a>, <a name='EWARM-6702'>EWARM-6702</a>]</b> <tt>assert</tt>マクロの<tt>NULL</tt>を使用すると、MISRAC2012-Rule-11.9に誤判定をトリガします。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-6354'>EWARM-6354</a>, <a name='TPB-3006'>TPB-3006</a>]</b> array型が1つ以上のレベルのtypedef指定子で構成されていて、arrayがstruct内に配置されている場合、C-STATのArray境界が間違って計算されます。
+        </p>
+     </li>
+</ul>
+<!--======================================================================-->
+<!-- USER GUIDE CORRECTIONS                                               -->
+<!--======================================================================-->
+      <h3>
+	<a name="manuals" id="manuals"></a>ユーザガイドの訂正
+      </h3>
+﻿<ul>
+<li>なし</li>
+</ul>
+<!--======================================================================-->
+<!-- MISCELLANEOUS                                                        -->
+<!--======================================================================-->
+      <h3>
+	<a name="misc" id="misc"></a>その他
+      </h3>
+﻿<ul>
+<li>なし</li>
+</ul>
+<!--======================================================================-->
+<!-- RELEASE HISTORY                                                      -->
+<!--======================================================================-->
+      <h3>
+	<a name="history" id="history"></a>リリース履歴
+      </h3>
+﻿<h4>V8.32 2018-10-12</h4>
+<b>プログラム修正</b>
+ 
+<ul>
+     <li>
+        <p>
+		EWARM 8.32.3 <b>[<a name='CSTAT-399'>CSTAT-399</a>, <a name='EWARM-6662'>EWARM-6662</a>]</b> C-STATは、-&gt; (矢印) または . (ドット)を経由したvolatileオブジェクトへのアクセスをvolatile書き込み操作と見なします。</font>
+        </p>
+     </li>
+     <li>
+        <p>
+		EWARM 8.32.3 <b>[<a name='CSTAT-398'>CSTAT-398</a>, <a name='EWARM-6658'>EWARM-6658</a>]</b> C-STATにリンク分析メッセージを中止することはできません。
+        </p>
+     </li>
+     <li>
+        <p>
+		EWARM 8.32.3 <b>[<a name='CSTAT-396'>CSTAT-396</a>, <a name='EWARM-6595'>EWARM-6595</a>]</b> 関数パラメータとして<tt>__segment_begin</tt>などのセクション演算子を使用すると、C-STATのインターナルエラーの原因になります。
+        </p>
+     </li>
+     <li>
+        <p>
+		EWARM 8.32.3 <b>[<a name='CSTAT-393'>CSTAT-393</a>, <a name='EWARM-6575'>EWARM-6575</a>]</b> MISRAC2012-Dir-4.6_a チェックを有効にして、変更されていないファイルに対して</font>分析を実行すると、C-STATがインターナルエラーを報告することがあります。
+        </p>
+     </li>
+     <li>
+        <p>
+		EWARM 8.32.3 <b>[<a name='CSTAT-391'>CSTAT-391</a>, <a name='EWARM-6526'>EWARM-6526</a>]</b> まれに、C-STATが関数パラメーターの使用方法を間違って識別することがあります。
+        </p>
+     </li>
+     <li>
+        <p>
+		EWARM 8.32.3 <b>[<a name='CSTAT-389'>CSTAT-389</a>, <a name='EWARM-6514'>EWARM-6514</a>]</b> MISRAC2012-Rule-10.3チェックが有効な場合、100要素以上の配列では、C-STATがクラッシュすることがあります。
+        </p>
+     </li>
+     <li>
+        <p>
+		EWARM 8.32.3 <b>[<a name='CSTAT-387'>CSTAT-387</a>, <a name='EWARM-6507'>EWARM-6507</a>]</b> C-STATは、誤って、関数から構造体を返すことをその構造体の使用と見なしません。</font>
+        </p>
+     </li>
+     <li>
+        <p>
+		EWARM 8.32.3 <b>[<a name='CSTAT-386'>CSTAT-386</a>, <a name='EWARM-6411'>EWARM-6411</a>]</b> ソースファイルが16 MB以上の場合、C-STATがクラッシュすることがあります。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='CSTAT-377'>CSTAT-377</a>, <a name='EWARM-6373'>EWARM-6373</a>]</b>関数アドレスを保存すると、関数呼び出しとみなされます。これが原因で、MISRAC2012-Rule-17.2_bなどの再帰を検索するチェックが誤判定になります。
+        </p>
+     </li>
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+  <li>
+なし
+  </li>
+</ul>
+ 
+ 
+<h4>V8.30 2018-06-15</h4>
+<b>プログラム修正</b>
+ 
+<ul>
+     <li>
+        <p>
+8.30.2<br><b>[<a name='CSTAT-375'>CSTAT-375</a>, <a name='EWARM-6345'>EWARM-6345</a>]</b>ソースファイルの分析が無効なメッセージだけで構成されている場合、IAR Embedded Workbenchは<b>ビルド</b>ウィンドウに&quot;Analyzing xxxx&quot;を出力しません。
+        </p>
+     </li>
+     <li>
+        <p>
+8.30.2<br><b>[<a name='CSTAT-372'>CSTAT-372</a>, <a name='EWARM-6289'>EWARM-6289</a>]</b>配列がstructのフィールド(ただし最初のフィールドではなく)であるとき、配列インデックスは間違って計算されます。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='CSTAT-368'>CSTAT-368</a>, <a name='EWARM-6189'>EWARM-6189</a>]</b>パラメータがグローバル配列の場合、MISRAC2012-Rule-17.5は誤判定をレポートすることがあります。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='CSTAT-364'>CSTAT-364</a>, <a name='EWARM-6161'>EWARM-6161</a>]</b>MISRAC2012-Rule-8.9_aおよびMISRAC2012-Rule-8.9_bチェックの重要度レベルが間違っています。「Low」であり、「Medium」ではありません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='CSTAT-363'>CSTAT-363</a>, <a name='EWARM-6151'>EWARM-6151</a>]</b><tt>if (++foo != 0)</tt>または<tt>if (--foo != 0)</tt>は、<tt>foo</tt>と0の比較として数えません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='CSTAT-360'>CSTAT-360</a>, <a name='EWARM-6142'>EWARM-6142</a>]</b>変数が<tt>static</tt>を宣言されていても、<tt>MISRAC2012-Rule-8.3_b</tt>同じ名前のグローバル変数間の統一されていない型にメッセージを生成します。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='CSTAT-359'>CSTAT-359</a>, <a name='EWARM-6141'>EWARM-6141</a>]</b>ソースファイルのパスにスペースがあると、リンク分析メッセージは表示されません。これは<tt>commands</tt>コマンドで<tt>icstat</tt>を実行しているときと、IAR Embedded Workbenchで分析を実行しているときの両方で発生します。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='CSTAT-357'>CSTAT-357</a>, <a name='EWARM-6137'>EWARM-6137</a>]</b><tt>構造体</tt>内の配列のアクセス範囲が正しく計算されません。これは、例えば<tt>ARR-inv-index-ptr-pos</tt>チェックで誤判定を生成することがあります。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='CSTAT-353'>CSTAT-353</a>, <a name='EWARM-6081'>EWARM-6081</a>]</b>非静的関数の関数パラメータは、関数が定義されているモジュール内のすべての関数呼び出しの分析をもとにした推定値範囲が与えられます。これにより、関数が他のモジュールに呼び出されたときに誤判定になることがあります。
+        </p>
+     </li>
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+  <li>
+なし
+  </li>
+</ul>
+ 
+ 
+<h4>V8.22 2018-01-22</h4>
+<b>プログラム修正</b>
+ 
+<ul>
+     <li>
+        <p>
+<b>[<a name='CSTAT-362'>CSTAT-362</a>, <a name='EWARM-6138'>EWARM-6138</a>]</b> シフト演算の右辺の引数の範囲が、間違って計算し、<tt>ATH-shift-bounds</tt>の誤判定を生成してしまうことがあります。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='CSTAT-350'>CSTAT-350</a>, <a name='EWARM-6090'>EWARM-6090</a>]</b> constでないポインタが割り当てられる、または変更またはコピーされたことのない別のconstでないポインタにコピーされるとき、MISRAC2012-Rule-13.8がメッセージを発行しません。この場合は、両方のポインタが<tt>const</tt>属性で宣言されます。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='CSTAT-343'>CSTAT-343</a>, <a name='EWARM-6074'>EWARM-6074</a>]</b><tt>&amp;arr[i]</tt>などの、演算子<tt>&amp;</tt>が使用されるとき、ARR-inv-index がバッファのオーバーフローをチェックしません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='CSTAT-346'>CSTAT-346</a>, <a name='EWARM-6071'>EWARM-6071</a>]</b> MISRAC2012-Rule-16.1: case句は複数のbreak、goto、またはreturn文を持つことはできません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='CSTAT-345'>CSTAT-345</a>, <a name='EWARM-6070'>EWARM-6070</a>]</b> MISRA C 2012 Rule 10.3の例外1は配列タイプに適用されません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='CSTAT-334'>CSTAT-334</a>, <a name='EWARM-5920'>EWARM-5920</a>]</b> 大きな数字で<tt>&amp;</tt>を計算すると、C-STATが内部エラーを生成します。
+        </p>
+     </li>
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+<li><p>なし</p></li>
+</ul>
+ 
+ 
+<h4>V8.20 2017-10-16</h4>
+<b>プログラム修正</b>
+ 
+<ul>
+     <li>
+        <p>
+EWARM 8.20.2<br><b>[<a name='EWARM-5989'>EWARM-5989</a>, <a name='CSTAT-340'>CSTAT-340</a>]</b> 符号付きでもなく符号なしでもないオブジェクトを返すと、インターナルエラーが発生します。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.20.2<br><b>[<a name='EWARM-5976'>EWARM-5976</a>, <a name='CSTAT-339'>CSTAT-339</a>]</b> MISRAC++2008-7-1-2: 関数パラメータのconstでないメンバ関数の呼び出しは、そのパラメータの潜在的な書き込み操作として認識されません。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.20.2<br><b>[<a name='EWARM-5950'>EWARM-5950</a>, <a name='CSTAT-337'>CSTAT-337</a>]</b> 同じシンボルを参照する異なるチェックからのリンクメッセージは、誤ってフィルターされます。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.20.2<br><b>[<a name='EWARM-5920'>EWARM-5920</a>, <a name='CSTAT-334'>CSTAT-334</a>]</b> 大きな数字で<tt>&amp;</tt>を計算すると、C-STATがインターナルエラーになる原因になります。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.20.2<br><b>[<a name='EWARM-5908'>EWARM-5908</a>, <a name='CSTAT-333'>CSTAT-333</a>]</b> MISRAC2012-Rule-8.4 は、それぞれ別の宣言を持つために<tt>main</tt>関数が必要です。
+        </p>
+     </li>
+     <li>
+        <p>
+EWARM 8.20.2<br><b>[<a name='EWARM-5867'>EWARM-5867</a>, <a name='CSTAT-331'>CSTAT-331</a>]</b> enumまたはboolean型を含む基底型の式は誤って評価されます。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5848'>EWARM-5848</a>、<a name='CSTAT-329'>CSTAT-329</a>]</b>まれに、大文字小文字の区別の問題が原因で、C-STATヘッダーファイルの問題でメッセージが表示できないことがあります。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5844'>EWARM-5844</a>、<a name='CSTAT-328'>CSTAT-328</a>]</b>ディレクトリ区切り文字が含まれているパスを除外するというオプションが使用できません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5843'>EWARM-5843</a>、<a name='CSTAT-327'>CSTAT-327</a>]</b>除外するというオプションを一回以上使用した場合、最後のオプションだけ有効です。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5808'>EWARM-5808</a>, <a name='CSTAT-324'>CSTAT-324</a>, <a name='EW26733'>EW26733</a>]</b> 配列にboolean型の要素があるとき、MISRAC2012-Rule-10.1_R3は配列でトリガします。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5807'>EWARM-5807</a>, <a name='CSTAT-323'>CSTAT-323</a>, <a name='EW26731'>EW26731</a>]</b> MISRAC2012-Rule-10.3のチェックは、配列およびポインタの代入を無視します。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5793'>EWARM-5793</a>, <a name='CSTAT-322'>CSTAT-322</a>, <a name='EW26708'>EW26708</a>]</b> リターン値のサイズは、その低い方と高い方の境界を考慮しません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5792'>EWARM-5792</a>, <a name='CSTAT-321'>CSTAT-321</a>, <a name='EW26706'>EW26706</a>]</b> 宛先が識別子以外の場合、C-STATは<tt>memset</tt>と関連の関数でオーバフローを認識しません。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5781'>EWARM-5781</a>, <a name='CSTAT-318'>CSTAT-318</a>, <a name='EW26688'>EW26688</a>]</b> switch文がループ内にあるとき、これらのチェックは誤判定を生成する場合があります: MISRAC2012-Rule-16.3、MISRAC++2008-6-4-5、およびMISRAC2004-15.2。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5779'>EWARM-5779</a>、<a name='EW26681'>EW26681</a>]</b>ビット単位のAND演算の左オペレンドが、結果と同じサイズの場合、ATHオーバーフローは誤ってトリガすることがあります。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5746'>EWARM-5746</a>、<a name='EW26636'>EW26636</a>]</b> C-STATは、volatile書き込み演算として、(arrow)または(dot)演算子を介して、volatileオブジェクトにアクセスすることを考慮します。
+        </p>
+     </li>
+     <li>
+        <p>
+<b>[<a name='EWARM-5743'>EWARM-5743</a>、<a name='EW26630'>EW26630</a>]</b>コマンドラインから'load'コマンドを実行するとき、リンクメッセージはicstatの出力の一部ではありません。
+        </p>
+     </li>
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+<li><p>なし</p></li>
+</ul>
+ 
+ 
+<h4>V8.11 2017-04-11</h4>
+<b>プログラム修正</b>
+ 
+<ul>
+  <li><p>
+コンパイル時にRawエンコードを使用している場合は、C-STATはASCII文字でないコメントを取り扱えません。<br>[EW26477]
+  </p></li>
+
+  <li><p>
+EWARM 8.11.2:<br>キーワード<code>static</code>で宣言したグローバル配列は、間違って定数値を持っていると想定されます。<br>[EW26461]
+  </p></li>
+
+  <li><p>
+EWARM 8.11.2:<br>MISRAC2012-Rule-8.13: 変数の潜在的な使用として、C-STATは<code>&amp;</code> (address-of) and <code>[]</code> (subscript)などの演算子を介して関数パラメータとして変数を送信しません。<br>[EW26560]
+  </p></li>
+
+  <li><p>
+EWARM 8.11.2:<br> MISRAC2012-Rule-2.2_b: C-STATは、構造体のフィールドの潜在的な書き込み演算としてエイリアスされたポインタを介して、構造体オブジェクトを送信できません。<br>[EW26562]
+  </p></li>
+
+</ul>
+
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+  <li>
+なし
+  </li>
+</ul>
+ 
+ 
+<h4>V8.10 2017/03/10</h4>
+<b>プログラム修正</b>
+ 
+<ul>
+  <li><p>
+リファレンスによって渡される変数の別の関数にある割当処理は、MISRAC++2008-0-1-6および同様のC-STATチェックによって、誤判定を生成することがあります。<br>[EW26117]
+  </p></li>
+
+  <li><p>
+まだ分析されていないプロジェクトでC-STATレポートを生成しようとすることが可能です。<br>[EW26173]
+  </p></li>
+
+  <li><p>
+ATHオーバフローは、代入演算子を短くするためにオーバフローを検知できません。<br>[EW26194]
+  </p></li>
+
+  <li><p>
+すべてのソースファイルの組み合わせた絶対パスが32,768文字を超えるプロジェクトは、リンク分析が起こり、クラッシュします。<br>[EW26217]
+  </p></li>
+
+  <li><p>
+MISRAC++2008-7-1-1は次のことを検討しません1) constでないメンバ関数の呼び出しおよび、2) 構造体変数のアドレスの取得および変更として１つのフィールドに書き込み。<br>[EW26219]
+  </p></li>
+
+  <li><p>
+三項演算子の種類が、その最初のオペランドの種類によって誤って決定されます。<br>[EW26243]
+  </p></li>
+
+  <li><p>
+C-STATは、演算子が符号なしでも、右シフト演算の左辺の引数が負の間隔を持つことをレポートすることがあります。<br>[EW26258]
+  </p></li>
+
+  <li><p>
+純粋でない関数のパラメータを使用するconstでないポインタは、MISRAC2012-Rule-8.13に影響すると認識されます。<br>[EW26260]
+  </p></li>
+
+  <li><p>
+リターン型<code>void</code>のシステム外部の関数は、ほかに影響するとは考えられていません。<br>[EW26262]
+  </p></li>
+
+  <li><p>
+C-STATは、構造体フィールドに書き込むように、代入文の左辺のサブスクリプト演算子内にある構造体フィールドにアクセスすると誤って認識します。<br>[EW26264]
+  </p></li>
+
+  <li><p>
+C-STATは、演算子が符号なしでも、左シフト演算の右辺の引数が負の間隔を持つことをレポートすることがあります。<br>[EW26271]
+  </p></li>
+
+  <li><p>
+Booleanポインタは<code>boolean</code>型があると認識されません。<br>[EW26273]
+  </p></li>
+
+  <li><p>
+明示的なキャスティングの使用がかかわる場合は、グローバルオブジェクトの使用は登録されません。これは、MISRAC2012-Rule-8.9_bに誤判定のトリガを促すことがあります。<br>[EW26275]
+  </p></li>
+
+  <li><p>
+SEC-NULL-literal-posおよびPTR-null-literal-posにより、リテラル<code>0</code>は<code>NULL</code>として認識されます。<br>[EW26283]
+  </p></li>
+
+  <li><p>
+リターン型<code>main()</code>が<code>int</code>の<code>typedef</code>の場合、EXP-main-ret-int は誤判定と警告します。<br>[EW26285]
+  </p></li>
+
+  <li><p>
+volatileオブジェクトのアドレスの取得は、不揮発性処理として認識されません。<br>[EW26302]
+  </p></li>
+
+  <li><p>
+グローバル割り当ての右辺にある静的グローバルの使用は、使用と認識されず、MISRAC2012-Rule-8.9_aに誤判定をトリガすることがあります。<br>[EW26304]
+  </p></li>
+
+  <li><p>
+異なる配列の<code>subscript</code>演算子を介してアクセスした値を比べることは、異なるポインタ間の比較として認識され、誤ってMISRAC2012-Rule-18.3をトリガします。<br>[EW26307]
+  </p></li>
+
+  <li><p>
+その名前に文字シーケンス<code>bool</code>、<code>Bool</code>、<code>BOOL</code>がある<code>typedef</code>の構造体フィールドは、boolean型と認識されません。<br>[EW26316]
+  </p></li>
+
+  <li><p>
+<code>bool</code>、<code>Bool</code>、または<code>BOOL</code>文字シーケンスの統一されたtypedefの構造体フィールドを使用することで、MISRAC2012-Rule-14.4が発生し誤判定を生成します。<br>[EW26318]
+  </p></li>
+
+  <li><p>
+明示的なキャスティングは、C-STATが符号なしの変数が負の値の間隔を持つと認識することがある。<br>[EW26365]
+  </p></li>
+
+  <li><p>
+31ビットより大きい値の<code>char</code>が含まれているコードを分析するとき、C-STATがインターナルエラーで失敗します。<br>[EW26392]
+  </p></li>
+
+  <li><p>
+複数の<code>--exclude</code>オプションを使用するとき、最後のオプションだけが適用されます。<br>[EW26438]
+  </p></li>
+</ul>
+ 
+<b>新機能</b>
+ 
+<ul>
+<li>なし</li>
+</ul>
+ 
+ 
+<h4>V7.80 2016-10-17</h4>
+<b>プログラム修正</b>
+
+<ul>
+  <li><p>
+MISRA-C:2004 rule 11.4は配列をポインタにキャストするためのメッセージが提供しません。<br>[EW26207]
+  </p></li>
+</ul>
+
+
+<h4>V7.70 2016-06-17</h4>
+<b>プログラム修正</b>
+ 
+<ul>
+  <li><p>
+C-STAT: MISRAC2004-17.4_bは現在複数次元の配列を取り扱います。<br>[EW26056]
+  </p></li>
+
+  <li><p>
+EWARM 7.70.2:<br> ブール演算式に、ネストした三項演算子であって本質的にブールであるものが含まれているときは、C-STAT が、 MISRAC2012-Rule-10.1_R2 において誤判定を生成します。<br>[EW26082]
+  </p></li>
+
+  <li><p>
+EWARM 7.70.2:<br>ルール MISRAC2012-Rule-12.1 / MISRAC++2008-5-0-2 / MISRAC2004-12.1 は、<code>sizeof()</code>演算式を、括弧で囲んで明確性を高める提案に関して、誤判定を生成します。<br>[EW26083]
+  </p></li>
+
+  <li><p>
+EWARM 7.70.2:<br> ワイルドカードを使用した抑制 C-STAT によるインターバル チェックが、意図したとおりに動作しません。<br>[EW26092]
+  </p></li>
+
+  <li><p>
+EWARM 7.70.2:<br> MISRAC++2008-5-0-6 のチェックで、「基底型（underlying type）」が不正に決定されることがあります。<br>[EW26118]
+  </p></li>
+
+  <li><p>
+EWARM 7.70.2:<br> MISRAC2012-Rule-11.9 が、暗黙の<code>(void *)0</code> casts、例えば<code>void *p = 0</code>に、メッセージを生成しません。<br> [EW26120]
+  </p></li>
+
+  <li><p>
+EWARM 7.70.2:<br> MISRAC2012-Rule-8.13: アサイメントによりコピーされたポインタに、const修飾子が必要ではなくなりました。<br>[EW26196]
+  </p></li>
+
+  <li><p>
+EWARM 7.70.2:<br> CERT-EXP19-Cが、else-if ステートメントの括弧が足りないという誤判定を大量に生成します。<br>[EW26198]
+  </p></li>
+</ul>
+ 
+<b>新機能</b>
+<ul>
+  <li>
+なし
+  </li>
+</ul>
+
+ 
+  
+<h4>V7.60 31.03.16</h4>
+<b>プログラム修正</b>
+ 
+<ul>
+  <li>
+    <p>
+C-STAT: C-STATのCONST-paramチェックでは<tt>&amp;</tt>パラメータを扱いません。<br>[EW25294]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+C-STAT: C-STATチェックはオブジェクト内の配列の初期化をチェックしません。<br>[EW25398]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+C-STAT: 匿名共用体のコード アクセス フィールドでインターナルエラーが発生します。<br>[EW25776]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+C-STAT: LIB-memcpy-overrun および MISRAC2012-Rule-1.3t は、送信先メモリのサイズを間違って計算することがあります。<br>[EW25908]
+    </p>
+  </li>
+</ul>
+
+<b>新機能</b>
+  
+<ul>
+<li><p><b>C-STAT の機能拡張</b><br /> 静的分析ツール C-STAT には、約 150 の新しいチェックで拡張され、この中には新しい 90 個は MISRA C:2012 チェックおよび、2 個の新しいチェックのパッケージがあります。また新しいオプションで、分析の間違った正の値の終了フェーズを有効または無効にし、また分析からファイルを実行します。C-STAT メッセージの無効化は、現在ソースファイルのコメントにあるディレクティブで、コントロールできます。詳細については、<a href="iccarm.ENU.html#features">コンパイラのリリースノート</a>を参照してください。
+  </p></li>
+
+</ul>
+
+
+<h4>V7.50 2015-11-10</h4>
+<b>プログラム修正</b>
+ 
+<ul>
+  <li>
+    <p>
+コンパイラのコマンドラインでオブジェクトファイルへのパスにマルチバイト文字が含まれる場合、C-STATで致命的なエラーが発生することがあります。<br>[EW25766]
+    </p>
+  </li>
+</ul>
+
+<b>新機能</b>
+ 
+<ul>
+  <li>
+<p><b>C-STATでの解析レポートの生成</b><br /> C-STATからhtml形式で解析レポートを生成できるようになりました。詳しくは、『<a href="../EW_CSTATGuide.ENU.pdf">C-STAT静的解析ガイド</a>』を参照してください。
+    </p>
+  </li>
+</ul>
+ 
+ 
+<h4>V7.40 2015-02-19</h4>
+<b>プログラム修正</b>
+ 
+<ul>
+
+  <li>
+    <p>
+EWARM 7.40.2:<br> C-STAT:<code>icstat</code>がタイムアウトすると、そのことについてまったくふれられません。<br>[EW25262]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+EWARM 7.40.2:<br> C-STAT: <code>ATH-div-0-cmp-aft</code>チェックが、適切な場合に分析済の間隔範囲を使用するようになりました。<br>[EW25300]
+    </p>
+  </li>
+
+  <li>
+    <p>
+EWARM 7.40.2:<br> C-STAT: MISRAC2012-Rule-15.6_cは、<code>else</code>の直後に<code>if</code>が続く場合にメッセージが表示されないことを認めていません。<br> [EW25330]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+EWARM 7.40.3:<br>C-STAT: 解析では<code>va_start</code>が変数の初期化として見なされません。<br>[EW25319]
+    </p>
+  </li>
+
+  <li>
+    <p>
+EWARM 7.40.3:<br> C-STAT: MISRAC2012-Dir-4.10(ガード式のインクルード)をチェックする際、<code>&lt;...&gt;</code>ではなく<code>&quot;...&quot;</code>を使用してインクルードされたあらゆるシステムヘッダは規則違反と見なされます。.<br>[EW25321]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+EWARM 7.40.3:<br> C-STAT: MISRAC2012-Dir-4.6_aが間違って違反と診断される場合があります。特に、配列タイプの宣言で<code>volatile</code>または<code>const</code>修飾子を使用すると、そうなる可能性があります。<br>[EW25323]
+    </p>
+  </li>
+
+  <li>
+    <p>
+EWARM 7.40.3:<br> C-STAT:の間隔ソルバが、グローバルまたは静的<code>volatile</code>変数の初期化された値を使用します。<br>[EW25332、EW25389]
+  </p>
+  </li>
+  
+  <li>
+    <p>
+EWARM 7.40.3:<br> C-STAT: <code>signed integer</code>のゼロ定数式が、MISRAC2012-Rule-10.1_R7に対して誤ったメッセージを出力します(シフトの右オペランドは本質的に符号なしにするべきです)。<br>[EW25343]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+EWARM 7.40.3:<br> C-STAT: MISRAC2012-Rule-10.3/4で間違ったメッセージが出力されることがありますbool<code>bool</code>のリターンおよび<code>integer</code>定数0と1を持つboolの比較)。<br>[EW25355]
+    </p>
+  </li>
+
+  <li>
+    <p>
+EWARM 7.40.3:<br> C-STAT: <code>sizeof()</code>式内の揮発性アクセスが、副作用と見なされます。<br>[EW25381]
+    </p>
+  </li>
+    
+  <li>
+    <p>
+EWARM 7.40.3:<br> C-STAT: MISRAC++2008-2-13-3により、列挙定数に間違ったフラグが付けられます。<br>[EW25412]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+EWARM 7.40.3:<br> C-STAT: MISRAC++2008-8-5-2が、正しい数のエレメントを持ったイニシャライザを使用している場合でも、100以上のエレメントを持つ配列で失敗します。<br>[EW25422]
+    </p>
+  </li>
+
+  <li>
+    <p>
+EWARM 7.40.5:<br> C-STAT: MISRAC2012-Rule-10.3/4で、<code>enum</code>定数0と1が<code>boolean</code>として処理されません。<br>[EW25370]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+EWARM 7.40.5:<br> CONST-param、MISRA-C:2004-16.7、MISRA C++:2008-7-1-2のチェックで、パラメータの配列割当てが検出されません。<br>[EW25547]
+    </p>
+  </li>
+
+  <li>
+    <p>
+EWARM 7.40.5:<br>MISRA-C:2004 19.15のチェックで、プロジェクトディレクトリ(<code>$PROJ_DIR$</code>)のサブディレクトリでないディレクトリにあるソースファイルについて、誤ってメッセージが表示される可能性があります。<br>[EW25549]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+EWARM 7.40.5:<br> C-STAT: マクロがシステムヘッダからのものかどうかの検出が失敗します。この場合、<code>offsetof</code>を使用すると誤ったメッセージが表示されます。<br>[EW25603]
+    </p>
+  </li>
+
+  <li>
+    <p>
+EWARM 7.40.5:<br> C-STATが、SPC-volatile-readsのチェックに対して間違った正の値を報告することがほとんどなくなりました。<br>[EW25607]
+    </p>
+  </li>
+  
+  <li>
+    <p>
+EWARM 7.40.5:<br> C-STAT、MEM-stack-global-alias: 配列からグローバル変数へ値を割り当てる際、スタックアドレスを割り当てるとは見なされなくなりました。<br>[EW25609]
+    </p>
+  </li>
+</ul>
+ 
+ 
+<b>新機能</b>
+ 
+<ul>
+<li><p><b>C-STAT</b><br /> 静的分析のためのアドオン製品、C-STATがサポートされるようになりました。C-STATは、不具合やバグ、CERTやCommon Weakness Enumerationが定義するセキュリティの脆弱性を検出できる画期的な静的分析機能を備えているほか、コードをMISRA-C:2012/2004やMISRA-C++:2008などのコード標準に適合させる上で役立ちます。詳しくは、see <A href="../EW_CSTATGuide.ENU.pdf" >C-STAT静的分析ガイド</A>を参照してください。
+  </p></li>
+</ul>
+    </div>
+  </body>
+</html>

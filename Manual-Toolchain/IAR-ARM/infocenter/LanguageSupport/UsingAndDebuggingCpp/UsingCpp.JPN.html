@@ -1,0 +1,783 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Using and debugging C++</title>
+    <link rel="StyleSheet" href="css/UsingCpp.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+  </head>
+  <body style="background-color: White; background-image: url(&quot;images/BlackGrayStrip.png&quot;); background-position: center top; background-repeat: repeat-x">
+    <table align="left">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/IARSystems.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading1"><a name="15992948">Using and debugging C++</a></div>
+      <div class="WebWorks_MiniTOC">
+        <div class="WebWorks_MiniTOC_Level1">
+          <a class="WebWorks_MiniTOC_Link" href="#15971732">Tutorial overview</a>
+        </div>
+        <div class="WebWorks_MiniTOC_Level2">
+          <a class="WebWorks_MiniTOC_Link" href="#16001653">Files used in this tutorial</a>
+        </div>
+        <div class="WebWorks_MiniTOC_Level2">
+          <a class="WebWorks_MiniTOC_Link" href="#16001988">Opening the tutorial project</a>
+        </div>
+        <div class="WebWorks_MiniTOC_Level1">
+          <a class="WebWorks_MiniTOC_Link" href="#15972018">Debugging various C++ constructs</a>
+        </div>
+        <div class="WebWorks_MiniTOC_Level2">
+          <a class="WebWorks_MiniTOC_Link" href="#15984535">Setting up the project</a>
+        </div>
+        <div class="WebWorks_MiniTOC_Level2">
+          <a class="WebWorks_MiniTOC_Link" href="#15984737">Monitoring constructors</a>
+        </div>
+        <div class="WebWorks_MiniTOC_Level2">
+          <a class="WebWorks_MiniTOC_Link" href="#16022554">Monitoring an unintuitive program flow</a>
+        </div>
+        <div class="WebWorks_MiniTOC_Level2">
+          <a class="WebWorks_MiniTOC_Link" href="#16022300">Backtracing function calls and their parameters</a>
+        </div>
+        <div class="WebWorks_MiniTOC_Level2">
+          <a class="WebWorks_MiniTOC_Link" href="#16007611">Monitoring STL containers</a>
+        </div>
+        <div class="WebWorks_MiniTOC_Level2">
+          <a class="WebWorks_MiniTOC_Link" href="#16023736">Printing the Fibonacci numbers</a>
+        </div>
+      </div>
+      <div class="Ingress"><a name="16041425">In this tutorial, C++ is used for creating a C++ class. The class is then used for creating independent objects, and the application is built and debugged.</a></div>
+      <div class="Ingress"><a name="16017510">During execution in C-SPY, various features that are specifically useful for debugging certain C++ constructs are demonstrated. </a></div>
+      <div class="Ingress"><a name="15982671">Note that the screenshots in this tutorial do not always correspond exactly to the counterparts in your product.</a></div>
+      <div class="Ingress"><a name="15982717">This tutorial assumes that you are familiar with basic use of IAR Embedded Workbench; see the tutorial </a><span class="Reference">Getting Started using IAR Embedded Workbench</span>.</div>
+      <div class="Heading2"><a name="15971732">Tutorial overview</a></div>
+      <div class="Heading3"><a name="16001653">Files used in this tutorial</a></div>
+      <div class="Body"><a name="16002137">The project in this tutorial uses these files:</a></div>
+      <div class="List_bullet_outer" style="margin-left: 9.999999999999984mm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><span class="Computer"><a name="16002148">FibonacciByClass.cpp</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body_in_list"><a name="16002151">It defines a class </a><span class="Computer">Fibonacci</span> that can be used for extracting a series of Fibonacci numbers. The result is printed on <span class="Computer">stdout</span>.</div>
+      <div class="List_bullet_outer" style="margin-left: 9.999999999999984mm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><span class="Computer"><a name="16002165">FibonacciByClass.h</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body_in_list"><a name="16002170">Contains required definitions and declarations.</a></div>
+      <div class="List_bullet_outer" style="margin-left: 9.999999999999984mm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><span class="Computer"><a name="16002179">UsingClasses.cpp</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body_in_list"><a name="16002187">Creates </a><span class="Computer">fib</span> objects from the class <span class="Computer">Fibonacci</span> and manipulates them before it extracts three sequences of Fibonacci numbers using the <span class="Computer">Fibonacci</span> class.</div>
+      <div class="Heading3"><a name="16001988">Opening the tutorial project</a></div>
+      <div class="List_step_first_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_first_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_first_inner"><a name="16001782">In the IDE, if Information Center is not open, choose </a><span class="Menu_Command">Help&gt;Information Center</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16001791">Click the </a><span class="Menu_Command">Product explorer</span> symbol.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="16001816"><img class="Default" src="images/TutorialsInInfoCenter_02.png" width="300" height="400" style="display: block; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16001826">Under the </a><span class="Menu_Command">Language support</span> heading, click <span class="Menu_Command">Open the tutorial workspace</span>. Choose a destination for your project in the browse dialog box that appears. We recommend that you create a specific directory (with a subdirectory) where you store all your tutorial files, if you have not done that already. In this tutorial we call the directory <span class="Computer">MyTutorials</span> and the subdirectory <span class="Computer">LanguageSupport</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="16009975">After you have chosen a destination directory, the </a><span class="Computer">LanguageSupport</span> workspace is opened in the IDE.</div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16001840">In the </a><span class="Menu_Command">Workspace</span> window, select the <span class="Computer">UsingAndDebuggingCpp</span> project, right-click and choose <span class="Menu_Command">Set as Active</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="16001858"><img class="Default" src="images/UsingCppInWorkspace_02.png" width="357" height="188" style="display: block; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="Heading2"><a name="15972018">Debugging various C++ constructs</a></div>
+      <div class="Body"><a name="3164422">In this example procedure, you will work through these steps:</a></div>
+      <div class="List_bullet_outer" style="margin-left: 9.999999999999984mm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a href="#15984535" title="Using and debugging C++" name="3164432">Setting up the project</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 9.999999999999984mm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a href="#15984737" title="Using and debugging C++" name="15981664">Monitoring constructors</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 9.999999999999984mm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a href="#16022554" title="Using and debugging C++" name="16007932">Monitoring an unintuitive program flow</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 9.999999999999984mm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a href="#16022300" title="Using and debugging C++" name="16024104">Backtracing function calls and their parameters</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 9.999999999999984mm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a href="#16007611" title="Using and debugging C++" name="16024167">Monitoring STL containers</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 9.999999999999984mm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a href="#16023736" title="Using and debugging C++" name="16024230">Printing the Fibonacci numbers</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Heading3"><a name="15984535">Setting up the project</a></div>
+      <div class="Body"><a name="15995462">The </a><span class="Computer">UsingAndDebuggingCpp</span> project is preconfigured with appropriate option settings for this tutorial. However, this procedure guides you through the options required for this tutorial.</div>
+      <div class="List_step_first_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_first_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_first_inner"><a name="15984798">In the </a><span class="Menu_Command">Workspace</span> window, select  <span class="Computer">UsingAndDebuggingCpp - Debug</span>, right-click, and choose <span class="Menu_Command">Options</span> from the context menu.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16012331">In addition to the default settings, verify these settings:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="TableAnchor"><a name="16026883">&nbsp;</a></div>
+      <table class="Standard" style="text-align: left; width: 470.5484314960624pt" cellspacing="0" summary="">
+        <caption></caption>
+        <tr>
+          <td style="border-bottom-color: #7f7f7f; border-bottom-style: solid; border-bottom-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: middle; width: 92.1653858267717pt">
+            <div class="CellHeading"><a name="16011606">Category</a></div>
+          </td>
+          <td style="border-bottom-color: #7f7f7f; border-bottom-style: solid; border-bottom-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: middle; width: 92.1653858267717pt">
+            <div class="CellHeading"><a name="16003290">Page</a></div>
+          </td>
+          <td style="border-bottom-color: #7f7f7f; border-bottom-style: solid; border-bottom-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: middle; width: 132.357486614173pt">
+            <div class="CellHeading"><a name="16003295">Option</a></div>
+          </td>
+          <td style="border-bottom-color: #7f7f7f; border-bottom-style: solid; border-bottom-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: middle; width: 153.860173228346pt">
+            <div class="CellHeading"><a name="16003370">Setting</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-top-color: #7f7f7f; border-top-style: solid; border-top-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><a name="16011615">General Options</a></div>
+          </td>
+          <td style="border-top-color: #7f7f7f; border-top-style: solid; border-top-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><a name="16003303">Library Configuration</a></div>
+          </td>
+          <td style="border-top-color: #7f7f7f; border-top-style: solid; border-top-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Menu_Command"><a name="16003309">Library</a></span></div>
+          </td>
+          <td style="border-top-color: #7f7f7f; border-top-style: solid; border-top-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Menu_Command"><a name="16003379">Normal DLIB</a></span></div>
+            <div class="CellBody"><a name="16011745">or for some products</a></div>
+            <div class="CellBody"><span class="Menu_Command"><a name="16011757">Normal</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><a name="16011628">C/C++ Compiler</a></div>
+          </td>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Menu_Command"><a name="16003319">Language 1</a></span></div>
+          </td>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Menu_Command"><a name="16003340">Language</a></span></div>
+          </td>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Menu_Command"><a name="16003408">C++</a></span></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><a name="16012102">C/C++ Compiler</a></div>
+          </td>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Menu_Command"><a name="16012114">Language 1</a></span></div>
+          </td>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Menu_Command"><a name="16012125">C++ dialect</a></span> (Only for some products)</div>
+          </td>
+          <td style="padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Menu_Command"><a name="16012132">Extended Embedded C++</a></span> (only for some products)</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #7f7f7f; border-bottom-style: solid; border-bottom-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><a name="16011987">Debugger</a></div>
+          </td>
+          <td style="border-bottom-color: #7f7f7f; border-bottom-style: solid; border-bottom-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Menu_Command"><a name="16011999">Setup</a></span></div>
+          </td>
+          <td style="border-bottom-color: #7f7f7f; border-bottom-style: solid; border-bottom-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Menu_Command"><a name="16012010">Run to</a></span></div>
+          </td>
+          <td style="border-bottom-color: #7f7f7f; border-bottom-style: solid; border-bottom-width: 1.2pt; padding-bottom: 3pt; padding-left: 0pt; padding-right: 4pt; padding-top: 3pt; vertical-align: top">
+            <div class="CellBody"><span class="Menu_Command"><a name="16012017">Main</a></span></div>
+          </td>
+        </tr>
+      </table>
+      <div class="Body"><a name="16012485">To read more about DLIB and support for C++, see the compiler documentation.</a></div>
+      <div class="Body"><a name="16026540">C++ might require some extra heap; for information about any settings required for heap usage, see the header of the </a><span class="Computer">UsingClasses.cpp</span> file.</div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="15984729">Click </a><span class="Menu_Command">OK</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="15997965">Choose </a><span class="Menu_Command">Project&gt;Make</span> to compile and link your application.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Heading3"><a name="15984737">Monitoring constructors</a></div>
+      <div class="Body"><a name="16027071">Static objects are created before </a><span class="Computer">main</span>. In C++ there are constructors which are executed when the object is created. Thus, constructors for static objects are executed before <span class="Computer">main</span>.</div>
+      <div class="List_step_first_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_first_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_first_inner"><a name="16005493">In the file </a><span class="Computer">UsingClasses.cpp</span>, notice the static variable <span class="Computer">fibStat</span>:</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="16013173"><img class="Default" src="images/ViewingStaticVariableInC++_02.png" width="290" height="76" style="display: block; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16006220">To be able to monitor the construction, set a breakpoint on </a><span class="Computer">cout &lt;&lt; "A Fibonacci object that starts at Fibonacci number"</span> which you find in the file <span class="Computer">FibonacciByClass.h</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="16006116"><img class="Default" src="images/SettingBrpOnConstructor_02.png" width="592" height="228" style="display: block; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16013961">Stopping execution before </a><span class="Computer">main</span> means that the option setting <span class="Menu_Command">Run to main</span> is disabled. Therefore, you should also set a breakpoint close to <span class="Computer">main</span>, for example on <span class="Computer">Fibonacci fib1; </span>in the file <span class="Computer">UsingClasses.cpp</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="16013984"><img class="Default" src="images/SettingBrpNearMain_02.png" width="536" height="144" style="display: block; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16004566">Choose </a><span class="Menu_Command">Project&gt;Download and Debug</span> to start C-SPY.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16013987">The execution stops at the breakpoint in the constructor. Notice that the constructor executes before </a><span class="Computer">main</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="16016684"><img class="Default" src="images/BreakingAtConstructor_02.png" width="521" height="109" style="display: block; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="Body"><a name="16015200">Click on the red dot to remove the breakpoint, which is no longer needed.</a></div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16006322">Click the </a><span class="Menu_Command">Go</span> button (<img class="Default" src="images/GoButton_Mym80_02.png" width="25" height="25" style="display: inline; left: 0.0; top: 0.0" alt="" />) to resume the execution.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">7	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="15989078">Execution stops at the next breakpoint.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="16006910"><img class="Default" src="images/BreakingAtfib1_02.png" width="586" height="161" style="display: block; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">8	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16015716">Click </a><span class="Menu_Command">Step Into</span> (<img class="Default" src="images/StepIntoButton_Mym80_02.png" width="25" height="25" style="display: inline; left: 0.0; top: 0.0" alt="" />) to step into <span class="Computer">fib1</span> and <span class="Computer">fib2</span> to see the various constructors.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Heading3"><a name="16022554">Monitoring an unintuitive program flow</a></div>
+      <div class="Body"><a name="16023207">In C++ it is not always intuitive what the next function call will be. In this example procedure you will use various features that assist you tracking the program flow.</a></div>
+      <div class="List_step_first_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_first_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_first_inner"><a name="16023063">Step until you reach </a><span class="Computer">fib1 = 1;</span>. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="16028754"><img class="Default" src="images/SteppingToFib1Again_02.png" width="594" height="165" style="display: block; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="Body"><a name="16023082">In practice, this statement consists of three various function calls:</a></div>
+      <div class="List_bullet_outer" style="margin-left: 9.999999999999984mm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><span class="Computer"><a name="16028849">Fibonacci::Fibonacci(uint_fast8_t)</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 9.999999999999984mm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><span class="Computer"><a name="16028859">Fibonacci::operator=</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_bullet_outer" style="margin-left: 9.999999999999984mm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_bullet_inner" style="width: 11.3385826771654pt; white-space: nowrap">
+                <img src="images/bullet.png" alt="*" border="0" width="10" height="9" /> </div>
+            </td>
+            <td width="100%">
+              <div class="List_bullet_inner"><a name="16028870">The </a><span class="Computer">Fibonacci</span> destructor.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16016117">Choose </a><span class="Menu_Command">View&gt;Call Stack</span>. This window shows the chain of function calls. At the top line you can see that <span class="Computer">Fibonacci:Fibonacci(uint_fast8_t)</span> is the first of the three functions to be called.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="16028545"><img class="Default" src="images/ViewingNextStepInCallStack_02.png" width="548" height="177" style="display: block; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16023488">There are various step commands to choose between to continue executing your application, for example </a><span class="Menu_Command">Step Into</span> and <span class="Menu_Command">Step Over</span>. However, because you in this case want to track the program flow on function call level, the best command to use is <span class="Menu_Command">Step Over</span> because this will take you directly to the next function call (in contrast to <span class="Menu_Command">Step Into</span> which will step into the function).</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="16023648">Click </a><span class="Menu_Command">Step Over</span> (<img class="Default" src="images/StepOverButton_Mym80_02.png" width="25" height="25" style="display: inline; left: 0.0; top: 0.0" alt="" />) and notice that the next call is <span class="Computer">Fibonacci::operator=(Fibonacci const &amp;)</span>.<img class="Default" src="images/ViewingEqualOperator_02.png" width="361" height="154" style="display: block; left: 0.0; top: 0.0" alt="" /></div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16033789">Click </a><span class="Menu_Command">Step Over</span> again and notice that the next call now is the final of the three calls, in other words <span class="Computer">Fibonacci::~Fibonacci()</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Heading3"><a name="16022300">Backtracing function calls and their parameters</a></div>
+      <div class="StepIntro"><a name="16022440">It can be interesting to backtrace the function calls a few levels down and examine the value of the parameter for each function call. In this example procedure you will locate the function </a><span class="Computer">nth</span> and monitor parts of its call chain.</div>
+      <div class="List_step_first_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_first_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_first_inner"><a name="16016923">A couple of rows further down (still in </a><span class="Computer">UsingClasses.cpp</span>), select <span class="Computer">fib1.next()</span>, right-click, and choose <span class="Menu_Command">Toggle Breakpoint (Code)</span> from the context menu.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="16035422"><img class="Default" src="images/BreakpointOnNext_1.png" width="568" height="92" style="display: block; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="Note_Generic">Note:&nbsp;<a name="16035440">&nbsp;</a></div>
+      <div class="Body"><a name="16017943">In this case, when you want to set a breakpoint on a specific function call, you cannot set a breakpoint by clicking in the left margin (as you might usually do when you toggle a breakpoint) because that would set a breakpoint on the first statement of that line.</a></div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16035139">Click </a><span class="Menu_Command">Go</span> (<img class="Default" src="images/GoButton_Mym80_02.png" width="25" height="25" style="display: inline; left: 0.0; top: 0.0" alt="" />); the execution stops at the breakpoint.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16018065">Click </a><span class="Menu_Command">Step Into</span> (<img class="Default" src="images/StepIntoButton_Mym80_02.png" width="25" height="25" style="display: inline; left: 0.0; top: 0.0" alt="" />); you are now in the function <span class="Computer">next</span> in the file <span class="Computer">FibonacciByClass.cpp</span>. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">4	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16018338">To locate the function </a><span class="Computer">nth</span>, click <span class="Menu_Command">Go to function</span> (<img class="Default" src="images/gotofct.png" width="17" height="16" style="display: inline; left: 0.0; top: 0.0" alt="" />) in the upper right corner of the editor window and choose <span class="Computer">nth</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">5	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16018633">In the function </a><span class="Computer">nth</span>, set a breakpoint on <span class="Computer">value = nth(n-1u) + nth(n-2u);</span>. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">6	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16019429">Click </a><span class="Menu_Command">Go</span> (<img class="Default" src="images/GoButton_Mym80_02.png" width="25" height="25" style="display: inline; left: 0.0; top: 0.0" alt="" />) repeatedly to execute the application until the breakpoint is triggered. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">7	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16019853">In the </a><span class="Menu_Command">Call Stack</span> window, right-click and choose <span class="Menu_Command">Show Arguments</span> from the context menu. You can now see an instance of the function <span class="Computer">nth</span> displayed on the call stack.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="16035731">Click </a><span class="Menu_Command">Go</span> (<img class="Default" src="images/GoButton_Mym80_02.png" width="25" height="25" style="display: inline; left: 0.0; top: 0.0" alt="" />) a few times. Because the <span class="Menu_Command">Call Stack</span> window displays the values of the function parameters, you can see the different values of <span class="Computer">n</span> in the different function instances.</div>
+      <div class="Body"><a name="16035839"><img class="Default" src="images/ViewingCallChainForNth_1.png" width="355" height="234" style="display: block; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="Heading3"><a name="16007611">Monitoring STL containers</a></div>
+      <div class="Body"><a name="16021989">In C-SPY, you can view the contents of STL containers (like for example </a><span class="Computer">msFib</span>, which is a vector) in the same way as arrays.</div>
+      <div class="List_step_first_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_first_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_first_inner"><a name="16021379">Choose </a><span class="Menu_Command">View&gt;Watch&gt;Watch 1</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16007779">In the </a><span class="Menu_Command">&lt;click to add&gt;</span> cell, type <span class="Computer">msFib</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="Body"><a name="16026294">Expand </a><span class="Computer">msFib</span> to view its content and expand <span class="Computer">Raw</span> to view the implementation.<img class="Default" src="images/MonitoringSTLcontainers_1.png" width="616" height="417" style="display: block; left: 0.0; top: 0.0" alt="" /></div>
+      <div class="Heading3"><a name="16023736">Printing the Fibonacci numbers</a></div>
+      <div class="List_step_first_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_first_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">1	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_first_inner"><a name="16023770">Choose </a><span class="Menu_Command">View&gt;Terminal I/O</span> to open the <span class="Menu_Command">Terminal I/O</span> window.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">2	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16023777">Remove the breakpoints and execute the application to the end and verify the Fibonacci sequences being printed.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="List_step_outer" style="margin-left: 0.5062999999999767cm">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="List_step_inner" style="width: 13.994645669291998pt; white-space: nowrap">
+                <span class="N_Step">3	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="List_step_inner"><a name="16023789">You are now finished with this tutorial and can exit the debug session.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </blockquote>
+  </body>
+</html>
